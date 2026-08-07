@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "reported_result": {
+    "model": "Qwen3.5-9B",
+    "episodes": 99,
+    "success_rate_percent": 56.6,
+    "source": "Pinned released-data README, lines 41 and 60",
+    "source_sha256": "c78319772773fd5cbdf1b09d831e1b6f84d430e9fccb94b2202bb4429daa6d08"
+  },
+  "released_artifact": {
+    "model_directory": "huggingface__Qwen__Qwen3.5-9B",
+    "episodes": 99,
+    "successes": 0,
+    "traces_without_terminal_assistant_response": 3
+  },
+  "mapping_evidence": [
+    "Repository-internal model name",
+    "Matching n=99 scope"
+  ],
+  "not_verified": [
+    "Checkpoint identity",
+    "Task-set identity",
+    "Evaluation configuration"
+  ],
+  "author_confirmation_available": false,
+  "exact_evaluation_slice_identity_verified": false,
+  "corrected_model_performance_identifiable": false,
+  "code_regression_test_sha256": "fc2161518b114f50bdd79bbc6338b086c2db95c3df468fdd2f4dfc2876bf120f"
+}

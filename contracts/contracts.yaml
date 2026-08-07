@@ -1,0 +1,50 @@
+version: "1.1"
+targets:
+  agentprm:
+    revision: e4714717f7f4bd4671848670c4ed54d0169f603a
+    study_phase: original
+    contracts:
+      - {id: APRM-TEMP-01, kind: equation, severity_ceiling: 3}
+      - {id: APRM-TEMP-02, kind: equation, severity_ceiling: 1}
+      - {id: APRM-TEMP-03, kind: equation, severity_ceiling: 3}
+      - {id: APRM-SCHEMA-01, kind: schema, severity_ceiling: 2}
+      - {id: APRM-METRIC-01, kind: metric, severity_ceiling: 3}
+  contractbench:
+    revision: c50eefee49b6925e2ccbf3c51a987ed705148725
+    data_revision: 457a8ad7d905cbb57ef6b892c5c087afee144171
+    study_phase: original
+    contracts:
+      - {id: CBEN-LOG-01, kind: logging, severity_ceiling: 2}
+      - {id: CBEN-LOG-02, kind: logging, severity_ceiling: 2}
+      - {id: CBEN-SCHEMA-01, kind: schema, severity_ceiling: 1}
+      - {id: CBEN-METRIC-01, kind: metric, severity_ceiling: 4}
+      - {id: CBEN-METRIC-02, kind: metric, severity_ceiling: 2}
+  toolace:
+    revision: 1156d649235235e686372956e99bfc50e4b1e3f6
+    study_phase: original
+    contracts:
+      - {id: TACE-COORD-01, kind: schema, severity_ceiling: 2}
+      - {id: TACE-COORD-02, kind: schema, severity_ceiling: 2}
+      - {id: TACE-SCHEMA-01, kind: schema, severity_ceiling: 2}
+      - {id: TACE-MASK-01, kind: equation, severity_ceiling: 2}
+      - {id: TACE-SUPPORT-01, kind: support, severity_ceiling: 0}
+  taubench:
+    revision: 59a200c6d575d595120f1cb70fea53cef0632f6b
+    study_phase: original
+    contracts:
+      - {id: TBEN-SCHEMA-01, kind: schema, severity_ceiling: 1}
+      - {id: TBEN-LOG-01, kind: logging, severity_ceiling: 1}
+      - {id: TBEN-METRIC-01, kind: metric, severity_ceiling: 2}
+      - {id: TBEN-METRIC-02, kind: metric, severity_ceiling: 2}
+      - {id: TBEN-NEG-01, kind: negative_control, severity_ceiling: 0}
+  agentabstain:
+    revision: f581249704b26804e28a39e37396f1be00b71a4d
+    data_revision: 842228426c2a703347396501af61c7890972c7ee
+    study_phase: prospective
+    released_model_outputs_available: false
+    contracts:
+      - {id: AABS-PAIR-01, kind: schema, severity_ceiling: 1}
+      - {id: AABS-PAIR-02, kind: metric, severity_ceiling: 1}
+      - {id: AABS-CAR-01, kind: metric, severity_ceiling: 0}
+      - {id: AABS-COMMIT-01, kind: logging, severity_ceiling: 2}
+      - {id: AABS-MACRO-01, kind: metric, severity_ceiling: 0}

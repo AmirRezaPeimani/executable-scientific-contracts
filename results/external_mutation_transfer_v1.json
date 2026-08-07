@@ -1,0 +1,117 @@
+{
+  "by_family": {
+    "arithmetic_operator_replacement": {
+      "detected": 1,
+      "total": 1
+    },
+    "constant_value_replacement": {
+      "detected": 1,
+      "total": 1
+    },
+    "logical_operator_replacement": {
+      "detected": 2,
+      "total": 2
+    },
+    "relational_operator_replacement": {
+      "detected": 0,
+      "total": 1
+    },
+    "statement_deletion": {
+      "detected": 2,
+      "total": 2
+    },
+    "unary_operator_replacement": {
+      "detected": 1,
+      "total": 1
+    }
+  },
+  "claim_boundary": "Operator-transfer evidence for eight prospectively frozen single-site mutants; not independent authorship or a prevalence sample.",
+  "external_sources": [
+    "Just 2014, Major mutation framework, Section 2.2",
+    "PIT public mutator catalog"
+  ],
+  "mutations": [
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "arithmetic_operator_replacement",
+      "fixture": "discounted_terminal_target",
+      "id": "XM-01",
+      "mutant_passes": false,
+      "transformation": "horizon - 1 - t -> horizon - 1 + t"
+    },
+    {
+      "clean_passes": true,
+      "detected": false,
+      "external_family": "relational_operator_replacement",
+      "fixture": "thresholded_pass_rate",
+      "id": "XM-02",
+      "mutant_passes": true,
+      "transformation": "reward >= threshold -> reward > threshold"
+    },
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "constant_value_replacement",
+      "fixture": "terminal_relative_index",
+      "id": "XM-03",
+      "mutant_passes": false,
+      "transformation": "terminal offset 1 -> 0"
+    },
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "unary_operator_replacement",
+      "fixture": "signed_target_values",
+      "id": "XM-04",
+      "mutant_passes": false,
+      "transformation": "value -> -value"
+    },
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "logical_operator_replacement",
+      "fixture": "paired_success",
+      "id": "XM-05",
+      "mutant_passes": false,
+      "transformation": "act and abstain -> act or abstain"
+    },
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "statement_deletion",
+      "fixture": "terminal_response_logging",
+      "id": "XM-06",
+      "mutant_passes": false,
+      "transformation": "delete final response append"
+    },
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "statement_deletion",
+      "fixture": "required_tool_arguments",
+      "id": "XM-07",
+      "mutant_passes": false,
+      "transformation": "delete required-argument insertion"
+    },
+    {
+      "clean_passes": true,
+      "detected": true,
+      "external_family": "logical_operator_replacement",
+      "fixture": "commit_aware_abstention",
+      "id": "XM-08",
+      "mutant_passes": false,
+      "transformation": "not commit and judge -> not commit or judge"
+    }
+  ],
+  "overall": {
+    "detected": 7,
+    "rate": 0.875,
+    "total": 8,
+    "wilson_95": [
+      0.5291118177871466,
+      0.9775825085499433
+    ]
+  },
+  "protocol": "protocols/EXTERNAL_MUTATION_TRANSFER_PROTOCOL.md"
+}

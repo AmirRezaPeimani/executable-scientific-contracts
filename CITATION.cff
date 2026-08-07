@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Executable Scientific Contracts for Research Auditing"
+type: software
+version: 1.0.0
+date-released: 2026-08-07
+authors:
+  - family-names: Peimani
+    given-names: Amir Reza
+    affiliation: University of Toronto
+    email: amir.peimani@utoronto.ca
+repository-code: "https://github.com/AmirRezaPeimani/executable-scientific-contracts"
+license: MIT

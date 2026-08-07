@@ -1,0 +1,30 @@
+{
+  "externally_sourced_mutation_transfer": {
+    "detected": 8,
+    "interpretation": "Eight operators were selected from Major/PIT families. Version 1's boundary-instantiation error is preserved; version 2 changes only the threshold to the frozen attained boundary.",
+    "total": 8,
+    "wilson_95": [
+      0.6755924351161198,
+      1.0
+    ]
+  },
+  "mutation_detection": {
+    "detected": 30,
+    "scope": "thirty purposively designed operators in four declared classes",
+    "total": 30,
+    "wilson_95": [
+      0.8864866068260312,
+      1.0
+    ]
+  },
+  "prospective_claim_anchored_checks": {
+    "conformant": 3,
+    "interpretation": "Three claim-anchored checks conform. Two additional checks are convention sensitivities, not defect-detection trials. This purposive same-author case does not estimate specificity.",
+    "total": 3
+  },
+  "prospective_method_transfer": {
+    "alternative_convention": 2,
+    "conformant": 3,
+    "interpretation": "A prospective method-transfer case, not a random prevalence sample; same-author contract translation remains a validity limitation."
+  }
+}

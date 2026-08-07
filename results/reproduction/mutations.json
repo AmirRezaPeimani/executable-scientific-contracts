@@ -1,0 +1,254 @@
+{
+  "by_class": {
+    "equation": {
+      "detected": 8,
+      "rate": 1.0,
+      "total": 8,
+      "wilson_high_95": 1.0,
+      "wilson_low_95": 0.6755924351161198
+    },
+    "logging": {
+      "detected": 8,
+      "rate": 1.0,
+      "total": 8,
+      "wilson_high_95": 1.0,
+      "wilson_low_95": 0.6755924351161198
+    },
+    "metric": {
+      "detected": 6,
+      "rate": 1.0,
+      "total": 6,
+      "wilson_high_95": 1.0,
+      "wilson_low_95": 0.6096657120978346
+    },
+    "schema": {
+      "detected": 8,
+      "rate": 1.0,
+      "total": 8,
+      "wilson_high_95": 1.0,
+      "wilson_low_95": 0.6755924351161198
+    }
+  },
+  "clean_fixture_failures": [],
+  "manifest_sha256": "37085d36ad794cfcc7368fe739f036a531ac596149acec30f5fb7736a064fd6f",
+  "mutations": [
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-01",
+      "operator": "reverse_temporal_exponent"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-02",
+      "operator": "shift_temporal_index"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-03",
+      "operator": "drop_terminal_offset"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-04",
+      "operator": "invert_discount"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-05",
+      "operator": "ignore_discount"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-06",
+      "operator": "negate_reward"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-07",
+      "operator": "normalize_wrong_axis"
+    },
+    {
+      "class": "equation",
+      "clean_passes": true,
+      "detected": true,
+      "id": "EQ-08",
+      "operator": "include_terminal_twice"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-01",
+      "operator": "drop_required_field"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-02",
+      "operator": "rename_required_field"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-03",
+      "operator": "wrong_field_type"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-04",
+      "operator": "duplicate_action_from_observation"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-05",
+      "operator": "unknown_tool_name"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-06",
+      "operator": "remove_tool_argument"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-07",
+      "operator": "shift_crop_coordinate"
+    },
+    {
+      "class": "schema",
+      "clean_passes": true,
+      "detected": true,
+      "id": "SC-08",
+      "operator": "supervise_prompt_token"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-01",
+      "operator": "drop_final_response"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-02",
+      "operator": "count_unlogged_output"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-03",
+      "operator": "orphan_tool_result"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-04",
+      "operator": "duplicate_terminal_event"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-05",
+      "operator": "reorder_call_and_result"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-06",
+      "operator": "drop_success_event"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-07",
+      "operator": "stale_run_identifier"
+    },
+    {
+      "class": "logging",
+      "clean_passes": true,
+      "detected": true,
+      "id": "LG-08",
+      "operator": "truncate_terminal_payload"
+    },
+    {
+      "class": "metric",
+      "clean_passes": true,
+      "detected": true,
+      "id": "MT-01",
+      "operator": "wrong_denominator"
+    },
+    {
+      "class": "metric",
+      "clean_passes": true,
+      "detected": true,
+      "id": "MT-02",
+      "operator": "exclude_failures"
+    },
+    {
+      "class": "metric",
+      "clean_passes": true,
+      "detected": true,
+      "id": "MT-03",
+      "operator": "duplicate_success"
+    },
+    {
+      "class": "metric",
+      "clean_passes": true,
+      "detected": true,
+      "id": "MT-04",
+      "operator": "threshold_shift"
+    },
+    {
+      "class": "metric",
+      "clean_passes": true,
+      "detected": true,
+      "id": "MT-05",
+      "operator": "mean_instead_of_pass_rate"
+    },
+    {
+      "class": "metric",
+      "clean_passes": true,
+      "detected": true,
+      "id": "MT-06",
+      "operator": "integer_truncation"
+    }
+  ],
+  "overall": {
+    "detected": 30,
+    "rate": 1.0,
+    "total": 30,
+    "wilson_high_95": 0.9999999999999999,
+    "wilson_low_95": 0.8864866068260312
+  },
+  "valid": true
+}

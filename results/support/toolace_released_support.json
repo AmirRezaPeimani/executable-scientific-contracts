@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "scope": "Aggregate support scan of the released ToolACE target candidates; no model outcomes are included.",
+  "repository_revision": "1156d649235235e686372956e99bfc50e4b1e3f6",
+  "source_dataset_sha256": "ba12c083fca7e8da48c67ad5b895e495447da7c66e39a2e19742c082e6cb537e",
+  "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "support_artifact_sha256": {
+    "summary_json": "d121a91c54e5521871523d963a7c05d274f242e7ab8947d7b9b8e7df4ea24829",
+    "per_target_csv": "e0e5e4f4d008697a6e3fccba8c1055095b6ace00d7d3f6f700f170dcf30c5190"
+  },
+  "counts": {
+    "candidate_targets": 10092,
+    "targets": 9412,
+    "overlength_targets": 0,
+    "zero_coded_loss_targets": 0,
+    "missing_named_schema_targets": 0,
+    "maximum_sequence_tokens": 3945,
+    "configured_max_length": 8192
+  },
+  "definitions": {
+    "candidate_targets": "Assistant messages in the released source data whose value begins with a list-form target.",
+    "targets": "Candidate targets successfully parsed by the frozen support scan.",
+    "maximum_sequence_tokens": "Maximum prompt-plus-response token count among parsed targets."
+  },
+  "redistribution": "Only aggregate values and source hashes are included here; the third-party dataset and per-target records are not redistributed."
+}

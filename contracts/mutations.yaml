@@ -1,0 +1,32 @@
+version: "1.0"
+mutations:
+  - {id: EQ-01, class: equation, operator: reverse_temporal_exponent}
+  - {id: EQ-02, class: equation, operator: shift_temporal_index}
+  - {id: EQ-03, class: equation, operator: drop_terminal_offset}
+  - {id: EQ-04, class: equation, operator: invert_discount}
+  - {id: EQ-05, class: equation, operator: ignore_discount}
+  - {id: EQ-06, class: equation, operator: negate_reward}
+  - {id: EQ-07, class: equation, operator: normalize_wrong_axis}
+  - {id: EQ-08, class: equation, operator: include_terminal_twice}
+  - {id: SC-01, class: schema, operator: drop_required_field}
+  - {id: SC-02, class: schema, operator: rename_required_field}
+  - {id: SC-03, class: schema, operator: wrong_field_type}
+  - {id: SC-04, class: schema, operator: duplicate_action_from_observation}
+  - {id: SC-05, class: schema, operator: unknown_tool_name}
+  - {id: SC-06, class: schema, operator: remove_tool_argument}
+  - {id: SC-07, class: schema, operator: shift_crop_coordinate}
+  - {id: SC-08, class: schema, operator: supervise_prompt_token}
+  - {id: LG-01, class: logging, operator: drop_final_response}
+  - {id: LG-02, class: logging, operator: count_unlogged_output}
+  - {id: LG-03, class: logging, operator: orphan_tool_result}
+  - {id: LG-04, class: logging, operator: duplicate_terminal_event}
+  - {id: LG-05, class: logging, operator: reorder_call_and_result}
+  - {id: LG-06, class: logging, operator: drop_success_event}
+  - {id: LG-07, class: logging, operator: stale_run_identifier}
+  - {id: LG-08, class: logging, operator: truncate_terminal_payload}
+  - {id: MT-01, class: metric, operator: wrong_denominator}
+  - {id: MT-02, class: metric, operator: exclude_failures}
+  - {id: MT-03, class: metric, operator: duplicate_success}
+  - {id: MT-04, class: metric, operator: threshold_shift}
+  - {id: MT-05, class: metric, operator: mean_instead_of_pass_rate}
+  - {id: MT-06, class: metric, operator: integer_truncation}

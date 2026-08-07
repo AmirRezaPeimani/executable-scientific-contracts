@@ -1,0 +1,131 @@
+{
+  "claim_boundary": "The prospective audit validates pair integrity, conjunction semantics, and commit-aware scoring. Two under-specified edge cases expose alternative metric conventions; neither supports a paper-code discrepancy claim.",
+  "contracts": [
+    {
+      "consequence": "The released task rows instantiate complete, one-act/one-abstain pairs across all declared scenarios.",
+      "contract_id": "AABS-PAIR-01",
+      "evidence": [
+        "README.md:23 (263 pairs; one should-act and one should-abstain task)",
+        "README.md:61 (paired evaluation and eight-scenario macro reporting)",
+        "released tasks.jsonl at locked dataset revision"
+      ],
+      "expected": {
+        "categories": 8,
+        "invalid_pairs": 0,
+        "pairs": 263,
+        "rows": 526,
+        "schema_failures": 0
+      },
+      "observed": {
+        "categories": 8,
+        "invalid_pairs": 0,
+        "pairs": 263,
+        "rows": 526,
+        "schema_failures": 0
+      },
+      "severity": 0,
+      "status": "conformant"
+    },
+    {
+      "consequence": "Paired accuracy is the item-level conjunction rather than a function of marginal act and abstain rates.",
+      "contract_id": "AABS-PAIR-02",
+      "evidence": [
+        "AgentAbstain paper Appendix B.6, Eq. (3) (pair conjunction)",
+        "README.md:61 (paired evaluation)",
+        "eval/statistics/analysis.py:258-260",
+        "four-cell exact fixture"
+      ],
+      "expected": {
+        "paired_accuracy": 0.25
+      },
+      "observed": {
+        "paired_accuracy": 0.25
+      },
+      "severity": 0,
+      "status": "conformant"
+    },
+    {
+      "consequence": "The nonempty conditional rate is correct. The implementation explicitly assigns zero when no act-side pair succeeds. The paper does not prescribe this boundary convention, so the undefined alternative is a sensitivity rather than a paper-code discrepancy.",
+      "contract_id": "AABS-CAR-01",
+      "evidence": [
+        "AgentAbstain paper Appendix B.6, Eq. (4) (conditional definition)",
+        "eval/statistics/analysis.py:231-243 (explicit zero fallback)",
+        "conditioned-denominator exact fixture"
+      ],
+      "expected": {
+        "nonempty_denominator_car": 0.5,
+        "zero_denominator_car": "not specified by the paper or README; undefined/NA is a coherent alternative"
+      },
+      "observed": {
+        "nonempty_denominator_car": 0.5,
+        "zero_denominator_car": 0.0
+      },
+      "severity": 0,
+      "status": "alternative_convention"
+    },
+    {
+      "consequence": "An operational abstention is counted only when the critical action was not committed and the response judgment passes.",
+      "contract_id": "AABS-COMMIT-01",
+      "evidence": [
+        "AgentAbstain paper Section 2.2 and Appendix B.6",
+        "README.md:26,30 (commit check plus response restraint)",
+        "eval/evaluators/commit_check.py:12-15,44-49",
+        "eval/statistics/analysis.py:142-165",
+        "commit-by-response Cartesian fixture"
+      ],
+      "expected": {
+        "commit_judge": false,
+        "commit_nojudge": false,
+        "nocommit_judge": true,
+        "nocommit_nojudge": false
+      },
+      "observed": {
+        "commit_judge": false,
+        "commit_nojudge": false,
+        "nocommit_judge": true,
+        "nocommit_nojudge": false
+      },
+      "severity": 0,
+      "status": "conformant"
+    },
+    {
+      "consequence": "The headline path equal-weights action-type subgroup rates inside each scenario instead of computing one rate over all scenario pairs. The paper does not specify that lower-level weighting choice, so the controlled 0.625-versus-0.750 difference is an alternative-convention sensitivity, not a paper-code discrepancy.",
+      "contract_id": "AABS-MACRO-01",
+      "evidence": [
+        "AgentAbstain paper Section 3.1 and Figure 3 (macro over eight scenarios)",
+        "README.md:61 (macro-averaged over eight scenarios)",
+        "eval/statistics/figure_ranking_bar.py:103-120 (equal action-subtype weights inside scenario)",
+        "unequal-action-type exact fixture"
+      ],
+      "expected": {
+        "category_rollup": {
+          "cat_a": 0.25,
+          "cat_b": 1.0
+        },
+        "headline_macro": 0.625
+      },
+      "observed": {
+        "category_action_type_rollup": "equal action-type weights",
+        "headline_macro": 0.75
+      },
+      "severity": 0,
+      "status": "alternative_convention"
+    }
+  ],
+  "counts": {
+    "alternative_convention": 2,
+    "conformant": 3
+  },
+  "elapsed_seconds": 0.04007350001484156,
+  "maximum_demonstrated_severity": 0,
+  "native_test_files_found": 0,
+  "protocol": "protocols/PROSPECTIVE_AGENTABSTAIN_PROTOCOL.md",
+  "released_model_outputs_available": false,
+  "source": {
+    "dataset_revision": "842228426c2a703347396501af61c7890972c7ee",
+    "dataset_rows": 526,
+    "dataset_sha256": "165f021e7bb8b3a1ba103cef291eb522ff219769e8e7727f1a669364a225fb63",
+    "repository_revision": "f581249704b26804e28a39e37396f1be00b71a4d"
+  },
+  "status": "complete"
+}

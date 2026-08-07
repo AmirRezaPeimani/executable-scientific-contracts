@@ -1,0 +1,99 @@
+{
+  "command": "conform audit taubench",
+  "contracts": [
+    {
+      "consequence": "Released task actions reference declared tool modules.",
+      "contract_id": "TBEN-SCHEMA-01",
+      "elapsed_seconds": 0.002499103546142578,
+      "evidence": [
+        "historical-trajectories/two-domains"
+      ],
+      "expected": {
+        "unknown_tools": []
+      },
+      "observed": {
+        "actions": 5920,
+        "unknown_tools": []
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "taubench"
+    },
+    {
+      "consequence": "Tool-result messages preserve call provenance.",
+      "contract_id": "TBEN-LOG-01",
+      "elapsed_seconds": 0.005739927291870117,
+      "evidence": [
+        "historical-trajectories/two-domains"
+      ],
+      "expected": {
+        "orphan_tool_results": 0
+      },
+      "observed": {
+        "orphan_tool_results": 0,
+        "trajectories": 1320
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "taubench"
+    },
+    {
+      "consequence": "Top-level rewards agree with their saved reward checks.",
+      "contract_id": "TBEN-METRIC-01",
+      "elapsed_seconds": 0.0007808208465576172,
+      "evidence": [
+        "historical-trajectories/two-domains"
+      ],
+      "expected": {
+        "reward_mismatches": 0
+      },
+      "observed": {
+        "reward_mismatches": 0,
+        "trajectories": 1320
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "taubench"
+    },
+    {
+      "consequence": "Each eligible trajectory enters the aggregate exactly once.",
+      "contract_id": "TBEN-METRIC-02",
+      "elapsed_seconds": 0.00036597251892089844,
+      "evidence": [
+        "historical-trajectories/two-domains"
+      ],
+      "expected": 0.621969696969697,
+      "observed": 0.621969696969697,
+      "severity": 0,
+      "status": "conformant",
+      "target": "taubench"
+    },
+    {
+      "consequence": "Pinned trajectories serve as a clean false-positive control.",
+      "contract_id": "TBEN-NEG-01",
+      "elapsed_seconds": 9.5367431640625e-07,
+      "evidence": [
+        "historical-trajectories/two-domains"
+      ],
+      "expected": {
+        "prior_contracts_conformant": true
+      },
+      "observed": {
+        "prior_contracts_conformant": true
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "taubench"
+    }
+  ],
+  "counts": {
+    "conformant": 5,
+    "discrepant": 0,
+    "error": 0,
+    "inactive": 0
+  },
+  "dirty": false,
+  "maximum_demonstrated_severity": 0,
+  "revision": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+  "target": "taubench"
+}

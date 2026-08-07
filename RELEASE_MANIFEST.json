@@ -1,0 +1,256 @@
+{
+  "authors": [
+    {
+      "affiliation": "University of Toronto",
+      "email": "amir.peimani@utoronto.ca",
+      "name": "Amir Reza Peimani"
+    }
+  ],
+  "canonical_evidence_sha256": {
+    "results/agentabstain_prospective_v2.json": "dd6b6a9da73de52a180edf5ea7398a31b4f83d7785a9b8ed33025cad534a7a36",
+    "results/external_mutation_transfer_v1.json": "32f4c8e62966d25c01ba88b94122bb340733258c5bdd7f7b0448d9bee1094c03",
+    "results/external_mutation_transfer_v2.json": "cf41f6e7f6c747ca5e3a1e98c230c156d49e4d706f198375361ffbe08c3c32a2",
+    "results/reproduction/audits/agentprm.json": "d36edb2b14faf60afcd0428b4032fccb99b74e53cfa62a9a75339158a56a9948",
+    "results/reproduction/audits/contractbench.json": "b210575e94dc72d19f4e3bc65edc4a23be3add375e999fb098b40260a3e78934",
+    "results/reproduction/audits/taubench.json": "23d61770962d42a945629ff2189eff4c147aa2bf20930a7ac5469298ebe9d56a",
+    "results/reproduction/audits/toolace.json": "bf30d1b788308ec11d79e2c994d27f43e3f54b6ed74bc880ece5dd8843a2bcef",
+    "results/reproduction/mutations.json": "1d7d18436edc8553605d581e6a731f4b7da0458cd775acb814f8c9258f65e763",
+    "results/submission_evidence/execution_benchmark.json": "39890274af76d86518628e4073fc35e34681a22c9287f529801d94ca5783c6e9",
+    "results/submission_evidence/uncertainty_and_scope.json": "e9ac91584501712d5c7a93f55169fb38c535e610ddc6c639fc546a7b08b64c12"
+  },
+  "file_count": 46,
+  "files": {
+    ".gitignore": {
+      "bytes": 101,
+      "sha256": "acb1cf818d53b62bd599cdcb7da573c2c4b52d5bd5e69ff7a3fc1ca4088f710d"
+    },
+    "CITATION.cff": {
+      "bytes": 452,
+      "sha256": "9940cc5e35fadfbb8a33277360fccf43551662928b5c76c9153acf0c60d61f34"
+    },
+    "LICENSE": {
+      "bytes": 1074,
+      "sha256": "7f8278fb8f705641cc931c09437898cc8c2145626e4921f3e376f3f066d2f2f1"
+    },
+    "README.md": {
+      "bytes": 8376,
+      "sha256": "a954da2509282c53a747f65a204717a1115c12e97bb86db6a749e4038ba1e546"
+    },
+    "UPSTREAM.md": {
+      "bytes": 2449,
+      "sha256": "66f860af39939702772ebbfa017fd858ea406ec822306e7f990d7c30530b0cb2"
+    },
+    "contracts/contracts.yaml": {
+      "bytes": 2333,
+      "sha256": "047d4b611a97c6da228fad29e6c95cc6384c73f7837c890305de928d835c5ec7"
+    },
+    "contracts/mutations.yaml": {
+      "bytes": 1935,
+      "sha256": "37085d36ad794cfcc7368fe739f036a531ac596149acec30f5fb7736a064fd6f"
+    },
+    "figures/contract_outcome_landscape_full_v1.pdf": {
+      "bytes": 25879,
+      "sha256": "9f6909b6cf5905a28d2b4e13fb67173e2027f4b983995af58c64f38c94acf497"
+    },
+    "figures/empirical_summary_v1.pdf": {
+      "bytes": 55702,
+      "sha256": "ca25d98e908159f994eded478754c3bcf81ea8509610ff14bd9477e3189ac2e7"
+    },
+    "figures/evidence_chain_v2.pdf": {
+      "bytes": 26215,
+      "sha256": "13c3d82692b7427172fe6d9b47b46fe8a4c316f9ffca56c5f8ed9cb9cb9c55b0"
+    },
+    "figures/execution_time_after_authoring_v1.pdf": {
+      "bytes": 22965,
+      "sha256": "09c5c5c48766554b251a69e113994ab7ce3e2f66baea9f18546cba44874d1e45"
+    },
+    "figures/worked_contract_example_v1.pdf": {
+      "bytes": 24731,
+      "sha256": "39b1122f3d6e3414cebc614c0d7b55c0f85189ddda3eda783d7ce3d163b57f6d"
+    },
+    "protocols/EXTERNAL_MUTATION_TRANSFER_PROTOCOL.md": {
+      "bytes": 3373,
+      "sha256": "7587a8bcaedcb77e29167cb9b620c8a32041bdb47486b315638f191e9bf4ccf4"
+    },
+    "protocols/PROSPECTIVE_AGENTABSTAIN_PROTOCOL.md": {
+      "bytes": 4970,
+      "sha256": "64e4f8cc522cd97dc6cffb8bfa6aee388e9a2097a438ca6af893d8c2b43ba692"
+    },
+    "pyproject.toml": {
+      "bytes": 954,
+      "sha256": "e79fa22b06f324ae5d14f4b64f432972f2bb8d9f4dfaf82e24d242b9509914e2"
+    },
+    "results/agentabstain_prospective_v2.json": {
+      "bytes": 5031,
+      "sha256": "dd6b6a9da73de52a180edf5ea7398a31b4f83d7785a9b8ed33025cad534a7a36"
+    },
+    "results/external_mutation_transfer_v1.json": {
+      "bytes": 3197,
+      "sha256": "32f4c8e62966d25c01ba88b94122bb340733258c5bdd7f7b0448d9bee1094c03"
+    },
+    "results/external_mutation_transfer_v2.json": {
+      "bytes": 3180,
+      "sha256": "cf41f6e7f6c747ca5e3a1e98c230c156d49e4d706f198375361ffbe08c3c32a2"
+    },
+    "results/reproduction/audits/agentprm.json": {
+      "bytes": 3393,
+      "sha256": "780d7adafd090763aff50d134593ecef44f846509a30019ccb15e4c36ce64ad6"
+    },
+    "results/reproduction/audits/contractbench.json": {
+      "bytes": 2960,
+      "sha256": "70a411488c59d6a96d3d1aef71e082d6c067ac1d7a504a88aad0b378f238c72d"
+    },
+    "results/reproduction/audits/taubench.json": {
+      "bytes": 2612,
+      "sha256": "23d61770962d42a945629ff2189eff4c147aa2bf20930a7ac5469298ebe9d56a"
+    },
+    "results/reproduction/audits/toolace.json": {
+      "bytes": 3082,
+      "sha256": "df4058e12e61d1f72f356cfd2cae5e9e3f839093abc2847adf627480fab2af31"
+    },
+    "results/reproduction/mutations.json": {
+      "bytes": 5528,
+      "sha256": "1d7d18436edc8553605d581e6a731f4b7da0458cd775acb814f8c9258f65e763"
+    },
+    "results/submission_evidence/execution_benchmark.json": {
+      "bytes": 2703,
+      "sha256": "39890274af76d86518628e4073fc35e34681a22c9287f529801d94ca5783c6e9"
+    },
+    "results/submission_evidence/uncertainty_and_scope.json": {
+      "bytes": 1099,
+      "sha256": "e9ac91584501712d5c7a93f55169fb38c535e610ddc6c639fc546a7b08b64c12"
+    },
+    "results/support/contractbench_repository_mapping.json": {
+      "bytes": 917,
+      "sha256": "bfc97989b53ea390605986937aef6ee37fc433f5b19bdae64a0b200fe651a1c9"
+    },
+    "results/support/toolace_released_support.json": {
+      "bytes": 1334,
+      "sha256": "eedbc5baba43a5a4f7f0a527ac166157af0b7a6231be55a4d78c334df0c7fe0a"
+    },
+    "scripts/make_figures.py": {
+      "bytes": 23293,
+      "sha256": "a9182abe119238e40d0a8a20f3a2819dccbae61cfad45007d58bbbe8f611e8f8"
+    },
+    "scripts/run_agentabstain_checks.py": {
+      "bytes": 16036,
+      "sha256": "20ee9befd65f30847384e85e6d7570923903f7ea945ff558b3c620778bd20759"
+    },
+    "scripts/run_external_mutations.py": {
+      "bytes": 7394,
+      "sha256": "4af865033fd8502ecb9b851e6824f4c8ab5aab87bea6b4645a6552e1cc587819"
+    },
+    "src/conform/__init__.py": {
+      "bytes": 74,
+      "sha256": "61ad5295d98ef1734e2744bc91b40cd22aa1f97b5ccfb8c53dbff710b197b6da"
+    },
+    "src/conform/adapters/__init__.py": {
+      "bytes": 308,
+      "sha256": "3b233461c666e3ce1ae09166026f6efe7c8a3f96fe5d2f1148e2ce11af1674ae"
+    },
+    "src/conform/adapters/agentprm.py": {
+      "bytes": 4893,
+      "sha256": "e192572c31ffcc15c26542b092f553ce3db18639d4328cd65dd38c0c790ffe8d"
+    },
+    "src/conform/adapters/contractbench.py": {
+      "bytes": 6132,
+      "sha256": "b84b3816e17a83f4886d3316012499ffe8b3db4b386be429888511d38633b382"
+    },
+    "src/conform/adapters/taubench.py": {
+      "bytes": 5042,
+      "sha256": "359c689101f4127913fa2254d9cc957a9639a429f70c521cb90d64bd27123cea"
+    },
+    "src/conform/adapters/toolace.py": {
+      "bytes": 4558,
+      "sha256": "51195deef225a6b1d619f78561fafc69e213ccfd6c95afe7d64150f03aa9ec67"
+    },
+    "src/conform/cli.py": {
+      "bytes": 4918,
+      "sha256": "c548b941d0bb09c7256e1d76bdb614e977d9e654f219f19a719ca1560f0af859"
+    },
+    "src/conform/core.py": {
+      "bytes": 2555,
+      "sha256": "87ae13f594a87f8227d80f305dd15f78e88c8160f2ca729165b5eb272dcdc915"
+    },
+    "src/conform/mutations.py": {
+      "bytes": 10376,
+      "sha256": "fdf9daad2023689f864f8d529a4eb935cf080f0ca70817e927b95f41f116e64f"
+    },
+    "src/conform/release.py": {
+      "bytes": 12612,
+      "sha256": "7d8df26de551f44a9e6d0394b0dd9ba5b9b747ad95532feb8a563fee6fb32540"
+    },
+    "src/conform/specification.py": {
+      "bytes": 4153,
+      "sha256": "1d8d939235b99adbfd19480fa5966650c905d4d0cbe57fb28c7b361d72480f70"
+    },
+    "tables/contract_inventory.csv": {
+      "bytes": 6305,
+      "sha256": "7f714325581ffdd23a06bb6703d323bc6bf2b1c9cb651435c0d675fe7c3b2ecb"
+    },
+    "tests/test_manifest.py": {
+      "bytes": 866,
+      "sha256": "456fa58a8de07e5346d9502fabf9f722420dd51b152e8a8477c168fbbea35db7"
+    },
+    "tests/test_mutations.py": {
+      "bytes": 469,
+      "sha256": "0603caed44a38aad9c10252f993093213b11e39699a26b012466e94439977047"
+    },
+    "tests/test_public_tree.py": {
+      "bytes": 795,
+      "sha256": "ae593a6ea690b888c76a897f55612c021931944879533b06220ef2f1965ccef5"
+    },
+    "tests/test_release_integrity.py": {
+      "bytes": 3217,
+      "sha256": "cdbfeab7fdc62492c52c6cd781566d6746b8195f3bd83f2c81f4e1a767b45b1e"
+    }
+  },
+  "publication_authority_sha256": {
+    "final_pdf": "1ea8a531868a72bd9cdfce87c935c19f6ca7681106c44b5a58c81119f1b1390d",
+    "main_tex": "bfbf77b39b33d0ac042181648eae02c8be1f966e6f295979e1cd4e0b51450363",
+    "overleaf_zip": "d66ce3ff8c6f941050cd2fec528e723dcd0248b8ff164704595d105f12e13ec5"
+  },
+  "release_stage": "public research release",
+  "repository_url": "https://github.com/AmirRezaPeimani/executable-scientific-contracts",
+  "schema_version": "1.0",
+  "title": "Executable Scientific Contracts for Research Auditing",
+  "total_bytes_excluding_manifest": 330541,
+  "upstream": {
+    "agentabstain": {
+      "license": "MIT",
+      "revision": "f581249704b26804e28a39e37396f1be00b71a4d",
+      "url": "https://github.com/AntiQuality/agentabstain"
+    },
+    "agentabstain_data": {
+      "license": "CC BY 4.0",
+      "redistributed": false,
+      "revision": "842228426c2a703347396501af61c7890972c7ee",
+      "url": "https://huggingface.co/datasets/antiquality/agentabstain"
+    },
+    "agentprm": {
+      "license": "MIT",
+      "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+      "url": "https://github.com/sanjibanc/agent_prm"
+    },
+    "contractbench_code": {
+      "license": "MIT",
+      "revision": "c50eefee49b6925e2ccbf3c51a987ed705148725",
+      "url": "https://github.com/SecurityLab-UCD/ContractBench"
+    },
+    "contractbench_data": {
+      "redistributed": false,
+      "revision": "457a8ad7d905cbb57ef6b892c5c087afee144171",
+      "url": "https://huggingface.co/datasets/nips26-anon-author/contractbench"
+    },
+    "taubench": {
+      "license": "MIT",
+      "revision": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+      "url": "https://github.com/sierra-research/tau-bench"
+    },
+    "toolace": {
+      "license": "MIT",
+      "revision": "1156d649235235e686372956e99bfc50e4b1e3f6",
+      "url": "https://github.com/hypasd-art/Tool-RL-Box"
+    }
+  }
+}

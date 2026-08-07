@@ -1,0 +1,112 @@
+{
+  "command": "conform audit toolace",
+  "contracts": [
+    {
+      "consequence": "The source mismatch is exact but inactive on the released support.",
+      "contract_id": "TACE-COORD-01",
+      "elapsed_seconds": 2.193450927734375e-05,
+      "evidence": [
+        "third_party/tool-rl-box/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py:170",
+        "third_party/tool-rl-box/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py:184",
+        "results/support/toolace_released_support.json"
+      ],
+      "expected": {
+        "corrected_supervised": 4
+      },
+      "observed": {
+        "fixture": [
+          10,
+          4,
+          8
+        ],
+        "implemented_supervised": 0
+      },
+      "severity": 0,
+      "status": "discrepant",
+      "target": "toolace"
+    },
+    {
+      "consequence": "Every released target retains supervised support.",
+      "contract_id": "TACE-COORD-02",
+      "elapsed_seconds": 3.0994415283203125e-06,
+      "evidence": [
+        "results/support/toolace_released_support.json"
+      ],
+      "expected": {
+        "zero_loss_targets": 0
+      },
+      "observed": {
+        "targets": 9412,
+        "zero_loss_targets": 0
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "toolace"
+    },
+    {
+      "consequence": "Every parsed released target retains its named tool declaration.",
+      "contract_id": "TACE-SCHEMA-01",
+      "elapsed_seconds": 0.0,
+      "evidence": [
+        "results/support/toolace_released_support.json"
+      ],
+      "expected": {
+        "missing_schema_targets": 0
+      },
+      "observed": {
+        "missing_schema_targets": 0,
+        "targets": 9412
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "toolace"
+    },
+    {
+      "consequence": "Non-cropped examples apply the declared prompt and terminal masks.",
+      "contract_id": "TACE-MASK-01",
+      "elapsed_seconds": 8.821487426757812e-06,
+      "evidence": [
+        "third_party/tool-rl-box/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py:184"
+      ],
+      "expected": {
+        "masks_prompt": true,
+        "masks_terminal": true
+      },
+      "observed": {
+        "masks_prompt": true,
+        "masks_terminal": true
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "toolace"
+    },
+    {
+      "consequence": "A real coordinate mismatch has zero released-data activation under the official maximum length.",
+      "contract_id": "TACE-SUPPORT-01",
+      "elapsed_seconds": 0.0,
+      "evidence": [
+        "results/support/toolace_released_support.json"
+      ],
+      "expected": {
+        "severity": 0
+      },
+      "observed": {
+        "overlength_targets": 0,
+        "source_defect": true
+      },
+      "severity": 0,
+      "status": "inactive",
+      "target": "toolace"
+    }
+  ],
+  "counts": {
+    "conformant": 3,
+    "discrepant": 1,
+    "error": 0,
+    "inactive": 1
+  },
+  "dirty": false,
+  "maximum_demonstrated_severity": 0,
+  "revision": "1156d649235235e686372956e99bfc50e4b1e3f6",
+  "target": "toolace"
+}

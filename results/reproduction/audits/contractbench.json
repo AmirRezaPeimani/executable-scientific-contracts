@@ -1,0 +1,104 @@
+{
+  "command": "conform audit contractbench",
+  "contracts": [
+    {
+      "consequence": "Generated output is not fully represented in the released trace; the number of corrected successes is not identifiable.",
+      "contract_id": "CBEN-LOG-01",
+      "elapsed_seconds": 0.00026917457580566406,
+      "evidence": [
+        "released-results/selected-9b-slice",
+        "third_party/contractbench_code/tests/test_docker_runner_loop.py:77"
+      ],
+      "expected": {
+        "output_without_assistant_message": 0
+      },
+      "observed": {
+        "episodes": 99,
+        "output_without_assistant_message": 3
+      },
+      "severity": 1,
+      "status": "discrepant",
+      "target": "contractbench"
+    },
+    {
+      "consequence": "The released slice has no success event lacking a trace.",
+      "contract_id": "CBEN-LOG-02",
+      "elapsed_seconds": 1.9073486328125e-05,
+      "evidence": [
+        "released-results/selected-9b-slice"
+      ],
+      "expected": {
+        "unrecoverable_successes": 0
+      },
+      "observed": {
+        "successes": 0,
+        "unrecoverable_successes": 0
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "contractbench"
+    },
+    {
+      "consequence": "Paired reward and trajectory records satisfy the declared fields.",
+      "contract_id": "CBEN-SCHEMA-01",
+      "elapsed_seconds": 5.1021575927734375e-05,
+      "evidence": [
+        "released-results/selected-9b-slice"
+      ],
+      "expected": {
+        "total": 99,
+        "valid": 99
+      },
+      "observed": {
+        "total": 99,
+        "valid": 99
+      },
+      "severity": 0,
+      "status": "conformant",
+      "target": "contractbench"
+    },
+    {
+      "consequence": "The released record-level aggregate does not reproduce the reported baseline count. Missing trace content prevents a defensible corrected performance estimate.",
+      "contract_id": "CBEN-METRIC-01",
+      "elapsed_seconds": 1.0967254638671875e-05,
+      "evidence": [
+        "released-results/selected-9b-slice",
+        "reported-table-baseline"
+      ],
+      "expected": {
+        "episodes": 99,
+        "successes": 56
+      },
+      "observed": {
+        "episodes": 99,
+        "successes": 0
+      },
+      "severity": 2,
+      "status": "discrepant",
+      "target": "contractbench"
+    },
+    {
+      "consequence": "The released slice is internally aggregatable under its own labels.",
+      "contract_id": "CBEN-METRIC-02",
+      "elapsed_seconds": 1.1920928955078125e-05,
+      "evidence": [
+        "released-results/selected-9b-slice"
+      ],
+      "expected": 0.0,
+      "observed": 0.0,
+      "severity": 0,
+      "status": "conformant",
+      "target": "contractbench"
+    }
+  ],
+  "counts": {
+    "conformant": 3,
+    "discrepant": 2,
+    "error": 0,
+    "inactive": 0
+  },
+  "dirty": false,
+  "maximum_demonstrated_severity": 2,
+  "revision": "c50eefee49b6925e2ccbf3c51a987ed705148725",
+  "target": "contractbench"
+}
