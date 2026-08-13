@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
-title: "Executable Scientific Contracts: Evidence-Bounded Auditing for Agent and LLM Research"
+title: "From Claims to Consequences: Executable Scientific Contracts for Paper–Code Auditing"
 type: software
 version: 1.0.0
 date-released: 2026-08-07
