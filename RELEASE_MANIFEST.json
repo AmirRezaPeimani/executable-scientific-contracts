@@ -213,7 +213,7 @@
   "release_stage": "public research release",
   "repository_url": "https://github.com/AmirRezaPeimani/executable-scientific-contracts",
   "schema_version": "1.0",
-  "title": "From Claims to Consequences: Executable Scientific Contracts for Paper–Code Auditing",
+  "title": "Executable Scientific Contracts: Evidence-Bounded Auditing for Agent and LLM Research",
   "total_bytes_excluding_manifest": 330541,
   "upstream": {
     "agentabstain": {
