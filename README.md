@@ -1,4 +1,4 @@
-# Executable Scientific Contracts for Research Auditing
+# From Claims to Consequences: Executable Scientific Contracts for Paper–Code Auditing
 
 Research papers, implementations, and released artifacts can encode different
 scientific objects even when each looks plausible in isolation. An executable
@@ -168,7 +168,7 @@ To cite this software release:
 ```bibtex
 @software{peimani_executable_scientific_contracts_2026,
   author  = {Peimani, Amir Reza},
-  title   = {Executable Scientific Contracts for Research Auditing},
+  title   = {From Claims to Consequences: Executable Scientific Contracts for Paper–Code Auditing},
   year    = {2026},
   version = {1.0.0},
   url     = {https://github.com/AmirRezaPeimani/executable-scientific-contracts}
