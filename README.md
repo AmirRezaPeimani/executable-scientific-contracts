@@ -1,4 +1,4 @@
-# From Claims to Consequences: Executable Scientific Contracts for Paper–Code Auditing
+# Executable Scientific Contracts for Research Auditing
 
 Research papers, implementations, and released artifacts can encode different
 scientific objects even when each looks plausible in isolation. An executable
