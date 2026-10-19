@@ -35,8 +35,7 @@ is in [`tables/contract_inventory.csv`](tables/contract_inventory.csv), and
 the corresponding machine-readable evidence is under [`results/`](results/).
 
 The included evidence reconstructs 15 conformant, 7 discrepant, 1 inactive,
-and 2 convention-sensitivity outcomes across all 25 checks. These are
-purposively selected check outcomes, not estimates of defect prevalence.
+and 2 convention-sensitivity outcomes across all 25 checks.
 
 Contract adequacy was tested with 30 study-specific mutations: 8 equation,
 8 schema/coordinate, 8 logging/serialization, and 6 metric/aggregation
