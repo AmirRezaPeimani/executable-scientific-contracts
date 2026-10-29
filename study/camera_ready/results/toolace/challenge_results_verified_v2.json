@@ -1,0 +1,963 @@
+{
+  "case_analysis_v1_sha256": "6168faa97bd8b6fe3165d99cbb0f6c90316be8a48ccb1b1f9c206f1942883062",
+  "command": [
+    "semantic-conformance/camera_ready_2026/analysis/toolace_evaluator_v2.py",
+    "--source-root",
+    "third_party/tool-rl-box",
+    "--tokenizer",
+    "semantic-conformance/camera_ready_2026/results/toolace/tokenizer_official",
+    "--results",
+    "semantic-conformance/camera_ready_2026/results/toolace",
+    "--protocol",
+    "semantic-conformance/camera_ready_2026/protocols/toolace_confirmation_v2.json"
+  ],
+  "confirmation_freeze": {
+    "availability": "sourcepath.is_file() and selectedfixtures nonempty; zeroeligible selected by actual official_census sequence_tokens>8192",
+    "case_analysis_v1_sha256": "6168faa97bd8b6fe3165d99cbb0f6c90316be8a48ccb1b1f9c206f1942883062",
+    "controlled_fixtures": [
+      {
+        "maximum": 8,
+        "prompt_tokens": 1,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 1,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 1,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 1,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 1,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 1,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 1,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 1,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 2,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 2,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 2,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 2,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 2,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 2,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 2,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 2,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 7,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 7,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 7,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 7,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 7,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 7,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 7,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 7,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 8,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 8,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 8,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 8,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 8,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 8,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 8,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 8,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 9,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 9,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 9,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 9,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 9,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 9,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 9,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 9,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 10,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 10,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 10,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 10,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 10,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 10,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 10,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 10,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 16,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 16,
+        "response_tokens": 1
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 16,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 16,
+        "response_tokens": 2
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 16,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 16,
+        "response_tokens": 4
+      },
+      {
+        "maximum": 8,
+        "prompt_tokens": 16,
+        "response_tokens": 9
+      },
+      {
+        "maximum": 16,
+        "prompt_tokens": 16,
+        "response_tokens": 9
+      }
+    ],
+    "cost_cad": 0,
+    "first_challenge_sha256": "86f9ce8a4cc414100501aeab7d3a3490c946be386adaad0dbab85b0c00d26e08",
+    "frozen_utc": "2026-10-29T14:34:50.722619+00:00",
+    "oracle": "Unchanged independent prediction-index oracle; score loss_mask[:-1] and compare actual retainedinput_ids and shiftedlabels to independently tokenized concatenation/crop/pad",
+    "partition_policy": "All reusedcases development with inheritedpartition and exposedconfirmation metadata",
+    "purpose": "Confirm exposed v1 cases with executable schema/availability predicates and actual trainer-consumed masks; not untouched heldout evidence",
+    "runner_sha256": "df9a673f8fb0ca8a415bf2cc9635082b455cb34b2e7ffbdd0e5d7f51f3cb7d39",
+    "schema": "Exact4keys; int64torch tensors; rank1; configured length",
+    "schema_version": "2.0",
+    "thresholds": "Faultcounts require at leastone consumed-position/token mismatch without errors. Repairs/benign must pass every selected fixture."
+  },
+  "corrections": [
+    "Execute schema predicates rather than preassign pass",
+    "Invoke real source availability and concrete census eligibility guards",
+    "Score trainer-consumed positions plus exact shifted token identities",
+    "All reused cases labeled exposed confirmation/development; inherited partition retained only as history"
+  ],
+  "first_evidence_preserved": true,
+  "generated_utc": "2026-10-29T14:34:54.387975+00:00",
+  "protocol": "semantic-conformance/camera_ready_2026/protocols/toolace_confirmation_v2.json",
+  "protocol_sha256": "4ddbf4cceabaf65c3231fe57fc7f73fb1c38bb35b444b5266934993702429406",
+  "rows": [
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "fault",
+      "id": "TACE-ORIGINAL",
+      "implementation": {
+        "extraction": {
+          "end_line": 196,
+          "source_sha256": "34340de3a2f62829c06fee03aabc2582f57af96913bd5a4248480852bd930553",
+          "start_line": 117
+        },
+        "parent_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c",
+        "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source": "implementation_variants/TACE-ORIGINAL/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c"
+      },
+      "inherited_partition": "development",
+      "mechanism": "uncropped_mask_origin",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=27; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": true,
+            "masks_terminal": true,
+            "source_defect": true
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 27,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "original"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "conformant",
+      "id": "TACE-REPAIR",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "6d0cd2366da239f316b5898fcbd4b97c80dbc505cb09bf69e5d5fb11a8f8b907",
+          "start_line": 117
+        },
+        "parent_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c",
+        "patch_sha256": "18791bc23a0c9794156a6ee751b2d23dceaf858109c86a99760f323dee982dd4",
+        "source": "implementation_variants/TACE-REPAIR/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09"
+      },
+      "inherited_partition": "development",
+      "mechanism": "uncropped_mask_origin",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 0,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "repair"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "fault",
+      "id": "TACE-CROP-SIGN",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "59e83ba75833391fb88a9fbe57e11a4e5795514db34faa3ca5a11412208eb84a",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "1cc92a5514ec1cb29ffdc4abf26333d5606ab64cd36cab9c95caccf26537c6e6",
+        "source": "implementation_variants/TACE-CROP-SIGN/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "5bdea5991f8791b729ff21ef2a7e3362e381ecfd9aab1cbe5b1d01dfc723a834"
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "crop_offset_sign",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=28; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 28,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "fault",
+      "id": "TACE-FIRST-RESPONSE",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "fbb57736e3c23d4d0512bda5938436d9a01fe60ad2a5dfe72be9ad51d14ee1a4",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "0420c4e49574818da6623f726dc13123a3de9b5f8683c38718efe23c412b8e5e",
+        "source": "implementation_variants/TACE-FIRST-RESPONSE/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "d866ecd1e9f0840c5639cddf5503174dcbafe75e0f9482b6e089d74356967d45"
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "first_response_boundary",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=42; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 42,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "fault",
+      "id": "TACE-PADDING",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "832c3b950038e0945bbb14393e972cfefa65688fbec48e2d346ad3e5bbc22133",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "702c648d9127de30f1e2cccd17835b9b785ec9d9234a2b3e792a734fdb3a8f03",
+        "source": "implementation_variants/TACE-PADDING/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "8d5ae7d23a8ae36a6a07971ef06b22cd9c4d1c71176cba44d0f6ea1458ad05dc"
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "padding_supervision",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=26; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 26,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "fault",
+      "id": "TACE-LAST-POSITION",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "9656c6ccb621c8d882970113f80c7773de722264f7e893292e1caf5b1e71e18d",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "1937cccfb36c01603c7ad0d452c21b95e3f3d021a2d3e16e3cb406b274f82df9",
+        "source": "implementation_variants/TACE-LAST-POSITION/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "b72fa3e9085a3849c6a2360fb6e6fdbea3fb79483cd12aea1ce394c1e9de5984"
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "final_position_supervision",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=26; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": false,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 26,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "conformant",
+      "id": "TACE-BENIGN-MIN",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "bd07e84722b8fa6044fde31af0bfc2e4cf916bccecff1e5201ec70fd199b9837",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "6eccdd80c51fbf7e125d9bd0c354ee7a81881460958b7c86e028f235a7350dab",
+        "source": "implementation_variants/TACE-BENIGN-MIN/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "70aa6daaf25a841903ffa7749d6df68c81f0b5887cf2149ebed0ca4851ec9b92"
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "equivalent_mask_expression",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 0,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 56,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "conformant",
+      "id": "TACE-BENIGN-RENAME",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "2915a7a8c06c6b8721e73933f47a9a885b4c1ada441d179fad9f71f8aa352197",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "9134a819745236b68bcd7a4b5e4d17f36395948a27ee37271b6b18595f511529",
+        "source": "implementation_variants/TACE-BENIGN-RENAME/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "b0ea1891ebf3b7607d0847c71a6b2bb69c3e090d973c82e10b92c362bbf2cb06"
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "local_variable_rename",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 56 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "evaluate",
+          "eligible_examples": 56,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 0,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "not_evaluated",
+      "id": "TACE-MISSING-EVIDENCE",
+      "implementation": {
+        "patch_sha256": null,
+        "source": null,
+        "source_sha256": null
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "evidence_eligibility",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "Required implementation source is absent"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Required implementation source is absent"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "Required implementation source is absent"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "Required implementation source is absent"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "not_evaluated",
+          "eligible_examples": 56,
+          "reason": "Required implementation source is absent",
+          "source_exists": false
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 0,
+        "inputs_disagreeing_with_oracle": 0,
+        "selection": {
+          "kind": "fixed controlled grid",
+          "selected": 56
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "control"
+    },
+    {
+      "eligible_examples": 0,
+      "evaluation_status": "exposed_confirmation_rerun_after_v1_inspection",
+      "expected_state": "not_evaluated",
+      "id": "TACE-ZERO-ELIGIBLE",
+      "implementation": {
+        "patch_sha256": null,
+        "source": null,
+        "source_sha256": null
+      },
+      "inherited_partition": "locked_evaluation",
+      "mechanism": "evidence_eligibility",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "Selection produced zero eligible examples"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Selection produced zero eligible examples"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "Selection produced zero eligible examples"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "Selection produced zero eligible examples"
+        }
+      },
+      "observed": {
+        "availability_guard": {
+          "decision": "not_evaluated",
+          "eligible_examples": 0,
+          "reason": "Selection produced zero eligible examples",
+          "source_exists": true
+        },
+        "errors": 0,
+        "full_returned_mask_is_not_scoring_unit": true,
+        "inputs": 0,
+        "inputs_disagreeing_with_oracle": 0,
+        "selection": {
+          "kind": "official census sequence_tokens > 8192",
+          "selected": 0,
+          "source_csv_sha256": "43768554eea3c6d073e23e15f398d43765e24b80ff4f60fc27c69416b2764a6f",
+          "source_rows": 9964
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "control"
+    }
+  ],
+  "schema_predicate_tests": [
+    {
+      "expected": true,
+      "id": "valid",
+      "observed": true
+    },
+    {
+      "expected": false,
+      "id": "missing_field",
+      "observed": false
+    },
+    {
+      "expected": false,
+      "id": "wrong_type",
+      "observed": false
+    },
+    {
+      "expected": false,
+      "id": "wrong_dtype",
+      "observed": false
+    },
+    {
+      "expected": false,
+      "id": "wrong_rank",
+      "observed": false
+    },
+    {
+      "expected": false,
+      "id": "wrong_length",
+      "observed": false
+    }
+  ],
+  "schema_version": "2.0",
+  "summary": {
+    "behavioral_faults_detected": 5,
+    "benign_false_alarms": 0,
+    "execution_errors": 0,
+    "finite_source_faults": 5,
+    "not_evaluated": 2,
+    "repairs_accepted": 1
+  }
+}

@@ -45,7 +45,7 @@ def _parser() -> argparse.ArgumentParser:
     release = subparsers.add_parser(
         "release-check", help="validate included evidence and reconstruct the paper summary"
     )
-    release.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+    release.add_argument("--root", type=Path, default=DEFAULT_ROOT / "history/submitted" if (DEFAULT_ROOT / "history/submitted").is_dir() else DEFAULT_ROOT)
     release.add_argument("--output", type=Path)
     audit = subparsers.add_parser("audit")
     audit.add_argument("target", choices=tuple(ADAPTERS))
@@ -57,6 +57,22 @@ def _parser() -> argparse.ArgumentParser:
         "--mutations", type=Path, default=DEFAULT_CONTRACTS / "mutations.yaml"
     )
     mutate.add_argument("--output", type=Path, required=True)
+    behavior = subparsers.add_parser(
+        "behavior-check", help="verify sealed saved camera-ready results; does not execute upstream implementations"
+    )
+    behavior.add_argument("--results-root", type=Path, required=True)
+    behavior.add_argument("--output", type=Path, required=True)
+    for name in ("behavior-run", "scan-toolace"):
+        runner = subparsers.add_parser(name, help="execute pinned upstream analysis and exposed guard confirmation; opt-in research dependencies required")
+        if name == "behavior-run":
+            runner.add_argument("--target", choices=("agentprm", "toolace", "agentabstain"), required=True)
+        runner.add_argument("--source-root", type=Path, required=True)
+        runner.add_argument("--protocol", type=Path, required=True)
+        runner.add_argument("--output-dir", type=Path, required=True)
+        runner.add_argument("--dataset-jsonl", type=Path)
+        runner.add_argument("--data", type=Path)
+        runner.add_argument("--tokenizer", type=Path)
+        runner.add_argument("--historical-tokenizer", type=Path)
     return parser
 
 
@@ -81,6 +97,20 @@ def _audit(target: str, manifest: dict, output: Path, paths: dict[str, Path]) ->
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    if args.command == "behavior-check":
+        from .camera_ready import save_new, verify_behavior_results
+        payload = verify_behavior_results(args.results_root.resolve())
+        save_new(args.output, payload)
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {"behavior-run", "scan-toolace"}:
+        from .camera_ready import run_behavior
+        payload = run_behavior(target="toolace" if args.command == "scan-toolace" else args.target,
+                               source_root=args.source_root, protocol=args.protocol, output_dir=args.output_dir,
+                               dataset_jsonl=args.dataset_jsonl, data=args.data, tokenizer=args.tokenizer,
+                               historical_tokenizer=args.historical_tokenizer)
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
     manifest = load_manifest(args.manifest)
     if args.command == "list":
         for target, entry in manifest["targets"].items():

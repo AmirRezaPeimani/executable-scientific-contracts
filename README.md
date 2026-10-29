@@ -1,181 +1,120 @@
-# Executable Scientific Contracts for Research Auditing
+# Executable Scientific Contracts for Verifiable LLM and Agent Research
 
-Research papers, implementations, and released artifacts can encode different
-scientific objects even when each looks plausible in isolation. An executable
-scientific contract turns one paper-facing expectation into a rerunnable,
-evidence-bounded check.
+Executable scientific contracts connect a paper claim, its implementation, a controlled input, activation in released data, and evidence about a reported result. This repository contains the analysis, results, figure sources, and executable example accompanying the final manuscript. Read the [camera-ready paper](manuscript/camera_ready.pdf), [supplement](manuscript/supplement.pdf), and [LaTeX source](manuscript/main.tex).
 
-Each contract preserves a five-link chain:
+## Results
 
-1. the scientific statement;
-2. the implementation or released-artifact path;
-3. a discriminating executable check;
-4. activation evidence from the released support, when available; and
-5. the strongest demonstrated consequence justified by that evidence.
+We examine 25 checks across AgentPRM, ContractBench, ToolACE, $\tau$-bench, and AgentAbstain. The inventory includes substantive checks, consistency checks, and summaries. The first four cases revisit findings already known when their 20 checks were constructed; the five AgentAbstain checks were specified before execution.
 
-A failed check is not automatically a paper-invalidating defect. The release
-distinguishes four outcomes:
+The experiment contains 60 cases: 17 faulty variants, comprising three original faults and 14 injected variants; three repairs; 12 harmless rewrites; eight conformant original cases; and 20 cases with missing evidence or ineligible inputs. A shared check returns ‘not evaluated’ when required evidence is missing or no eligible examples are available, before the compared methods run. We reran the same 60 cases after correcting the eligibility checks and prediction-mask accounting.
 
-- **Conformant:** the observed behavior satisfies the contract.
-- **Discrepant:** the implementation or released artifact differs from the
-  stated expectation on the available check.
-- **Inactive:** a source-level mismatch is present, but its triggering
-  condition was not observed in the examined released support.
-- **Convention sensitivity:** the source leaves a consequential choice
-  unspecified, so different coherent conventions do not support a discrepancy
-  claim.
+The contracts detected all 17 faulty variants, accepted all three repairs, and raised no flags on 12 harmless rewrites. The original adapters combine source inspection with locally reconstructed calculations; that comparison covers AgentPRM and ToolACE. Relevant native test coverage was unavailable for the selected behaviors. The eight conformant original cases are retained in the saved results and supplementary results table.
 
-## Study artifacts
+After freezing the corrected checks, we constructed nine additional cases covering terminal-reward remapping, response-token order, and replacement of the outer scenario mean with a median. Each family contains a fault, a reference implementation, and a harmless rewrite. The checks and their imports remained unchanged. These nine cases are reported separately.
 
-The study contains five contracts for each of AgentPRM, ContractBench,
-ToolACE, tau-bench, and AgentAbstain. The first four repositories form the
-original 20-check set. AgentAbstain is a prospective fifth case: its five
-checks were fixed before their outcomes were executed. The complete inventory
-is in [`tables/contract_inventory.csv`](tables/contract_inventory.csv), and
-the corresponding machine-readable evidence is under [`results/`](results/).
+### AgentPRM
 
-The included evidence reconstructs 15 conformant, 7 discrepant, 1 inactive,
-and 2 convention-sensitivity outcomes across all 25 checks.
+For a successful four-action trajectory at the released $\gamma=0.95$, correcting the callers changes the signed targets from $(1,0.95,0.9025,0.857375)$ to $(0.857375,0.9025,0.95,1)$. The mean remains 0.92746875, but the target assigned to each state changes.
 
-Contract adequacy was tested with 30 study-specific mutations: 8 equation,
-8 schema/coordinate, 8 logging/serialization, and 6 metric/aggregation
-mutations. All 30 were detected. A separate eight-operator set detected 7/8
-on its frozen first execution and 8/8 after correcting only the fixture that
-failed to instantiate its intended boundary. The two executions remain
-separate in the released evidence.
+Reversal preserves the multiset over complete trajectory visits. Averaging deduplicated state-action targets can give different means before and after repair. The absolute-target exporter applies $0.5(Q+1)$; preference construction uses the signed values. For two successful continuations from a shared state, with lengths four and eight, the signed margin changes from zero to $0.95^3-0.95^7$, exceeding the released preference threshold $\delta=0.03$. A preference is added for each of the 28 chosen length pairs.
 
-## Quickstart: deterministic local validation
+The rollout also copies observations into the action field of the query history. A test agent records six incorrect history entries before repair and none afterward. The separately saved trajectory contains the executed actions in both versions. Historical training traces were unavailable.
 
-Python 3.10 or newer is required. After the declared PyPI dependencies have
-been installed, the validation, mutation, summary, and figure commands use
-only files included in this repository and do not make network calls.
+### ToolACE
+
+The official conversion produces 9,964 examples. Running the loader with the recorded tokenizer finds no sequence above the 8,192-token limit; the maximum length is 3,945. The crop defect is therefore inactive on these converted examples.
+
+The earlier custom conversion retained 9,412 of 10,092 candidate targets (93.3%). The official conversion produces 9,964 examples: 9,394 with nonempty responses and 570 with empty responses supervised on EOS only. Conversation-schema validation excludes 128 candidates. The official and custom converters disagree on 18 retained prompt/response rows; the conversion comparison records these differences.
+
+### ContractBench and AgentAbstain
+
+ContractBench reports 56.6% for Qwen3.5-9B on 99 tasks. The released artifact contains 0/99 success labels under the repository mapping. Three traces report 8,192 output tokens but contain no terminal assistant response. The model name and evaluation size match the report; the original checkpoint, task set, and evaluation configuration remain unverified. The successful-trace check has zero eligible examples and is marked ‘not evaluated’.
+
+AgentAbstain’s released task file contains 526 rows forming 263 complete act/abstain pairs across eight scenarios. Pair integrity, paired-accuracy conjunction, and commit scoring match the source. Two choices remain unspecified: the treatment of an empty conditioned denominator and the weighting of subtypes within a scenario. The released subtype counts permit a maximum absolute difference of 2.412476 percentage points in the overall eight-scenario macro average. Individual scenario bounds range from zero to 5.882353 points. Constructed endpoint outcomes attain the overall bound through the unchanged ranking computation. Released model outputs were unavailable.
+
+### Historical classifications and fixture mutations
+
+Original classifications across the 25 checks were 15 conformant, seven discrepant, one inactive, and two convention sensitivities. These classifications are historical records, not estimates of defect prevalence.
+
+The four fixture validators detected all 30 selected mutations: eight equation changes, eight schema changes, eight logging changes, and six aggregation changes. The set includes duplicate temporal transformations. The separate eight-operator experiment detected seven mutations on its first execution. Its relational mutation survived because the input contained no equality case. Adding that case increased detection to eight of eight with the check unchanged.
+
+## Reproduction
+
+Python 3.10 or newer is required. Install the declared dependencies:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[test,figures]"
-pytest
-conform validate-manifest
-conform release-check --output artifacts/paper_summary.json
-conform mutate --output artifacts/study_mutations.json
-python scripts/run_external_mutations.py --execution first --output artifacts/external_first.json
-python scripts/run_external_mutations.py --execution corrected --output artifacts/external_corrected.json
-python scripts/make_figures.py --output artifacts/figures
+python -m pip install -e '.[camera-ready,figures]'
 ```
 
-`conform release-check` is the principal validation entry point. It derives
-the paper-facing summary from the audit JSON files, prospective result,
-mutation outputs, support aggregates, runtime samples, and 25-check inventory;
-it fails if those artifacts disagree or if an inventory evidence path is
-missing.
-
-The committed PDFs in [`figures/`](figures/) are the exact files used in the
-final submission package. `scripts/make_figures.py` regenerates their five
-paper-facing views from the included aggregate evidence. Rendering may vary
-slightly with Matplotlib and font versions; the numerical content is checked
-independently by `conform release-check` and the tests.
-
-## Optional upstream audits
-
-The source adapters can rerun the four original audits after the upstream
-repositories and released artifacts have been acquired at the locked
-revisions. The prospective AgentAbstain checks have a separate runner because
-they require the pinned dataset and the upstream evaluation package.
-
-Acquisition is intentionally separate from local validation; see
-[`UPSTREAM.md`](UPSTREAM.md). No upstream source repository, dataset, model
-output, API key, or paid service is bundled here.
-
-After acquisition:
+Verify the saved implementation results without executing upstream code:
 
 ```bash
-conform --workspace /path/to/acquisition-root audit agentprm --output artifacts/agentprm.json
-conform --workspace /path/to/acquisition-root audit contractbench --output artifacts/contractbench.json
-conform --workspace /path/to/acquisition-root audit toolace --output artifacts/toolace.json
-conform --workspace /path/to/acquisition-root audit taubench --output artifacts/taubench.json
-
-python scripts/run_agentabstain_checks.py \
-  --source-root /path/to/acquisition-root/third_party/agentabstain \
-  --dataset-jsonl /path/to/acquisition-root/third_party/agentabstain-data/tasks.jsonl \
-  --output artifacts/agentabstain.json
+conform behavior-check --results-root study/camera_ready/results --output /new/path/implementation_summary.json
 ```
 
-The AgentAbstain runner requires the optional `prospective` dependency and the
-dependencies declared by the pinned upstream repository.
+Regenerate the six manuscript figures from the recorded results:
 
 ```bash
-python -m pip install -e ".[prospective]"
+python scripts/make_final_figures.py --results-root study/camera_ready/results --output-dir /new/path/figures
 ```
 
-## Repository layout
+The paper prints `scripts/agentabstain_contract_example.py` directly from the supplied source. Acquire AgentAbstain at `f581249704b26804e28a39e37396f1be00b71a4d`; the example requires Python 3.10 or newer and pandas 2.x. It constructs all four Boolean pairs, imports the actual `compute_summary_metrics`, asserts paired accuracy 0.25 and four eligible pairs, and prints the source SHA-256:
+
+```bash
+python scripts/agentabstain_contract_example.py --source-root /path/to/pinned/agentabstain
+```
+
+Pinned source/data acquisition and full implementation execution commands are in [study/camera_ready/README.md](study/camera_ready/README.md) and [UPSTREAM.md](UPSTREAM.md). `behavior-run` and `scan-toolace` execute acquired implementations; `behavior-check` verifies existing result records. Source and dataset revisions, hashes, protocols, and commands accompany the results. No model training is required.
+
+## Repository contents
 
 | Path | Contents |
 |---|---|
-| `contracts/` | Five-target contract manifest and 30-mutation manifest |
-| `src/conform/` | Contract result model, four source adapters, mutation fixtures, and release validator |
-| `scripts/` | Prospective check, external-mutation, and figure entry points |
-| `tests/` | Unit and release-integrity tests |
-| `results/reproduction/audits/` | Sanitized exact audit records for the original four repositories |
-| `results/support/` | Reader-facing aggregate support and mapping metadata |
-| `tables/` | Complete 25-check inventory with paper-visible evidence paths |
-| `figures/` | Final submission figures |
-| `protocols/` | Frozen prospective and external-mutation protocols |
+| `study/camera_ready/analysis/` | Versioned implementation analyses and executable checks |
+| `study/camera_ready/results/` | Current results, quantitative CSVs, and separate additional-family records |
+| `study/camera_ready/protocols/` | Recorded scientific protocols and source/data pins |
+| `study/camera_ready/metadata/` | Public-file hashes and original raw-artifact identities |
+| `tables/` | Final manuscript tables, including the role/eligibility inventory and all 60 implementation cases |
+| `manuscript/` | Matching final PDFs and complete LaTeX sources |
+| `scripts/` and `figures/` | Complete executable example and sources/assets for the six final figures |
+| `history/submitted/` | Historical fixture experiments, original classifications, and adapters’ result records |
+| `src/conform/` | Command interfaces, original comparison adapters, and result verification |
 
-## Evidence boundaries
+Historical records are preserved separately and do not replace the current implementation evidence. The historical summary can be reconstructed with `conform release-check --root history/submitted`; the selected fixture mutations can be reproduced with `conform mutate --output /new/path/fixture_mutations.json`. The external operators remain in `history/submitted/scripts/run_external_mutations.py` with separate `--execution first` and `--execution corrected` modes.
 
-- ContractBench's released artifact has the same repository-internal model
-  name and denominator as the reported Qwen3.5-9B result, but checkpoint,
-  task-set identity, and evaluation configuration were not verified. The
-  0/99-versus-56.6% comparison therefore holds only under the repository
-  mapping. Corrected historical performance is not identifiable.
-- The ToolACE source mismatch changes a controlled crop fixture, but none of
-  the 9,412 parsed released targets exceeded the 8,192-token condition. The
-  released aggregate includes 10,092 candidate targets, 9,412 parsed targets,
-  and a maximum parsed sequence length of 3,945; third-party target text and
-  per-target records are not redistributed.
-- AgentAbstain released model outputs were unavailable. Three prospective
-  checks conform; two expose source-under-specified conventions and are not
-  defect claims.
-- The repositories and checks were purposively selected. The release does not
-  establish prevalence, completeness, automatic contract authorship, or a
-  general proof of scientific correctness.
+## Manuscript build
 
-Legacy audit JSON fields named `severity` encode the original numeric
-consequence rubric. Reader-facing summaries use **demonstrated consequence**
-and do not assign a defect level to convention sensitivities.
+The LaTeX sources use the figures in `figures/` and the executable example in `scripts/`. From the repository root, compile with TeX Live and write temporary products outside the checkout:
 
-## Fixed revisions
+```bash
+paper_source="$PWD/manuscript"
+paper_build=/path/to/paper-build
+mkdir -p "$paper_build"
+cd "$paper_source"
+pdflatex -output-directory="$paper_build" -jobname=camera_ready main.tex
+(cd "$paper_build" && BIBINPUTS="$paper_source:" bibtex camera_ready)
+pdflatex -output-directory="$paper_build" -jobname=camera_ready main.tex
+pdflatex -output-directory="$paper_build" -jobname=camera_ready main.tex
+pdflatex -output-directory="$paper_build" supplement.tex
+pdflatex -output-directory="$paper_build" supplement.tex
+```
 
-| Artifact | Revision |
-|---|---|
-| AgentPRM | `e4714717f7f4bd4671848670c4ed54d0169f603a` |
-| ContractBench code | `c50eefee49b6925e2ccbf3c51a987ed705148725` |
-| ContractBench released data | `457a8ad7d905cbb57ef6b892c5c087afee144171` |
-| ToolACE / Tool-RL-Box | `1156d649235235e686372956e99bfc50e4b1e3f6` |
-| tau-bench | `59a200c6d575d595120f1cb70fea53cef0632f6b` |
-| AgentAbstain code | `f581249704b26804e28a39e37396f1be00b71a4d` |
-| AgentAbstain dataset | `842228426c2a703347396501af61c7890972c7ee` |
+## Limitations
+
+The study covers five repositories and manually selected faults. The checks and outcome labels were assigned by one author. Authoring time and agreement between independent authors were not measured. The proposed review workflow has not been evaluated in use. The recorded cases do not estimate population detection accuracy or establish historical model-performance changes.
 
 ## Citation and license
 
-Author: Amir Reza Peimani, University of Toronto
-
-Contact: [amir.peimani@utoronto.ca](mailto:amir.peimani@utoronto.ca)
-
-To cite this software release:
+Amir Reza Peimani, University of Toronto — [amir.peimani@utoronto.ca](mailto:amir.peimani@utoronto.ca).
 
 ```bibtex
 @software{peimani_executable_scientific_contracts_2026,
   author  = {Peimani, Amir Reza},
-  title   = {From Claims to Consequences: Executable Scientific Contracts for Paper–Code Auditing},
+  title   = {Executable Scientific Contracts for Verifiable LLM and Agent Research},
   year    = {2026},
-  version = {1.0.0},
+  version = {1.1.1},
   url     = {https://github.com/AmirRezaPeimani/executable-scientific-contracts}
 }
 ```
 
-Citation metadata is also provided in [`CITATION.cff`](CITATION.cff).
-
-The code in this repository is released under the MIT License. Upstream
-repositories and datasets retain their own licenses; none are redistributed
-here.
+The code is MIT licensed. Acquired upstream repositories and datasets retain their own licenses; raw upstream datasets, tokenizer assets, and model weights are not bundled. See [CITATION.cff](CITATION.cff) and the recorded upstream notices.

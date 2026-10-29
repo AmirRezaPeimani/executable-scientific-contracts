@@ -1,0 +1,22 @@
+% Requires: booktabs, array, tabularx, ragged2e, url
+\begin{nonfloatingtable}
+\centering
+\fontfamily{ptm}\fontsize{9}{10}\selectfont
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\setlength{\extrarowheight}{2pt}
+\caption{Five AgentAbstain checks specified before execution.}
+\label{tab:agentabstain-checks-v2}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}p{0.12\linewidth}>{\RaggedRight\arraybackslash}p{0.31\linewidth}>{\RaggedRight\arraybackslash}p{0.18\linewidth}>{\RaggedRight\arraybackslash}p{0.15\linewidth}>{\RaggedRight\arraybackslash}X@{}}
+\toprule
+Check & Exact source support & Implemented result & Classification & Alternative value \\
+\midrule
+AABS-\allowbreak{}PAIR-\allowbreak{}01 & README.md:23 (263 pairs;\allowbreak{} one should-\allowbreak{}act and one should-\allowbreak{}abstain task);\allowbreak{} README.md:61 (paired evaluation and eight-\allowbreak{}scenario macro reporting);\allowbreak{} released tasks.jsonl at locked dataset revision & 526 rows; 263 pairs; 8 scenarios; 0 invalid pairs & conformant &  \\
+AABS-\allowbreak{}PAIR-\allowbreak{}02 & AgentAbstain paper Appendix B.6, Eq. (3) (pair conjunction);\allowbreak{} README.md:61 (paired evaluation);\allowbreak{} eval/\allowbreak{}statistics/\allowbreak{}analysis.py:258-\allowbreak{}260;\allowbreak{} four-\allowbreak{}cell exact fixture & paired accuracy 0.25 & conformant &  \\
+AABS-\allowbreak{}CAR-\allowbreak{}01 & AgentAbstain paper Appendix B.6, Eq. (4) (conditional definition);\allowbreak{} eval/\allowbreak{}statistics/\allowbreak{}analysis.py:231-\allowbreak{}243 (explicit zero fallback);\allowbreak{} conditioned-\allowbreak{}denominator exact fixture & nonempty=0.50; empty=0 & convention sensitivity & empty denominator represented as undefined / NA \\
+AABS-\allowbreak{}COMMIT-\allowbreak{}01 & AgentAbstain paper Section 2.2 and Appendix B.6;\allowbreak{} README.md:26,30 (commit check plus response restraint);\allowbreak{} eval/\allowbreak{}evaluators/\allowbreak{}commit\_\allowbreak{}check.py:12-\allowbreak{}15,44-\allowbreak{}49;\allowbreak{} eval/\allowbreak{}statistics/\allowbreak{}analysis.py:142-\allowbreak{}165;\allowbreak{} commit-\allowbreak{}by-\allowbreak{}response Cartesian fixture & only noncommit + passing judge is successful (1/4) & conformant &  \\
+AABS-\allowbreak{}MACRO-\allowbreak{}01 & AgentAbstain paper Section 3.1 and Figure 3 (macro over eight scenarios);\allowbreak{} README.md:61 (macro-\allowbreak{}averaged over eight scenarios);\allowbreak{} eval/\allowbreak{}statistics/\allowbreak{}figure\_\allowbreak{}ranking\_\allowbreak{}bar.py:103-\allowbreak{}120 (equal action-\allowbreak{}subtype weights inside scenario);\allowbreak{} unequal-\allowbreak{}action-\allowbreak{}type exact fixture & equal-subtype headline macro 0.750 & convention sensitivity & pair-weighted scenario macro 0.625 \\
+\bottomrule
+\end{tabularx}
+\par\medskip
+\end{nonfloatingtable}

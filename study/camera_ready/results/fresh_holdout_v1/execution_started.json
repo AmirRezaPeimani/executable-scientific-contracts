@@ -1,0 +1,10 @@
+{
+  "command": [
+    "semantic-conformance/camera_ready_2026/analysis/fresh_holdout_v1.py",
+    "--phase",
+    "run"
+  ],
+  "hashes_verified": 34,
+  "protocol_sha256": "669fca39cb055d2387f674fbdc51f19295aaa36b922e9b733849c71d4cf7afe6",
+  "started_utc": "2026-10-29T14:54:06.786660+00:00"
+}

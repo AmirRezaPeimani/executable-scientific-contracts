@@ -1,0 +1,1434 @@
+{
+  "all_oracles_valid": true,
+  "elapsed_seconds": 4.387706756591797,
+  "finite_set_only": true,
+  "rows": [
+    {
+      "eligible_examples": 24,
+      "expected_state": "fault",
+      "id": "APRM-DEV-TEMP-ORIGINAL",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/original",
+        "patch_sha256": "d3092e0a803ca56b2aa004d2a12d351bf703c7232021f9c63adaed930a45ea01",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "terminal_discount",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "legacy_checks": {
+          "APRM-METRIC-01": {
+            "id": "APRM-METRIC-01",
+            "observed": {
+              "mean": 0.4255,
+              "values": [
+                1.0,
+                0.54,
+                0.16200000000000003,
+                0.0
+              ]
+            },
+            "status": "discrepant"
+          },
+          "APRM-TEMP-01": {
+            "id": "APRM-TEMP-01",
+            "observed": "gamma**t",
+            "status": "discrepant"
+          },
+          "APRM-TEMP-02": {
+            "id": "APRM-TEMP-02",
+            "observed": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "status": "conformant"
+          },
+          "APRM-TEMP-03": {
+            "id": "APRM-TEMP-03",
+            "observed": {
+              "late_non_decreasing": false,
+              "weights": [
+                1.0,
+                0.9,
+                0.81,
+                0.7290000000000001
+              ]
+            },
+            "status": "discrepant"
+          }
+        },
+        "max_abs_error": 0.3016627039062503,
+        "paths": {
+          "scripts/dataproc/compute_prm_preference_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                1.0,
+                0.95,
+                0.9025,
+                0.8573749999999999
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -1.0,
+                -0.95,
+                -0.9025,
+                -0.8573749999999999,
+                -0.8145062499999999,
+                -0.7737809374999998,
+                -0.7350918906249998,
+                -0.6983372960937497
+              ]
+            }
+          ],
+          "scripts/dataproc/compute_prm_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                1.0,
+                0.95,
+                0.9025,
+                0.8573749999999999
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -1.0,
+                -0.95,
+                -0.9025,
+                -0.8573749999999999,
+                -0.8145062499999999,
+                -0.7737809374999998,
+                -0.7350918906249998,
+                -0.6983372960937497
+              ]
+            }
+          ]
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentprm",
+      "variant": "original"
+    },
+    {
+      "eligible_examples": 24,
+      "expected_state": "conformant",
+      "id": "APRM-DEV-TEMP-REPAIR",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/repaired",
+        "patch_sha256": "e1311436fcc8ecc689c178a174877d74014436f7f8902d72badae0b83ccc3294",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+          "scripts/dataproc/compute_prm_target.py": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+          "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "terminal_discount",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "legacy_checks": {
+          "APRM-METRIC-01": {
+            "id": "APRM-METRIC-01",
+            "observed": {
+              "mean": 0.4255,
+              "values": [
+                1.0,
+                0.54,
+                0.16200000000000003,
+                0.0
+              ]
+            },
+            "status": "discrepant"
+          },
+          "APRM-TEMP-01": {
+            "id": "APRM-TEMP-01",
+            "observed": "gamma**t",
+            "status": "discrepant"
+          },
+          "APRM-TEMP-02": {
+            "id": "APRM-TEMP-02",
+            "observed": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "status": "conformant"
+          },
+          "APRM-TEMP-03": {
+            "id": "APRM-TEMP-03",
+            "observed": {
+              "late_non_decreasing": false,
+              "weights": [
+                1.0,
+                0.9,
+                0.81,
+                0.7290000000000001
+              ]
+            },
+            "status": "discrepant"
+          }
+        },
+        "max_abs_error": 1.1102230246251565e-16,
+        "paths": {
+          "scripts/dataproc/compute_prm_preference_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999998,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ]
+            }
+          ],
+          "scripts/dataproc/compute_prm_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999998,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ]
+            }
+          ]
+        }
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentprm",
+      "variant": "repaired"
+    },
+    {
+      "eligible_examples": 6,
+      "expected_state": "fault",
+      "id": "APRM-DEV-HIST-ORIGINAL",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/original",
+        "patch_sha256": "d3092e0a803ca56b2aa004d2a12d351bf703c7232021f9c63adaed930a45ea01",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "query_history_action",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "executed_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "history_action_mismatches": 6,
+        "history_entries": 6,
+        "legacy_checks": {
+          "APRM-SCHEMA-01": {
+            "id": "APRM-SCHEMA-01",
+            "observed": "action copied from observation",
+            "status": "discrepant"
+          }
+        },
+        "query_histories": [
+          [],
+          [
+            {
+              "action": "room-0\n\nYour task is to: complete controlled sequence",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            }
+          ],
+          [
+            {
+              "action": "room-0\n\nYour task is to: complete controlled sequence",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "room-1",
+              "observation": "room-1"
+            }
+          ],
+          [
+            {
+              "action": "room-0\n\nYour task is to: complete controlled sequence",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "room-1",
+              "observation": "room-1"
+            },
+            {
+              "action": "room-2",
+              "observation": "room-2"
+            }
+          ]
+        ],
+        "saved_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "saved_actions_match_execution": true,
+        "summaries": [
+          {
+            "gamefile": "controlled/game.tw-pddl",
+            "model_id": "controlled-recording-agent",
+            "num_actions": 4,
+            "score": 1
+          }
+        ],
+        "unchanged_ast_extractions": [
+          {
+            "first_line": 27,
+            "last_line": 33,
+            "name": "parse_gamefile_string",
+            "source_sha256": "5b4acb15d834bb820beb771be311c0ed3026da664d92574dd678b4b6a2cfb523"
+          },
+          {
+            "first_line": 35,
+            "last_line": 47,
+            "name": "extract_task_from_observation",
+            "source_sha256": "e9e6552df3c192ce63195f37f8a507137b98bbce945f662ad8407107a6f3795b"
+          },
+          {
+            "first_line": 35,
+            "last_line": 127,
+            "name": "rollout_agent_env",
+            "source_sha256": "9f933e3f00f6d63362a13bb5fa9090c3d91c809a4028d0ef42d5bd3765da73b9"
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentprm",
+      "variant": "original"
+    },
+    {
+      "eligible_examples": 6,
+      "expected_state": "conformant",
+      "id": "APRM-DEV-HIST-REPAIR",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/repaired",
+        "patch_sha256": "e1311436fcc8ecc689c178a174877d74014436f7f8902d72badae0b83ccc3294",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+          "scripts/dataproc/compute_prm_target.py": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+          "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "query_history_action",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "pass",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "executed_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "history_action_mismatches": 0,
+        "history_entries": 6,
+        "legacy_checks": {
+          "APRM-SCHEMA-01": {
+            "id": "APRM-SCHEMA-01",
+            "observed": "distinct action",
+            "status": "conformant"
+          }
+        },
+        "query_histories": [
+          [],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            }
+          ],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "act-1",
+              "observation": "room-1"
+            }
+          ],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "act-1",
+              "observation": "room-1"
+            },
+            {
+              "action": "act-2",
+              "observation": "room-2"
+            }
+          ]
+        ],
+        "saved_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "saved_actions_match_execution": true,
+        "summaries": [
+          {
+            "gamefile": "controlled/game.tw-pddl",
+            "model_id": "controlled-recording-agent",
+            "num_actions": 4,
+            "score": 1
+          }
+        ],
+        "unchanged_ast_extractions": [
+          {
+            "first_line": 27,
+            "last_line": 33,
+            "name": "parse_gamefile_string",
+            "source_sha256": "5b4acb15d834bb820beb771be311c0ed3026da664d92574dd678b4b6a2cfb523"
+          },
+          {
+            "first_line": 35,
+            "last_line": 47,
+            "name": "extract_task_from_observation",
+            "source_sha256": "e9e6552df3c192ce63195f37f8a507137b98bbce945f662ad8407107a6f3795b"
+          },
+          {
+            "first_line": 35,
+            "last_line": 127,
+            "name": "rollout_agent_env",
+            "source_sha256": "04e68fea4d74b7b348c850e815f5fb4d88f836ee8a6b8e5f2ac4c77896b30ce8"
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentprm",
+      "variant": "repaired"
+    },
+    {
+      "eligible_examples": 24,
+      "expected_state": "fault",
+      "id": "APRM-LOCK-TEMP-OFFSET",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/terminal_offset_fault",
+        "patch_sha256": "57b280875c0426d158848a4167ff1674e215c4b00f798ef32a6c3e68c7c99fa8",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "ff4464c284b108cb655470ae0d6bd708da7bc7db2f61e52e2abeae0f9fcdcd08",
+          "scripts/dataproc/compute_prm_target.py": "ff645b35e1371597a928cda09e69c7bea6ccbd15da2411d6c3aa1ce92d5e0c24",
+          "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "terminal_discount",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "legacy_checks": {
+          "APRM-METRIC-01": {
+            "id": "APRM-METRIC-01",
+            "observed": {
+              "mean": 0.4255,
+              "values": [
+                1.0,
+                0.54,
+                0.16200000000000003,
+                0.0
+              ]
+            },
+            "status": "discrepant"
+          },
+          "APRM-TEMP-01": {
+            "id": "APRM-TEMP-01",
+            "observed": "gamma**t",
+            "status": "discrepant"
+          },
+          "APRM-TEMP-02": {
+            "id": "APRM-TEMP-02",
+            "observed": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "status": "conformant"
+          },
+          "APRM-TEMP-03": {
+            "id": "APRM-TEMP-03",
+            "observed": {
+              "late_non_decreasing": false,
+              "weights": [
+                1.0,
+                0.9,
+                0.81,
+                0.7290000000000001
+              ]
+            },
+            "status": "discrepant"
+          }
+        },
+        "max_abs_error": 0.050000000000000044,
+        "paths": {
+          "scripts/dataproc/compute_prm_preference_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                0.8145062499999999,
+                0.8573749999999999,
+                0.9025,
+                0.95
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -0.6634204312890623,
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999998,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95
+              ]
+            }
+          ],
+          "scripts/dataproc/compute_prm_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                0.8145062499999999,
+                0.8573749999999999,
+                0.9025,
+                0.95
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -0.6634204312890623,
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999998,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95
+              ]
+            }
+          ]
+        }
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "terminal_offset_fault"
+    },
+    {
+      "eligible_examples": 6,
+      "expected_state": "fault",
+      "id": "APRM-LOCK-HIST-STALE",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/stale_history_fault",
+        "patch_sha256": "b643d34bc5292ba96a085eb06f6f9c1e24a1dcab337b7d8c7936cd22e2a10533",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+          "scripts/dataproc/compute_prm_target.py": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+          "scripts/dataproc/rollout_alfworld.py": "ba5b15c929c4efb91a427645cf3e4a646130462bd5515cd11ccd310dfa078fbd",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "query_history_action",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "pass",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "executed_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "history_action_mismatches": 3,
+        "history_entries": 6,
+        "legacy_checks": {
+          "APRM-SCHEMA-01": {
+            "id": "APRM-SCHEMA-01",
+            "observed": "distinct action",
+            "status": "conformant"
+          }
+        },
+        "query_histories": [
+          [],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            }
+          ],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "act-0",
+              "observation": "room-1"
+            }
+          ],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "act-0",
+              "observation": "room-1"
+            },
+            {
+              "action": "act-1",
+              "observation": "room-2"
+            }
+          ]
+        ],
+        "saved_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "saved_actions_match_execution": true,
+        "summaries": [
+          {
+            "gamefile": "controlled/game.tw-pddl",
+            "model_id": "controlled-recording-agent",
+            "num_actions": 4,
+            "score": 1
+          }
+        ],
+        "unchanged_ast_extractions": [
+          {
+            "first_line": 27,
+            "last_line": 33,
+            "name": "parse_gamefile_string",
+            "source_sha256": "5b4acb15d834bb820beb771be311c0ed3026da664d92574dd678b4b6a2cfb523"
+          },
+          {
+            "first_line": 35,
+            "last_line": 47,
+            "name": "extract_task_from_observation",
+            "source_sha256": "e9e6552df3c192ce63195f37f8a507137b98bbce945f662ad8407107a6f3795b"
+          },
+          {
+            "first_line": 35,
+            "last_line": 127,
+            "name": "rollout_agent_env",
+            "source_sha256": "dabdec8ad27ca7caa1e4162a951c0a969c7010e527f24a3d8ab5a97bf157fa51"
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "stale_history_fault"
+    },
+    {
+      "eligible_examples": 24,
+      "expected_state": "conformant",
+      "id": "APRM-LOCK-TEMP-BENIGN",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/benign_power",
+        "patch_sha256": "bd1fa9458533f076f2230d89e5d299cbe9a3061b984a2ad50d0e589ededa86d7",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "a3aa9627e6ffe6b881801f84e940cec2b8d80b91eabdf4b899938eea448819b9",
+          "scripts/dataproc/compute_prm_target.py": "2f0ca050b0c2e14b2c63c6bff73b01c4177644763a289df57481483be4216a63",
+          "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "terminal_discount",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "legacy_checks": {
+          "APRM-METRIC-01": {
+            "id": "APRM-METRIC-01",
+            "observed": {
+              "mean": 0.4255,
+              "values": [
+                1.0,
+                0.54,
+                0.16200000000000003,
+                0.0
+              ]
+            },
+            "status": "discrepant"
+          },
+          "APRM-TEMP-01": {
+            "id": "APRM-TEMP-01",
+            "observed": "terminal-relative exponent",
+            "status": "conformant"
+          },
+          "APRM-TEMP-02": {
+            "id": "APRM-TEMP-02",
+            "observed": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "status": "conformant"
+          },
+          "APRM-TEMP-03": {
+            "id": "APRM-TEMP-03",
+            "observed": {
+              "late_non_decreasing": false,
+              "weights": [
+                1.0,
+                0.9,
+                0.81,
+                0.7290000000000001
+              ]
+            },
+            "status": "discrepant"
+          }
+        },
+        "max_abs_error": 1.1102230246251565e-16,
+        "paths": {
+          "scripts/dataproc/compute_prm_preference_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999998,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ]
+            }
+          ],
+          "scripts/dataproc/compute_prm_target.py": [
+            {
+              "expected": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ],
+              "fixture": "challenge-0.json",
+              "signed_values": [
+                0.8573749999999999,
+                0.9025,
+                0.95,
+                1.0
+              ]
+            },
+            {
+              "expected": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999999,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ],
+              "fixture": "challenge-1.json",
+              "signed_values": [
+                -0.6983372960937497,
+                -0.7350918906249998,
+                -0.7737809374999998,
+                -0.8145062499999999,
+                -0.8573749999999999,
+                -0.9025,
+                -0.95,
+                -1.0
+              ]
+            }
+          ]
+        }
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "benign_power"
+    },
+    {
+      "eligible_examples": 6,
+      "expected_state": "conformant",
+      "id": "APRM-LOCK-HIST-BENIGN",
+      "implementation": {
+        "base_source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+          "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+          "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        },
+        "patch_record": "sources/benign_history",
+        "patch_sha256": "d039d197b958fc0bd2e277e6c2b82630abe853e047f61d7b6bbc5f302346ace0",
+        "revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+        "source_files": {
+          "scripts/dataproc/compute_prm_preference_target.py": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+          "scripts/dataproc/compute_prm_target.py": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+          "scripts/dataproc/rollout_alfworld.py": "77a520c025b541cc64863b8bc925f234c01a2128469de31a79146fe7c91fe6f8",
+          "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+        }
+      },
+      "mechanism": "query_history_action",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+        },
+        "source_pattern": {
+          "decision": "pass",
+          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+        }
+      },
+      "observed": {
+        "executed_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "history_action_mismatches": 0,
+        "history_entries": 6,
+        "legacy_checks": {
+          "APRM-SCHEMA-01": {
+            "id": "APRM-SCHEMA-01",
+            "observed": "distinct action",
+            "status": "conformant"
+          }
+        },
+        "query_histories": [
+          [],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            }
+          ],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "act-1",
+              "observation": "room-1"
+            }
+          ],
+          [
+            {
+              "action": "act-0",
+              "observation": "room-0\n\nYour task is to: complete controlled sequence"
+            },
+            {
+              "action": "act-1",
+              "observation": "room-1"
+            },
+            {
+              "action": "act-2",
+              "observation": "room-2"
+            }
+          ]
+        ],
+        "saved_actions": [
+          "act-0",
+          "act-1",
+          "act-2",
+          "act-3"
+        ],
+        "saved_actions_match_execution": true,
+        "summaries": [
+          {
+            "gamefile": "controlled/game.tw-pddl",
+            "model_id": "controlled-recording-agent",
+            "num_actions": 4,
+            "score": 1
+          }
+        ],
+        "unchanged_ast_extractions": [
+          {
+            "first_line": 27,
+            "last_line": 33,
+            "name": "parse_gamefile_string",
+            "source_sha256": "5b4acb15d834bb820beb771be311c0ed3026da664d92574dd678b4b6a2cfb523"
+          },
+          {
+            "first_line": 35,
+            "last_line": 47,
+            "name": "extract_task_from_observation",
+            "source_sha256": "e9e6552df3c192ce63195f37f8a507137b98bbce945f662ad8407107a6f3795b"
+          },
+          {
+            "first_line": 35,
+            "last_line": 127,
+            "name": "rollout_agent_env",
+            "source_sha256": "24f66aa4cdb8cd0dcc2635a9536c5fda23faaf4e206e10a3de5d18b8783703ca"
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "benign_history"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "APRM-LOCK-MISSING",
+      "implementation": {},
+      "mechanism": "terminal_discount",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "required implementation missing"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "required implementation missing"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "required implementation missing"
+        }
+      },
+      "observed": {},
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "APRM-LOCK-INELIGIBLE",
+      "implementation": {},
+      "mechanism": "terminal_discount",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "unit-discount fixture cannot discriminate temporal exponent direction"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "unit-discount fixture cannot discriminate temporal exponent direction"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "unit-discount fixture cannot discriminate temporal exponent direction"
+        }
+      },
+      "observed": {},
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "original"
+    }
+  ],
+  "schema_version": "2.0",
+  "summary": {
+    "behavioral_contract": {
+      "all": {
+        "benign": 2,
+        "benign_false_alarms": 0,
+        "conformant": 4,
+        "conformant_accepted": 4,
+        "errors": 0,
+        "faults": 4,
+        "faults_detected": 4,
+        "not_evaluated": 2,
+        "repairs": 2,
+        "repairs_accepted": 2
+      },
+      "development": {
+        "benign": 0,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 2,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 2,
+        "not_evaluated": 0,
+        "repairs": 2,
+        "repairs_accepted": 2
+      },
+      "locked_evaluation": {
+        "benign": 2,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 2,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 2,
+        "not_evaluated": 2,
+        "repairs": 0,
+        "repairs_accepted": 0
+      }
+    },
+    "native_tests": {
+      "all": {
+        "benign": 2,
+        "benign_false_alarms": 0,
+        "conformant": 4,
+        "conformant_accepted": 0,
+        "errors": 0,
+        "faults": 4,
+        "faults_detected": 0,
+        "not_evaluated": 10,
+        "repairs": 2,
+        "repairs_accepted": 0
+      },
+      "development": {
+        "benign": 0,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 0,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 0,
+        "not_evaluated": 4,
+        "repairs": 2,
+        "repairs_accepted": 0
+      },
+      "locked_evaluation": {
+        "benign": 2,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 0,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 0,
+        "not_evaluated": 6,
+        "repairs": 0,
+        "repairs_accepted": 0
+      }
+    },
+    "schema": {
+      "all": {
+        "benign": 2,
+        "benign_false_alarms": 0,
+        "conformant": 4,
+        "conformant_accepted": 4,
+        "errors": 0,
+        "faults": 4,
+        "faults_detected": 0,
+        "not_evaluated": 2,
+        "repairs": 2,
+        "repairs_accepted": 2
+      },
+      "development": {
+        "benign": 0,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 2,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 0,
+        "not_evaluated": 0,
+        "repairs": 2,
+        "repairs_accepted": 2
+      },
+      "locked_evaluation": {
+        "benign": 2,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 2,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 0,
+        "not_evaluated": 2,
+        "repairs": 0,
+        "repairs_accepted": 0
+      }
+    },
+    "source_pattern": {
+      "all": {
+        "benign": 2,
+        "benign_false_alarms": 1,
+        "conformant": 4,
+        "conformant_accepted": 2,
+        "errors": 0,
+        "faults": 4,
+        "faults_detected": 3,
+        "not_evaluated": 2,
+        "repairs": 2,
+        "repairs_accepted": 1
+      },
+      "development": {
+        "benign": 0,
+        "benign_false_alarms": 0,
+        "conformant": 2,
+        "conformant_accepted": 1,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 2,
+        "not_evaluated": 0,
+        "repairs": 2,
+        "repairs_accepted": 1
+      },
+      "locked_evaluation": {
+        "benign": 2,
+        "benign_false_alarms": 1,
+        "conformant": 2,
+        "conformant_accepted": 1,
+        "errors": 0,
+        "faults": 2,
+        "faults_detected": 1,
+        "not_evaluated": 2,
+        "repairs": 0,
+        "repairs_accepted": 0
+      }
+    }
+  }
+}

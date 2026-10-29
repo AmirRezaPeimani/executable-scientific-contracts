@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "executable-scientific-contracts"
-version = "1.0.0"
-description = "Executable scientific contracts for research auditing"
+version = "1.1.1"
+description = "Executable Scientific Contracts for Verifiable LLM and Agent Research"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -22,6 +22,7 @@ Repository = "https://github.com/AmirRezaPeimani/executable-scientific-contracts
 test = ["pytest>=8"]
 figures = ["matplotlib>=3.7"]
 prospective = ["pandas>=2"]
+camera-ready = ["numpy>=1.24", "pandas>=2", "pyarrow>=12", "torch>=2", "transformers>=4.40", "tqdm>=4"]
 
 [project.scripts]
 conform = "conform.cli:main"
@@ -34,6 +35,17 @@ where = ["src"]
   "contracts/contracts.yaml",
   "contracts/mutations.yaml",
 ]
+
+"share/executable-scientific-contracts/study/camera_ready" = ["study/camera_ready/README.md"]
+"share/executable-scientific-contracts/study/camera_ready/analysis" = ["study/camera_ready/analysis/agentabstain_analysis.py", "study/camera_ready/analysis/agentabstain_benign_validation.py", "study/camera_ready/analysis/agentabstain_guards_v2.py", "study/camera_ready/analysis/agentprm_analysis.py", "study/camera_ready/analysis/agentprm_guarded_v2.py", "study/camera_ready/analysis/fresh_holdout_v1.py", "study/camera_ready/analysis/toolace_analysis.py", "study/camera_ready/analysis/toolace_evaluator_v2.py", "study/camera_ready/analysis/validate_toolace_evidence.py"]
+"share/executable-scientific-contracts/study/camera_ready/baseline/toolace_original_scan" = ["study/camera_ready/baseline/toolace_original_scan/audit_toolace_truncation.py"]
+"share/executable-scientific-contracts/study/camera_ready/metadata" = ["study/camera_ready/metadata/fresh_evidence_manifest.json", "study/camera_ready/metadata/runner_manifest.json", "study/camera_ready/metadata/toolace_tokenizer_acquisition.json"]
+"share/executable-scientific-contracts/study/camera_ready/protocols" = ["study/camera_ready/protocols/agentabstain_v1.json", "study/camera_ready/protocols/agentabstain_v2.json", "study/camera_ready/protocols/agentprm_guarded_v2.json", "study/camera_ready/protocols/agentprm_v1.json", "study/camera_ready/protocols/fresh_holdout_v1.json", "study/camera_ready/protocols/overall_v1.json", "study/camera_ready/protocols/toolace_confirmation_v2.json", "study/camera_ready/protocols/toolace_v1.json"]
+"share/executable-scientific-contracts/study/camera_ready/results" = ["study/camera_ready/results/behavioral_summary_v1.json", "study/camera_ready/results/remaining_evidence_v3.json"]
+"share/executable-scientific-contracts/study/camera_ready/results/agentabstain" = ["study/camera_ready/results/agentabstain/camera_ready_target_manifest.json", "study/camera_ready/results/agentabstain/case_analysis_v1.json", "study/camera_ready/results/agentabstain/challenge_results_v1.json", "study/camera_ready/results/agentabstain/challenge_results_v2.json", "study/camera_ready/results/agentabstain/subtype_sensitivity_v1.csv"]
+"share/executable-scientific-contracts/study/camera_ready/results/agentprm" = ["study/camera_ready/results/agentprm/camera_ready_target_manifest.json", "study/camera_ready/results/agentprm/case_analysis_v1.json", "study/camera_ready/results/agentprm/challenge_results_v1.json", "study/camera_ready/results/agentprm/challenge_results_v2.json", "study/camera_ready/results/agentprm/label_invariance_execution_v2.json", "study/camera_ready/results/agentprm/mean_scope_companion_v2.json", "study/camera_ready/results/agentprm/preference_sensitivity_v1.csv", "study/camera_ready/results/agentprm/state_targets_v1.csv", "study/camera_ready/results/agentprm/target_sensitivity_v1.csv"]
+"share/executable-scientific-contracts/study/camera_ready/results/fresh_holdout_v1" = ["study/camera_ready/results/fresh_holdout_v1/INTERPRETATION.md", "study/camera_ready/results/fresh_holdout_v1/REPORT.md", "study/camera_ready/results/fresh_holdout_v1/challenge_results_v1.json", "study/camera_ready/results/fresh_holdout_v1/coverage_validation_v1.json", "study/camera_ready/results/fresh_holdout_v1/execution_started.json"]
+"share/executable-scientific-contracts/study/camera_ready/results/toolace" = ["study/camera_ready/results/toolace/camera_ready_target_manifest.json", "study/camera_ready/results/toolace/case_analysis_v1.json", "study/camera_ready/results/toolace/challenge_results_v1.json", "study/camera_ready/results/toolace/challenge_results_verified_v2.json", "study/camera_ready/results/toolace/controlled_boundary_sweep_v1.csv", "study/camera_ready/results/toolace/controlled_boundary_verified_v2.csv", "study/camera_ready/results/toolace/conversion_row_comparison_v1.csv", "study/camera_ready/results/toolace/official_loader_census_v1.csv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

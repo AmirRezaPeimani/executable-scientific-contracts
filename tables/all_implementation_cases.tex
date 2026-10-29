@@ -1,0 +1,66 @@
+\begingroup\footnotesize\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{@{}p{0.33\linewidth}p{0.12\linewidth}p{0.09\linewidth}p{0.12\linewidth}p{0.10\linewidth}p{0.11\linewidth}p{0.06\linewidth}@{}}
+\caption{Decisions on all 60 implementation cases.}\label{tab:all-implementation-cases}\\
+\toprule Case & Expected & Field/type & Original adapters & Native tests & Behavioral contract & Eligible \\\midrule\endfirsthead
+\toprule Case & Expected & Field/type & Original adapters & Native tests & Behavioral contract & Eligible \\\midrule\endhead
+APRM-\allowbreak{}DEV-\allowbreak{}TEMP-\allowbreak{}ORIGINAL-\allowbreak{}V2\newline terminal discount & fault & pass & fail & unavailable & fail & 24 \\
+APRM-\allowbreak{}DEV-\allowbreak{}TEMP-\allowbreak{}REPAIR-\allowbreak{}V2\newline terminal discount & conformant & pass & fail & unavailable & pass & 24 \\
+APRM-\allowbreak{}DEV-\allowbreak{}HIST-\allowbreak{}ORIGINAL-\allowbreak{}V2\newline query history action & fault & pass & fail & unavailable & fail & 6 \\
+APRM-\allowbreak{}DEV-\allowbreak{}HIST-\allowbreak{}REPAIR-\allowbreak{}V2\newline query history action & conformant & pass & pass & unavailable & pass & 6 \\
+APRM-\allowbreak{}LOCK-\allowbreak{}TEMP-\allowbreak{}OFFSET-\allowbreak{}V2\newline terminal discount & fault & pass & fail & unavailable & fail & 24 \\
+APRM-\allowbreak{}LOCK-\allowbreak{}HIST-\allowbreak{}STALE-\allowbreak{}V2\newline query history action & fault & pass & pass & unavailable & fail & 6 \\
+APRM-\allowbreak{}LOCK-\allowbreak{}TEMP-\allowbreak{}BENIGN-\allowbreak{}V2\newline terminal discount & conformant & pass & fail & unavailable & pass & 24 \\
+APRM-\allowbreak{}LOCK-\allowbreak{}HIST-\allowbreak{}BENIGN-\allowbreak{}V2\newline query history action & conformant & pass & pass & unavailable & pass & 6 \\
+APRM-\allowbreak{}LOCK-\allowbreak{}MISSING-\allowbreak{}V2\newline terminal discount & not evaluated & not evaluated & not evaluated & unavailable & not evaluated & 0 \\
+APRM-\allowbreak{}LOCK-\allowbreak{}INELIGIBLE-\allowbreak{}V2\newline terminal discount & not evaluated & not evaluated & not evaluated & unavailable & not evaluated & 0 \\
+TACE-\allowbreak{}ORIGINAL\newline uncropped mask origin & fault & pass & fail & unavailable & fail & 56 \\
+TACE-\allowbreak{}REPAIR\newline uncropped mask origin & conformant & pass & fail & unavailable & pass & 56 \\
+TACE-\allowbreak{}CROP-\allowbreak{}SIGN\newline crop offset sign & fault & pass & fail & unavailable & fail & 56 \\
+TACE-\allowbreak{}FIRST-\allowbreak{}RESPONSE\newline first response boundary & fault & pass & fail & unavailable & fail & 56 \\
+TACE-\allowbreak{}PADDING\newline padding supervision & fault & pass & fail & unavailable & fail & 56 \\
+TACE-\allowbreak{}LAST-\allowbreak{}POSITION\newline final position supervision & fault & pass & fail & unavailable & fail & 56 \\
+TACE-\allowbreak{}BENIGN-\allowbreak{}MIN\newline equivalent mask expression & conformant & pass & fail & unavailable & pass & 56 \\
+TACE-\allowbreak{}BENIGN-\allowbreak{}RENAME\newline local variable rename & conformant & pass & fail & unavailable & pass & 56 \\
+TACE-\allowbreak{}MISSING-\allowbreak{}EVIDENCE\newline evidence eligibility & not evaluated & not evaluated & not evaluated & unavailable & not evaluated & 0 \\
+TACE-\allowbreak{}ZERO-\allowbreak{}ELIGIBLE\newline evidence eligibility & not evaluated & not evaluated & not evaluated & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}conjunction-\allowbreak{}original\_\allowbreak{}conformant\newline paired conjunction & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}conjunction-\allowbreak{}fault\newline paired conjunction & fault & pass & unavailable & unavailable & fail & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}conjunction-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline paired conjunction & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}conjunction-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline paired conjunction & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}conjunction-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline paired conjunction & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}operational\_\allowbreak{}combined-\allowbreak{}original\_\allowbreak{}conformant\newline operational combined & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}operational\_\allowbreak{}combined-\allowbreak{}fault\newline operational combined & fault & pass & unavailable & unavailable & fail & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}operational\_\allowbreak{}combined-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline operational combined & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}operational\_\allowbreak{}combined-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline operational combined & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}operational\_\allowbreak{}combined-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline operational combined & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}conditional\_\allowbreak{}denominator-\allowbreak{}original\_\allowbreak{}conformant\newline conditional denominator & conformant & pass & unavailable & unavailable & pass & 2 \\
+AABS-\allowbreak{}v2-\allowbreak{}conditional\_\allowbreak{}denominator-\allowbreak{}fault\newline conditional denominator & fault & pass & unavailable & unavailable & fail & 2 \\
+AABS-\allowbreak{}v2-\allowbreak{}conditional\_\allowbreak{}denominator-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline conditional denominator & conformant & pass & unavailable & unavailable & pass & 2 \\
+AABS-\allowbreak{}v2-\allowbreak{}conditional\_\allowbreak{}denominator-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline conditional denominator & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}conditional\_\allowbreak{}denominator-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline conditional denominator & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}marginal\_\allowbreak{}product-\allowbreak{}original\_\allowbreak{}conformant\newline paired marginal product & conformant & pass & unavailable & unavailable & pass & 2 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}marginal\_\allowbreak{}product-\allowbreak{}fault\newline paired marginal product & fault & pass & unavailable & unavailable & fail & 2 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}marginal\_\allowbreak{}product-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline paired marginal product & conformant & pass & unavailable & unavailable & pass & 2 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}marginal\_\allowbreak{}product-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline paired marginal product & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}paired\_\allowbreak{}marginal\_\allowbreak{}product-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline paired marginal product & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}informational\_\allowbreak{}combined-\allowbreak{}original\_\allowbreak{}conformant\newline informational combined & conformant & pass & unavailable & unavailable & pass & 1 \\
+AABS-\allowbreak{}v2-\allowbreak{}informational\_\allowbreak{}combined-\allowbreak{}fault\newline informational combined & fault & pass & unavailable & unavailable & fail & 1 \\
+AABS-\allowbreak{}v2-\allowbreak{}informational\_\allowbreak{}combined-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline informational combined & conformant & pass & unavailable & unavailable & pass & 1 \\
+AABS-\allowbreak{}v2-\allowbreak{}informational\_\allowbreak{}combined-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline informational combined & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}informational\_\allowbreak{}combined-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline informational combined & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}commit\_\allowbreak{}success\_\allowbreak{}flag-\allowbreak{}original\_\allowbreak{}conformant\newline commit success flag & conformant & pass & unavailable & unavailable & pass & 1 \\
+AABS-\allowbreak{}v2-\allowbreak{}commit\_\allowbreak{}success\_\allowbreak{}flag-\allowbreak{}fault\newline commit success flag & fault & pass & unavailable & unavailable & fail & 1 \\
+AABS-\allowbreak{}v2-\allowbreak{}commit\_\allowbreak{}success\_\allowbreak{}flag-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline commit success flag & conformant & pass & unavailable & unavailable & pass & 1 \\
+AABS-\allowbreak{}v2-\allowbreak{}commit\_\allowbreak{}success\_\allowbreak{}flag-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline commit success flag & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}commit\_\allowbreak{}success\_\allowbreak{}flag-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline commit success flag & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}ranking\_\allowbreak{}columns-\allowbreak{}original\_\allowbreak{}conformant\newline ranking columns & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}ranking\_\allowbreak{}columns-\allowbreak{}fault\newline ranking columns & fault & pass & unavailable & unavailable & fail & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}ranking\_\allowbreak{}columns-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline ranking columns & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}ranking\_\allowbreak{}columns-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline ranking columns & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}ranking\_\allowbreak{}columns-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline ranking columns & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}scenario\_\allowbreak{}macro-\allowbreak{}original\_\allowbreak{}conformant\newline scenario macro & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}scenario\_\allowbreak{}macro-\allowbreak{}fault\newline scenario macro & fault & pass & unavailable & unavailable & fail & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}scenario\_\allowbreak{}macro-\allowbreak{}path\_\allowbreak{}relevant\_\allowbreak{}benign\newline scenario macro & conformant & pass & unavailable & unavailable & pass & 4 \\
+AABS-\allowbreak{}v2-\allowbreak{}scenario\_\allowbreak{}macro-\allowbreak{}missing\_\allowbreak{}source\_\allowbreak{}file\newline scenario macro & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+AABS-\allowbreak{}v2-\allowbreak{}scenario\_\allowbreak{}macro-\allowbreak{}actual\_\allowbreak{}ineligible\_\allowbreak{}input\newline scenario macro & not evaluated & not evaluated & unavailable & unavailable & not evaluated & 0 \\
+\bottomrule\end{longtable}\endgroup

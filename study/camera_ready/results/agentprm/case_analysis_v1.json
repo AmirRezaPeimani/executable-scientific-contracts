@@ -1,0 +1,471 @@
+{
+  "actual_cli_export_checks": [
+    {
+      "affine_export_verified": true,
+      "command": [
+        "python",
+        "STUDY_ROOT/results/agentprm/sources/original/scripts/dataproc/compute_prm_target.py",
+        "--config",
+        "STUDY_ROOT/results/agentprm/configs/original-compute_prm_target.yaml",
+        "--seed",
+        "42"
+      ],
+      "output": "STUDY_ROOT/results/agentprm/top_level/original-compute_prm_target",
+      "path": "scripts/dataproc/compute_prm_target.py",
+      "records": [
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/original-compute_prm_target/test.parquet",
+          "rows": 2,
+          "sha256": "d1b7410f12d6b15820604905f8ff03bf956da7abe9b712619e0e336a35588993"
+        },
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/original-compute_prm_target/train.parquet",
+          "rows": 10,
+          "sha256": "c9a43ebd8e421b1a74c3aafa3a0361b71b28bc346f1dc39eee20d5c5eebe6a4a"
+        }
+      ],
+      "returncode": 0,
+      "variant": "original"
+    },
+    {
+      "command": [
+        "python",
+        "STUDY_ROOT/results/agentprm/sources/original/scripts/dataproc/compute_prm_preference_target.py",
+        "--config",
+        "STUDY_ROOT/results/agentprm/configs/original-compute_prm_preference_target.yaml",
+        "--seed",
+        "42"
+      ],
+      "exported_preferences": 0,
+      "output": "STUDY_ROOT/results/agentprm/top_level/original-compute_prm_preference_target",
+      "path": "scripts/dataproc/compute_prm_preference_target.py",
+      "preference_export_verified": true,
+      "records": [
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/original-compute_prm_preference_target/test.parquet",
+          "rows": 0,
+          "sha256": "23f0a4ed6fff78ee0236bb9ff238775bdc7bc3e95e9bbc65231f3c0f43db753b"
+        },
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/original-compute_prm_preference_target/train.parquet",
+          "rows": 0,
+          "sha256": "23f0a4ed6fff78ee0236bb9ff238775bdc7bc3e95e9bbc65231f3c0f43db753b"
+        }
+      ],
+      "returncode": 0,
+      "variant": "original"
+    },
+    {
+      "affine_export_verified": true,
+      "command": [
+        "python",
+        "STUDY_ROOT/results/agentprm/sources/repaired/scripts/dataproc/compute_prm_target.py",
+        "--config",
+        "STUDY_ROOT/results/agentprm/configs/repaired-compute_prm_target.yaml",
+        "--seed",
+        "42"
+      ],
+      "output": "STUDY_ROOT/results/agentprm/top_level/repaired-compute_prm_target",
+      "path": "scripts/dataproc/compute_prm_target.py",
+      "records": [
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/repaired-compute_prm_target/test.parquet",
+          "rows": 2,
+          "sha256": "ac5153f6d2f826acecb36573f7c8f127d2d91bbb7bc7271feb038b3e3c9e4b21"
+        },
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/repaired-compute_prm_target/train.parquet",
+          "rows": 10,
+          "sha256": "5805fec13cdfa27991837c7c40bad11e7d8b6974b9f235cdb48118f5f8a6686a"
+        }
+      ],
+      "returncode": 0,
+      "variant": "repaired"
+    },
+    {
+      "command": [
+        "python",
+        "STUDY_ROOT/results/agentprm/sources/repaired/scripts/dataproc/compute_prm_preference_target.py",
+        "--config",
+        "STUDY_ROOT/results/agentprm/configs/repaired-compute_prm_preference_target.yaml",
+        "--seed",
+        "42"
+      ],
+      "exported_preferences": 1,
+      "output": "STUDY_ROOT/results/agentprm/top_level/repaired-compute_prm_preference_target",
+      "path": "scripts/dataproc/compute_prm_preference_target.py",
+      "preference_export_verified": true,
+      "records": [
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/repaired-compute_prm_preference_target/test.parquet",
+          "rows": 1,
+          "sha256": "505a1214c2769630b3aa67f5a567199f69bb70626baf70d2102f8811af516465"
+        },
+        {
+          "file": "STUDY_ROOT/results/agentprm/top_level/repaired-compute_prm_preference_target/train.parquet",
+          "rows": 0,
+          "sha256": "23f0a4ed6fff78ee0236bb9ff238775bdc7bc3e95e9bbc65231f3c0f43db753b"
+        }
+      ],
+      "returncode": 0,
+      "variant": "repaired"
+    }
+  ],
+  "mean_identity_max_abs_error": 2.220446049250313e-16,
+  "merge_check": {
+    "counts": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "input_outcomes": [
+      1,
+      1,
+      0
+    ],
+    "reference": [
+      0.2857916666666666,
+      0.30083333333333334,
+      0.31666666666666665,
+      0.3333333333333333
+    ],
+    "values": [
+      0.2857916666666666,
+      0.30083333333333334,
+      0.31666666666666665,
+      0.3333333333333333
+    ]
+  },
+  "preference_comparisons": 140,
+  "preference_scope": "Same initial state, two distinct candidate actions, successful continuations of different lengths; controlled parameter grid, not prevalence or empirical training distribution.",
+  "primary_delta": 0.03,
+  "primary_gamma": 0.95,
+  "primary_preference_added_cases": 28,
+  "primary_preference_comparisons": 28,
+  "primary_preference_removed_cases": 0,
+  "primary_target_sensitivity": [
+    {
+      "gamma": 0.95,
+      "length": 1,
+      "max_abs_exported_distortion": 0.0,
+      "max_abs_signed_distortion": 0.0,
+      "mean_abs_signed_distortion": 0.0,
+      "mean_signed_original": -1.0,
+      "mean_signed_repaired": -1.0,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 1,
+      "max_abs_exported_distortion": 0.0,
+      "max_abs_signed_distortion": 0.0,
+      "mean_abs_signed_distortion": 0.0,
+      "mean_signed_original": 1.0,
+      "mean_signed_repaired": 1.0,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 2,
+      "max_abs_exported_distortion": 0.025000000000000022,
+      "max_abs_signed_distortion": 0.050000000000000044,
+      "mean_abs_signed_distortion": 0.050000000000000044,
+      "mean_signed_original": -0.975,
+      "mean_signed_repaired": -0.975,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 2,
+      "max_abs_exported_distortion": 0.025000000000000022,
+      "max_abs_signed_distortion": 0.050000000000000044,
+      "mean_abs_signed_distortion": 0.050000000000000044,
+      "mean_signed_original": 0.975,
+      "mean_signed_repaired": 0.975,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 4,
+      "max_abs_exported_distortion": 0.07131250000000006,
+      "max_abs_signed_distortion": 0.1426250000000001,
+      "mean_abs_signed_distortion": 0.09506250000000005,
+      "mean_signed_original": -0.92746875,
+      "mean_signed_repaired": -0.92746875,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 4,
+      "max_abs_exported_distortion": 0.07131250000000006,
+      "max_abs_signed_distortion": 0.1426250000000001,
+      "mean_abs_signed_distortion": 0.09506250000000005,
+      "mean_signed_original": 0.92746875,
+      "mean_signed_repaired": 0.92746875,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 8,
+      "max_abs_exported_distortion": 0.15083135195312514,
+      "max_abs_signed_distortion": 0.3016627039062503,
+      "mean_abs_signed_distortion": 0.17203965644531266,
+      "mean_signed_original": -0.8414489217773437,
+      "mean_signed_repaired": -0.8414489217773437,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 8,
+      "max_abs_exported_distortion": 0.15083135195312514,
+      "max_abs_signed_distortion": 0.3016627039062503,
+      "mean_abs_signed_distortion": 0.17203965644531266,
+      "mean_signed_original": 0.8414489217773437,
+      "mean_signed_repaired": 0.8414489217773437,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 16,
+      "max_abs_exported_distortion": 0.2683543849201235,
+      "max_abs_signed_distortion": 0.536708769840247,
+      "mean_abs_signed_distortion": 0.2832145151841019,
+      "mean_signed_original": -0.6998416641852927,
+      "mean_signed_repaired": -0.6998416641852927,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 16,
+      "max_abs_exported_distortion": 0.2683543849201235,
+      "max_abs_signed_distortion": 0.536708769840247,
+      "mean_abs_signed_distortion": 0.2832145151841019,
+      "mean_signed_original": 0.6998416641852927,
+      "mean_signed_repaired": 0.6998416641852927,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 32,
+      "max_abs_exported_distortion": 0.39804658712710483,
+      "max_abs_signed_distortion": 0.7960931742542097,
+      "mean_abs_signed_distortion": 0.39182268394371234,
+      "mean_signed_original": -0.5039303222134366,
+      "mean_signed_repaired": -0.5039303222134364,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 32,
+      "max_abs_exported_distortion": 0.39804658712710483,
+      "max_abs_signed_distortion": 0.7960931742542097,
+      "mean_abs_signed_distortion": 0.39182268394371234,
+      "mean_signed_original": 0.5039303222134366,
+      "mean_signed_repaired": 0.5039303222134364,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 64,
+      "max_abs_exported_distortion": 0.48025045304678105,
+      "max_abs_signed_distortion": 0.9605009060935621,
+      "mean_abs_signed_distortion": 0.40631323143382103,
+      "mean_signed_original": -0.300773706496526,
+      "mean_signed_repaired": -0.3007737064965259,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 64,
+      "max_abs_exported_distortion": 0.48025045304678105,
+      "max_abs_signed_distortion": 0.9605009060935621,
+      "mean_abs_signed_distortion": 0.40631323143382103,
+      "mean_signed_original": 0.300773706496526,
+      "mean_signed_repaired": 0.3007737064965259,
+      "terminal_score": 1
+    },
+    {
+      "gamma": 0.95,
+      "length": 128,
+      "max_abs_exported_distortion": 0.49925891525077093,
+      "max_abs_signed_distortion": 0.9985178305015419,
+      "mean_abs_signed_distortion": 0.289487432062907,
+      "mean_signed_original": -0.15602999046507238,
+      "mean_signed_repaired": -0.15602999046507246,
+      "terminal_score": 0
+    },
+    {
+      "gamma": 0.95,
+      "length": 128,
+      "max_abs_exported_distortion": 0.49925891525077093,
+      "max_abs_signed_distortion": 0.9985178305015419,
+      "mean_abs_signed_distortion": 0.289487432062907,
+      "mean_signed_original": 0.15602999046507238,
+      "mean_signed_repaired": 0.15602999046507246,
+      "terminal_score": 1
+    }
+  ],
+  "query_history": {
+    "original": {
+      "executed_actions": [
+        "act-0",
+        "act-1",
+        "act-2",
+        "act-3"
+      ],
+      "history_action_mismatches": 6,
+      "history_entries": 6,
+      "query_histories": [
+        [],
+        [
+          {
+            "action": "room-0\n\nYour task is to: complete controlled sequence",
+            "observation": "room-0\n\nYour task is to: complete controlled sequence"
+          }
+        ],
+        [
+          {
+            "action": "room-0\n\nYour task is to: complete controlled sequence",
+            "observation": "room-0\n\nYour task is to: complete controlled sequence"
+          },
+          {
+            "action": "room-1",
+            "observation": "room-1"
+          }
+        ],
+        [
+          {
+            "action": "room-0\n\nYour task is to: complete controlled sequence",
+            "observation": "room-0\n\nYour task is to: complete controlled sequence"
+          },
+          {
+            "action": "room-1",
+            "observation": "room-1"
+          },
+          {
+            "action": "room-2",
+            "observation": "room-2"
+          }
+        ]
+      ],
+      "saved_actions": [
+        "act-0",
+        "act-1",
+        "act-2",
+        "act-3"
+      ],
+      "saved_actions_match_execution": true,
+      "summaries": [
+        {
+          "gamefile": "controlled/game.tw-pddl",
+          "model_id": "controlled-recording-agent",
+          "num_actions": 4,
+          "score": 1
+        }
+      ],
+      "unchanged_ast_extractions": [
+        {
+          "first_line": 27,
+          "last_line": 33,
+          "name": "parse_gamefile_string",
+          "source_sha256": "5b4acb15d834bb820beb771be311c0ed3026da664d92574dd678b4b6a2cfb523"
+        },
+        {
+          "first_line": 35,
+          "last_line": 47,
+          "name": "extract_task_from_observation",
+          "source_sha256": "e9e6552df3c192ce63195f37f8a507137b98bbce945f662ad8407107a6f3795b"
+        },
+        {
+          "first_line": 35,
+          "last_line": 127,
+          "name": "rollout_agent_env",
+          "source_sha256": "9f933e3f00f6d63362a13bb5fa9090c3d91c809a4028d0ef42d5bd3765da73b9"
+        }
+      ]
+    },
+    "repaired": {
+      "executed_actions": [
+        "act-0",
+        "act-1",
+        "act-2",
+        "act-3"
+      ],
+      "history_action_mismatches": 0,
+      "history_entries": 6,
+      "query_histories": [
+        [],
+        [
+          {
+            "action": "act-0",
+            "observation": "room-0\n\nYour task is to: complete controlled sequence"
+          }
+        ],
+        [
+          {
+            "action": "act-0",
+            "observation": "room-0\n\nYour task is to: complete controlled sequence"
+          },
+          {
+            "action": "act-1",
+            "observation": "room-1"
+          }
+        ],
+        [
+          {
+            "action": "act-0",
+            "observation": "room-0\n\nYour task is to: complete controlled sequence"
+          },
+          {
+            "action": "act-1",
+            "observation": "room-1"
+          },
+          {
+            "action": "act-2",
+            "observation": "room-2"
+          }
+        ]
+      ],
+      "saved_actions": [
+        "act-0",
+        "act-1",
+        "act-2",
+        "act-3"
+      ],
+      "saved_actions_match_execution": true,
+      "summaries": [
+        {
+          "gamefile": "controlled/game.tw-pddl",
+          "model_id": "controlled-recording-agent",
+          "num_actions": 4,
+          "score": 1
+        }
+      ],
+      "unchanged_ast_extractions": [
+        {
+          "first_line": 27,
+          "last_line": 33,
+          "name": "parse_gamefile_string",
+          "source_sha256": "5b4acb15d834bb820beb771be311c0ed3026da664d92574dd678b4b6a2cfb523"
+        },
+        {
+          "first_line": 35,
+          "last_line": 47,
+          "name": "extract_task_from_observation",
+          "source_sha256": "e9e6552df3c192ce63195f37f8a507137b98bbce945f662ad8407107a6f3795b"
+        },
+        {
+          "first_line": 35,
+          "last_line": 127,
+          "name": "rollout_agent_env",
+          "source_sha256": "04e68fea4d74b7b348c850e815f5fb4d88f836ee8a6b8e5f2ac4c77896b30ce8"
+        }
+      ]
+    }
+  },
+  "scope": "Controlled synthetic trajectories and deterministic environment/agent; no model training, historical trajectories or model-performance estimate.",
+  "source_revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+  "state_rows": 2550,
+  "state_sweep_cells": 80
+}

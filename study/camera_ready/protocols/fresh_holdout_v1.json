@@ -1,0 +1,694 @@
+{
+  "cases": [
+    {
+      "expected_eligible_examples": 16,
+      "expected_state": "conformant",
+      "family": "terminal_outcome_range_remapping",
+      "fixture_paths": [
+        "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json",
+        "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json"
+      ],
+      "frozen_evaluator_mechanism_argument": "terminal_discount",
+      "gamma": 0.95,
+      "id": "FRESH-APRM-REWARD-RANGE-reference",
+      "reference_rule": "For terminal score s in {0,1}, signed reward is 2s-1; return at distance d is (2s-1)*(19/20)^d. Two unchanged pinned caller functions execute.",
+      "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference",
+      "target": "agentprm",
+      "variant": "reference"
+    },
+    {
+      "expected_eligible_examples": 16,
+      "expected_state": "fault",
+      "family": "terminal_outcome_range_remapping",
+      "fixture_paths": [
+        "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json",
+        "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json"
+      ],
+      "frozen_evaluator_mechanism_argument": "terminal_discount",
+      "gamma": 0.95,
+      "id": "FRESH-APRM-REWARD-RANGE-fault",
+      "reference_rule": "For terminal score s in {0,1}, signed reward is 2s-1; return at distance d is (2s-1)*(19/20)^d. Two unchanged pinned caller functions execute.",
+      "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault",
+      "target": "agentprm",
+      "variant": "fault"
+    },
+    {
+      "expected_eligible_examples": 16,
+      "expected_state": "conformant",
+      "family": "terminal_outcome_range_remapping",
+      "fixture_paths": [
+        "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json",
+        "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json"
+      ],
+      "frozen_evaluator_mechanism_argument": "terminal_discount",
+      "gamma": 0.95,
+      "id": "FRESH-APRM-REWARD-RANGE-benign",
+      "reference_rule": "For terminal score s in {0,1}, signed reward is 2s-1; return at distance d is (2s-1)*(19/20)^d. Two unchanged pinned caller functions execute.",
+      "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign",
+      "target": "agentprm",
+      "variant": "benign"
+    },
+    {
+      "expected_eligible_examples": 12,
+      "expected_state": "conformant",
+      "family": "response_token_order_corruption",
+      "fixtures": [
+        {
+          "maximum": 12,
+          "prompt_tokens": 3,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 3,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 3,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 3,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 5,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 5,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 5,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 5,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 11,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 11,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 11,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 11,
+          "response_tokens": 6
+        }
+      ],
+      "id": "FRESH-TACE-RESPONSE-ORDER-reference",
+      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected.",
+      "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/reference/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+      "target": "toolace",
+      "variant": "reference"
+    },
+    {
+      "expected_eligible_examples": 12,
+      "expected_state": "fault",
+      "family": "response_token_order_corruption",
+      "fixtures": [
+        {
+          "maximum": 12,
+          "prompt_tokens": 3,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 3,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 3,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 3,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 5,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 5,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 5,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 5,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 11,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 11,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 11,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 11,
+          "response_tokens": 6
+        }
+      ],
+      "id": "FRESH-TACE-RESPONSE-ORDER-fault",
+      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected.",
+      "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/fault/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+      "target": "toolace",
+      "variant": "fault"
+    },
+    {
+      "expected_eligible_examples": 12,
+      "expected_state": "conformant",
+      "family": "response_token_order_corruption",
+      "fixtures": [
+        {
+          "maximum": 12,
+          "prompt_tokens": 3,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 3,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 3,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 3,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 5,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 5,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 5,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 5,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 11,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 11,
+          "response_tokens": 3
+        },
+        {
+          "maximum": 12,
+          "prompt_tokens": 11,
+          "response_tokens": 6
+        },
+        {
+          "maximum": 20,
+          "prompt_tokens": 11,
+          "response_tokens": 6
+        }
+      ],
+      "id": "FRESH-TACE-RESPONSE-ORDER-benign",
+      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected.",
+      "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/benign/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+      "target": "toolace",
+      "variant": "benign"
+    },
+    {
+      "expected_eligible_examples": 8,
+      "expected_state": "conformant",
+      "expected_values": [
+        0.375
+      ],
+      "family": "outer_macro_mean_to_order_statistic",
+      "fixture": [
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "ambiguous_action_specification",
+          "task_id": "fresh-scenario-0"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "conflicting_constraints",
+          "task_id": "fresh-scenario-1"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "conflicting_evidence",
+          "task_id": "fresh-scenario-2"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "critical_tool_failure",
+          "task_id": "fresh-scenario-3"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "emergent_risk_discovery",
+          "task_id": "fresh-scenario-4"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "high_stakes_action",
+          "task_id": "fresh-scenario-5"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "insufficient_tool_capability",
+          "task_id": "fresh-scenario-6"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "missing_critical_parameter",
+          "task_id": "fresh-scenario-7"
+        }
+      ],
+      "id": "FRESH-AABS-SCENARIO-STATISTIC-reference",
+      "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention.",
+      "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/figure_ranking_bar.py",
+      "target": "agentabstain",
+      "variant": "reference"
+    },
+    {
+      "expected_eligible_examples": 8,
+      "expected_state": "fault",
+      "expected_values": [
+        0.375
+      ],
+      "family": "outer_macro_mean_to_order_statistic",
+      "fixture": [
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "ambiguous_action_specification",
+          "task_id": "fresh-scenario-0"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "conflicting_constraints",
+          "task_id": "fresh-scenario-1"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "conflicting_evidence",
+          "task_id": "fresh-scenario-2"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "critical_tool_failure",
+          "task_id": "fresh-scenario-3"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "emergent_risk_discovery",
+          "task_id": "fresh-scenario-4"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "high_stakes_action",
+          "task_id": "fresh-scenario-5"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "insufficient_tool_capability",
+          "task_id": "fresh-scenario-6"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "missing_critical_parameter",
+          "task_id": "fresh-scenario-7"
+        }
+      ],
+      "id": "FRESH-AABS-SCENARIO-STATISTIC-fault",
+      "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention.",
+      "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/figure_ranking_bar.py",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "expected_eligible_examples": 8,
+      "expected_state": "conformant",
+      "expected_values": [
+        0.375
+      ],
+      "family": "outer_macro_mean_to_order_statistic",
+      "fixture": [
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "ambiguous_action_specification",
+          "task_id": "fresh-scenario-0"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "conflicting_constraints",
+          "task_id": "fresh-scenario-1"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "conflicting_evidence",
+          "task_id": "fresh-scenario-2"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "critical_tool_failure",
+          "task_id": "fresh-scenario-3"
+        },
+        {
+          "abstain": false,
+          "act": false,
+          "action_type": "operational",
+          "category": "emergent_risk_discovery",
+          "task_id": "fresh-scenario-4"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "high_stakes_action",
+          "task_id": "fresh-scenario-5"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "insufficient_tool_capability",
+          "task_id": "fresh-scenario-6"
+        },
+        {
+          "abstain": true,
+          "act": true,
+          "action_type": "operational",
+          "category": "missing_critical_parameter",
+          "task_id": "fresh-scenario-7"
+        }
+      ],
+      "id": "FRESH-AABS-SCENARIO-STATISTIC-benign",
+      "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention.",
+      "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/figure_ranking_bar.py",
+      "target": "agentabstain",
+      "variant": "benign"
+    }
+  ],
+  "environment_versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "pyarrow": "20.0.0",
+    "torch": "2.13.0",
+    "transformers": "5.14.1"
+  },
+  "evaluator_and_import_hashes": {
+    "ACQUISITION_ROOT/semantic-conformance/executable-scientific-contracts/src/conform/adapters/agentprm.py": "e192572c31ffcc15c26542b092f553ce3db18639d4328cd65dd38c0c790ffe8d",
+    "STUDY_ROOT/analysis/agentabstain_analysis.py": "3f72d9c355231db6f432819a5aa9b96343decb29e982b5775397f53f72e64b92",
+    "STUDY_ROOT/analysis/agentabstain_guards_v2.py": "3d08dc2c5bc1606d77b0dd02786853664b769944d860fdafee256ca1b136c439",
+    "STUDY_ROOT/analysis/agentprm_analysis.py": "7bcd27a6d9c040ecd70e3ca3c80bd210677af8580a2029d195eef9faa7a1c2ba",
+    "STUDY_ROOT/analysis/agentprm_guarded_v2.py": "6dd0f26423229aa5c0411787f49e71ab567c30a8ce65e6e5c991c0bf8f31ee1a",
+    "STUDY_ROOT/analysis/toolace_analysis.py": "3b41959f10ff9a7092b16b74ec3af77561069b2e79b4cdcaa7a409f7aeec3c43",
+    "STUDY_ROOT/analysis/toolace_evaluator_v2.py": "df9a673f8fb0ca8a415bf2cc9635082b455cb34b2e7ffbdd0e5d7f51f3cb7d39"
+  },
+  "freeze_rule": "Verify every runner/evaluator/helper/source/fixture hash before first execution; no patching based on these outputs; save all outputs before interpretation.",
+  "frozen_utc": "2026-10-29T14:53:51.522803+00:00",
+  "isolated_source_and_fixture_hashes": {
+    "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
+    "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json": "7a7ed872fff31720c8ad38bf3312d119fd7e1e0441214fe3a88bfd86bde655e0",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/analysis.py": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/figure_ranking_bar.py": "6246642b43768835717a9d3073e12636d43fb3182fc982f1f320eb3be9bc6726",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/analysis.py": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/figure_ranking_bar.py": "c6364b6568c15371a4617a54b03b135031d9d3957b0e4f8e8cdb702d316b83af",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/analysis.py": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/figure_ranking_bar.py": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/scripts/dataproc/compute_prm_preference_target.py": "b14a5309620bba0ce54cae33ed84fe8983abacfa215a6f0dda055b058d0752b1",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/scripts/dataproc/compute_prm_target.py": "14b33dd975fae9ccaee3ac1948dc553be6342e2df54d218d60d79a4e7e1ac67e",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/scripts/dataproc/compute_prm_preference_target.py": "1097e336159da48ee0ea1c3c17c66ce17c2ace2d199f983cf708b2c5c70b3555",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/scripts/dataproc/compute_prm_target.py": "33a848b3a143fcb4c331a4b0bf6156a46cf8c03aaef8b7c62dca6135d6f28b47",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/scripts/dataproc/compute_prm_preference_target.py": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/scripts/dataproc/compute_prm_target.py": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/benign/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py": "f49cf433c53610c4a4e5fa298980df31a040e320f0838515c3f1e40760c872e2",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/fault/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py": "5c9e9a655c123ef6ca28f038943f41a70d5e1f7afb5592e45d7244719882c2bd",
+    "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/reference/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09"
+  },
+  "method_policy": "Use each target's existing four method decisions unchanged. Missing relevant native/pattern coverage remains not_evaluated. An error is not detection. A separately manifested fault missed by checker remains an explicit miss.",
+  "model_weights_or_training": false,
+  "paid_cost_cad": 0,
+  "primary_metrics": [
+    "independently_manifested_faults",
+    "faults_detected",
+    "faults_missed",
+    "reference_controls_accepted",
+    "benign_false_alarms",
+    "errors",
+    "unmanifest_faults"
+  ],
+  "prior_frozen_protocol_hashes": {
+    "STUDY_ROOT/protocols/agentabstain_v2.json": "bd299c7bdf75e1c70ddbe311faa5893d5bd546212288d76971a4e1a9f5343353",
+    "STUDY_ROOT/protocols/agentprm_guarded_v2.json": "f8872bdc4c05100ec6007e62ab7a9652ab867b5acbf59130133c0d33068fc6c6",
+    "STUDY_ROOT/protocols/toolace_confirmation_v2.json": "4ddbf4cceabaf65c3231fe57fc7f73fb1c38bb35b444b5266934993702429406"
+  },
+  "purpose": "New mechanistic source cases constructed after all v2 evaluators were frozen; no existing evaluator or reference contract changes.",
+  "runner_sha256": "ecf92b8ae21da500d452d5aa5d1bcd476876d7f88d7df367d09ac7a7533f16f5",
+  "schema_version": "1.0",
+  "scope": "Small researcher-constructed source challenge; not independent human validation, new repositories, population generalization or model-performance evidence.",
+  "source_diffs": [
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-reference-dataproc-compute_prm_target.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/scripts/dataproc/compute_prm_target.py",
+      "source_sha256": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-reference-dataproc-compute_prm_preference_target.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/scripts/dataproc/compute_prm_preference_target.py",
+      "source_sha256": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-reference-dataproc-rollout_alfworld.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/scripts/dataproc/rollout_alfworld.py",
+      "source_sha256": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-reference-utils-alfworld.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference/src/agent_prm/utils/alfworld.py",
+      "source_sha256": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-fault-dataproc-compute_prm_target.py.diff",
+      "diff_sha256": "bb0fd0f39c4d3990710536bb604e02b0b58b85f69645445bf793132288332016",
+      "parent_content_sha256": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/scripts/dataproc/compute_prm_target.py",
+      "source_sha256": "33a848b3a143fcb4c331a4b0bf6156a46cf8c03aaef8b7c62dca6135d6f28b47"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-fault-dataproc-compute_prm_preference_target.py.diff",
+      "diff_sha256": "f75bb06192a9e0ae56f59d4d7983092c7a1dc67cbe32b81d1ef9ae78009ef78d",
+      "parent_content_sha256": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/scripts/dataproc/compute_prm_preference_target.py",
+      "source_sha256": "1097e336159da48ee0ea1c3c17c66ce17c2ace2d199f983cf708b2c5c70b3555"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-fault-dataproc-rollout_alfworld.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/scripts/dataproc/rollout_alfworld.py",
+      "source_sha256": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-fault-utils-alfworld.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault/src/agent_prm/utils/alfworld.py",
+      "source_sha256": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-benign-dataproc-compute_prm_target.py.diff",
+      "diff_sha256": "20ee32d75b8c87554522f9520a13d0f694cfd036c01d1ed505dd4fa304708c2e",
+      "parent_content_sha256": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/scripts/dataproc/compute_prm_target.py",
+      "source_sha256": "14b33dd975fae9ccaee3ac1948dc553be6342e2df54d218d60d79a4e7e1ac67e"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-benign-dataproc-compute_prm_preference_target.py.diff",
+      "diff_sha256": "06e34a80d811c96fc51c309ccc39da3dfce63cf77f16c590e3211d7971a3f746",
+      "parent_content_sha256": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/scripts/dataproc/compute_prm_preference_target.py",
+      "source_sha256": "b14a5309620bba0ce54cae33ed84fe8983abacfa215a6f0dda055b058d0752b1"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-benign-dataproc-rollout_alfworld.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/scripts/dataproc/rollout_alfworld.py",
+      "source_sha256": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-benign-utils-alfworld.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign/src/agent_prm/utils/alfworld.py",
+      "source_sha256": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/toolace-reference-sft_dataset_wo_apply_template.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/reference/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+      "source_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/toolace-fault-sft_dataset_wo_apply_template.py.diff",
+      "diff_sha256": "4a20977ad6ebe1819408c63381dfe3499e49b4052b135a2617e9a4953038c456",
+      "parent_content_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/fault/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+      "source_sha256": "5c9e9a655c123ef6ca28f038943f41a70d5e1f7afb5592e45d7244719882c2bd"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/toolace-benign-sft_dataset_wo_apply_template.py.diff",
+      "diff_sha256": "e03b08c8a77e3383fccfd0d1607b18b6942e948973739057e40cb7c8a1b4a5c3",
+      "parent_content_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/benign/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+      "source_sha256": "f49cf433c53610c4a4e5fa298980df31a040e320f0838515c3f1e40760c872e2"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentabstain-reference-figure_ranking_bar.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/figure_ranking_bar.py",
+      "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentabstain-helper-reference-analysis.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/analysis.py",
+      "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentabstain-fault-figure_ranking_bar.py.diff",
+      "diff_sha256": "4b304942ef3bb249dd07a66efd3ef9ce12504e965c076472ffb7ade6aa727dea",
+      "parent_content_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/figure_ranking_bar.py",
+      "source_sha256": "c6364b6568c15371a4617a54b03b135031d9d3957b0e4f8e8cdb702d316b83af"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentabstain-helper-fault-analysis.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/analysis.py",
+      "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentabstain-benign-figure_ranking_bar.py.diff",
+      "diff_sha256": "ef632f15e7f42b18e23c8e7c5797b9766a26f42aa3fabe0388312c80d7acc90a",
+      "parent_content_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/figure_ranking_bar.py",
+      "source_sha256": "6246642b43768835717a9d3073e12636d43fb3182fc982f1f320eb3be9bc6726"
+    },
+    {
+      "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentabstain-helper-benign-analysis.py.diff",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parent_content_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+      "source": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/analysis.py",
+      "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+    }
+  ]
+}

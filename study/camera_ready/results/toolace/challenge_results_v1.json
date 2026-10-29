@@ -1,0 +1,494 @@
+{
+  "protocol_sha256": "7b49f2abb1896403fd6c3048c4a9f4007d2dfd853cab0d5346792a5f8af8b5f6",
+  "rows": [
+    {
+      "eligible_examples": 56,
+      "expected_state": "fault",
+      "id": "TACE-ORIGINAL",
+      "implementation": {
+        "extraction": {
+          "end_line": 196,
+          "source_sha256": "34340de3a2f62829c06fee03aabc2582f57af96913bd5a4248480852bd930553",
+          "start_line": 117
+        },
+        "parent_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c",
+        "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source": "implementation_variants/TACE-ORIGINAL/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c"
+      },
+      "mechanism": "uncropped_mask_origin",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": true,
+          "decision": "fail",
+          "prompt_mask_pattern": true,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 27
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "original"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "conformant",
+      "id": "TACE-REPAIR",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "6d0cd2366da239f316b5898fcbd4b97c80dbc505cb09bf69e5d5fb11a8f8b907",
+          "start_line": 117
+        },
+        "parent_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c",
+        "patch_sha256": "18791bc23a0c9794156a6ee751b2d23dceaf858109c86a99760f323dee982dd4",
+        "source": "implementation_variants/TACE-REPAIR/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09"
+      },
+      "mechanism": "uncropped_mask_origin",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 0
+      },
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "toolace",
+      "variant": "repair"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "fault",
+      "id": "TACE-CROP-SIGN",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "59e83ba75833391fb88a9fbe57e11a4e5795514db34faa3ca5a11412208eb84a",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "1cc92a5514ec1cb29ffdc4abf26333d5606ab64cd36cab9c95caccf26537c6e6",
+        "source": "implementation_variants/TACE-CROP-SIGN/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "5bdea5991f8791b729ff21ef2a7e3362e381ecfd9aab1cbe5b1d01dfc723a834"
+      },
+      "mechanism": "crop_offset_sign",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 28
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "fault",
+      "id": "TACE-FIRST-RESPONSE",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "fbb57736e3c23d4d0512bda5938436d9a01fe60ad2a5dfe72be9ad51d14ee1a4",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "0420c4e49574818da6623f726dc13123a3de9b5f8683c38718efe23c412b8e5e",
+        "source": "implementation_variants/TACE-FIRST-RESPONSE/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "d866ecd1e9f0840c5639cddf5503174dcbafe75e0f9482b6e089d74356967d45"
+      },
+      "mechanism": "first_response_boundary",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 42
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "fault",
+      "id": "TACE-PADDING",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "832c3b950038e0945bbb14393e972cfefa65688fbec48e2d346ad3e5bbc22133",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "702c648d9127de30f1e2cccd17835b9b785ec9d9234a2b3e792a734fdb3a8f03",
+        "source": "implementation_variants/TACE-PADDING/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "8d5ae7d23a8ae36a6a07971ef06b22cd9c4d1c71176cba44d0f6ea1458ad05dc"
+      },
+      "mechanism": "padding_supervision",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 26
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "fault",
+      "id": "TACE-LAST-POSITION",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "9656c6ccb621c8d882970113f80c7773de722264f7e893292e1caf5b1e71e18d",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "1937cccfb36c01603c7ad0d452c21b95e3f3d021a2d3e16e3cb406b274f82df9",
+        "source": "implementation_variants/TACE-LAST-POSITION/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "b72fa3e9085a3849c6a2360fb6e6fdbea3fb79483cd12aea1ce394c1e9de5984"
+      },
+      "mechanism": "final_position_supervision",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": false
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 56
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "source_fault"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "conformant",
+      "id": "TACE-BENIGN-MIN",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "bd07e84722b8fa6044fde31af0bfc2e4cf916bccecff1e5201ec70fd199b9837",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "6eccdd80c51fbf7e125d9bd0c354ee7a81881460958b7c86e028f235a7350dab",
+        "source": "implementation_variants/TACE-BENIGN-MIN/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "70aa6daaf25a841903ffa7749d6df68c81f0b5887cf2149ebed0ca4851ec9b92"
+      },
+      "mechanism": "equivalent_mask_expression",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 0
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 56,
+      "expected_state": "conformant",
+      "id": "TACE-BENIGN-RENAME",
+      "implementation": {
+        "extraction": {
+          "end_line": 197,
+          "source_sha256": "2915a7a8c06c6b8721e73933f47a9a885b4c1ada441d179fad9f71f8aa352197",
+          "start_line": 117
+        },
+        "parent_sha256": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09",
+        "patch_sha256": "9134a819745236b68bcd7a4b5e4d17f36395948a27ee37271b6b18595f511529",
+        "source": "implementation_variants/TACE-BENIGN-RENAME/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_sha256": "b0ea1891ebf3b7607d0847c71a6b2bb69c3e090d973c82e10b92c362bbf2cb06"
+      },
+      "mechanism": "local_variable_rename",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "name_matches": [
+            "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
+            "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
+          ],
+          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+        },
+        "source_pattern": {
+          "coordinate_fault_pattern": false,
+          "decision": "fail",
+          "prompt_mask_pattern": false,
+          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "terminal_mask_pattern": true
+        }
+      },
+      "observed": {
+        "error": null,
+        "inputs": 56,
+        "inputs_disagreeing_with_oracle": 0
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "TACE-MISSING-EVIDENCE",
+      "implementation": {
+        "patch_sha256": null,
+        "source": null,
+        "source_sha256": null
+      },
+      "mechanism": "evidence_eligibility",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "Required pinned source is deliberately unavailable"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Required pinned source is deliberately unavailable"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "Required pinned source is deliberately unavailable"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "Required pinned source is deliberately unavailable"
+        }
+      },
+      "observed": {
+        "reason": "Required pinned source is deliberately unavailable"
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "control"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "TACE-ZERO-ELIGIBLE",
+      "implementation": {
+        "patch_sha256": null,
+        "source": null,
+        "source_sha256": null
+      },
+      "mechanism": "evidence_eligibility",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+        }
+      },
+      "observed": {
+        "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "control"
+    }
+  ],
+  "schema_version": "2.0",
+  "summary": {
+    "behavioral_faults_detected": 5,
+    "benign_false_alarms": 0,
+    "execution_errors": 0,
+    "finite_source_faults": 5,
+    "not_evaluated": 2,
+    "repairs_accepted": 1
+  }
+}

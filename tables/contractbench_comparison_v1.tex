@@ -1,0 +1,13 @@
+% Requires: booktabs, tabularx, array
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Item & Evidence \\
+\midrule
+Reported result & Qwen3.5-9B, n=99, 56.6\% \\
+Released artifact & Qwen3.5-9B, n=99, 0/99 success labels \\
+Matches & model name; denominator \\
+Not verified & checkpoint; task set; evaluation configuration \\
+Trace issue & 3/99 traces report 8,192 output tokens but contain no terminal assistant response \\
+Interpretation & 0/99 successes under the repository mapping; correspondence to the reported evaluation remains unresolved \\
+\bottomrule
+\end{tabularx}

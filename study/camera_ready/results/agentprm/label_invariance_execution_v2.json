@@ -1,0 +1,241 @@
+{
+  "all_actual_reexecutions_label_invariant": true,
+  "cases": [
+    {
+      "input_case": "fault",
+      "label_invariant_methods": true,
+      "three_actual_evaluations": [
+        {
+          "eligible_examples": 24,
+          "executed_probes": 4,
+          "expected_annotation": "fault",
+          "external_oracle_valid": true,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "fail",
+              "reason": "Actual implementation compared against the frozen terminal/history expectation."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "No relevant native dataproc/history tests at the pinned revision."
+            },
+            "schema": {
+              "decision": "pass",
+              "reason": "Executed required-field/type/finite-number validator over actual outputs."
+            },
+            "source_pattern": {
+              "decision": "fail",
+              "reason": "Executed unchanged v1 public adapter for relevant IDs."
+            }
+          }
+        },
+        {
+          "eligible_examples": 24,
+          "executed_probes": 4,
+          "expected_annotation": "conformant",
+          "external_oracle_valid": false,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "fail",
+              "reason": "Actual implementation compared against the frozen terminal/history expectation."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "No relevant native dataproc/history tests at the pinned revision."
+            },
+            "schema": {
+              "decision": "pass",
+              "reason": "Executed required-field/type/finite-number validator over actual outputs."
+            },
+            "source_pattern": {
+              "decision": "fail",
+              "reason": "Executed unchanged v1 public adapter for relevant IDs."
+            }
+          }
+        },
+        {
+          "eligible_examples": 24,
+          "executed_probes": 4,
+          "expected_annotation": "not_evaluated",
+          "external_oracle_valid": false,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "fail",
+              "reason": "Actual implementation compared against the frozen terminal/history expectation."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "No relevant native dataproc/history tests at the pinned revision."
+            },
+            "schema": {
+              "decision": "pass",
+              "reason": "Executed required-field/type/finite-number validator over actual outputs."
+            },
+            "source_pattern": {
+              "decision": "fail",
+              "reason": "Executed unchanged v1 public adapter for relevant IDs."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input_case": "unit_discount",
+      "label_invariant_methods": true,
+      "three_actual_evaluations": [
+        {
+          "eligible_examples": 0,
+          "executed_probes": 4,
+          "expected_annotation": "fault",
+          "external_oracle_valid": false,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "schema": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "source_pattern": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            }
+          }
+        },
+        {
+          "eligible_examples": 0,
+          "executed_probes": 4,
+          "expected_annotation": "conformant",
+          "external_oracle_valid": false,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "schema": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "source_pattern": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            }
+          }
+        },
+        {
+          "eligible_examples": 0,
+          "executed_probes": 4,
+          "expected_annotation": "not_evaluated",
+          "external_oracle_valid": true,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "schema": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            },
+            "source_pattern": {
+              "decision": "not_evaluated",
+              "reason": "Actual executed inputs provide no eligible discriminating examples."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "input_case": "missing",
+      "label_invariant_methods": true,
+      "three_actual_evaluations": [
+        {
+          "eligible_examples": 0,
+          "executed_probes": 0,
+          "expected_annotation": "fault",
+          "external_oracle_valid": false,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "schema": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "source_pattern": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            }
+          }
+        },
+        {
+          "eligible_examples": 0,
+          "executed_probes": 0,
+          "expected_annotation": "conformant",
+          "external_oracle_valid": false,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "schema": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "source_pattern": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            }
+          }
+        },
+        {
+          "eligible_examples": 0,
+          "executed_probes": 0,
+          "expected_annotation": "not_evaluated",
+          "external_oracle_valid": true,
+          "methods": {
+            "behavioral_contract": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "native_tests": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "schema": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            },
+            "source_pattern": {
+              "decision": "not_evaluated",
+              "reason": "Required source/input file is unavailable."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "created_utc": "2026-10-29T14:40:16.096776+00:00",
+  "evaluator_sha256": "6dd0f26423229aa5c0411787f49e71ab567c30a8ce65e6e5c991c0bf8f31ee1a"
+}

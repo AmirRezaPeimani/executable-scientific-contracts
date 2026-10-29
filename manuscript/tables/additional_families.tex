@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Nine cases constructed after the checks were frozen. Each mutation family contains a fault, a reference implementation, and a harmless rewrite.}
+\label{tab:additional-families}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}p{0.19\linewidth}*{4}{>{\RaggedRight\arraybackslash}X}@{}}
+\toprule
+Method & Faults detected & References accepted & Benign flags & Uncovered faults \\
+\midrule
+Field/type & 0/3 & 3/3 & 0/3 & 0 \\
+Native tests & Unavailable & Unavailable & Unavailable & 3 \\
+Original adapters & 2/2 covered & 0/2 covered & 2/2 covered & 1 \\
+Behavioral contracts & 3/3 & 3/3 & 0/3 & 0 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\noindent
+All nine cases completed and were included. The checks and their imports matched the recorded hashes.
+\end{table}

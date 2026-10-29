@@ -1,0 +1,80 @@
+{
+  "controls": [
+    "original/conformant",
+    "equivalent conjunction operand order",
+    "equivalent success identity expression",
+    "missing implementation evidence",
+    "zero complete-pair eligibility"
+  ],
+  "cost_cad": 0,
+  "dataset_revision": "842228426c2a703347396501af61c7890972c7ee",
+  "dataset_sha256": "165f021e7bb8b3a1ba103cef291eb522ff219769e8e7727f1a669364a225fb63",
+  "development": {
+    "fault_families": [
+      "pair_conjunction_to_disjunction",
+      "combined_conjunction_to_disjunction",
+      "conditional_wrong_denominator"
+    ],
+    "fixtures": [
+      "four Boolean pairs",
+      "four commit-by-judge cases",
+      "conditional nonempty denominator",
+      "two scenarios with unequal subtype counts"
+    ]
+  },
+  "frozen_before_first_execution": true,
+  "go_no_go": "Any original rejection, benign false alarm, unmanifest counted mutation, error counted as detection, or synthetic output described as an observed leaderboard change blocks release pending transparent repair/new version.",
+  "hypotheses": [
+    "Pinned evaluator and final ranking computation reproduce the historical Boolean, conditional-rate, operational scoring and aggregation fixtures.",
+    "Same frozen behavioral contracts reject manifest source faults, accept the original and semantically equivalent source, and abstain on missing evidence or zero eligible pairs.",
+    "Released subtype composition permits an exact finite bound on equal-subtype versus pair-weighted scenario macro averaging; constructed endpoint rates attain the bound without implying observed model performance."
+  ],
+  "locked_evaluation": {
+    "fault_families": [
+      "pair_conjunction_to_marginal_product",
+      "informational_metric_gated_by_commit",
+      "count_failed_critical_tool_calls",
+      "headline_uses_act_column",
+      "headline_pools_scenarios"
+    ],
+    "fixtures": [
+      "two anti-correlated pairs",
+      "incomplete-pair exclusion",
+      "informational judge with irrelevant failed commit check",
+      "critical tool call success flag",
+      "three-scenario unequal sizes with act-versus-paired disagreement"
+    ],
+    "rule": "Contract runner and expected outputs are frozen in script hash before first execution. These are held-out transformation families, not blind external authorship or unbiased fault sampling."
+  },
+  "methods": [
+    "schema",
+    "native_tests",
+    "source_pattern",
+    "behavioral_contract"
+  ],
+  "primary_metrics": [
+    "manifest faults detected",
+    "original/conformant accepted",
+    "benign false alarms",
+    "not evaluated",
+    "errors"
+  ],
+  "schema_version": "1.0",
+  "sensitivity": {
+    "missing_pair_counts": [
+      0,
+      1,
+      3,
+      8
+    ],
+    "outputs": [
+      "full-data subtype counts",
+      "per-scenario exact attainable bound",
+      "eight-scenario macro bound",
+      "composed synthetic outputs through pinned final ranking path"
+    ],
+    "units": "pairs removed per scenario, conservatively from each subtype in turn"
+  },
+  "source_revision": "f581249704b26804e28a39e37396f1be00b71a4d",
+  "uncertainty": "Exact finite challenge counts and algebraic sharp bounds, not population confidence intervals over handcrafted mutants."
+}

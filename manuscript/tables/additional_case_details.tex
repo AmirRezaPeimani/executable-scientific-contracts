@@ -1,0 +1,15 @@
+\begingroup\footnotesize\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{@{}p{0.33\linewidth}p{0.12\linewidth}p{0.09\linewidth}p{0.12\linewidth}p{0.10\linewidth}p{0.11\linewidth}p{0.06\linewidth}@{}}
+\caption{Nine additional implementation cases.}\label{tab:additional-case-details}\\
+\toprule Case & Expected & Field/type & Original adapters & Native tests & Behavioral contract & Eligible \\\midrule\endfirsthead
+\toprule Case & Expected & Field/type & Original adapters & Native tests & Behavioral contract & Eligible \\\midrule\endhead
+FRESH-\allowbreak{}APRM-\allowbreak{}REWARD-\allowbreak{}RANGE-\allowbreak{}reference\newline terminal outcome range remapping & conformant & pass & fail & unavailable & pass & 16 \\
+FRESH-\allowbreak{}APRM-\allowbreak{}REWARD-\allowbreak{}RANGE-\allowbreak{}fault\newline terminal outcome range remapping & fault & pass & fail & unavailable & fail & 16 \\
+FRESH-\allowbreak{}APRM-\allowbreak{}REWARD-\allowbreak{}RANGE-\allowbreak{}benign\newline terminal outcome range remapping & conformant & pass & fail & unavailable & pass & 16 \\
+FRESH-\allowbreak{}TACE-\allowbreak{}RESPONSE-\allowbreak{}ORDER-\allowbreak{}reference\newline response token order corruption & conformant & pass & fail & unavailable & pass & 12 \\
+FRESH-\allowbreak{}TACE-\allowbreak{}RESPONSE-\allowbreak{}ORDER-\allowbreak{}fault\newline response token order corruption & fault & pass & fail & unavailable & fail & 12 \\
+FRESH-\allowbreak{}TACE-\allowbreak{}RESPONSE-\allowbreak{}ORDER-\allowbreak{}benign\newline response token order corruption & conformant & pass & fail & unavailable & pass & 12 \\
+FRESH-\allowbreak{}AABS-\allowbreak{}SCENARIO-\allowbreak{}STATISTIC-\allowbreak{}reference\newline outer macro mean to order statistic & conformant & pass & unavailable & unavailable & pass & 8 \\
+FRESH-\allowbreak{}AABS-\allowbreak{}SCENARIO-\allowbreak{}STATISTIC-\allowbreak{}fault\newline outer macro mean to order statistic & fault & pass & unavailable & unavailable & fail & 8 \\
+FRESH-\allowbreak{}AABS-\allowbreak{}SCENARIO-\allowbreak{}STATISTIC-\allowbreak{}benign\newline outer macro mean to order statistic & conformant & pass & unavailable & unavailable & pass & 8 \\
+\bottomrule\end{longtable}\endgroup

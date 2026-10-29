@@ -1,0 +1,31 @@
+{
+  "challenge_file": "challenge_results_v2.json",
+  "files": {
+    "case_analysis_v1.json": "613a1dafe0eaf4145eb2cc3f278d951083933849e8821a4bb6d8bfba260db6e2",
+    "challenge_results_v1.json": "96f999eaf448328a38fd280cc4cd9a77734271106b4869741b4b5406cf2be7d4",
+    "challenge_results_v2.json": "bcbc89ccc1d7ab8f211d248eb36c6af9cd0f9e750f643f2a47486471f7325a27",
+    "label_invariance_execution_v2.json": "937cf298a3f42149a1da499c100541a2d1c4329c51eb98ac96606c7cd1ee1a20",
+    "mean_scope_companion_v2.json": "7cd5e9728b896f1f22372eeea02db174e84d7a1d431db5a642b4cd77a672256f",
+    "preference_sensitivity_v1.csv": "1de9a35110e249342666759354531dfe7a72e71de76a885312c189d931ce27f2",
+    "state_targets_v1.csv": "d7163a3e62374d347a88d1b63544f6f22aae23b483a5ae99a0d54c2a9baf1e8a",
+    "target_sensitivity_v1.csv": "8c32e0ec4a7f0fffdb65a638448f64d968c81e64a836d96c9996cb1c088e5dfe"
+  },
+  "normalization": {
+    "camera_ready_workspace": "STUDY_ROOT",
+    "projects_acquisition_workspace": "ACQUISITION_ROOT",
+    "research_python_executable": "python"
+  },
+  "schema_version": "2.0",
+  "scope": "Public-copy hashes validate public files. Embedded historical artifact hashes identify unchanged private raw evidence and do not purport to hash normalized public copies.",
+  "source_artifact_raw_sha256": {
+    "case_analysis_v1.json": "f0457020a093811f56baa1a2ab4b65a2065574d689e8474eb034166df7051651",
+    "challenge_results_v1.json": "96f999eaf448328a38fd280cc4cd9a77734271106b4869741b4b5406cf2be7d4",
+    "challenge_results_v2.json": "91c3898af56edc9e3e1ee70b42d08a83e9cf92606abed0c26910d2c64cbcc4fb",
+    "label_invariance_execution_v2.json": "406de2d43b537942fb7a8869d842620ca26d9b9f74a143b3e69d5220d7c4e032",
+    "mean_scope_companion_v2.json": "2a382ebca66f3fa477b5bebe6cee9cee86fb0e476a60b126383a39441ca9f817",
+    "preference_sensitivity_v1.csv": "a3620838b39189cfc3949c6e22483a4601688ec8bf268a604e558eb4fde83c86",
+    "state_targets_v1.csv": "0bf65e9c3cfda8a8cb882c2bff9e85cbdbf7e7b1dc7879039f5aec029b402f64",
+    "target_sensitivity_v1.csv": "0207e0f3a39273689a680e882eeb3c5123e5b88b991cee6a96caff922980bc58"
+  },
+  "target": "agentprm"
+}

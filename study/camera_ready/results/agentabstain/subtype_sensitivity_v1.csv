@@ -1,0 +1,17 @@
+category,action_type,pairs,scenario_pairs,sharp_gap,max_gap_pp,attaining_rate
+ambiguous_action_specification,informational,15,30,0.0,0.0,0
+ambiguous_action_specification,operational,15,30,0.0,0.0,0
+conflicting_constraints,informational,17,32,0.03125,3.125,0
+conflicting_constraints,operational,15,32,0.03125,3.125,1
+conflicting_evidence,informational,15,30,0.0,0.0,0
+conflicting_evidence,operational,15,30,0.0,0.0,0
+critical_tool_failure,informational,19,34,0.058823529411764705,5.88235294117647,0
+critical_tool_failure,operational,15,34,0.058823529411764705,5.88235294117647,1
+emergent_risk_discovery,informational,16,33,0.015151515151515152,1.5151515151515151,1
+emergent_risk_discovery,operational,17,33,0.015151515151515152,1.5151515151515151,0
+high_stakes_action,informational,16,31,0.016129032258064516,1.6129032258064515,0
+high_stakes_action,operational,15,31,0.016129032258064516,1.6129032258064515,1
+insufficient_tool_capability,informational,15,34,0.058823529411764705,5.88235294117647,1
+insufficient_tool_capability,operational,19,34,0.058823529411764705,5.88235294117647,0
+missing_critical_parameter,informational,19,39,0.01282051282051282,1.282051282051282,1
+missing_critical_parameter,operational,20,39,0.01282051282051282,1.282051282051282,0

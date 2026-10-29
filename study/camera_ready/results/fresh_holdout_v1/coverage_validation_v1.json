@@ -1,0 +1,70 @@
+{
+  "all_declared_coverage_matches": true,
+  "all_source_faults_manifest_separately": true,
+  "coverage_aware_metrics": {
+    "behavioral_contract": {
+      "benign_evaluated": 3,
+      "benign_false_alarms": 0,
+      "benign_total": 3,
+      "decisions": {
+        "fail": 3,
+        "pass": 6
+      },
+      "faults_detected": 3,
+      "faults_evaluated": 3,
+      "faults_total": 3,
+      "reference_accepted": 3,
+      "reference_evaluated": 3,
+      "reference_total": 3
+    },
+    "native_tests": {
+      "benign_evaluated": 0,
+      "benign_false_alarms": 0,
+      "benign_total": 3,
+      "decisions": {
+        "not_evaluated": 9
+      },
+      "faults_detected": 0,
+      "faults_evaluated": 0,
+      "faults_total": 3,
+      "reference_accepted": 0,
+      "reference_evaluated": 0,
+      "reference_total": 3
+    },
+    "schema": {
+      "benign_evaluated": 3,
+      "benign_false_alarms": 0,
+      "benign_total": 3,
+      "decisions": {
+        "pass": 9
+      },
+      "faults_detected": 0,
+      "faults_evaluated": 3,
+      "faults_total": 3,
+      "reference_accepted": 3,
+      "reference_evaluated": 3,
+      "reference_total": 3
+    },
+    "source_pattern": {
+      "benign_evaluated": 2,
+      "benign_false_alarms": 2,
+      "benign_total": 3,
+      "decisions": {
+        "fail": 6,
+        "not_evaluated": 3
+      },
+      "faults_detected": 2,
+      "faults_evaluated": 2,
+      "faults_total": 3,
+      "reference_accepted": 0,
+      "reference_evaluated": 2,
+      "reference_total": 3
+    }
+  },
+  "created_utc": "2026-10-29T14:55:52.988107+00:00",
+  "current_result_sha256": "808292f4a5dcc62e92b1e3e56d0a37141a5186662aba1cb9e3b8b3de6738dd55",
+  "evaluator_and_helper_hashes_unchanged_after_execution": true,
+  "firstexecution_preserved": true,
+  "observed_issues": [],
+  "protocol_sha256": "669fca39cb055d2387f674fbdc51f19295aaa36b922e9b733849c71d4cf7afe6"
+}

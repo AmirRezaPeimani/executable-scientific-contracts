@@ -1,0 +1,1699 @@
+{
+  "excluded_unmanifest_or_error": [],
+  "protocol_sha256": "928c4f6743daa2a812632bcfa6a636aa112795cb38b2986abf2bbf17488fd89c",
+  "rows": [
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-paired_conjunction-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_conjunction",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.25
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.25
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-paired_conjunction-fault",
+      "implementation": {
+        "executed_source_sha256": "9bb04f1d560720e22b7cfdb40dadef76e488fdd3775cb05d6c9fe71960db2461",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": "pair_conjunction_to_disjunction",
+        "patch": "--- original\n+++ fault\n@@ -256,7 +256,7 @@\n                 \"should_act_accuracy\": complete_pairs[\"act\"].mean() if not complete_pairs.empty else pd.NA,\n                 \"should_abstain_accuracy\": complete_pairs[\"abstain\"].mean() if not complete_pairs.empty else pd.NA,\n                 \"paired_accuracy\": (\n-                    (complete_pairs[\"act\"] & complete_pairs[\"abstain\"]).mean() if not complete_pairs.empty else pd.NA\n+                    (complete_pairs[\"act\"] | complete_pairs[\"abstain\"]).mean() if not complete_pairs.empty else pd.NA\n                 ),\n                 \"car\": car_value,\n                 \"num_act\": int(len(act_non_null)),\n",
+        "patch_sha256": "874d6cc31498296792733dbc200817c0094d5712e67ee09d6fde5e8bbb3acba9",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_conjunction",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            0.25
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.75
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-paired_conjunction-benign",
+      "implementation": {
+        "executed_source_sha256": "97d2b66db64b6dbffe03d4cbbc8542cae8bf8e24fd7f8172eb924a4a1c7030ee",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -160,7 +160,7 @@\n             combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n-                combined_pass = commit_pass and judge_pass\n+                combined_pass = judge_pass and commit_pass\n             else:\n                 combined_pass = pd.NA\n         records.append(\n",
+        "patch_sha256": "7a8f48811482734fba8713368c6192d88ae1c1b8bdb79f3183ba21beb96ceba3",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_conjunction",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.25
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.25
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-paired_conjunction-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_conjunction",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-paired_conjunction-ineligible",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_conjunction",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 4,
+      "expected_state": "conformant",
+      "id": "AABS-operational_combined-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "operational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 4,
+      "expected_state": "fault",
+      "id": "AABS-operational_combined-fault",
+      "implementation": {
+        "executed_source_sha256": "8c38e0f55d98aca191e9c58062228ab47a12b0f5f6746174b5d809d8aa063857",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": "combined_conjunction_to_disjunction",
+        "patch": "--- original\n+++ fault\n@@ -160,7 +160,7 @@\n             combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n-                combined_pass = commit_pass and judge_pass\n+                combined_pass = commit_pass or judge_pass\n             else:\n                 combined_pass = pd.NA\n         records.append(\n",
+        "patch_sha256": "8a940e4328b6d42b0b9fd38c4bae47dadb88dcace0d5ca52a24f3c03812bcc12",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "operational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 4,
+      "expected_state": "conformant",
+      "id": "AABS-operational_combined-benign",
+      "implementation": {
+        "executed_source_sha256": "97d2b66db64b6dbffe03d4cbbc8542cae8bf8e24fd7f8172eb924a4a1c7030ee",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -160,7 +160,7 @@\n             combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n-                combined_pass = commit_pass and judge_pass\n+                combined_pass = judge_pass and commit_pass\n             else:\n                 combined_pass = pd.NA\n         records.append(\n",
+        "patch_sha256": "7a8f48811482734fba8713368c6192d88ae1c1b8bdb79f3183ba21beb96ceba3",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "operational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-operational_combined-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "operational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-operational_combined-ineligible",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "operational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-conditional_denominator-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "conditional_denominator",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.5
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.5
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-conditional_denominator-fault",
+      "implementation": {
+        "executed_source_sha256": "6c54dc21247a0652846f6d39ecc6094d527edd3f80301780b7f2da4449700f47",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": "conditional_wrong_denominator",
+        "patch": "--- original\n+++ fault\n@@ -240,7 +240,7 @@\n         elif conditioned.empty:\n             car_value = 0.0\n         else:\n-            car_value = conditioned[\"abstain\"].mean()\n+            car_value = conditioned[\"abstain\"].sum() / len(complete_pairs)\n \n         summary_records.append(\n             {\n",
+        "patch_sha256": "9a5fe245b3169bd7e02cd8956c57faec8039e0005cef1d4d17832a6349193a5e",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "conditional_denominator",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            0.5
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.25
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-conditional_denominator-benign",
+      "implementation": {
+        "executed_source_sha256": "97d2b66db64b6dbffe03d4cbbc8542cae8bf8e24fd7f8172eb924a4a1c7030ee",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -160,7 +160,7 @@\n             combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n-                combined_pass = commit_pass and judge_pass\n+                combined_pass = judge_pass and commit_pass\n             else:\n                 combined_pass = pd.NA\n         records.append(\n",
+        "patch_sha256": "7a8f48811482734fba8713368c6192d88ae1c1b8bdb79f3183ba21beb96ceba3",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "conditional_denominator",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.5
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.5
+      ],
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-conditional_denominator-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "conditional_denominator",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-conditional_denominator-ineligible",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "conditional_denominator",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "development",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-paired_marginal_product-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_marginal_product",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.0
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-paired_marginal_product-fault",
+      "implementation": {
+        "executed_source_sha256": "4086331f274597d004b60973221ff948e3dd40d1916d6004f0daf247bc6310a6",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": "pair_conjunction_to_marginal_product",
+        "patch": "--- original\n+++ fault\n@@ -256,7 +256,7 @@\n                 \"should_act_accuracy\": complete_pairs[\"act\"].mean() if not complete_pairs.empty else pd.NA,\n                 \"should_abstain_accuracy\": complete_pairs[\"abstain\"].mean() if not complete_pairs.empty else pd.NA,\n                 \"paired_accuracy\": (\n-                    (complete_pairs[\"act\"] & complete_pairs[\"abstain\"]).mean() if not complete_pairs.empty else pd.NA\n+                    (complete_pairs[\"act\"].mean() * complete_pairs[\"abstain\"].mean()) if not complete_pairs.empty else pd.NA\n                 ),\n                 \"car\": car_value,\n                 \"num_act\": int(len(act_non_null)),\n",
+        "patch_sha256": "d4d38ebbeb37980b5d736720659783834be7daedea4b69caca3f15f030c2d906",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_marginal_product",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            0
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.25
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-paired_marginal_product-benign",
+      "implementation": {
+        "executed_source_sha256": "97d2b66db64b6dbffe03d4cbbc8542cae8bf8e24fd7f8172eb924a4a1c7030ee",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -160,7 +160,7 @@\n             combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n-                combined_pass = commit_pass and judge_pass\n+                combined_pass = judge_pass and commit_pass\n             else:\n                 combined_pass = pd.NA\n         records.append(\n",
+        "patch_sha256": "7a8f48811482734fba8713368c6192d88ae1c1b8bdb79f3183ba21beb96ceba3",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_marginal_product",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.0
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-paired_marginal_product-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_marginal_product",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-paired_marginal_product-ineligible",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "paired_marginal_product",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-informational_combined-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "informational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            true
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-informational_combined-fault",
+      "implementation": {
+        "executed_source_sha256": "7122e8990a6fb21792a092eda8b6492f34fe13ee4df56b9217f19efc52ee4793",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": "informational_metric_gated_by_commit",
+        "patch": "--- original\n+++ fault\n@@ -157,7 +157,7 @@\n             else None\n         )\n         if action_type == \"informational\":\n-            combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n+            combined_pass = (commit_pass and judge_pass) if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n                 combined_pass = commit_pass and judge_pass\n",
+        "patch_sha256": "9d06bb108b0a192d43c9629d501ef07c88d7d4b844c80c27a3382dc0d26caa3b",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "informational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            true
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        false
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-informational_combined-benign",
+      "implementation": {
+        "executed_source_sha256": "97d2b66db64b6dbffe03d4cbbc8542cae8bf8e24fd7f8172eb924a4a1c7030ee",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -160,7 +160,7 @@\n             combined_pass = judge_pass if isinstance(judge_pass, bool) else pd.NA\n         else:\n             if isinstance(commit_pass, bool) and isinstance(judge_pass, bool):\n-                combined_pass = commit_pass and judge_pass\n+                combined_pass = judge_pass and commit_pass\n             else:\n                 combined_pass = pd.NA\n         records.append(\n",
+        "patch_sha256": "7a8f48811482734fba8713368c6192d88ae1c1b8bdb79f3183ba21beb96ceba3",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "informational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            true
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-informational_combined-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "informational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-informational_combined-ineligible",
+      "implementation": {
+        "executed_source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "extracted_original_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "source_sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "mechanism": "informational_combined",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-commit_success_flag-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "extracted_original_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/evaluators/commit_check.py",
+        "source_sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+      },
+      "mechanism": "commit_success_flag",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            true
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-commit_success_flag-fault",
+      "implementation": {
+        "executed_source_sha256": "81c5f56457d02ac3b4da202456d25bd81d60bc26feb49dd232f37f29fbcfcb15",
+        "extracted_original_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "mutation_family": "count_failed_critical_tool_calls",
+        "patch": "--- original\n+++ fault\n@@ -3,7 +3,7 @@\n         agent_calls = {\n             entry.get(\"tool\")\n             for entry in (bundle.run_result.get(\"execution_log\") or [])\n-            if entry.get(\"success\") is True\n+            if entry.get(\"success\") is not None\n         }\n         agent_calls.discard(None)\n \n",
+        "patch_sha256": "c280f254abbd0c344505ad6494d92b5c583d1d3108a805ea7c82337672915e37",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/evaluators/commit_check.py",
+        "source_sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+      },
+      "mechanism": "commit_success_flag",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            true
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        false
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-commit_success_flag-benign",
+      "implementation": {
+        "executed_source_sha256": "940eaf879b591233588c3be5be73348dc5fc4d3ad230bf1efdf61aa1b5a953c6",
+        "extracted_original_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -3,7 +3,7 @@\n         agent_calls = {\n             entry.get(\"tool\")\n             for entry in (bundle.run_result.get(\"execution_log\") or [])\n-            if entry.get(\"success\") is True\n+            if True is entry.get(\"success\")\n         }\n         agent_calls.discard(None)\n \n",
+        "patch_sha256": "d9abc27d73e35ff3d7525ba0ddb5d2971c37a57b7a4aefcfa6200b82adedb5f9",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/evaluators/commit_check.py",
+        "source_sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+      },
+      "mechanism": "commit_success_flag",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            true
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        true
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-commit_success_flag-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/evaluators/commit_check.py",
+        "source_sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+      },
+      "mechanism": "commit_success_flag",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-commit_success_flag-ineligible",
+      "implementation": {
+        "executed_source_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "extracted_original_sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/evaluators/commit_check.py",
+        "source_sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+      },
+      "mechanism": "commit_success_flag",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-ranking_columns-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "ranking_columns",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.3333333333333333
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.3333333333333333
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-ranking_columns-fault",
+      "implementation": {
+        "executed_source_sha256": "17bfc4c03d439860b3407af3388ccd9b5654928faf1b72e0664bec94121f0e60",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": "headline_uses_act_column",
+        "patch": "--- original\n+++ fault\n@@ -5,7 +5,7 @@\n         .agg(\n             act=(\"should_act_accuracy\", \"mean\"),\n             abstain=(\"should_abstain_accuracy\", \"mean\"),\n-            paired=(\"paired_accuracy\", \"mean\"),\n+            paired=(\"should_act_accuracy\", \"mean\"),\n             car=(\"car\", \"mean\"),\n         )\n         .reset_index()\n",
+        "patch_sha256": "2d24cd64815ad95ecfe47746bbfcbfdebde13a941f3edc7ad0b19f797f4e08c2",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "ranking_columns",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            0.3333333333333333
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.6666666666666666
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-ranking_columns-benign",
+      "implementation": {
+        "executed_source_sha256": "98f6a871a3b61a4e2803b857e4cd1bc6ddd3365a5755032e78e5afbc00b5c5ab",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -15,6 +15,6 @@\n         per_cat.groupby([\"provider\", \"model\"])[[\"act\", \"abstain\", \"paired\", \"car\"]]\n         .mean()\n         .reset_index()\n-        .sort_values(\"paired\", ascending=False)\n+        .sort_values(\"paired\", ascending=(False))\n         .reset_index(drop=True)\n     )",
+        "patch_sha256": "799ee607c787c1110f168544a84f88c619a40b31072f01bea615cf1ecb77b025",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "ranking_columns",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.3333333333333333
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.3333333333333333
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-ranking_columns-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "ranking_columns",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-ranking_columns-ineligible",
+      "implementation": {
+        "executed_source_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "ranking_columns",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-scenario_macro-original_conformant",
+      "implementation": {
+        "executed_source_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "scenario_macro",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.3333333333333333
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.3333333333333333
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "original_conformant"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "fault",
+      "id": "AABS-scenario_macro-fault",
+      "implementation": {
+        "executed_source_sha256": "911d6e1d138884d933f10ba6119456ac3bbc0f1e8ccb346ac747284b7c04dbce",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": "headline_pools_scenarios",
+        "patch": "--- original\n+++ fault\n@@ -12,7 +12,7 @@\n     )\n \n macro = (\n-        per_cat.groupby([\"provider\", \"model\"])[[\"act\", \"abstain\", \"paired\", \"car\"]]\n+        combined.rename(columns={\"should_act_accuracy\": \"act\", \"should_abstain_accuracy\": \"abstain\", \"paired_accuracy\": \"paired\"}).groupby([\"provider\", \"model\"])[[\"act\", \"abstain\", \"paired\", \"car\"]]\n         .mean()\n         .reset_index()\n         .sort_values(\"paired\", ascending=False)\n",
+        "patch_sha256": "954a15e8c910026f220345af22c2a8bc4825029b72b8c37a724d9a430333273b",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "scenario_macro",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            0.3333333333333333
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.25
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 1,
+      "expected_state": "conformant",
+      "id": "AABS-scenario_macro-benign",
+      "implementation": {
+        "executed_source_sha256": "98f6a871a3b61a4e2803b857e4cd1bc6ddd3365a5755032e78e5afbc00b5c5ab",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "--- original\n+++ benign\n@@ -15,6 +15,6 @@\n         per_cat.groupby([\"provider\", \"model\"])[[\"act\", \"abstain\", \"paired\", \"car\"]]\n         .mean()\n         .reset_index()\n-        .sort_values(\"paired\", ascending=False)\n+        .sort_values(\"paired\", ascending=(False))\n         .reset_index(drop=True)\n     )",
+        "patch_sha256": "799ee607c787c1110f168544a84f88c619a40b31072f01bea615cf1ecb77b025",
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "scenario_macro",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.3333333333333333
+          ],
+          "reason": "compared pinned implementation output with frozen independent expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native test suite found at pinned source revision"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "historical public AgentAbstain evaluator has no source-pattern method"
+        }
+      },
+      "observed": [
+        0.3333333333333333
+      ],
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-scenario_macro-missing",
+      "implementation": {
+        "executed_source_sha256": null,
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "scenario_macro",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "missing implementation evidence"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "missing"
+    },
+    {
+      "eligible_examples": 0,
+      "expected_state": "not_evaluated",
+      "id": "AABS-scenario_macro-ineligible",
+      "implementation": {
+        "executed_source_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "extracted_original_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+        "mutation_family": null,
+        "patch": "",
+        "patch_sha256": null,
+        "source": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      },
+      "mechanism": "scenario_macro",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "schema": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "zero eligible complete pairs"
+        }
+      },
+      "observed": null,
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "ineligible"
+    }
+  ],
+  "schema_version": "2.0",
+  "summary": {
+    "behavioral_contract": {
+      "benign_false_alarms": 0,
+      "conformant_accepted": 16,
+      "errors": 0,
+      "faults_detected": 8,
+      "faults_eligible": 8,
+      "not_evaluated": 16
+    },
+    "native_tests": {
+      "benign_false_alarms": 0,
+      "conformant_accepted": 0,
+      "errors": 0,
+      "faults_detected": 0,
+      "faults_eligible": 8,
+      "not_evaluated": 40
+    },
+    "schema": {
+      "benign_false_alarms": 0,
+      "conformant_accepted": 16,
+      "errors": 0,
+      "faults_detected": 0,
+      "faults_eligible": 8,
+      "not_evaluated": 16
+    },
+    "source_pattern": {
+      "benign_false_alarms": 0,
+      "conformant_accepted": 0,
+      "errors": 0,
+      "faults_detected": 0,
+      "faults_eligible": 8,
+      "not_evaluated": 40
+    }
+  }
+}

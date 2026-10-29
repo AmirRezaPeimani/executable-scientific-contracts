@@ -1,0 +1,23 @@
+{
+  "challenge_file": "challenge_results_v2.json",
+  "files": {
+    "case_analysis_v1.json": "7b1363ee5b565f609f603b64fd34490de1a150b08c10a3490e1cac1dabab2d97",
+    "challenge_results_v1.json": "c21c41a64b67a78fbec8e4aba46222e00d433beccdd145d5f94c8e307f71cfae",
+    "challenge_results_v2.json": "fdc5cc242bce65ca3dd2073e376b85aab1708a44ed970ef1612ef8c9403bb221",
+    "subtype_sensitivity_v1.csv": "0f53d610a7c1d8d843b043ddb8d0fdd0528658119742d35106805b3f86e5ca51"
+  },
+  "normalization": {
+    "camera_ready_workspace": "STUDY_ROOT",
+    "projects_acquisition_workspace": "ACQUISITION_ROOT",
+    "research_python_executable": "python"
+  },
+  "schema_version": "2.0",
+  "scope": "Public-copy hashes validate public files. Embedded historical artifact hashes identify unchanged private raw evidence and do not purport to hash normalized public copies.",
+  "source_artifact_raw_sha256": {
+    "case_analysis_v1.json": "8bd3a782ee3dc329c88fccfb736811cff3b5fbea7252c6ba35d0a41a87ad11cd",
+    "challenge_results_v1.json": "c0f6de9bb3c4041ba908fb4194bf0992ae9c74b3a6d8949ac0f30a63952dd08c",
+    "challenge_results_v2.json": "8e0b6f18f7c38573decdb97af034c1aa60acab712d230b58b397adefb83146fe",
+    "subtype_sensitivity_v1.csv": "5986e9ef6b271827d1b1958dc98425634b5dce52dd27fec75e844a2a4ece2e06"
+  },
+  "target": "agentabstain"
+}

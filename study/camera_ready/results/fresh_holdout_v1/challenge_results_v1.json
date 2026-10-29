@@ -1,0 +1,4709 @@
+{
+  "cost_cad": 0,
+  "execution_finished_utc": "2026-10-29T14:54:11.606968+00:00",
+  "frozen_evaluators_unchanged": true,
+  "limitations": [
+    "One new source family per target selected by the same researcher after viewing existing evaluators.",
+    "No unseen repository, independent human author, population accuracy or historical model-performance claim.",
+    "All misses, errors, uncovered cases and nonmanifested faults remain in the saved record."
+  ],
+  "protocol": "STUDY_ROOT/protocols/fresh_holdout_v1.json",
+  "protocol_sha256": "669fca39cb055d2387f674fbdc51f19295aaa36b922e9b733849c71d4cf7afe6",
+  "rows": [
+    {
+      "eligible_examples": 16,
+      "expected_coverage_matches": true,
+      "expected_state": "conformant",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-APRM-REWARD-RANGE-reference",
+      "implementation": {
+        "source_path": null,
+        "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference"
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": false,
+        "witnesses": [
+          {
+            "actual": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-failure-length3.json",
+            "reference": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_target.py"
+          },
+          {
+            "actual": [
+              0.8145062499999999,
+              0.8573749999999999,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-success-length5.json",
+            "reference": [
+              0.81450625,
+              0.857375,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_target.py"
+          },
+          {
+            "actual": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-failure-length3.json",
+            "reference": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_preference_target.py"
+          },
+          {
+            "actual": [
+              0.8145062499999999,
+              0.8573749999999999,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-success-length5.json",
+            "reference": [
+              0.81450625,
+              0.857375,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_preference_target.py"
+          }
+        ]
+      },
+      "mechanism": "terminal_outcome_range_remapping",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native dataproc/history tests at the pinned revision."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+        }
+      },
+      "observed": {
+        "eligible_examples": 16,
+        "evidence": {
+          "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+          "executed_implementation_probes": 4,
+          "fixture_hashes": {
+            "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
+            "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json": "7a7ed872fff31720c8ad38bf3312d119fd7e1e0441214fe3a88bfd86bde655e0"
+          },
+          "gamma": 0.95,
+          "missing_fixture_paths": [],
+          "missing_source_files": [],
+          "required_source_files": [
+            "scripts/dataproc/compute_prm_target.py",
+            "scripts/dataproc/compute_prm_preference_target.py",
+            "scripts/dataproc/rollout_alfworld.py",
+            "src/agent_prm/utils/alfworld.py"
+          ],
+          "source_hashes": {
+            "scripts/dataproc/compute_prm_preference_target.py": "69a3e24f62eae0229149bcd399b19af06185db06242457338c731730c68adc64",
+            "scripts/dataproc/compute_prm_target.py": "c8b78a1ed6514414743fc30e3f4b0237b31cdfce6e7f6da0018579c59548833d",
+            "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+            "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+          },
+          "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/reference"
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "pass",
+            "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "No relevant native dataproc/history tests at the pinned revision."
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          },
+          "source_pattern": {
+            "decision": "fail",
+            "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          }
+        },
+        "observed": {
+          "legacy_checks": {
+            "APRM-METRIC-01": {
+              "id": "APRM-METRIC-01",
+              "observed": {
+                "mean": 0.4255,
+                "values": [
+                  1.0,
+                  0.54,
+                  0.16200000000000003,
+                  0.0
+                ]
+              },
+              "status": "discrepant"
+            },
+            "APRM-TEMP-01": {
+              "id": "APRM-TEMP-01",
+              "observed": "gamma**t",
+              "status": "discrepant"
+            },
+            "APRM-TEMP-02": {
+              "id": "APRM-TEMP-02",
+              "observed": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "status": "conformant"
+            },
+            "APRM-TEMP-03": {
+              "id": "APRM-TEMP-03",
+              "observed": {
+                "late_non_decreasing": false,
+                "weights": [
+                  1.0,
+                  0.9,
+                  0.81,
+                  0.7290000000000001
+                ]
+              },
+              "status": "discrepant"
+            }
+          },
+          "max_abs_error": 0.0,
+          "paths": {
+            "scripts/dataproc/compute_prm_preference_target.py": [
+              {
+                "fixture": "agentprm-failure-length3.json",
+                "signed_values": [
+                  -0.9025,
+                  -0.95,
+                  -1.0
+                ],
+                "terminal_score": 0,
+                "trajectory_length": 3
+              },
+              {
+                "fixture": "agentprm-success-length5.json",
+                "signed_values": [
+                  0.8145062499999999,
+                  0.8573749999999999,
+                  0.9025,
+                  0.95,
+                  1.0
+                ],
+                "terminal_score": 1,
+                "trajectory_length": 5
+              }
+            ],
+            "scripts/dataproc/compute_prm_target.py": [
+              {
+                "fixture": "agentprm-failure-length3.json",
+                "signed_values": [
+                  -0.9025,
+                  -0.95,
+                  -1.0
+                ],
+                "terminal_score": 0,
+                "trajectory_length": 3
+              },
+              {
+                "fixture": "agentprm-success-length5.json",
+                "signed_values": [
+                  0.8145062499999999,
+                  0.8573749999999999,
+                  0.9025,
+                  0.95,
+                  1.0
+                ],
+                "terminal_score": 1,
+                "trajectory_length": 5
+              }
+            ]
+          },
+          "raw_outputs": {
+            "scripts/dataproc/compute_prm_preference_target.py": [
+              {
+                "953ebffab19eef738b91118ed4d8f1bed80d916c0db360eb0ffae8d8e9a22187": {
+                  "count": 1,
+                  "qestimate": -0.9025,
+                  "reason_action": {
+                    "action": "failure-length3-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-0"
+                    ],
+                    "history": [],
+                    "observation": "failure-length3-obs-0",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "99df201e4f0e126b86ad44e7e4c656448fc24d1fb13035602a169cad16e31f71": {
+                  "count": 1,
+                  "qestimate": -1.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      },
+                      {
+                        "action": "failure-length3-act-1",
+                        "observation": "failure-length3-obs-1"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-2",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "e8f4c0dd12fbaf1346e9e6754645e357c994c3cfec2b6911b3d3e4ad2757d02a": {
+                  "count": 1,
+                  "qestimate": -0.95,
+                  "reason_action": {
+                    "action": "failure-length3-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-1",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                }
+              },
+              {
+                "04031d9de32de4bda83a6461089a7c0f66b7f32730c17d73100ce702df8e9f18": {
+                  "count": 1,
+                  "qestimate": 1.0,
+                  "reason_action": {
+                    "action": "success-length5-act-4",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-4"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      },
+                      {
+                        "action": "success-length5-act-3",
+                        "observation": "success-length5-obs-3"
+                      }
+                    ],
+                    "observation": "success-length5-obs-4",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "38aa27a650cb77d42ba9e6e9e8f045488bd151670e59f0d834401dfa03e06506": {
+                  "count": 1,
+                  "qestimate": 0.8573749999999999,
+                  "reason_action": {
+                    "action": "success-length5-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      }
+                    ],
+                    "observation": "success-length5-obs-1",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "486eda38bf7986a1b4108cf6c25194c88c6993ba790b98b0a3d2edb8d9163e2c": {
+                  "count": 1,
+                  "qestimate": 0.9025,
+                  "reason_action": {
+                    "action": "success-length5-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      }
+                    ],
+                    "observation": "success-length5-obs-2",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "55dadcca516a6cda31434ebee580c640c7380884ff64b2e4beeb0773177d9d84": {
+                  "count": 1,
+                  "qestimate": 0.95,
+                  "reason_action": {
+                    "action": "success-length5-act-3",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-3"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      }
+                    ],
+                    "observation": "success-length5-obs-3",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "604359f51ffb53c4c8fe996557a59afbd931c467616e4c63b2fe30da1ae46b46": {
+                  "count": 1,
+                  "qestimate": 0.8145062499999999,
+                  "reason_action": {
+                    "action": "success-length5-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-0"
+                    ],
+                    "history": [],
+                    "observation": "success-length5-obs-0",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                }
+              }
+            ],
+            "scripts/dataproc/compute_prm_target.py": [
+              {
+                "953ebffab19eef738b91118ed4d8f1bed80d916c0db360eb0ffae8d8e9a22187": {
+                  "count": 1,
+                  "qestimate": -0.9025,
+                  "reason_action": {
+                    "action": "failure-length3-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-0"
+                    ],
+                    "history": [],
+                    "observation": "failure-length3-obs-0",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "99df201e4f0e126b86ad44e7e4c656448fc24d1fb13035602a169cad16e31f71": {
+                  "count": 1,
+                  "qestimate": -1.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      },
+                      {
+                        "action": "failure-length3-act-1",
+                        "observation": "failure-length3-obs-1"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-2",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "e8f4c0dd12fbaf1346e9e6754645e357c994c3cfec2b6911b3d3e4ad2757d02a": {
+                  "count": 1,
+                  "qestimate": -0.95,
+                  "reason_action": {
+                    "action": "failure-length3-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-1",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                }
+              },
+              {
+                "04031d9de32de4bda83a6461089a7c0f66b7f32730c17d73100ce702df8e9f18": {
+                  "count": 1,
+                  "qestimate": 1.0,
+                  "reason_action": {
+                    "action": "success-length5-act-4",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-4"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      },
+                      {
+                        "action": "success-length5-act-3",
+                        "observation": "success-length5-obs-3"
+                      }
+                    ],
+                    "observation": "success-length5-obs-4",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "38aa27a650cb77d42ba9e6e9e8f045488bd151670e59f0d834401dfa03e06506": {
+                  "count": 1,
+                  "qestimate": 0.8573749999999999,
+                  "reason_action": {
+                    "action": "success-length5-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      }
+                    ],
+                    "observation": "success-length5-obs-1",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "486eda38bf7986a1b4108cf6c25194c88c6993ba790b98b0a3d2edb8d9163e2c": {
+                  "count": 1,
+                  "qestimate": 0.9025,
+                  "reason_action": {
+                    "action": "success-length5-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      }
+                    ],
+                    "observation": "success-length5-obs-2",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "55dadcca516a6cda31434ebee580c640c7380884ff64b2e4beeb0773177d9d84": {
+                  "count": 1,
+                  "qestimate": 0.95,
+                  "reason_action": {
+                    "action": "success-length5-act-3",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-3"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      }
+                    ],
+                    "observation": "success-length5-obs-3",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "604359f51ffb53c4c8fe996557a59afbd931c467616e4c63b2fe30da1ae46b46": {
+                  "count": 1,
+                  "qestimate": 0.8145062499999999,
+                  "reason_action": {
+                    "action": "success-length5-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-0"
+                    ],
+                    "history": [],
+                    "observation": "success-length5-obs-0",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "reference"
+    },
+    {
+      "eligible_examples": 16,
+      "expected_coverage_matches": true,
+      "expected_state": "fault",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-APRM-REWARD-RANGE-fault",
+      "implementation": {
+        "source_path": null,
+        "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault"
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": true,
+        "witnesses": [
+          {
+            "actual": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "different": true,
+            "fixture": "agentprm-failure-length3.json",
+            "reference": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_target.py"
+          },
+          {
+            "actual": [
+              0.8145062499999999,
+              0.8573749999999999,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-success-length5.json",
+            "reference": [
+              0.81450625,
+              0.857375,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_target.py"
+          },
+          {
+            "actual": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "different": true,
+            "fixture": "agentprm-failure-length3.json",
+            "reference": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_preference_target.py"
+          },
+          {
+            "actual": [
+              0.8145062499999999,
+              0.8573749999999999,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-success-length5.json",
+            "reference": [
+              0.81450625,
+              0.857375,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_preference_target.py"
+          }
+        ]
+      },
+      "mechanism": "terminal_outcome_range_remapping",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native dataproc/history tests at the pinned revision."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+        }
+      },
+      "observed": {
+        "eligible_examples": 16,
+        "evidence": {
+          "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+          "executed_implementation_probes": 4,
+          "fixture_hashes": {
+            "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
+            "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json": "7a7ed872fff31720c8ad38bf3312d119fd7e1e0441214fe3a88bfd86bde655e0"
+          },
+          "gamma": 0.95,
+          "missing_fixture_paths": [],
+          "missing_source_files": [],
+          "required_source_files": [
+            "scripts/dataproc/compute_prm_target.py",
+            "scripts/dataproc/compute_prm_preference_target.py",
+            "scripts/dataproc/rollout_alfworld.py",
+            "src/agent_prm/utils/alfworld.py"
+          ],
+          "source_hashes": {
+            "scripts/dataproc/compute_prm_preference_target.py": "1097e336159da48ee0ea1c3c17c66ce17c2ace2d199f983cf708b2c5c70b3555",
+            "scripts/dataproc/compute_prm_target.py": "33a848b3a143fcb4c331a4b0bf6156a46cf8c03aaef8b7c62dca6135d6f28b47",
+            "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+            "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+          },
+          "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/fault"
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "fail",
+            "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "No relevant native dataproc/history tests at the pinned revision."
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          },
+          "source_pattern": {
+            "decision": "fail",
+            "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          }
+        },
+        "observed": {
+          "legacy_checks": {
+            "APRM-METRIC-01": {
+              "id": "APRM-METRIC-01",
+              "observed": {
+                "mean": 0.4255,
+                "values": [
+                  1.0,
+                  0.54,
+                  0.16200000000000003,
+                  0.0
+                ]
+              },
+              "status": "discrepant"
+            },
+            "APRM-TEMP-01": {
+              "id": "APRM-TEMP-01",
+              "observed": "gamma**t",
+              "status": "discrepant"
+            },
+            "APRM-TEMP-02": {
+              "id": "APRM-TEMP-02",
+              "observed": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "status": "conformant"
+            },
+            "APRM-TEMP-03": {
+              "id": "APRM-TEMP-03",
+              "observed": {
+                "late_non_decreasing": false,
+                "weights": [
+                  1.0,
+                  0.9,
+                  0.81,
+                  0.7290000000000001
+                ]
+              },
+              "status": "discrepant"
+            }
+          },
+          "max_abs_error": 1.0,
+          "paths": {
+            "scripts/dataproc/compute_prm_preference_target.py": [
+              {
+                "fixture": "agentprm-failure-length3.json",
+                "signed_values": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "terminal_score": 0,
+                "trajectory_length": 3
+              },
+              {
+                "fixture": "agentprm-success-length5.json",
+                "signed_values": [
+                  0.8145062499999999,
+                  0.8573749999999999,
+                  0.9025,
+                  0.95,
+                  1.0
+                ],
+                "terminal_score": 1,
+                "trajectory_length": 5
+              }
+            ],
+            "scripts/dataproc/compute_prm_target.py": [
+              {
+                "fixture": "agentprm-failure-length3.json",
+                "signed_values": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "terminal_score": 0,
+                "trajectory_length": 3
+              },
+              {
+                "fixture": "agentprm-success-length5.json",
+                "signed_values": [
+                  0.8145062499999999,
+                  0.8573749999999999,
+                  0.9025,
+                  0.95,
+                  1.0
+                ],
+                "terminal_score": 1,
+                "trajectory_length": 5
+              }
+            ]
+          },
+          "raw_outputs": {
+            "scripts/dataproc/compute_prm_preference_target.py": [
+              {
+                "953ebffab19eef738b91118ed4d8f1bed80d916c0db360eb0ffae8d8e9a22187": {
+                  "count": 1,
+                  "qestimate": 0.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-0"
+                    ],
+                    "history": [],
+                    "observation": "failure-length3-obs-0",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "99df201e4f0e126b86ad44e7e4c656448fc24d1fb13035602a169cad16e31f71": {
+                  "count": 1,
+                  "qestimate": 0.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      },
+                      {
+                        "action": "failure-length3-act-1",
+                        "observation": "failure-length3-obs-1"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-2",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "e8f4c0dd12fbaf1346e9e6754645e357c994c3cfec2b6911b3d3e4ad2757d02a": {
+                  "count": 1,
+                  "qestimate": 0.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-1",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                }
+              },
+              {
+                "04031d9de32de4bda83a6461089a7c0f66b7f32730c17d73100ce702df8e9f18": {
+                  "count": 1,
+                  "qestimate": 1.0,
+                  "reason_action": {
+                    "action": "success-length5-act-4",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-4"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      },
+                      {
+                        "action": "success-length5-act-3",
+                        "observation": "success-length5-obs-3"
+                      }
+                    ],
+                    "observation": "success-length5-obs-4",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "38aa27a650cb77d42ba9e6e9e8f045488bd151670e59f0d834401dfa03e06506": {
+                  "count": 1,
+                  "qestimate": 0.8573749999999999,
+                  "reason_action": {
+                    "action": "success-length5-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      }
+                    ],
+                    "observation": "success-length5-obs-1",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "486eda38bf7986a1b4108cf6c25194c88c6993ba790b98b0a3d2edb8d9163e2c": {
+                  "count": 1,
+                  "qestimate": 0.9025,
+                  "reason_action": {
+                    "action": "success-length5-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      }
+                    ],
+                    "observation": "success-length5-obs-2",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "55dadcca516a6cda31434ebee580c640c7380884ff64b2e4beeb0773177d9d84": {
+                  "count": 1,
+                  "qestimate": 0.95,
+                  "reason_action": {
+                    "action": "success-length5-act-3",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-3"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      }
+                    ],
+                    "observation": "success-length5-obs-3",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "604359f51ffb53c4c8fe996557a59afbd931c467616e4c63b2fe30da1ae46b46": {
+                  "count": 1,
+                  "qestimate": 0.8145062499999999,
+                  "reason_action": {
+                    "action": "success-length5-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-0"
+                    ],
+                    "history": [],
+                    "observation": "success-length5-obs-0",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                }
+              }
+            ],
+            "scripts/dataproc/compute_prm_target.py": [
+              {
+                "953ebffab19eef738b91118ed4d8f1bed80d916c0db360eb0ffae8d8e9a22187": {
+                  "count": 1,
+                  "qestimate": 0.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-0"
+                    ],
+                    "history": [],
+                    "observation": "failure-length3-obs-0",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "99df201e4f0e126b86ad44e7e4c656448fc24d1fb13035602a169cad16e31f71": {
+                  "count": 1,
+                  "qestimate": 0.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      },
+                      {
+                        "action": "failure-length3-act-1",
+                        "observation": "failure-length3-obs-1"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-2",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "e8f4c0dd12fbaf1346e9e6754645e357c994c3cfec2b6911b3d3e4ad2757d02a": {
+                  "count": 1,
+                  "qestimate": 0.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-1",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                }
+              },
+              {
+                "04031d9de32de4bda83a6461089a7c0f66b7f32730c17d73100ce702df8e9f18": {
+                  "count": 1,
+                  "qestimate": 1.0,
+                  "reason_action": {
+                    "action": "success-length5-act-4",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-4"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      },
+                      {
+                        "action": "success-length5-act-3",
+                        "observation": "success-length5-obs-3"
+                      }
+                    ],
+                    "observation": "success-length5-obs-4",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "38aa27a650cb77d42ba9e6e9e8f045488bd151670e59f0d834401dfa03e06506": {
+                  "count": 1,
+                  "qestimate": 0.8573749999999999,
+                  "reason_action": {
+                    "action": "success-length5-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      }
+                    ],
+                    "observation": "success-length5-obs-1",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "486eda38bf7986a1b4108cf6c25194c88c6993ba790b98b0a3d2edb8d9163e2c": {
+                  "count": 1,
+                  "qestimate": 0.9025,
+                  "reason_action": {
+                    "action": "success-length5-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      }
+                    ],
+                    "observation": "success-length5-obs-2",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "55dadcca516a6cda31434ebee580c640c7380884ff64b2e4beeb0773177d9d84": {
+                  "count": 1,
+                  "qestimate": 0.95,
+                  "reason_action": {
+                    "action": "success-length5-act-3",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-3"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      }
+                    ],
+                    "observation": "success-length5-obs-3",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "604359f51ffb53c4c8fe996557a59afbd931c467616e4c63b2fe30da1ae46b46": {
+                  "count": 1,
+                  "qestimate": 0.8145062499999999,
+                  "reason_action": {
+                    "action": "success-length5-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-0"
+                    ],
+                    "history": [],
+                    "observation": "success-length5-obs-0",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 16,
+      "expected_coverage_matches": true,
+      "expected_state": "conformant",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-APRM-REWARD-RANGE-benign",
+      "implementation": {
+        "source_path": null,
+        "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign"
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": false,
+        "witnesses": [
+          {
+            "actual": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-failure-length3.json",
+            "reference": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_target.py"
+          },
+          {
+            "actual": [
+              0.8145062499999999,
+              0.8573749999999999,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-success-length5.json",
+            "reference": [
+              0.81450625,
+              0.857375,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_target.py"
+          },
+          {
+            "actual": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-failure-length3.json",
+            "reference": [
+              -0.9025,
+              -0.95,
+              -1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_preference_target.py"
+          },
+          {
+            "actual": [
+              0.8145062499999999,
+              0.8573749999999999,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "different": false,
+            "fixture": "agentprm-success-length5.json",
+            "reference": [
+              0.81450625,
+              0.857375,
+              0.9025,
+              0.95,
+              1.0
+            ],
+            "source_path": "scripts/dataproc/compute_prm_preference_target.py"
+          }
+        ]
+      },
+      "mechanism": "terminal_outcome_range_remapping",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native dataproc/history tests at the pinned revision."
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+        }
+      },
+      "observed": {
+        "eligible_examples": 16,
+        "evidence": {
+          "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+          "executed_implementation_probes": 4,
+          "fixture_hashes": {
+            "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
+            "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-success-length5.json": "7a7ed872fff31720c8ad38bf3312d119fd7e1e0441214fe3a88bfd86bde655e0"
+          },
+          "gamma": 0.95,
+          "missing_fixture_paths": [],
+          "missing_source_files": [],
+          "required_source_files": [
+            "scripts/dataproc/compute_prm_target.py",
+            "scripts/dataproc/compute_prm_preference_target.py",
+            "scripts/dataproc/rollout_alfworld.py",
+            "src/agent_prm/utils/alfworld.py"
+          ],
+          "source_hashes": {
+            "scripts/dataproc/compute_prm_preference_target.py": "b14a5309620bba0ce54cae33ed84fe8983abacfa215a6f0dda055b058d0752b1",
+            "scripts/dataproc/compute_prm_target.py": "14b33dd975fae9ccaee3ac1948dc553be6342e2df54d218d60d79a4e7e1ac67e",
+            "scripts/dataproc/rollout_alfworld.py": "74cfde20bfb31a104e93c9a51c977389d2240e213d3857b5f6d6ca65867bffae",
+            "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+          },
+          "source_root": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentprm/benign"
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "pass",
+            "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "No relevant native dataproc/history tests at the pinned revision."
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          },
+          "source_pattern": {
+            "decision": "fail",
+            "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          }
+        },
+        "observed": {
+          "legacy_checks": {
+            "APRM-METRIC-01": {
+              "id": "APRM-METRIC-01",
+              "observed": {
+                "mean": 0.4255,
+                "values": [
+                  1.0,
+                  0.54,
+                  0.16200000000000003,
+                  0.0
+                ]
+              },
+              "status": "discrepant"
+            },
+            "APRM-TEMP-01": {
+              "id": "APRM-TEMP-01",
+              "observed": "gamma**t",
+              "status": "discrepant"
+            },
+            "APRM-TEMP-02": {
+              "id": "APRM-TEMP-02",
+              "observed": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "status": "conformant"
+            },
+            "APRM-TEMP-03": {
+              "id": "APRM-TEMP-03",
+              "observed": {
+                "late_non_decreasing": false,
+                "weights": [
+                  1.0,
+                  0.9,
+                  0.81,
+                  0.7290000000000001
+                ]
+              },
+              "status": "discrepant"
+            }
+          },
+          "max_abs_error": 0.0,
+          "paths": {
+            "scripts/dataproc/compute_prm_preference_target.py": [
+              {
+                "fixture": "agentprm-failure-length3.json",
+                "signed_values": [
+                  -0.9025,
+                  -0.95,
+                  -1.0
+                ],
+                "terminal_score": 0,
+                "trajectory_length": 3
+              },
+              {
+                "fixture": "agentprm-success-length5.json",
+                "signed_values": [
+                  0.8145062499999999,
+                  0.8573749999999999,
+                  0.9025,
+                  0.95,
+                  1.0
+                ],
+                "terminal_score": 1,
+                "trajectory_length": 5
+              }
+            ],
+            "scripts/dataproc/compute_prm_target.py": [
+              {
+                "fixture": "agentprm-failure-length3.json",
+                "signed_values": [
+                  -0.9025,
+                  -0.95,
+                  -1.0
+                ],
+                "terminal_score": 0,
+                "trajectory_length": 3
+              },
+              {
+                "fixture": "agentprm-success-length5.json",
+                "signed_values": [
+                  0.8145062499999999,
+                  0.8573749999999999,
+                  0.9025,
+                  0.95,
+                  1.0
+                ],
+                "terminal_score": 1,
+                "trajectory_length": 5
+              }
+            ]
+          },
+          "raw_outputs": {
+            "scripts/dataproc/compute_prm_preference_target.py": [
+              {
+                "953ebffab19eef738b91118ed4d8f1bed80d916c0db360eb0ffae8d8e9a22187": {
+                  "count": 1,
+                  "qestimate": -0.9025,
+                  "reason_action": {
+                    "action": "failure-length3-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-0"
+                    ],
+                    "history": [],
+                    "observation": "failure-length3-obs-0",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "99df201e4f0e126b86ad44e7e4c656448fc24d1fb13035602a169cad16e31f71": {
+                  "count": 1,
+                  "qestimate": -1.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      },
+                      {
+                        "action": "failure-length3-act-1",
+                        "observation": "failure-length3-obs-1"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-2",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "e8f4c0dd12fbaf1346e9e6754645e357c994c3cfec2b6911b3d3e4ad2757d02a": {
+                  "count": 1,
+                  "qestimate": -0.95,
+                  "reason_action": {
+                    "action": "failure-length3-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-1",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                }
+              },
+              {
+                "04031d9de32de4bda83a6461089a7c0f66b7f32730c17d73100ce702df8e9f18": {
+                  "count": 1,
+                  "qestimate": 1.0,
+                  "reason_action": {
+                    "action": "success-length5-act-4",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-4"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      },
+                      {
+                        "action": "success-length5-act-3",
+                        "observation": "success-length5-obs-3"
+                      }
+                    ],
+                    "observation": "success-length5-obs-4",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "38aa27a650cb77d42ba9e6e9e8f045488bd151670e59f0d834401dfa03e06506": {
+                  "count": 1,
+                  "qestimate": 0.8573749999999999,
+                  "reason_action": {
+                    "action": "success-length5-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      }
+                    ],
+                    "observation": "success-length5-obs-1",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "486eda38bf7986a1b4108cf6c25194c88c6993ba790b98b0a3d2edb8d9163e2c": {
+                  "count": 1,
+                  "qestimate": 0.9025,
+                  "reason_action": {
+                    "action": "success-length5-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      }
+                    ],
+                    "observation": "success-length5-obs-2",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "55dadcca516a6cda31434ebee580c640c7380884ff64b2e4beeb0773177d9d84": {
+                  "count": 1,
+                  "qestimate": 0.95,
+                  "reason_action": {
+                    "action": "success-length5-act-3",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-3"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      }
+                    ],
+                    "observation": "success-length5-obs-3",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "604359f51ffb53c4c8fe996557a59afbd931c467616e4c63b2fe30da1ae46b46": {
+                  "count": 1,
+                  "qestimate": 0.8145062499999999,
+                  "reason_action": {
+                    "action": "success-length5-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-0"
+                    ],
+                    "history": [],
+                    "observation": "success-length5-obs-0",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                }
+              }
+            ],
+            "scripts/dataproc/compute_prm_target.py": [
+              {
+                "953ebffab19eef738b91118ed4d8f1bed80d916c0db360eb0ffae8d8e9a22187": {
+                  "count": 1,
+                  "qestimate": -0.9025,
+                  "reason_action": {
+                    "action": "failure-length3-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-0"
+                    ],
+                    "history": [],
+                    "observation": "failure-length3-obs-0",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "99df201e4f0e126b86ad44e7e4c656448fc24d1fb13035602a169cad16e31f71": {
+                  "count": 1,
+                  "qestimate": -1.0,
+                  "reason_action": {
+                    "action": "failure-length3-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      },
+                      {
+                        "action": "failure-length3-act-1",
+                        "observation": "failure-length3-obs-1"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-2",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                },
+                "e8f4c0dd12fbaf1346e9e6754645e357c994c3cfec2b6911b3d3e4ad2757d02a": {
+                  "count": 1,
+                  "qestimate": -0.95,
+                  "reason_action": {
+                    "action": "failure-length3-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "failure-length3-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "failure-length3-act-0",
+                        "observation": "failure-length3-obs-0"
+                      }
+                    ],
+                    "observation": "failure-length3-obs-1",
+                    "task": "fresh-reward-range-failure-length3"
+                  }
+                }
+              },
+              {
+                "04031d9de32de4bda83a6461089a7c0f66b7f32730c17d73100ce702df8e9f18": {
+                  "count": 1,
+                  "qestimate": 1.0,
+                  "reason_action": {
+                    "action": "success-length5-act-4",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-4"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      },
+                      {
+                        "action": "success-length5-act-3",
+                        "observation": "success-length5-obs-3"
+                      }
+                    ],
+                    "observation": "success-length5-obs-4",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "38aa27a650cb77d42ba9e6e9e8f045488bd151670e59f0d834401dfa03e06506": {
+                  "count": 1,
+                  "qestimate": 0.8573749999999999,
+                  "reason_action": {
+                    "action": "success-length5-act-1",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-1"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      }
+                    ],
+                    "observation": "success-length5-obs-1",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "486eda38bf7986a1b4108cf6c25194c88c6993ba790b98b0a3d2edb8d9163e2c": {
+                  "count": 1,
+                  "qestimate": 0.9025,
+                  "reason_action": {
+                    "action": "success-length5-act-2",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-2"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      }
+                    ],
+                    "observation": "success-length5-obs-2",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "55dadcca516a6cda31434ebee580c640c7380884ff64b2e4beeb0773177d9d84": {
+                  "count": 1,
+                  "qestimate": 0.95,
+                  "reason_action": {
+                    "action": "success-length5-act-3",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-3"
+                    ],
+                    "history": [
+                      {
+                        "action": "success-length5-act-0",
+                        "observation": "success-length5-obs-0"
+                      },
+                      {
+                        "action": "success-length5-act-1",
+                        "observation": "success-length5-obs-1"
+                      },
+                      {
+                        "action": "success-length5-act-2",
+                        "observation": "success-length5-obs-2"
+                      }
+                    ],
+                    "observation": "success-length5-obs-3",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                },
+                "604359f51ffb53c4c8fe996557a59afbd931c467616e4c63b2fe30da1ae46b46": {
+                  "count": 1,
+                  "qestimate": 0.8145062499999999,
+                  "reason_action": {
+                    "action": "success-length5-act-0",
+                    "reason": "controlled fresh terminal outcome"
+                  },
+                  "state": {
+                    "candidate_actions": [
+                      "success-length5-act-0"
+                    ],
+                    "history": [],
+                    "observation": "success-length5-obs-0",
+                    "task": "fresh-reward-range-success-length5"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentprm",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 12,
+      "expected_coverage_matches": true,
+      "expected_state": "conformant",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-TACE-RESPONSE-ORDER-reference",
+      "implementation": {
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/reference/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_root": null
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": false,
+        "witnesses": [
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ]
+          }
+        ]
+      },
+      "mechanism": "response_token_order_corruption",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "eligible_examples": 12,
+        "guard": {
+          "decision": "evaluate",
+          "eligible_examples": 12,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "pass",
+            "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+          },
+          "source_pattern": {
+            "decision": "fail",
+            "predicates": {
+              "masks_prompt": false,
+              "masks_terminal": true,
+              "source_defect": false
+            },
+            "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+          }
+        },
+        "outcomes": [
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "reference"
+    },
+    {
+      "eligible_examples": 12,
+      "expected_coverage_matches": true,
+      "expected_state": "fault",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-TACE-RESPONSE-ORDER-fault",
+      "implementation": {
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/fault/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_root": null
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": true,
+        "witnesses": [
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              379,
+              379,
+              379
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              151645,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151643,
+              151643,
+              151643
+            ],
+            "different": true,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ]
+          }
+        ]
+      },
+      "mechanism": "response_token_order_corruption",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=12; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "eligible_examples": 12,
+        "guard": {
+          "decision": "evaluate",
+          "eligible_examples": 12,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "fail",
+            "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=12; errors=0"
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+          },
+          "source_pattern": {
+            "decision": "fail",
+            "predicates": {
+              "masks_prompt": false,
+              "masks_terminal": true,
+              "source_defect": false
+            },
+            "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+          }
+        },
+        "outcomes": [
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          },
+          {
+            "behavior": "fail",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": false,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": false
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 12,
+      "expected_coverage_matches": true,
+      "expected_state": "conformant",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-TACE-RESPONSE-ORDER-benign",
+      "implementation": {
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/benign/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
+        "source_root": null
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": false,
+        "witnesses": [
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643,
+              151643
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645
+            ]
+          },
+          {
+            "actual_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ],
+            "different": false,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "reference_input_ids": [
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              856,
+              379,
+              379,
+              379,
+              379,
+              379,
+              151645,
+              151643,
+              151643,
+              151643
+            ]
+          }
+        ]
+      },
+      "mechanism": "response_token_order_corruption",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+        },
+        "source_pattern": {
+          "decision": "fail",
+          "predicates": {
+            "masks_prompt": false,
+            "masks_terminal": true,
+            "source_defect": false
+          },
+          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+        }
+      },
+      "observed": {
+        "eligible_examples": 12,
+        "guard": {
+          "decision": "evaluate",
+          "eligible_examples": 12,
+          "reason": "Source exists and selected fixtures are nonempty",
+          "source_exists": true
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "pass",
+            "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+          },
+          "source_pattern": {
+            "decision": "fail",
+            "predicates": {
+              "masks_prompt": false,
+              "masks_terminal": true,
+              "source_defect": false
+            },
+            "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+          }
+        },
+        "outcomes": [
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 3,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 5,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 3,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 3
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 3,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 12,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          },
+          {
+            "behavior": "pass",
+            "coded_supervised_predictions": 6,
+            "consumed_mask_mismatches": 0,
+            "fixture": {
+              "maximum": 20,
+              "prompt_tokens": 11,
+              "response_tokens": 6
+            },
+            "full_mask_mismatches": 0,
+            "oracle_supervised_predictions": 6,
+            "retained_input_identity_equal": true,
+            "schema": {
+              "pass": true,
+              "reason": "Four required int64 one-dimensional tensors have configured length"
+            },
+            "shifted_label_identity_equal": true
+          }
+        ]
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "toolace",
+      "variant": "benign"
+    },
+    {
+      "eligible_examples": 8,
+      "expected_coverage_matches": true,
+      "expected_state": "conformant",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-AABS-SCENARIO-STATISTIC-reference",
+      "implementation": {
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/figure_ranking_bar.py",
+        "source_root": null
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": false,
+        "witnesses": [
+          {
+            "actual": 0.375,
+            "different": false,
+            "reference": 0.375,
+            "reference_exact": "3/8",
+            "scenario_pairs": 8
+          }
+        ]
+      },
+      "mechanism": "outer_macro_mean_to_order_statistic",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.375
+          ],
+          "reason": "actual eligible output versus frozen expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native suite"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "output fields and types without scientific equality oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "no historical source-pattern detector"
+        }
+      },
+      "observed": {
+        "eligibility": {
+          "missing_paired_metrics": 0,
+          "num_pairs": 8,
+          "summary_rows": 8
+        },
+        "eligible_examples": 8,
+        "implementation": {
+          "executed_source_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+          "full_source_sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270",
+          "original_extraction_sha256": "c42de03bb50ebfaeaa493a3f5123cceda861ca84f5ffe84ce09d4c80bcaa29f9",
+          "patch": ""
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "pass",
+            "expected": [
+              0.375
+            ],
+            "reason": "actual eligible output versus frozen expected values"
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "no relevant native suite"
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "output fields and types without scientific equality oracle"
+          },
+          "source_pattern": {
+            "decision": "not_evaluated",
+            "reason": "no historical source-pattern detector"
+          }
+        },
+        "observed": [
+          0.375
+        ],
+        "source_exists": true,
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/figure_ranking_bar.py"
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "reference"
+    },
+    {
+      "eligible_examples": 8,
+      "expected_coverage_matches": true,
+      "expected_state": "fault",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-AABS-SCENARIO-STATISTIC-fault",
+      "implementation": {
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/figure_ranking_bar.py",
+        "source_root": null
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": true,
+        "witnesses": [
+          {
+            "actual": 0.0,
+            "different": true,
+            "reference": 0.375,
+            "reference_exact": "3/8",
+            "scenario_pairs": 8
+          }
+        ]
+      },
+      "mechanism": "outer_macro_mean_to_order_statistic",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "fail",
+          "expected": [
+            0.375
+          ],
+          "reason": "actual eligible output versus frozen expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native suite"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "output fields and types without scientific equality oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "no historical source-pattern detector"
+        }
+      },
+      "observed": {
+        "eligibility": {
+          "missing_paired_metrics": 0,
+          "num_pairs": 8,
+          "summary_rows": 8
+        },
+        "eligible_examples": 8,
+        "implementation": {
+          "executed_source_sha256": "29440c88a1d7a36f74bff159de28118757d54ba60510d29d890952b6895583de",
+          "full_source_sha256": "c6364b6568c15371a4617a54b03b135031d9d3957b0e4f8e8cdb702d316b83af",
+          "original_extraction_sha256": "29440c88a1d7a36f74bff159de28118757d54ba60510d29d890952b6895583de",
+          "patch": ""
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "fail",
+            "expected": [
+              0.375
+            ],
+            "reason": "actual eligible output versus frozen expected values"
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "no relevant native suite"
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "output fields and types without scientific equality oracle"
+          },
+          "source_pattern": {
+            "decision": "not_evaluated",
+            "reason": "no historical source-pattern detector"
+          }
+        },
+        "observed": [
+          0.0
+        ],
+        "source_exists": true,
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/figure_ranking_bar.py"
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "fault"
+    },
+    {
+      "eligible_examples": 8,
+      "expected_coverage_matches": true,
+      "expected_state": "conformant",
+      "freshness": "new_cases_after_v2_evaluator_freeze",
+      "id": "FRESH-AABS-SCENARIO-STATISTIC-benign",
+      "implementation": {
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/figure_ranking_bar.py",
+        "source_root": null
+      },
+      "independent_human_validation": false,
+      "independent_manifestation": {
+        "different_from_reference": false,
+        "witnesses": [
+          {
+            "actual": 0.375,
+            "different": false,
+            "reference": 0.375,
+            "reference_exact": "3/8",
+            "scenario_pairs": 8
+          }
+        ]
+      },
+      "mechanism": "outer_macro_mean_to_order_statistic",
+      "methods": {
+        "behavioral_contract": {
+          "decision": "pass",
+          "expected": [
+            0.375
+          ],
+          "reason": "actual eligible output versus frozen expected values"
+        },
+        "native_tests": {
+          "decision": "not_evaluated",
+          "reason": "no relevant native suite"
+        },
+        "schema": {
+          "decision": "pass",
+          "reason": "output fields and types without scientific equality oracle"
+        },
+        "source_pattern": {
+          "decision": "not_evaluated",
+          "reason": "no historical source-pattern detector"
+        }
+      },
+      "observed": {
+        "eligibility": {
+          "missing_paired_metrics": 0,
+          "num_pairs": 8,
+          "summary_rows": 8
+        },
+        "eligible_examples": 8,
+        "implementation": {
+          "executed_source_sha256": "325ccb2a0d2ead015a87579029d1537e2c98b0813cb1f7ab96ed58ef6bd36622",
+          "full_source_sha256": "6246642b43768835717a9d3073e12636d43fb3182fc982f1f320eb3be9bc6726",
+          "original_extraction_sha256": "325ccb2a0d2ead015a87579029d1537e2c98b0813cb1f7ab96ed58ef6bd36622",
+          "patch": ""
+        },
+        "methods": {
+          "behavioral_contract": {
+            "decision": "pass",
+            "expected": [
+              0.375
+            ],
+            "reason": "actual eligible output versus frozen expected values"
+          },
+          "native_tests": {
+            "decision": "not_evaluated",
+            "reason": "no relevant native suite"
+          },
+          "schema": {
+            "decision": "pass",
+            "reason": "output fields and types without scientific equality oracle"
+          },
+          "source_pattern": {
+            "decision": "not_evaluated",
+            "reason": "no historical source-pattern detector"
+          }
+        },
+        "observed": [
+          0.375
+        ],
+        "source_exists": true,
+        "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/figure_ranking_bar.py"
+      },
+      "oracle_valid": true,
+      "partition": "locked_evaluation",
+      "target": "agentabstain",
+      "variant": "benign"
+    }
+  ],
+  "schema_version": "2.0",
+  "summary": {
+    "behavioral_contract": {
+      "benign_controls": 3,
+      "benign_false_alarms": 0,
+      "errors": 0,
+      "faults_detected": 3,
+      "faults_missed": 0,
+      "faults_uncovered": 0,
+      "independently_manifested_faults": 3,
+      "reference_controls": 3,
+      "reference_controls_accepted": 3,
+      "unmanifest_faults": 0
+    },
+    "native_tests": {
+      "benign_controls": 3,
+      "benign_false_alarms": 0,
+      "errors": 0,
+      "faults_detected": 0,
+      "faults_missed": 0,
+      "faults_uncovered": 3,
+      "independently_manifested_faults": 3,
+      "reference_controls": 3,
+      "reference_controls_accepted": 0,
+      "unmanifest_faults": 0
+    },
+    "schema": {
+      "benign_controls": 3,
+      "benign_false_alarms": 0,
+      "errors": 0,
+      "faults_detected": 0,
+      "faults_missed": 3,
+      "faults_uncovered": 0,
+      "independently_manifested_faults": 3,
+      "reference_controls": 3,
+      "reference_controls_accepted": 3,
+      "unmanifest_faults": 0
+    },
+    "source_pattern": {
+      "benign_controls": 3,
+      "benign_false_alarms": 2,
+      "errors": 0,
+      "faults_detected": 2,
+      "faults_missed": 0,
+      "faults_uncovered": 1,
+      "independently_manifested_faults": 3,
+      "reference_controls": 3,
+      "reference_controls_accepted": 0,
+      "unmanifest_faults": 0
+    }
+  }
+}

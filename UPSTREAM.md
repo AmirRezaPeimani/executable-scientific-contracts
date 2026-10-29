@@ -1,9 +1,9 @@
 # Optional upstream acquisition
 
-The deterministic release checks use the included aggregate evidence. The
-commands below are needed only to rerun source/data adapters. They make network
-requests and download third-party material under the upstream projects' own
-licenses.
+The commands below acquire pinned sources and released data for implementation
+analyses. They make network requests and download third-party material under
+the upstream projects' own licenses. Saved-result verification uses the
+included records and does not require these downloads.
 
 Use a separate acquisition root so the public repository stays clean:
 

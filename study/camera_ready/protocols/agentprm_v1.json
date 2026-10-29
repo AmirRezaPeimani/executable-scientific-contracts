@@ -1,0 +1,169 @@
+{
+  "analysis_sha256": "7bcd27a6d9c040ecd70e3ca3c80bd210677af8580a2029d195eef9faa7a1c2ba",
+  "budget_cad": 0,
+  "challenges": [
+    {
+      "expected_state": "fault",
+      "id": "APRM-DEV-TEMP-ORIGINAL",
+      "mechanism": "terminal_discount",
+      "partition": "development",
+      "variant": "original"
+    },
+    {
+      "expected_state": "conformant",
+      "id": "APRM-DEV-TEMP-REPAIR",
+      "mechanism": "terminal_discount",
+      "partition": "development",
+      "variant": "repaired"
+    },
+    {
+      "expected_state": "fault",
+      "id": "APRM-DEV-HIST-ORIGINAL",
+      "mechanism": "query_history_action",
+      "partition": "development",
+      "variant": "original"
+    },
+    {
+      "expected_state": "conformant",
+      "id": "APRM-DEV-HIST-REPAIR",
+      "mechanism": "query_history_action",
+      "partition": "development",
+      "variant": "repaired"
+    },
+    {
+      "expected_state": "fault",
+      "id": "APRM-LOCK-TEMP-OFFSET",
+      "mechanism": "terminal_discount",
+      "partition": "locked_evaluation",
+      "variant": "terminal_offset_fault"
+    },
+    {
+      "expected_state": "fault",
+      "id": "APRM-LOCK-HIST-STALE",
+      "mechanism": "query_history_action",
+      "partition": "locked_evaluation",
+      "variant": "stale_history_fault"
+    },
+    {
+      "expected_state": "conformant",
+      "id": "APRM-LOCK-TEMP-BENIGN",
+      "mechanism": "terminal_discount",
+      "partition": "locked_evaluation",
+      "variant": "benign_power"
+    },
+    {
+      "expected_state": "conformant",
+      "id": "APRM-LOCK-HIST-BENIGN",
+      "mechanism": "query_history_action",
+      "partition": "locked_evaluation",
+      "variant": "benign_history"
+    },
+    {
+      "expected_state": "not_evaluated",
+      "id": "APRM-LOCK-MISSING",
+      "mechanism": "terminal_discount",
+      "partition": "locked_evaluation",
+      "variant": "missing"
+    },
+    {
+      "expected_state": "not_evaluated",
+      "id": "APRM-LOCK-INELIGIBLE",
+      "ineligible": true,
+      "mechanism": "terminal_discount",
+      "partition": "locked_evaluation",
+      "variant": "original"
+    }
+  ],
+  "controls": [
+    "gamma=1",
+    "trajectory length=1",
+    "both successful and failed terminal outcomes",
+    "same-state alternative continuations",
+    "count-weighted repeated-state merge",
+    "benign source rewrites",
+    "missing implementation",
+    "ineligible unit-discount fixture"
+  ],
+  "created_utc": "2026-10-29T14:28:06.515178+00:00",
+  "execution_boundary": "Historical forward-discount and duplicated-history examples are development; terminal-offset and stale-history transformations and benign rewrites are locked. Known repository, same author; no blind selection or independent human authorship claim.",
+  "freeze_rule": "No contract/protocol edits after the locked_execution_manifest is created; retain all first execution errors and misses. New versions require a new protocol and evaluation family.",
+  "gammas": [
+    0.8,
+    0.9,
+    0.95,
+    0.99,
+    1.0
+  ],
+  "go_no_go": "All outputs retained. A behavioral contract is validated only for executed cases; source faults enter detection denominators only when the independent reference confirms their behavioral manifestation. Crashes are errors, not detections. No outcome-favorable stopping.",
+  "legacy_adapter": "ACQUISITION_ROOT/semantic-conformance/executable-scientific-contracts/src/conform/adapters/agentprm.py",
+  "legacy_adapter_sha256": "e192572c31ffcc15c26542b092f553ce3db18639d4328cd65dd38c0c790ffe8d",
+  "lengths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "preference_continuation_lengths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "primary_delta": 0.03,
+  "primary_gamma": 0.95,
+  "primary_metrics": [
+    "exact state-aligned target agreement",
+    "repair acceptance",
+    "finite fault detection",
+    "benign false alarms",
+    "explicit unavailable/ineligible evidence"
+  ],
+  "source_hashes": {
+    "scripts/dataproc/compute_prm_preference_target.py": "d2c26507803c9360d660bf765054e25108d56a6a5d8610a1d470e0e95ec594ed",
+    "scripts/dataproc/compute_prm_target.py": "c6503483027abb38bc0ed4f1f70caa5d05f1e3afa0a3df45a82c81b81a13f532",
+    "scripts/dataproc/rollout_alfworld.py": "ec7047657da28177668f7f9744280ce2387f6e7913308b82096a686bda4e6e66",
+    "src/agent_prm/utils/alfworld.py": "4ac182a12b620a2bb6143e9180e33c850b7ba954b921ea0668f9d6033f424021"
+  },
+  "source_revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
+  "terminal_outcomes": [
+    0,
+    1
+  ],
+  "uncertainty": "Exact deterministic grid and finite challenge outcomes. No population sensitivity interval or historical model-performance claim.",
+  "variants": {
+    "benign_history": {
+      "history_expression": "env_data.get(\"action\")[t]",
+      "temporal_argument": "len(trajectory) - 1 - t"
+    },
+    "benign_power": {
+      "benign": "equivalent_power",
+      "history_expression": "env_data[\"action\"][t]",
+      "temporal_argument": "len(trajectory) - 1 - t"
+    },
+    "original": {
+      "history_expression": "env_data[\"observation\"][t]",
+      "temporal_argument": "t"
+    },
+    "repaired": {
+      "history_expression": "env_data[\"action\"][t]",
+      "temporal_argument": "len(trajectory) - 1 - t"
+    },
+    "stale_history_fault": {
+      "history_expression": "env_data[\"action\"][max(0, t-1)]",
+      "temporal_argument": "len(trajectory) - 1 - t"
+    },
+    "terminal_offset_fault": {
+      "history_expression": "env_data[\"action\"][t]",
+      "temporal_argument": "len(trajectory) - t"
+    }
+  },
+  "version": "agentprm-camera-ready-v1"
+}

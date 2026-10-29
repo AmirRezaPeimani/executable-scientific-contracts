@@ -1,0 +1,51 @@
+{
+  "behaviors": [
+    "paired_conjunction",
+    "operational_combined",
+    "conditional_denominator",
+    "paired_marginal_product",
+    "informational_combined",
+    "commit_success_flag",
+    "ranking_columns",
+    "scenario_macro"
+  ],
+  "cost_cad": 0,
+  "counterfactual_test": "Execute every case again with expected_state replaced by each other gold label; observed outputs and all method decisions must stay identical. The guarded checker has no expected_state argument.",
+  "eligibility": {
+    "combined": "Actual combined metric rows contain Boolean results after dependency handling.",
+    "commit": "Concrete input bundle includes at least one critical action; empty critical set cannot test critical-call success semantics.",
+    "conditional": "Actual summary has positive num_car_pairs; zero conditioned denominator remains a separately documented convention sensitivity.",
+    "paired": "Actual pinned summary has positive num_pairs and a nonmissing paired_accuracy.",
+    "ranking": "Actual metric summary contains positive complete-pair coverage before final ranking aggregation."
+  },
+  "exposure": "All reused families were observed in v1; inherited_partition retained only as provenance. No new independent holdout claim.",
+  "frozen_before_v2_execution": true,
+  "go_no_go": "Any decision dependence on a gold label, unmanifest fault, unsupported pass, crash counted as detection, or false alarm blocks validation. Preserve v1 exactly.",
+  "ineligible_inputs": [
+    "one-sided pair",
+    "zero conditioned successful act pairs",
+    "missing Boolean metric dependencies",
+    "empty critical-action set",
+    "ranking input with no complete pairs"
+  ],
+  "metrics": [
+    "manifest faults rejected",
+    "conformant accepted",
+    "benign false alarms",
+    "actual guard abstentions",
+    "execution errors",
+    "label-independence cases"
+  ],
+  "partition": "development",
+  "purpose": "Replace gold-label-driven v1 missing/ineligible decisions with an executable source-availability and actual-input eligibility guard.",
+  "source_missing_test": "Pass an actual nonexistent file path; no variant-name or expected-label shortcut.",
+  "source_revision": "f581249704b26804e28a39e37396f1be00b71a4d",
+  "variants": [
+    "original_conformant",
+    "fault",
+    "path_relevant_benign",
+    "missing_source_file",
+    "actual_ineligible_input"
+  ],
+  "version": "agentabstain-guard-correction-v2"
+}

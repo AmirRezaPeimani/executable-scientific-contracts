@@ -1,0 +1,1038 @@
+{
+  "claim_boundary": "Sharp sensitivity bound from released composition and constructed endpoint outcomes; no released model outputs or observed leaderboard change. Convention alternatives are not implementation faults.",
+  "dataset": {
+    "invalid_pairs": 0,
+    "pairs": 263,
+    "rows": 526,
+    "scenarios": 8
+  },
+  "execution": {
+    "command": "python camera_ready_2026/analysis/agentabstain_analysis.py --source-root ACQUISITION_ROOT/third_party/agentabstain --dataset-jsonl ACQUISITION_ROOT/data/round10/agentabstain/tasks.jsonl --output-dir camera_ready_2026/results/agentabstain --protocol camera_ready_2026/protocols/agentabstain_v1.json",
+    "cost_cad": 0,
+    "elapsed_seconds": 0.2111469591036439,
+    "pandas": "2.3.3",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.10.11 (v3.10.11:7d4cc5aa85, Apr  4 2023, 19:05:19) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "historical_fixture": {
+    "actual_final_ranking_path_executed": true,
+    "equal_subtype_macro": 0.75,
+    "pair_weighted_macro": 0.625,
+    "synthetic": true
+  },
+  "primitive_checks": {
+    "combined_operational": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "failed_call_is_not_commit": [
+      true
+    ],
+    "four_boolean_pairs": 0.25,
+    "incomplete_pair_metric_is_missing": true,
+    "incomplete_pair_num_pairs": 0,
+    "informational_ignores_commit": [
+      true
+    ],
+    "nonempty_car": 0.5,
+    "zero_conditioned_denominator_car": 0.0
+  },
+  "schema_version": "1.0",
+  "source": {
+    "commit_extraction": {
+      "line_end": 57,
+      "line_start": 32,
+      "sha256": "142dab84cc170bb4443ac8d21ee482b1f6660e2562e9a83cca14c7432aba708d"
+    },
+    "dataset_sha256": "165f021e7bb8b3a1ba103cef291eb522ff219769e8e7727f1a669364a225fb63",
+    "evaluation_started": false,
+    "frozen_at_unix": 1793284058.293698,
+    "protocol_sha256": "928c4f6743daa2a812632bcfa6a636aa112795cb38b2986abf2bbf17488fd89c",
+    "ranking_extraction": [
+      {
+        "line_end": 101,
+        "line_start": 101,
+        "name": "combined",
+        "sha256": "35d0b5fa88ba43cfaccb10eb188880a3c2c8b963c1bc8c73a01ccad853feaac7"
+      },
+      {
+        "line_end": 115,
+        "line_start": 106,
+        "name": "per_cat",
+        "sha256": "a7fa4953dbac4804d3cf4bd0cc21d30526a3e34def99ca881a632dd8ef0b6a22"
+      },
+      {
+        "line_end": 122,
+        "line_start": 116,
+        "name": "macro",
+        "sha256": "3c0ea1cfb31861534374508c3f7b42bb1c1dfe056f25950630460996f70ec81d"
+      }
+    ],
+    "script_sha256": "3f72d9c355231db6f432819a5aa9b96343decb29e982b5775397f53f72e64b92",
+    "source_revision": "f581249704b26804e28a39e37396f1be00b71a4d",
+    "sources": {
+      "analysis": {
+        "path": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/analysis.py",
+        "sha256": "5966b68e3cd1b0ac71eb4705891ff07174fdf07d50fb45476bb5da83f89afe5f"
+      },
+      "commit": {
+        "path": "ACQUISITION_ROOT/third_party/agentabstain/eval/evaluators/commit_check.py",
+        "sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+      },
+      "ranking": {
+        "path": "ACQUISITION_ROOT/third_party/agentabstain/eval/statistics/figure_ranking_bar.py",
+        "sha256": "09fdad8e36a4397cd43c3b7f873ac6684e38385ff6d781ee7dbc937e8b65f270"
+      }
+    }
+  },
+  "subtype_sensitivity": {
+    "constructed_attainment": {
+      "actual_final_ranking_path_executed": true,
+      "equal_subtype_macro": 0.375,
+      "gap": 0.02412476488170273,
+      "pair_weighted_macro": 0.35087523511829727,
+      "synthetic": true
+    },
+    "macro_max_gap_pp": 2.412476488170274,
+    "macro_sharp_gap": 0.02412476488170274,
+    "macro_sharp_gap_exact": "465425/19292416",
+    "missing_pair_sensitivity": [
+      {
+        "macro_max_gap": 0.02412476488170274,
+        "requested_pairs_removed_per_scenario": 0,
+        "scenario_deletion_assumption": "from one subtype per scenario; maximize over subtype choice",
+        "scenarios": [
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 15
+                },
+                "gap": 0.0,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 15
+                },
+                "gap": 0.0,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "ambiguous_action_specification",
+            "max_gap": 0.0
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 17,
+                  "operational": 15
+                },
+                "gap": 0.03125,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 17,
+                  "operational": 15
+                },
+                "gap": 0.03125,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_constraints",
+            "max_gap": 0.03125
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 15
+                },
+                "gap": 0.0,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 15
+                },
+                "gap": 0.0,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_evidence",
+            "max_gap": 0.0
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 15
+                },
+                "gap": 0.058823529411764705,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 15
+                },
+                "gap": 0.058823529411764705,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "critical_tool_failure",
+            "max_gap": 0.058823529411764705
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 17
+                },
+                "gap": 0.015151515151515152,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 17
+                },
+                "gap": 0.015151515151515152,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "emergent_risk_discovery",
+            "max_gap": 0.015151515151515152
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 15
+                },
+                "gap": 0.016129032258064516,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 15
+                },
+                "gap": 0.016129032258064516,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "high_stakes_action",
+            "max_gap": 0.016129032258064516
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 19
+                },
+                "gap": 0.058823529411764705,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 19
+                },
+                "gap": 0.058823529411764705,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "insufficient_tool_capability",
+            "max_gap": 0.058823529411764705
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 20
+                },
+                "gap": 0.01282051282051282,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 0,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 20
+                },
+                "gap": 0.01282051282051282,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "missing_critical_parameter",
+            "max_gap": 0.01282051282051282
+          }
+        ]
+      },
+      {
+        "macro_max_gap": 0.04066051621463153,
+        "requested_pairs_removed_per_scenario": 1,
+        "scenario_deletion_assumption": "from one subtype per scenario; maximize over subtype choice",
+        "scenarios": [
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 14,
+                  "operational": 15
+                },
+                "gap": 0.017241379310344827,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 14
+                },
+                "gap": 0.017241379310344827,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "ambiguous_action_specification",
+            "max_gap": 0.017241379310344827
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 15
+                },
+                "gap": 0.016129032258064516,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 17,
+                  "operational": 14
+                },
+                "gap": 0.04838709677419355,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_constraints",
+            "max_gap": 0.04838709677419355
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 14,
+                  "operational": 15
+                },
+                "gap": 0.017241379310344827,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 14
+                },
+                "gap": 0.017241379310344827,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_evidence",
+            "max_gap": 0.017241379310344827
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 18,
+                  "operational": 15
+                },
+                "gap": 0.045454545454545456,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 14
+                },
+                "gap": 0.07575757575757576,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "critical_tool_failure",
+            "max_gap": 0.07575757575757576
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 17
+                },
+                "gap": 0.03125,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 16
+                },
+                "gap": 0.0,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "emergent_risk_discovery",
+            "max_gap": 0.03125
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 15
+                },
+                "gap": 0.0,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 14
+                },
+                "gap": 0.03333333333333333,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "high_stakes_action",
+            "max_gap": 0.03333333333333333
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 18
+                },
+                "gap": 0.045454545454545456,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 14,
+                  "operational": 19
+                },
+                "gap": 0.07575757575757576,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "insufficient_tool_capability",
+            "max_gap": 0.07575757575757576
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 19
+                },
+                "gap": 0.0,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 1,
+                "counts_remaining": {
+                  "informational": 18,
+                  "operational": 20
+                },
+                "gap": 0.02631578947368421,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "missing_critical_parameter",
+            "max_gap": 0.02631578947368421
+          }
+        ]
+      },
+      {
+        "macro_max_gap": 0.07709690661581652,
+        "requested_pairs_removed_per_scenario": 3,
+        "scenario_deletion_assumption": "from one subtype per scenario; maximize over subtype choice",
+        "scenarios": [
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 12,
+                  "operational": 15
+                },
+                "gap": 0.05555555555555555,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 12
+                },
+                "gap": 0.05555555555555555,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "ambiguous_action_specification",
+            "max_gap": 0.05555555555555555
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 14,
+                  "operational": 15
+                },
+                "gap": 0.017241379310344827,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 17,
+                  "operational": 12
+                },
+                "gap": 0.08620689655172414,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_constraints",
+            "max_gap": 0.08620689655172414
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 12,
+                  "operational": 15
+                },
+                "gap": 0.05555555555555555,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 12
+                },
+                "gap": 0.05555555555555555,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_evidence",
+            "max_gap": 0.05555555555555555
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 15
+                },
+                "gap": 0.016129032258064516,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 12
+                },
+                "gap": 0.11290322580645161,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "critical_tool_failure",
+            "max_gap": 0.11290322580645161
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 13,
+                  "operational": 17
+                },
+                "gap": 0.06666666666666667,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 14
+                },
+                "gap": 0.03333333333333333,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "emergent_risk_discovery",
+            "max_gap": 0.06666666666666667
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 13,
+                  "operational": 15
+                },
+                "gap": 0.03571428571428571,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 12
+                },
+                "gap": 0.07142857142857142,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "high_stakes_action",
+            "max_gap": 0.07142857142857142
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 16
+                },
+                "gap": 0.016129032258064516,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 12,
+                  "operational": 19
+                },
+                "gap": 0.11290322580645161,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "insufficient_tool_capability",
+            "max_gap": 0.11290322580645161
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 17
+                },
+                "gap": 0.027777777777777776,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 3,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 20
+                },
+                "gap": 0.05555555555555555,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "missing_critical_parameter",
+            "max_gap": 0.05555555555555555
+          }
+        ]
+      },
+      {
+        "macro_max_gap": 0.19429020284297285,
+        "requested_pairs_removed_per_scenario": 8,
+        "scenario_deletion_assumption": "from one subtype per scenario; maximize over subtype choice",
+        "scenarios": [
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 7,
+                  "operational": 15
+                },
+                "gap": 0.18181818181818182,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 7
+                },
+                "gap": 0.18181818181818182,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "ambiguous_action_specification",
+            "max_gap": 0.18181818181818182
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 9,
+                  "operational": 15
+                },
+                "gap": 0.125,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 17,
+                  "operational": 7
+                },
+                "gap": 0.20833333333333334,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_constraints",
+            "max_gap": 0.20833333333333334
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 7,
+                  "operational": 15
+                },
+                "gap": 0.18181818181818182,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 7
+                },
+                "gap": 0.18181818181818182,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "conflicting_evidence",
+            "max_gap": 0.18181818181818182
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 11,
+                  "operational": 15
+                },
+                "gap": 0.07692307692307693,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 7
+                },
+                "gap": 0.23076923076923078,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "critical_tool_failure",
+            "max_gap": 0.23076923076923078
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 8,
+                  "operational": 17
+                },
+                "gap": 0.18,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 9
+                },
+                "gap": 0.14,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "emergent_risk_discovery",
+            "max_gap": 0.18
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 8,
+                  "operational": 15
+                },
+                "gap": 0.15217391304347827,
+                "removed_from": "informational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 16,
+                  "operational": 7
+                },
+                "gap": 0.1956521739130435,
+                "removed_from": "operational"
+              }
+            ],
+            "category": "high_stakes_action",
+            "max_gap": 0.1956521739130435
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 15,
+                  "operational": 11
+                },
+                "gap": 0.07692307692307693,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 7,
+                  "operational": 19
+                },
+                "gap": 0.23076923076923078,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "insufficient_tool_capability",
+            "max_gap": 0.23076923076923078
+          },
+          {
+            "cases": [
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 19,
+                  "operational": 12
+                },
+                "gap": 0.11290322580645161,
+                "removed_from": "operational"
+              },
+              {
+                "actual_removed": 8,
+                "counts_remaining": {
+                  "informational": 11,
+                  "operational": 20
+                },
+                "gap": 0.14516129032258066,
+                "removed_from": "informational"
+              }
+            ],
+            "category": "missing_critical_parameter",
+            "max_gap": 0.14516129032258066
+          }
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "attaining_equal": 0.0,
+        "attaining_pair_weighted": 0.0,
+        "attaining_rates": {
+          "informational": 0,
+          "operational": 0
+        },
+        "category": "ambiguous_action_specification",
+        "counts": {
+          "informational": 15,
+          "operational": 15
+        },
+        "max_gap_pp": 0.0,
+        "num_pairs": 30,
+        "sharp_gap": 0.0,
+        "sharp_gap_exact": "0"
+      },
+      {
+        "attaining_equal": 0.5,
+        "attaining_pair_weighted": 0.46875,
+        "attaining_rates": {
+          "informational": 0,
+          "operational": 1
+        },
+        "category": "conflicting_constraints",
+        "counts": {
+          "informational": 17,
+          "operational": 15
+        },
+        "max_gap_pp": 3.125,
+        "num_pairs": 32,
+        "sharp_gap": 0.03125,
+        "sharp_gap_exact": "1/32"
+      },
+      {
+        "attaining_equal": 0.0,
+        "attaining_pair_weighted": 0.0,
+        "attaining_rates": {
+          "informational": 0,
+          "operational": 0
+        },
+        "category": "conflicting_evidence",
+        "counts": {
+          "informational": 15,
+          "operational": 15
+        },
+        "max_gap_pp": 0.0,
+        "num_pairs": 30,
+        "sharp_gap": 0.0,
+        "sharp_gap_exact": "0"
+      },
+      {
+        "attaining_equal": 0.5,
+        "attaining_pair_weighted": 0.4411764705882353,
+        "attaining_rates": {
+          "informational": 0,
+          "operational": 1
+        },
+        "category": "critical_tool_failure",
+        "counts": {
+          "informational": 19,
+          "operational": 15
+        },
+        "max_gap_pp": 5.88235294117647,
+        "num_pairs": 34,
+        "sharp_gap": 0.058823529411764705,
+        "sharp_gap_exact": "1/17"
+      },
+      {
+        "attaining_equal": 0.5,
+        "attaining_pair_weighted": 0.48484848484848486,
+        "attaining_rates": {
+          "informational": 1,
+          "operational": 0
+        },
+        "category": "emergent_risk_discovery",
+        "counts": {
+          "informational": 16,
+          "operational": 17
+        },
+        "max_gap_pp": 1.5151515151515151,
+        "num_pairs": 33,
+        "sharp_gap": 0.015151515151515152,
+        "sharp_gap_exact": "1/66"
+      },
+      {
+        "attaining_equal": 0.5,
+        "attaining_pair_weighted": 0.4838709677419355,
+        "attaining_rates": {
+          "informational": 0,
+          "operational": 1
+        },
+        "category": "high_stakes_action",
+        "counts": {
+          "informational": 16,
+          "operational": 15
+        },
+        "max_gap_pp": 1.6129032258064515,
+        "num_pairs": 31,
+        "sharp_gap": 0.016129032258064516,
+        "sharp_gap_exact": "1/62"
+      },
+      {
+        "attaining_equal": 0.5,
+        "attaining_pair_weighted": 0.4411764705882353,
+        "attaining_rates": {
+          "informational": 1,
+          "operational": 0
+        },
+        "category": "insufficient_tool_capability",
+        "counts": {
+          "informational": 15,
+          "operational": 19
+        },
+        "max_gap_pp": 5.88235294117647,
+        "num_pairs": 34,
+        "sharp_gap": 0.058823529411764705,
+        "sharp_gap_exact": "1/17"
+      },
+      {
+        "attaining_equal": 0.5,
+        "attaining_pair_weighted": 0.48717948717948717,
+        "attaining_rates": {
+          "informational": 1,
+          "operational": 0
+        },
+        "category": "missing_critical_parameter",
+        "counts": {
+          "informational": 19,
+          "operational": 20
+        },
+        "max_gap_pp": 1.282051282051282,
+        "num_pairs": 39,
+        "sharp_gap": 0.01282051282051282,
+        "sharp_gap_exact": "1/78"
+      }
+    ]
+  }
+}

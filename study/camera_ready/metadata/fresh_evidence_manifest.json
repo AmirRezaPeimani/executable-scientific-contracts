@@ -1,0 +1,37 @@
+{
+  "confirmation_60_seals_unchanged": {
+    "agentabstain": "715f50b5032526519e07f7600c71a99550010ee40339a9809fdbdb8e08da6177",
+    "agentprm": "4944888abaebcf577d1038f1a8e57bd14fa6aa621a28ea9aefe0af6e8740e8e8",
+    "toolace": "3d8f9324d63690faacde247de7f1f7304af9d23e7743b4460c194f22e874c05c"
+  },
+  "files": {
+    "protocols/fresh_holdout_v1.json": "71750d4754b381dd9b947acd890b3952412cd6abc2de307d929abc57afd37133",
+    "results/fresh_holdout_v1/INTERPRETATION.md": "5a04aab7749191c2d308106517bae53802eacf5680a59261cb018bc2509f7886",
+    "results/fresh_holdout_v1/REPORT.md": "c5288e14f501532aaa452d9652b410dfbbf304a130d497e29b5d90382e3e54d3",
+    "results/fresh_holdout_v1/challenge_results_v1.json": "e2041e1bde80bc78b83bfd640661699a3fba606bdfda3881311292d9f9c3a8ef",
+    "results/fresh_holdout_v1/coverage_validation_v1.json": "8631885fef991ce68c26b79665cfa1d0af51da5fa06843ca0017f25756c8a082",
+    "results/fresh_holdout_v1/execution_started.json": "e477835a8f1d5ba52f07f5fb647d796ee19f78b7cccdad6526c52acccf90ebd6"
+  },
+  "identity_scope": "Public hashes verify the current portable reproduction runner and normalized published evidence. The runner source_artifact_raw_sha256 and embedded protocol/source/parent hashes identify the original execution. Upstream source variants are acquired or reconstructed separately.",
+  "interpretation": "Nine cases in three researcher-constructed source families evaluated after v2 evaluator freeze, separate from the sixty exposed confirmation cases. No independent human authorship, unseen-repository or population-accuracy claim.",
+  "kind": "separate_fresh_source_family_evidence",
+  "normalization": {
+    "camera_ready_workspace": "STUDY_ROOT",
+    "projects_acquisition_workspace": "ACQUISITION_ROOT",
+    "research_python_executable": "python"
+  },
+  "raw_artifact_sha256": {
+    "protocols/fresh_holdout_v1.json": "669fca39cb055d2387f674fbdc51f19295aaa36b922e9b733849c71d4cf7afe6",
+    "results/fresh_holdout_v1/INTERPRETATION.md": "5a04aab7749191c2d308106517bae53802eacf5680a59261cb018bc2509f7886",
+    "results/fresh_holdout_v1/REPORT.md": "c5288e14f501532aaa452d9652b410dfbbf304a130d497e29b5d90382e3e54d3",
+    "results/fresh_holdout_v1/challenge_results_v1.json": "808292f4a5dcc62e92b1e3e56d0a37141a5186662aba1cb9e3b8b3de6738dd55",
+    "results/fresh_holdout_v1/coverage_validation_v1.json": "b2754061bec5ca076bc1c55e26ee0b07e7fa01cf106fff1b9e99e0f8b533401d",
+    "results/fresh_holdout_v1/execution_started.json": "e477835a8f1d5ba52f07f5fb647d796ee19f78b7cccdad6526c52acccf90ebd6"
+  },
+  "runner": {
+    "path": "analysis/fresh_holdout_v1.py",
+    "sha256": "a6e824f22718b30e6a90ab6f893fb558446af3b38a5ff0d3d8b47b70696dbdde",
+    "source_artifact_raw_sha256": "ecf92b8ae21da500d452d5aa5d1bcd476876d7f88d7df367d09ac7a7533f16f5"
+  },
+  "schema_version": "1.0"
+}

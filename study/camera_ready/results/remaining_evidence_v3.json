@@ -1,0 +1,1248 @@
+{
+  "classification_correction": {
+    "cost_cad": 0,
+    "data_rerun": false,
+    "derived_from": "camera_ready_2026/results/remaining_evidence_v2.json",
+    "derived_from_sha256": "3a4891e7f0474a4d1ce913a1283f29b1d16cda4aca8266b4afbf465cfd625889",
+    "numeric_results_unchanged": true,
+    "reason": "Independent review identified stored-field reward agreement as consistency control, not independent scientific conjunction validation."
+  },
+  "comparison": "Saved labels are retained as historical observations; coverage-corrected statuses do not overwrite them.",
+  "contracts": [
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "CBEN-LOG-01",
+      "coverage": {
+        "eligible_examples": 99,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "unverified_evaluation_identity"
+      },
+      "interpretation": "Generated output is not fully represented in the released trace; the number of corrected successes is not identifiable.",
+      "legacy_result": {
+        "consequence": "Generated output is not fully represented in the released trace; the number of corrected successes is not identifiable.",
+        "contract_id": "CBEN-LOG-01",
+        "elapsed_seconds": 0.00013589859008789062,
+        "evidence": [
+          "released-results/selected-9b-slice",
+          "ACQUISITION_ROOT/third_party/contractbench_code/tests/test_docker_runner_loop.py:77"
+        ],
+        "expected": {
+          "output_without_assistant_message": 0
+        },
+        "observed": {
+          "episodes": 99,
+          "output_without_assistant_message": 3
+        },
+        "severity": 1,
+        "status": "discrepant",
+        "target": "contractbench"
+      },
+      "local_behavior": "discrepant",
+      "role": "scientific_assertion",
+      "target": "contractbench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "not_evaluated_no_eligible_examples"
+      },
+      "contract_id": "CBEN-LOG-02",
+      "coverage": {
+        "eligible_examples": 0,
+        "state": "no_eligible_examples",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "unverified_evaluation_identity"
+      },
+      "interpretation": "No successful episodes in the released slice; successful-trace recoverability was not evaluated.",
+      "legacy_result": {
+        "consequence": "The released slice has no success event lacking a trace.",
+        "contract_id": "CBEN-LOG-02",
+        "elapsed_seconds": 7.867813110351562e-06,
+        "evidence": [
+          "released-results/selected-9b-slice"
+        ],
+        "expected": {
+          "unrecoverable_successes": 0
+        },
+        "observed": {
+          "successes": 0,
+          "unrecoverable_successes": 0
+        },
+        "severity": 0,
+        "status": "conformant",
+        "target": "contractbench"
+      },
+      "local_behavior": "not_evaluated",
+      "role": "scientific_assertion",
+      "target": "contractbench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "CBEN-SCHEMA-01",
+      "coverage": {
+        "eligible_examples": 99,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "unverified_evaluation_identity"
+      },
+      "interpretation": "Paired reward and trajectory records satisfy the declared fields.",
+      "legacy_result": {
+        "consequence": "Paired reward and trajectory records satisfy the declared fields.",
+        "contract_id": "CBEN-SCHEMA-01",
+        "elapsed_seconds": 4.315376281738281e-05,
+        "evidence": [
+          "released-results/selected-9b-slice"
+        ],
+        "expected": {
+          "total": 99,
+          "valid": 99
+        },
+        "observed": {
+          "total": 99,
+          "valid": 99
+        },
+        "severity": 0,
+        "status": "conformant",
+        "target": "contractbench"
+      },
+      "local_behavior": "conformant",
+      "role": "scientific_assertion",
+      "target": "contractbench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "CBEN-METRIC-01",
+      "coverage": {
+        "eligible_examples": 99,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "unverified_evaluation_identity"
+      },
+      "interpretation": "The released record-level aggregate does not reproduce the reported baseline count. Missing trace content prevents a defensible corrected performance estimate.",
+      "legacy_result": {
+        "consequence": "The released record-level aggregate does not reproduce the reported baseline count. Missing trace content prevents a defensible corrected performance estimate.",
+        "contract_id": "CBEN-METRIC-01",
+        "elapsed_seconds": 1.1920928955078125e-05,
+        "evidence": [
+          "released-results/selected-9b-slice",
+          "reported-table-baseline"
+        ],
+        "expected": {
+          "episodes": 99,
+          "successes": 56
+        },
+        "observed": {
+          "episodes": 99,
+          "successes": 0
+        },
+        "severity": 2,
+        "status": "discrepant",
+        "target": "contractbench"
+      },
+      "local_behavior": "discrepant",
+      "role": "scientific_assertion",
+      "target": "contractbench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "CBEN-METRIC-02",
+      "coverage": {
+        "eligible_examples": 99,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "unverified_evaluation_identity"
+      },
+      "interpretation": "The released slice is internally aggregatable under its own labels.",
+      "legacy_result": {
+        "consequence": "The released slice is internally aggregatable under its own labels.",
+        "contract_id": "CBEN-METRIC-02",
+        "elapsed_seconds": 1.0013580322265625e-05,
+        "evidence": [
+          "released-results/selected-9b-slice"
+        ],
+        "expected": 0.0,
+        "observed": 0.0,
+        "severity": 0,
+        "status": "conformant",
+        "target": "contractbench"
+      },
+      "local_behavior": "conformant",
+      "role": "consistency_control",
+      "target": "contractbench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "TBEN-SCHEMA-01",
+      "coverage": {
+        "eligible_examples": 5920,
+        "state": "evaluated",
+        "unit": "declared task actions"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "released_historical_trajectories_only"
+      },
+      "interpretation": "Released task actions reference declared tool modules.",
+      "legacy_result": {
+        "consequence": "Released task actions reference declared tool modules.",
+        "contract_id": "TBEN-SCHEMA-01",
+        "elapsed_seconds": 0.0016160011291503906,
+        "evidence": [
+          "historical-trajectories/two-domains"
+        ],
+        "expected": {
+          "unknown_tools": []
+        },
+        "observed": {
+          "actions": 5920,
+          "unknown_tools": []
+        },
+        "severity": 0,
+        "status": "conformant",
+        "target": "taubench"
+      },
+      "local_behavior": "conformant",
+      "role": "scientific_assertion",
+      "target": "taubench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "TBEN-LOG-01",
+      "coverage": {
+        "eligible_examples": 1320,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "released_historical_trajectories_only"
+      },
+      "interpretation": "Tool-result messages preserve call provenance.",
+      "legacy_result": {
+        "consequence": "Tool-result messages preserve call provenance.",
+        "contract_id": "TBEN-LOG-01",
+        "elapsed_seconds": 0.006119966506958008,
+        "evidence": [
+          "historical-trajectories/two-domains"
+        ],
+        "expected": {
+          "orphan_tool_results": 0
+        },
+        "observed": {
+          "orphan_tool_results": 0,
+          "trajectories": 1320
+        },
+        "severity": 0,
+        "status": "conformant",
+        "target": "taubench"
+      },
+      "local_behavior": "conformant",
+      "role": "scientific_assertion",
+      "target": "taubench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "TBEN-METRIC-01",
+      "coverage": {
+        "eligible_examples": 1313,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "released_historical_trajectories_only"
+      },
+      "interpretation": "Compares the top-level stored reward with info.reward_info.reward for 1,313 records; seven of 1,320 records lack nested reward information. It does not recompute the underlying primitive reward-conjunction semantics.",
+      "legacy_result": {
+        "consequence": "Top-level rewards agree with their saved reward checks.",
+        "contract_id": "TBEN-METRIC-01",
+        "elapsed_seconds": 0.0007946491241455078,
+        "evidence": [
+          "historical-trajectories/two-domains"
+        ],
+        "expected": {
+          "reward_mismatches": 0
+        },
+        "observed": {
+          "reward_mismatches": 0,
+          "trajectories": 1320
+        },
+        "severity": 0,
+        "status": "conformant",
+        "target": "taubench"
+      },
+      "local_behavior": "conformant",
+      "role": "consistency_control",
+      "target": "taubench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "TBEN-METRIC-02",
+      "coverage": {
+        "eligible_examples": 1320,
+        "state": "evaluated",
+        "unit": "released records"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "released_historical_trajectories_only"
+      },
+      "interpretation": "Each eligible trajectory enters the aggregate exactly once.",
+      "legacy_result": {
+        "consequence": "Each eligible trajectory enters the aggregate exactly once.",
+        "contract_id": "TBEN-METRIC-02",
+        "elapsed_seconds": 0.0002841949462890625,
+        "evidence": [
+          "historical-trajectories/two-domains"
+        ],
+        "expected": 0.621969696969697,
+        "observed": 0.621969696969697,
+        "severity": 0,
+        "status": "conformant",
+        "target": "taubench"
+      },
+      "local_behavior": "conformant",
+      "role": "consistency_control",
+      "target": "taubench"
+    },
+    {
+      "activation": {
+        "independent_of_local_outcome": true,
+        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "state": "released_support_available"
+      },
+      "contract_id": "TBEN-NEG-01",
+      "coverage": {
+        "eligible_examples": 4,
+        "state": "evaluated",
+        "unit": "preceding checks"
+      },
+      "historical_result_linkage": {
+        "published_performance_change_identifiable": false,
+        "state": "released_historical_trajectories_only"
+      },
+      "interpretation": "Summarizes the preceding four adapter outcomes; it is not independent false-positive validation or another scientific assertion.",
+      "legacy_result": {
+        "consequence": "Pinned trajectories serve as a clean false-positive control.",
+        "contract_id": "TBEN-NEG-01",
+        "elapsed_seconds": 9.5367431640625e-07,
+        "evidence": [
+          "historical-trajectories/two-domains"
+        ],
+        "expected": {
+          "prior_contracts_conformant": true
+        },
+        "observed": {
+          "prior_contracts_conformant": true
+        },
+        "severity": 0,
+        "status": "conformant",
+        "target": "taubench"
+      },
+      "local_behavior": "conformant",
+      "role": "derived_summary",
+      "target": "taubench"
+    }
+  ],
+  "execution": {
+    "command": "python camera_ready_2026/analysis/remaining_evidence.py --public-root camera_ready_2026/release/executable-scientific-contracts --contractbench-source ACQUISITION_ROOT/third_party/contractbench_code --contractbench-data ACQUISITION_ROOT/third_party/contractbench --taubench-source ACQUISITION_ROOT/third_party/tau-bench --output camera_ready_2026/results/remaining_evidence_v2.json",
+    "cost_cad": 0,
+    "elapsed_seconds": 0.2694529581349343,
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.10.11 (v3.10.11:7d4cc5aa85, Apr  4 2023, 19:05:19) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "preserved_historical_labels": true,
+  "schema_version": "1.0",
+  "sources": {
+    "created_at_unix": 1793284246.954607,
+    "expected_interpretation": {
+      "CBEN-LOG-02": "not_evaluated when zero successful episodes",
+      "TBEN-NEG-01": "derived summary, not independent scientific assertion"
+    },
+    "inputs": [
+      {
+        "path": "camera_ready_2026/release/executable-scientific-contracts/src/conform/adapters/contractbench.py",
+        "sha256": "b84b3816e17a83f4886d3316012499ffe8b3db4b386be429888511d38633b382"
+      },
+      {
+        "path": "camera_ready_2026/release/executable-scientific-contracts/src/conform/adapters/taubench.py",
+        "sha256": "359c689101f4127913fa2254d9cc957a9639a429f70c521cb90d64bd27123cea"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/tau-bench/historical_trajectories/sonnet-35-new-retail.json",
+        "sha256": "0df526398e9d2720c32d340815cffb04fe8c4f8a61b1f4f84bf3bb558f760131"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/tau-bench/historical_trajectories/sonnet-35-new-airline.json",
+        "sha256": "fe62fcd514b855b36f156dd4c3c7748597b392b006aff739b53337a9f3ba94d1"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/adversarial-shortcut-injection/reward.json",
+        "sha256": "78c6da2f6ed8de45c770d9f0495f95163b2adfe7e84cc047362a2492b380daed"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/api-key-rotation/reward.json",
+        "sha256": "b5e4608ad81e666326eb0cc245b27798cddacdd605c7382d5f257ab4d7ac263e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/api-rate-limit-patience/reward.json",
+        "sha256": "1628ced1229214e2ad392170c0e0f8003440cdaf87a526ac262f4c84a9035553"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/basic-oauth-token/reward.json",
+        "sha256": "c1e1ac6fa20a143fce9333ee2eae688dea71b64cf2a921ff090b70e31a77a3b2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/cascading-token-revocation/reward.json",
+        "sha256": "2db7763aaff49ae400e3e104848d46ff07a4fe59711f44b7f9c846b402bb649c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/certificate-pinning-handshake/reward.json",
+        "sha256": "f366c2ba3887f2ecd80b5ebb99775447023e92016702cdf46c5351054d3cf710"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/constraint-overload-protocol/reward.json",
+        "sha256": "b5ba59a9a5aa4b2dc5b0652d303d0fd1acbedbe17acd65eb219056b46dfb212e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/content-negotiation-chain/reward.json",
+        "sha256": "908f14d0fee87ca64a34b860005e8d10972e591a17a0707fa206f3332f938281"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/csrf-form-submit/reward.json",
+        "sha256": "34a5424e9695212862b7193de7e7e4e085c1b92df11d72289fbf0a4d171c6714"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/cumulative-hash-chain/reward.json",
+        "sha256": "b2fe82c5858ddf08a5d9b49ded6389f5ea8508617755890f8f3e23f4cfb67976"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/cursor-pagination-integrity/reward.json",
+        "sha256": "c9786829fb79ce086aade211860c769d7d9ac848995b1b8115551af19ddb7b95"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/distributed-lock-acquire/reward.json",
+        "sha256": "19085ddadf4c56fe40d6460565f285e57bc6fd59b4fa21e2f22f3db73eec5455"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/etag-conditional-get/reward.json",
+        "sha256": "8de6e5844eef750bd3de0aa0c90b1b11dfa09eb51c49b026e05d3ca53033e215"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/event-sourced-consistency/reward.json",
+        "sha256": "c026b581eda8221db77fb4fbcb8f01b8e3e42d5803bcc68f97ecf66be8489504"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/extreme-url-length/reward.json",
+        "sha256": "380226a03e01bf98a5b723542e9e754bad8e05fb2438f17d96479e8df89f25d7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/idempotency-key-retry/reward.json",
+        "sha256": "6137699d03574c3df8226b2797f7d60862931f4ef323e8fcc06b73ed669f56f2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/long-token-handling/reward.json",
+        "sha256": "901aa264939c3eb08e1c954ce5dd470881088ae824fb2b14ec85dfc2f5641d4f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-resource-priority/reward.json",
+        "sha256": "c30777c2c321ea21cdc864f4fef59a05ff9a2203a13965a22747a565628a1ff9"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-service-saga/reward.json",
+        "sha256": "1de45f3d040e044dbc742d1368a3f0fa5dfa1e2a14eaef5703f5b128b933efb9"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-token-workflow/reward.json",
+        "sha256": "4944dad33180e7c9579f1202e0fbb55805653966b815e4ca9d51bf3f09a7208d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-turn-recall/reward.json",
+        "sha256": "2ed9b022a55db8fb3227b3d403a063dfbe68b03cec7025baca290d876c09b02b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/oauth-authorization-code/reward.json",
+        "sha256": "7fe3bc1d309ed64dd09ebe5dc893eeaa4d684fdccab4c05a87ca65896ef1eec2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/oauth-pkce-with-rotation/reward.json",
+        "sha256": "e8ba5f1cd6cd9fb4c7112fccaac0c67165744990da92f6c873a27414971b4640"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/presigned-url-download/reward.json",
+        "sha256": "d2f4c9218e16eeb6c18fa04b420e055b570f1facdc3d4390ada3cc4be5de3ac1"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/presigned-url-integrity/reward.json",
+        "sha256": "27d5cc42616a0c61c318a9feb6f8533299249e019a405a4310e259036f0210bc"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/retry-backoff-compliance/reward.json",
+        "sha256": "bf6b6c5d929cf50b08a971aa2328f89cfd1b35831f4359bdead4397da277c900"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/scattered-url-assembly/reward.json",
+        "sha256": "72b9c2cdac57f56983a98447c57e674374a52d48705fdf85271191876443794e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/scheduled-maintenance/reward.json",
+        "sha256": "c73ccab4643fe0dd6ce8fce4445dbc85528b23c570a0dc6cb791ba180d7c0885"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/session-cookie-chain/reward.json",
+        "sha256": "2df08cc8f52a59640e88411406a9c28568ec2c27e8745b48d058c13c1cf245d7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/signed-request-canonicalization/reward.json",
+        "sha256": "0355e2dbdab0f3f9de3163905f4ec559ff4a9bba1718af827f7c6f162b9f84e3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/token-refresh-workflow/reward.json",
+        "sha256": "2403be53ddc0e096ed39888fe033562d6c816c45855158ae4e1c05154d6b759f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/url-trap-ellipsis/reward.json",
+        "sha256": "1586674c6723ecc015fb29a1fe31ee2d9818789f7b685ccfe0d79a7be5813bde"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/webhook-hmac-verify/reward.json",
+        "sha256": "5cc50452b39ff058fcc875f696cf33b48fe53cf037a366a5f6cabd3620aca73f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/adversarial-shortcut-injection/reward.json",
+        "sha256": "78c6da2f6ed8de45c770d9f0495f95163b2adfe7e84cc047362a2492b380daed"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/api-key-rotation/reward.json",
+        "sha256": "b5e4608ad81e666326eb0cc245b27798cddacdd605c7382d5f257ab4d7ac263e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/api-rate-limit-patience/reward.json",
+        "sha256": "1628ced1229214e2ad392170c0e0f8003440cdaf87a526ac262f4c84a9035553"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/basic-oauth-token/reward.json",
+        "sha256": "664cb18c2c9342fc62340d3dcc046c90b376d418073304753b32609e6623206e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/cascading-token-revocation/reward.json",
+        "sha256": "2db7763aaff49ae400e3e104848d46ff07a4fe59711f44b7f9c846b402bb649c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/certificate-pinning-handshake/reward.json",
+        "sha256": "8431aed3366634de0073fc6bd7e5bdc6cc255730371f5fa02d2816876600a896"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/constraint-overload-protocol/reward.json",
+        "sha256": "b5ba59a9a5aa4b2dc5b0652d303d0fd1acbedbe17acd65eb219056b46dfb212e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/content-negotiation-chain/reward.json",
+        "sha256": "908f14d0fee87ca64a34b860005e8d10972e591a17a0707fa206f3332f938281"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/csrf-form-submit/reward.json",
+        "sha256": "34a5424e9695212862b7193de7e7e4e085c1b92df11d72289fbf0a4d171c6714"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/cumulative-hash-chain/reward.json",
+        "sha256": "b2fe82c5858ddf08a5d9b49ded6389f5ea8508617755890f8f3e23f4cfb67976"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/cursor-pagination-integrity/reward.json",
+        "sha256": "c9786829fb79ce086aade211860c769d7d9ac848995b1b8115551af19ddb7b95"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/distributed-lock-acquire/reward.json",
+        "sha256": "19085ddadf4c56fe40d6460565f285e57bc6fd59b4fa21e2f22f3db73eec5455"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/etag-conditional-get/reward.json",
+        "sha256": "4465475db8c0a58ad21461fec5b0bea4241eb4d2e2b7aeed08e51bd08dcbe5b2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/event-sourced-consistency/reward.json",
+        "sha256": "c026b581eda8221db77fb4fbcb8f01b8e3e42d5803bcc68f97ecf66be8489504"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/extreme-url-length/reward.json",
+        "sha256": "380226a03e01bf98a5b723542e9e754bad8e05fb2438f17d96479e8df89f25d7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/idempotency-key-retry/reward.json",
+        "sha256": "6137699d03574c3df8226b2797f7d60862931f4ef323e8fcc06b73ed669f56f2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/long-token-handling/reward.json",
+        "sha256": "901aa264939c3eb08e1c954ce5dd470881088ae824fb2b14ec85dfc2f5641d4f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-resource-priority/reward.json",
+        "sha256": "c30777c2c321ea21cdc864f4fef59a05ff9a2203a13965a22747a565628a1ff9"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-service-saga/reward.json",
+        "sha256": "1de45f3d040e044dbc742d1368a3f0fa5dfa1e2a14eaef5703f5b128b933efb9"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-token-workflow/reward.json",
+        "sha256": "4944dad33180e7c9579f1202e0fbb55805653966b815e4ca9d51bf3f09a7208d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-turn-recall/reward.json",
+        "sha256": "2ed9b022a55db8fb3227b3d403a063dfbe68b03cec7025baca290d876c09b02b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/oauth-authorization-code/reward.json",
+        "sha256": "7fe3bc1d309ed64dd09ebe5dc893eeaa4d684fdccab4c05a87ca65896ef1eec2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/oauth-pkce-with-rotation/reward.json",
+        "sha256": "e8ba5f1cd6cd9fb4c7112fccaac0c67165744990da92f6c873a27414971b4640"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/presigned-url-download/reward.json",
+        "sha256": "d2f4c9218e16eeb6c18fa04b420e055b570f1facdc3d4390ada3cc4be5de3ac1"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/presigned-url-integrity/reward.json",
+        "sha256": "27d5cc42616a0c61c318a9feb6f8533299249e019a405a4310e259036f0210bc"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/retry-backoff-compliance/reward.json",
+        "sha256": "bf6b6c5d929cf50b08a971aa2328f89cfd1b35831f4359bdead4397da277c900"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/scattered-url-assembly/reward.json",
+        "sha256": "72b9c2cdac57f56983a98447c57e674374a52d48705fdf85271191876443794e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/scheduled-maintenance/reward.json",
+        "sha256": "c73ccab4643fe0dd6ce8fce4445dbc85528b23c570a0dc6cb791ba180d7c0885"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/session-cookie-chain/reward.json",
+        "sha256": "2df08cc8f52a59640e88411406a9c28568ec2c27e8745b48d058c13c1cf245d7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/signed-request-canonicalization/reward.json",
+        "sha256": "0355e2dbdab0f3f9de3163905f4ec559ff4a9bba1718af827f7c6f162b9f84e3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/token-refresh-workflow/reward.json",
+        "sha256": "2403be53ddc0e096ed39888fe033562d6c816c45855158ae4e1c05154d6b759f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/url-trap-ellipsis/reward.json",
+        "sha256": "1586674c6723ecc015fb29a1fe31ee2d9818789f7b685ccfe0d79a7be5813bde"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/webhook-hmac-verify/reward.json",
+        "sha256": "5cc50452b39ff058fcc875f696cf33b48fe53cf037a366a5f6cabd3620aca73f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/adversarial-shortcut-injection/reward.json",
+        "sha256": "78c6da2f6ed8de45c770d9f0495f95163b2adfe7e84cc047362a2492b380daed"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/api-key-rotation/reward.json",
+        "sha256": "b5e4608ad81e666326eb0cc245b27798cddacdd605c7382d5f257ab4d7ac263e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/api-rate-limit-patience/reward.json",
+        "sha256": "1628ced1229214e2ad392170c0e0f8003440cdaf87a526ac262f4c84a9035553"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/basic-oauth-token/reward.json",
+        "sha256": "c1e1ac6fa20a143fce9333ee2eae688dea71b64cf2a921ff090b70e31a77a3b2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/cascading-token-revocation/reward.json",
+        "sha256": "2db7763aaff49ae400e3e104848d46ff07a4fe59711f44b7f9c846b402bb649c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/certificate-pinning-handshake/reward.json",
+        "sha256": "f366c2ba3887f2ecd80b5ebb99775447023e92016702cdf46c5351054d3cf710"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/constraint-overload-protocol/reward.json",
+        "sha256": "b5ba59a9a5aa4b2dc5b0652d303d0fd1acbedbe17acd65eb219056b46dfb212e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/content-negotiation-chain/reward.json",
+        "sha256": "908f14d0fee87ca64a34b860005e8d10972e591a17a0707fa206f3332f938281"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/csrf-form-submit/reward.json",
+        "sha256": "34a5424e9695212862b7193de7e7e4e085c1b92df11d72289fbf0a4d171c6714"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/cumulative-hash-chain/reward.json",
+        "sha256": "b2fe82c5858ddf08a5d9b49ded6389f5ea8508617755890f8f3e23f4cfb67976"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/cursor-pagination-integrity/reward.json",
+        "sha256": "ada4f146f9d39f69822c140112174f553abe6ab03ec450f012c31437531db4e6"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/distributed-lock-acquire/reward.json",
+        "sha256": "19085ddadf4c56fe40d6460565f285e57bc6fd59b4fa21e2f22f3db73eec5455"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/etag-conditional-get/reward.json",
+        "sha256": "4465475db8c0a58ad21461fec5b0bea4241eb4d2e2b7aeed08e51bd08dcbe5b2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/event-sourced-consistency/reward.json",
+        "sha256": "c026b581eda8221db77fb4fbcb8f01b8e3e42d5803bcc68f97ecf66be8489504"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/extreme-url-length/reward.json",
+        "sha256": "380226a03e01bf98a5b723542e9e754bad8e05fb2438f17d96479e8df89f25d7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/idempotency-key-retry/reward.json",
+        "sha256": "6137699d03574c3df8226b2797f7d60862931f4ef323e8fcc06b73ed669f56f2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/long-token-handling/reward.json",
+        "sha256": "901aa264939c3eb08e1c954ce5dd470881088ae824fb2b14ec85dfc2f5641d4f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-resource-priority/reward.json",
+        "sha256": "c30777c2c321ea21cdc864f4fef59a05ff9a2203a13965a22747a565628a1ff9"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-service-saga/reward.json",
+        "sha256": "e0faad98771e8030585d55f749aa27c707661791ca115dc704988d289e5ce72c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-token-workflow/reward.json",
+        "sha256": "4944dad33180e7c9579f1202e0fbb55805653966b815e4ca9d51bf3f09a7208d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-turn-recall/reward.json",
+        "sha256": "2ed9b022a55db8fb3227b3d403a063dfbe68b03cec7025baca290d876c09b02b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/oauth-authorization-code/reward.json",
+        "sha256": "7fe3bc1d309ed64dd09ebe5dc893eeaa4d684fdccab4c05a87ca65896ef1eec2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/oauth-pkce-with-rotation/reward.json",
+        "sha256": "e8ba5f1cd6cd9fb4c7112fccaac0c67165744990da92f6c873a27414971b4640"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/presigned-url-download/reward.json",
+        "sha256": "d2f4c9218e16eeb6c18fa04b420e055b570f1facdc3d4390ada3cc4be5de3ac1"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/presigned-url-integrity/reward.json",
+        "sha256": "27d5cc42616a0c61c318a9feb6f8533299249e019a405a4310e259036f0210bc"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/retry-backoff-compliance/reward.json",
+        "sha256": "bf6b6c5d929cf50b08a971aa2328f89cfd1b35831f4359bdead4397da277c900"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/scattered-url-assembly/reward.json",
+        "sha256": "72b9c2cdac57f56983a98447c57e674374a52d48705fdf85271191876443794e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/scheduled-maintenance/reward.json",
+        "sha256": "c73ccab4643fe0dd6ce8fce4445dbc85528b23c570a0dc6cb791ba180d7c0885"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/session-cookie-chain/reward.json",
+        "sha256": "2df08cc8f52a59640e88411406a9c28568ec2c27e8745b48d058c13c1cf245d7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/signed-request-canonicalization/reward.json",
+        "sha256": "0355e2dbdab0f3f9de3163905f4ec559ff4a9bba1718af827f7c6f162b9f84e3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/token-refresh-workflow/reward.json",
+        "sha256": "2403be53ddc0e096ed39888fe033562d6c816c45855158ae4e1c05154d6b759f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/url-trap-ellipsis/reward.json",
+        "sha256": "1586674c6723ecc015fb29a1fe31ee2d9818789f7b685ccfe0d79a7be5813bde"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/webhook-hmac-verify/reward.json",
+        "sha256": "5cc50452b39ff058fcc875f696cf33b48fe53cf037a366a5f6cabd3620aca73f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/adversarial-shortcut-injection/agent_trace.json",
+        "sha256": "3ce7055023183b511c40095d36ef55f4b79a144be3668a68bc4e620496cee822"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/api-key-rotation/agent_trace.json",
+        "sha256": "7f4782314dc659abc32ec3850cc5c8b33fb8c4de16d57f3be598bf23e40072d4"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/api-rate-limit-patience/agent_trace.json",
+        "sha256": "c0012f4629d54d5e9fb246b792f7d8d5e74fbeafe415af883e8ae512ae2443fa"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/basic-oauth-token/agent_trace.json",
+        "sha256": "78aa01a9ccddf6b1bc3cdc8729f1361da98a9b395c9832e3d5f0a547775321f3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/cascading-token-revocation/agent_trace.json",
+        "sha256": "370d1972b75437a3dfaec42f416deab5dab85a5026a93f6a408cbb5d5eaad6ef"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/certificate-pinning-handshake/agent_trace.json",
+        "sha256": "59c0f35c6db346fa517252691f3efd75b9864f2facbeab280423902cd3d6af79"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/constraint-overload-protocol/agent_trace.json",
+        "sha256": "3d17adcf492897a431027ddb9a52ae6055bcdc0482a81c6185267b9704d270e5"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/content-negotiation-chain/agent_trace.json",
+        "sha256": "24d7c07fa375b12522cd60f98c3d85c85aafc5f1499890bc6766ad57d49fc809"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/csrf-form-submit/agent_trace.json",
+        "sha256": "fd2ed328af9342591ec2eb845632e817d483a2bac70750760dd8a4ac301df564"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/cumulative-hash-chain/agent_trace.json",
+        "sha256": "ada3d1cb1795540ec2f4a3a8e2a79b632ddbd4c37230b90cd18b5ee01344d775"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/cursor-pagination-integrity/agent_trace.json",
+        "sha256": "ddfce88e5bde9fc7383f1405665ec4d0b44d7d4437f3b254612972f20f39ae36"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/distributed-lock-acquire/agent_trace.json",
+        "sha256": "2c4f36f16bd446e608e844c58caa8c64a15b1811ab1da782f9023fc36431fbd7"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/etag-conditional-get/agent_trace.json",
+        "sha256": "2e27374a6af1ae59ec0cdbf922b1ad1d438c69f50562032c518ceb2ed8e82ed2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/event-sourced-consistency/agent_trace.json",
+        "sha256": "0b830624cc428052beffd823462b883622cb402ffec02fde9d78d0423cb9ef6a"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/extreme-url-length/agent_trace.json",
+        "sha256": "56c6bda9a896540948e4e520edb3145f3bd70651aca5add8a1d2dc0685e05f2b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/idempotency-key-retry/agent_trace.json",
+        "sha256": "7e1d4eb584626f7b0b1c1a78aa51c02d9315c044881f2f00fd43966f2e1cd72e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/long-token-handling/agent_trace.json",
+        "sha256": "4d609c09da1868791a1a17b91943e6140bb0950981e8df68be9bfb9c5fdc62d5"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-resource-priority/agent_trace.json",
+        "sha256": "9be1c7140de6eb9ecd50df42ab13eacef84142ae425c3e88a5e06e4b02b62f4c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-service-saga/agent_trace.json",
+        "sha256": "37b6a54919f75964dec2df98b38fab8e557d875750a57c79122c8a0c7e7d9721"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-token-workflow/agent_trace.json",
+        "sha256": "0e2b991bbed401be9735c7cefd67d1c90af8f147e1f39217e6349874d492a12a"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/multi-turn-recall/agent_trace.json",
+        "sha256": "09ecdd1e15426177093ec4a634f82e970adf7246412df1929d108e0e89dcdad3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/oauth-authorization-code/agent_trace.json",
+        "sha256": "eb01cc5b3dc329ede2e62155c1977d85fa4f65a3ec32ceef0ccc493bb1a556ff"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/oauth-pkce-with-rotation/agent_trace.json",
+        "sha256": "a10307f20f6d0d02a0578bbf03d637fb19d7669d4178ee01370b83d045d2e240"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/presigned-url-download/agent_trace.json",
+        "sha256": "9c9016c26ab1a3aac235e4244711381f8451d0860040e9ec3ff9c14269506e90"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/presigned-url-integrity/agent_trace.json",
+        "sha256": "2ac5ffaad70433a3cdbbc47e61bc45dd66775a2ac31240a7f8348d431cddf054"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/retry-backoff-compliance/agent_trace.json",
+        "sha256": "405cd1447bffecf115e0fe8c622fbf92588150ec5cf95d0a2456c09a5e0772db"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/scattered-url-assembly/agent_trace.json",
+        "sha256": "07ae5a30cd3f5d15dd5d5480d84a523a0717f231ecb28df01b5035aa8902a476"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/scheduled-maintenance/agent_trace.json",
+        "sha256": "fbe0f6309170a53db7cb8927d45ee8c0649b075b3842aaf9ebae61c34cf58bf0"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/session-cookie-chain/agent_trace.json",
+        "sha256": "604426ffe87af1351d1a3dc8d601a271667c08e55621f08e317cb80fb23dbf27"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/signed-request-canonicalization/agent_trace.json",
+        "sha256": "06cb3f549a090ef773f50dd73d471a07eaf97b58371268d42c93f3b99dfef576"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/token-refresh-workflow/agent_trace.json",
+        "sha256": "3d1e37b2c6780451707ac2ac654289990e1e38db389aed44f747544ce2a95071"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/url-trap-ellipsis/agent_trace.json",
+        "sha256": "68a2370ae7f1af6d712844f995ef59c03f6fc329ab4ab2046a537a46d5efc7ca"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_0/webhook-hmac-verify/agent_trace.json",
+        "sha256": "8bbf0ecc281d41bd43bf207fb44d423e5def45a019c03eea3dd89e251871c43e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/adversarial-shortcut-injection/agent_trace.json",
+        "sha256": "35a13d336cf5945afcc3a0d6b34644976117eb684e03211b61fff1cd7293c204"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/api-key-rotation/agent_trace.json",
+        "sha256": "810014b6f173b9a4918451ad818839654d814bd0971b988d39393a3ae76180b6"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/api-rate-limit-patience/agent_trace.json",
+        "sha256": "03c31489735bcf0622aab886a8942431b27dc52793ec8930ab6ddfc8c1fd984c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/basic-oauth-token/agent_trace.json",
+        "sha256": "6fcd49aa72557835c10de7d08300131bdac6a884b60788ba7d49183a7f769bcf"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/cascading-token-revocation/agent_trace.json",
+        "sha256": "36e0e14850c4ec8902a46fa49b82fb1614f4912e0b3f0041086e314420f41b18"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/certificate-pinning-handshake/agent_trace.json",
+        "sha256": "1f89ba321150c8c7b2a60a007ea35d5c1bdb4cd68fffb8f727941ac0d643a6a1"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/constraint-overload-protocol/agent_trace.json",
+        "sha256": "0f847104de6f89ff6845fdfa81e1253a2f0fb2404eadc8117f4c1369c6f09be5"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/content-negotiation-chain/agent_trace.json",
+        "sha256": "24d387b288d899f88d19ee79b62642c4b7be3d47b5a109a1d04391fc91ed5339"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/csrf-form-submit/agent_trace.json",
+        "sha256": "11120977e228608d64490bdc4e3cd4456615e47bdddb37a89b946a68a2b62e9d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/cumulative-hash-chain/agent_trace.json",
+        "sha256": "51a9693d39fbb9e304bcc0ac97970c76a4e6b604db3c3416f7d9f5e25ddda9ce"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/cursor-pagination-integrity/agent_trace.json",
+        "sha256": "493aaf3ca9f44f538b291cb2f629523dc394a4bedf68e493c5a6489f83a35d46"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/distributed-lock-acquire/agent_trace.json",
+        "sha256": "931bb1bb1d3d3dd1bae8cdf2b75ba4c1a82f79e08a80a794e608de7a81c2a669"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/etag-conditional-get/agent_trace.json",
+        "sha256": "052978b83ff14749a8c81a501ea111c34579d18b497aa45a6bebdcd6c895d21e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/event-sourced-consistency/agent_trace.json",
+        "sha256": "6ef72d8fdd301f6b3da0f84c86fb86b1fa43db34150661ca88dd6165d58ac745"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/extreme-url-length/agent_trace.json",
+        "sha256": "0e3ea0003afeb457f085eb8324cd0f46647d15ecb381b7480643a41923600237"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/idempotency-key-retry/agent_trace.json",
+        "sha256": "0c0e8491f28557e69a86dbc48ad2fe1d44b8282403b4d427708becde40fbc9f6"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/long-token-handling/agent_trace.json",
+        "sha256": "a5b35b27531e17360854e0b4f1a0c59917daaf41f549820e3569ffa1f72e6de2"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-resource-priority/agent_trace.json",
+        "sha256": "d8b437e77b54797b21c156fd3f84705a4e9139c72e2d665961752349227873ed"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-service-saga/agent_trace.json",
+        "sha256": "278967b2ccb03c21b52653f531268010c65f8bffa0981a8678d6d54c4c8aaba8"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-token-workflow/agent_trace.json",
+        "sha256": "c4076c2df4ffff7fa0f5eca4c6bbf3694804021e6deee283473fb52fff74e727"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/multi-turn-recall/agent_trace.json",
+        "sha256": "ac4adb4242f17e4c123bfa0329bcb5f36e465b6b9cea6faa85c82db0d8d8b320"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/oauth-authorization-code/agent_trace.json",
+        "sha256": "803922981e3826373dd58b5115da43f3e0889e81f9f369e11ff86a345db91a97"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/oauth-pkce-with-rotation/agent_trace.json",
+        "sha256": "d595c727fd33c77c26f9b343c1f148ddf99785ca4bd68bf8f4c702a5ec2f8fde"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/presigned-url-download/agent_trace.json",
+        "sha256": "87aac53821b100e0260f635e4343429b1d2097b6af222204493c1b7c2998b73b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/presigned-url-integrity/agent_trace.json",
+        "sha256": "8fcfd947ef66019268725af20187d3ee3f8ce6bc85dd1c28f77442bf54e455d0"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/retry-backoff-compliance/agent_trace.json",
+        "sha256": "186f571444b70894e07ca842bbf5b138634b1200701aa0a6dbb8cffdf04e134e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/scattered-url-assembly/agent_trace.json",
+        "sha256": "bca43c6ffa85d276f20d810b78f4c0fffa27c301b66ce86821e207a4754afb43"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/scheduled-maintenance/agent_trace.json",
+        "sha256": "c71c231b064800e50f64754b5282ebd1cffcf64648c58de003a7d9c71c00311f"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/session-cookie-chain/agent_trace.json",
+        "sha256": "91233d28c91c8ccdba03e29ea5a4a181bcb232323725a627871b6dce80e1e5b5"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/signed-request-canonicalization/agent_trace.json",
+        "sha256": "8423e5b6c3ea4107c60df2cefcdb4fb937251d573d42f2b03200f097f4d8c18b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/token-refresh-workflow/agent_trace.json",
+        "sha256": "ca35c9e78370f79a2cc42e8843b4ccb7bed65845a2870602851e79657dcd0f9d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/url-trap-ellipsis/agent_trace.json",
+        "sha256": "341334f78ebc5b15ae05c438eaf1b574b64d415f31024ff1616d668d56d9cf3e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_1/webhook-hmac-verify/agent_trace.json",
+        "sha256": "24f0c26d87b1edc332d92587fd4d4d60689da14779ab650c2bbe42c9f21070cc"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/adversarial-shortcut-injection/agent_trace.json",
+        "sha256": "84e27438512bfe79f828dc5b230cda4ada1f2d82638f5a0cdaea563c1d2e41e3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/api-key-rotation/agent_trace.json",
+        "sha256": "b70115b651e69a4fa7b56cf3f6ccfb894a23d7580b42918d1c53d3b3af0b6294"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/api-rate-limit-patience/agent_trace.json",
+        "sha256": "1f377726ded263e5dca9afa56d08162c5752219e35aec32a4f88030985bfd92a"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/basic-oauth-token/agent_trace.json",
+        "sha256": "b08ec9c79b8d2fab4070edb03a44ed6115cb484455b3c34627795a97a96e496d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/cascading-token-revocation/agent_trace.json",
+        "sha256": "8d727c9a1f28e78979aba11a56a137a8d68c4b4346f28be14b5368f5a3d1aed0"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/certificate-pinning-handshake/agent_trace.json",
+        "sha256": "4ee6f99f42fe1bd15951f93d365bd6048626aafb8c98c42a4b7e82b9c321d29b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/constraint-overload-protocol/agent_trace.json",
+        "sha256": "dfc0ffe388bf2f32fa1d6bf4a051868214f3a6c15e253c8d1304f272e8fd38b6"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/content-negotiation-chain/agent_trace.json",
+        "sha256": "268789de812eb93cc4ea5c7de963d008246bee8fb894e4cf6070d9796405a65a"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/csrf-form-submit/agent_trace.json",
+        "sha256": "0c183a2dfaa7c5ae8e9681cdd9a070f1e0535b8e28cd52664268c6ead4e63c57"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/cumulative-hash-chain/agent_trace.json",
+        "sha256": "5001db2f37b6070d65396d70365cd34e0e560e1f5fd786ad62d8101852267b77"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/cursor-pagination-integrity/agent_trace.json",
+        "sha256": "99a1382fb1c082e3e08d26834dd35fe8777525e7d51e842c4562d889187ac81a"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/distributed-lock-acquire/agent_trace.json",
+        "sha256": "d0c2db9bcef8377211bd7030acabe5a17612326b9b2709894a812cbe0eb1f1c5"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/etag-conditional-get/agent_trace.json",
+        "sha256": "b5f94c2421d43c97917a992e91c0910a5d246cc7102d3e2438418f8bb1f499ea"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/event-sourced-consistency/agent_trace.json",
+        "sha256": "25c70b96bf1e8fd0572fe129d94b5b042e51c661f6fdc9bcefad1b531671cd98"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/extreme-url-length/agent_trace.json",
+        "sha256": "55418c7959ed360b29380836c23cdcb65067290d9a9da22b50d5690c5b75d772"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/idempotency-key-retry/agent_trace.json",
+        "sha256": "4d29da1edf60b4733485ab3503f39c796dd0c3a40443d8808d60b8d3566ba184"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/long-token-handling/agent_trace.json",
+        "sha256": "b1a39827f567afbc87e532b5cc54bae06f3c72cc71a620acd36b86d8c754848e"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-resource-priority/agent_trace.json",
+        "sha256": "2f24b253ae22162bd7ba7e7feb6010a8dd9950a4b38e8064a6a2d44fc40c4352"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-service-saga/agent_trace.json",
+        "sha256": "adebe805c823d37fe808cadb467888edecaf08ec6cad230fdc82bb6b4d31109c"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-token-workflow/agent_trace.json",
+        "sha256": "415e85027435eccfaa689b81341d39eac083f3d9ba271e10c425b9cdce2390b0"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/multi-turn-recall/agent_trace.json",
+        "sha256": "359c07d07345294998c2e1a9c0e1bad02e281533b936b95878d0f3b3315fb024"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/oauth-authorization-code/agent_trace.json",
+        "sha256": "708161bb984beb220e507282c1138c98277c5f795c80cfdbed89c4c25769b614"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/oauth-pkce-with-rotation/agent_trace.json",
+        "sha256": "9f59062e98a954ba2ec069d5c61b2fb2b06c7800c47793653f9a513d2fc9bf4b"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/presigned-url-download/agent_trace.json",
+        "sha256": "7bcbe03212a3ce79d9abfa75950a3665b0a0392dfd8cf87836b848e2e809c919"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/presigned-url-integrity/agent_trace.json",
+        "sha256": "82c64186a9d6b1ff45aca641ee049344503a5003b2ce789ec9836ef316753226"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/retry-backoff-compliance/agent_trace.json",
+        "sha256": "c9c8b214593c26b91c715f06fc759dc4618f16e63c249d7df0b39aab7bdec0e0"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/scattered-url-assembly/agent_trace.json",
+        "sha256": "705530d2d860ae8b59fc75eba60b87dd3a5cada250a3933112ab6e056d8bfcdb"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/scheduled-maintenance/agent_trace.json",
+        "sha256": "18ab1975a4124ce2ca083efc645ee498bee514798b19f792ea0362c895c1e99a"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/session-cookie-chain/agent_trace.json",
+        "sha256": "d195fa532e535337a21a96fc6895ce380a396363eda4d9704607bec36c4265ac"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/signed-request-canonicalization/agent_trace.json",
+        "sha256": "de78d7cf92b905acfc61f8f60ec0bd47deec2ee262af8e1004db921a3b8abba9"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/token-refresh-workflow/agent_trace.json",
+        "sha256": "0f8d57bcbff12228c26ade6c0f3897b02222918a95549aaa0053eea472ddf8b3"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/url-trap-ellipsis/agent_trace.json",
+        "sha256": "83068bcfb33969333749a4ccfd27f9d886f3fa7dc94b6831e901534a547b842d"
+      },
+      {
+        "path": "ACQUISITION_ROOT/third_party/contractbench/results/huggingface__Qwen__Qwen3.5-9B/run_2/webhook-hmac-verify/agent_trace.json",
+        "sha256": "fca80a8fab7ef74ebb7d8fb7bf618d0bdee0b73139cb037b918213d063fac9db"
+      }
+    ],
+    "revisions": {
+      "contractbench_data": "457a8ad7d905cbb57ef6b892c5c087afee144171",
+      "contractbench_source": "c50eefee49b6925e2ccbf3c51a987ed705148725",
+      "taubench": "59a200c6d575d595120f1cb70fea53cef0632f6b"
+    },
+    "script_sha256": "fdea42d65b0795ea7ee8d691f72505a432dd8fc9a6cc96135f7e1dcaa96c664e"
+  },
+  "summary": {
+    "contractbench": {
+      "exact_historical_evaluation_identity_verified": false,
+      "missing_terminal_responses": 3,
+      "released_episodes": 99,
+      "released_successes": 0,
+      "reported_percent": 56.6,
+      "successful_trace_eligible_examples": 0
+    },
+    "taubench": {
+      "consistency_controls": 2,
+      "declared_actions": 5920,
+      "derived_summaries": 1,
+      "derived_summary_check": "TBEN-NEG-01",
+      "independent_scientific_assertions": 2,
+      "primitive_reward_conjunction_recomputed": false,
+      "reward_info_eligible": 1313,
+      "trajectories": 1320
+    }
+  }
+}

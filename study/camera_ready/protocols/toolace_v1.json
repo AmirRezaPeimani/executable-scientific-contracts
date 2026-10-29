@@ -1,0 +1,70 @@
+{
+  "boundary": "No weights, model training, cloud resources or post-hoc favorable activation dataset. Official 8192 run separate from controlled boundary sweeps. All inherited files read-only.",
+  "controlled_inputs": {
+    "max_length_is_diagnostic_only": true,
+    "max_lengths": [
+      8,
+      16
+    ],
+    "prompt_lengths": [
+      1,
+      2,
+      7,
+      8,
+      9,
+      10,
+      16
+    ],
+    "response_lengths": [
+      1,
+      2,
+      4,
+      9
+    ]
+  },
+  "conversion": "Execute unchanged complete converter with storage and tokenizer-path redirection only; preserve first execution exception. Any continuation/subset is separately labeled. Compare scanner prompts and responses against actual converter outputs before interpreting count equivalence.",
+  "cost_cad": 0,
+  "coverage": "Reconcile 10092 raw candidates, 9412 parsed targets, 680 exclusions and 1070 mixed-unit parse failures. Measure empty-response and EOS supervision. Do not infer historical model performance.",
+  "development": [
+    "original uncropped mask coordinates",
+    "repaired mask coordinates",
+    "known 10/4/8 crop fixture",
+    "official full released-data census"
+  ],
+  "eligibility": "A fault counts only if executable variant produces a value differing from independent oracle on its assigned input family. Unmanifested mutations are excluded with reasons. Errors are errors, not detections.",
+  "frozen_utc": "2026-10-29T14:25:30.631457+00:00",
+  "locked_evaluation": [
+    "source crop-offset sign mutation",
+    "source first-response boundary mutation",
+    "source padding-supervision mutation",
+    "source final-position-supervision mutation",
+    "equivalent mask expression transform",
+    "local variable rename",
+    "missing source evidence",
+    "zero eligible examples"
+  ],
+  "methods": [
+    "required-field/type validation",
+    "relevant native tests when discoverable",
+    "historical source-pattern checks",
+    "frozen behavioral contract"
+  ],
+  "official_configuration": {
+    "max_length": 8192,
+    "tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "training": false,
+    "truncation": "left"
+  },
+  "oracle": "For prediction index j, target index j+1 must be a retained response token, including EOS, and within unpadded retained sequence. Compare full loss-mask vector and token identity after the trainer's documented input_ids[:,1:] shift, not unshifted response coordinates. No model forward pass.",
+  "primary_metrics": [
+    "faults_detected",
+    "repairs_accepted",
+    "benign_false_alarms",
+    "not_evaluated",
+    "execution_errors"
+  ],
+  "primary_question": "Do implementation-coupled crop contracts reject manifested source faults, accept an executable repair and harmless source transforms, and distinguish unavailable evidence?",
+  "schema_version": "1.0",
+  "source_revision": "1156d649235235e686372956e99bfc50e4b1e3f6",
+  "statistics": "Exact outcomes on fixed source transformations and complete-data census; no population confidence interval over handcrafted mutants."
+}

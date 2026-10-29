@@ -1,0 +1,248 @@
+{
+  "evidence_paths_relative_to": "repository root",
+  "experiments_executed": false,
+  "inputs": {
+    "history/submitted/results/agentabstain_prospective_v2.json": "dd6b6a9da73de52a180edf5ea7398a31b4f83d7785a9b8ed33025cad534a7a36",
+    "history/submitted/results/reproduction/audits/agentprm.json": "780d7adafd090763aff50d134593ecef44f846509a30019ccb15e4c36ce64ad6",
+    "history/submitted/results/reproduction/audits/contractbench.json": "70a411488c59d6a96d3d1aef71e082d6c067ac1d7a504a88aad0b378f238c72d",
+    "history/submitted/results/reproduction/audits/taubench.json": "23d61770962d42a945629ff2189eff4c147aa2bf20930a7ac5469298ebe9d56a",
+    "history/submitted/results/reproduction/audits/toolace.json": "df4058e12e61d1f72f356cfd2cae5e9e3f839093abc2847adf627480fab2af31",
+    "history/submitted/tables/contract_inventory.csv": "7f714325581ffdd23a06bb6703d323bc6bf2b1c9cb651435c0d675fe7c3b2ecb",
+    "study/camera_ready/results/agentabstain/case_analysis_v1.json": "7b1363ee5b565f609f603b64fd34490de1a150b08c10a3490e1cac1dabab2d97",
+    "study/camera_ready/results/agentabstain/challenge_results_v2.json": "fdc5cc242bce65ca3dd2073e376b85aab1708a44ed970ef1612ef8c9403bb221",
+    "study/camera_ready/results/agentprm/case_analysis_v1.json": "613a1dafe0eaf4145eb2cc3f278d951083933849e8821a4bb6d8bfba260db6e2",
+    "study/camera_ready/results/agentprm/challenge_results_v2.json": "bcbc89ccc1d7ab8f211d248eb36c6af9cd0f9e750f643f2a47486471f7325a27",
+    "study/camera_ready/results/agentprm/mean_scope_companion_v2.json": "7cd5e9728b896f1f22372eeea02db174e84d7a1d431db5a642b4cd77a672256f",
+    "study/camera_ready/results/agentprm/state_targets_v1.csv": "d7163a3e62374d347a88d1b63544f6f22aae23b483a5ae99a0d54c2a9baf1e8a",
+    "study/camera_ready/results/remaining_evidence_v3.json": "7ee6de5ced5100fe519d2d606df08617f6724eb7ce9ab8eaa13bbc4ac4c713b2",
+    "study/camera_ready/results/toolace/case_analysis_v1.json": "6168faa97bd8b6fe3165d99cbb0f6c90316be8a48ccb1b1f9c206f1942883062",
+    "study/camera_ready/results/toolace/challenge_results_verified_v2.json": "868163024ca5f89eaa7fb257dcc52e2db53a8d5c2fc749899c3b9662995636df"
+  },
+  "original_classifications": {
+    "conformant": 15,
+    "convention sensitivity": 2,
+    "discrepant": 7,
+    "inactive": 1
+  },
+  "outputs": {
+    "manuscript/tables/contract_inventory.csv": "c0c597dec9044e350975458b89084fc2d102556fb3e1cc4a674e41eaeccf9722",
+    "manuscript/tables/contract_inventory.tex": "00a870075124e10d4018339842fe5aa1f32f0aa8551c3400a98df043381e78eb",
+    "tables/contract_inventory.csv": "c0c597dec9044e350975458b89084fc2d102556fb3e1cc4a674e41eaeccf9722",
+    "tables/contract_inventory.tex": "00a870075124e10d4018339842fe5aa1f32f0aa8551c3400a98df043381e78eb"
+  },
+  "preserved_fields": [
+    "contract_id",
+    "repository",
+    "source",
+    "role",
+    "original_classification",
+    "eligible_examples",
+    "coverage"
+  ],
+  "reproduction_command": "python scripts/make_contract_inventory.py",
+  "row_count": 25,
+  "rows": [
+    {
+      "contract_id": "APRM-TEMP-01",
+      "current_evidence": "study/camera_ready/results/agentprm/challenge_results_v2.json",
+      "eligibility_basis": "Original terminal-discount case: eligible_examples across both pinned caller paths.",
+      "eligible_examples": 24,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/agentprm.json"
+    },
+    {
+      "contract_id": "APRM-TEMP-02",
+      "current_evidence": "study/camera_ready/results/agentprm/state_targets_v1.csv",
+      "eligibility_basis": "Count saved state observations with gamma=1.",
+      "eligible_examples": 510,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/agentprm.json"
+    },
+    {
+      "contract_id": "APRM-TEMP-03",
+      "current_evidence": "study/camera_ready/results/agentprm/state_targets_v1.csv",
+      "eligibility_basis": "Count saved positive-terminal observations at gamma=0.95 with trajectory length greater than one.",
+      "eligible_examples": 254,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/agentprm.json"
+    },
+    {
+      "contract_id": "APRM-SCHEMA-01",
+      "current_evidence": "study/camera_ready/results/agentprm/case_analysis_v1.json",
+      "eligibility_basis": "Original query_history.history_entries; separately saved actions remain correct.",
+      "eligible_examples": 6,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/agentprm.json"
+    },
+    {
+      "contract_id": "APRM-METRIC-01",
+      "current_evidence": "study/camera_ready/results/agentprm/mean_scope_companion_v2.json",
+      "eligibility_basis": "Ineligibility designation for the superseded varying-terminal-outcome fixture, not a measured zero effect. Saved replacement evidence compares complete visits with merged state-action means.",
+      "eligible_examples": 0,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/agentprm.json"
+    },
+    {
+      "contract_id": "CBEN-LOG-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=CBEN-LOG-01].coverage.eligible_examples; released records.",
+      "eligible_examples": 99,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/contractbench.json"
+    },
+    {
+      "contract_id": "CBEN-LOG-02",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=CBEN-LOG-02].coverage.eligible_examples; released records.",
+      "eligible_examples": 0,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/contractbench.json"
+    },
+    {
+      "contract_id": "CBEN-SCHEMA-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=CBEN-SCHEMA-01].coverage.eligible_examples; released records.",
+      "eligible_examples": 99,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/contractbench.json"
+    },
+    {
+      "contract_id": "CBEN-METRIC-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=CBEN-METRIC-01].coverage.eligible_examples; released records.",
+      "eligible_examples": 99,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/contractbench.json"
+    },
+    {
+      "contract_id": "CBEN-METRIC-02",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=CBEN-METRIC-02].coverage.eligible_examples; released records.",
+      "eligible_examples": 99,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/contractbench.json"
+    },
+    {
+      "contract_id": "TACE-COORD-01",
+      "current_evidence": "study/camera_ready/results/toolace/challenge_results_verified_v2.json",
+      "eligibility_basis": "TACE-ORIGINAL eligible_examples in the saved controlled length grid.",
+      "eligible_examples": 56,
+      "historical_classification": "discrepant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/toolace.json"
+    },
+    {
+      "contract_id": "TACE-COORD-02",
+      "current_evidence": "study/camera_ready/results/toolace/case_analysis_v1.json",
+      "eligibility_basis": "coverage.nonempty_parsed_targets from the official conversion.",
+      "eligible_examples": 9394,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/toolace.json"
+    },
+    {
+      "contract_id": "TACE-SCHEMA-01",
+      "current_evidence": "study/camera_ready/results/toolace/case_analysis_v1.json",
+      "eligibility_basis": "coverage.nonempty_parsed_targets from the official conversion.",
+      "eligible_examples": 9394,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/toolace.json"
+    },
+    {
+      "contract_id": "TACE-MASK-01",
+      "current_evidence": "study/camera_ready/results/toolace/case_analysis_v1.json",
+      "eligibility_basis": "official_8192_census.converted_rows, including separately identified EOS-only examples.",
+      "eligible_examples": 9964,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/toolace.json"
+    },
+    {
+      "contract_id": "TACE-SUPPORT-01",
+      "current_evidence": "study/camera_ready/results/toolace/case_analysis_v1.json",
+      "eligibility_basis": "official_8192_census.converted_rows, including separately identified EOS-only examples.",
+      "eligible_examples": 9964,
+      "historical_classification": "inactive",
+      "historical_evidence": "history/submitted/results/reproduction/audits/toolace.json"
+    },
+    {
+      "contract_id": "TBEN-SCHEMA-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=TBEN-SCHEMA-01].coverage.eligible_examples; declared task actions.",
+      "eligible_examples": 5920,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/taubench.json"
+    },
+    {
+      "contract_id": "TBEN-LOG-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=TBEN-LOG-01].coverage.eligible_examples; released records.",
+      "eligible_examples": 1320,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/taubench.json"
+    },
+    {
+      "contract_id": "TBEN-METRIC-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=TBEN-METRIC-01].coverage.eligible_examples; released records.",
+      "eligible_examples": 1313,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/taubench.json"
+    },
+    {
+      "contract_id": "TBEN-METRIC-02",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=TBEN-METRIC-02].coverage.eligible_examples; released records.",
+      "eligible_examples": 1320,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/taubench.json"
+    },
+    {
+      "contract_id": "TBEN-NEG-01",
+      "current_evidence": "study/camera_ready/results/remaining_evidence_v3.json",
+      "eligibility_basis": "contracts[contract_id=TBEN-NEG-01].coverage.eligible_examples; preceding checks.",
+      "eligible_examples": 4,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/reproduction/audits/taubench.json"
+    },
+    {
+      "contract_id": "AABS-PAIR-01",
+      "current_evidence": "study/camera_ready/results/agentabstain/case_analysis_v1.json",
+      "eligibility_basis": "dataset.pairs in the released task-composition census.",
+      "eligible_examples": 263,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/agentabstain_prospective_v2.json"
+    },
+    {
+      "contract_id": "AABS-PAIR-02",
+      "current_evidence": "study/camera_ready/results/agentabstain/challenge_results_v2.json",
+      "eligibility_basis": "Original conformant paired_conjunction case: eligible_examples; empty-denominator convention is separate.",
+      "eligible_examples": 4,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/agentabstain_prospective_v2.json"
+    },
+    {
+      "contract_id": "AABS-CAR-01",
+      "current_evidence": "study/camera_ready/results/agentabstain/challenge_results_v2.json",
+      "eligibility_basis": "Original conformant conditional_denominator case: eligible_examples; empty-denominator convention is separate.",
+      "eligible_examples": 2,
+      "historical_classification": "convention sensitivity",
+      "historical_evidence": "history/submitted/results/agentabstain_prospective_v2.json"
+    },
+    {
+      "contract_id": "AABS-COMMIT-01",
+      "current_evidence": "study/camera_ready/results/agentabstain/case_analysis_v1.json",
+      "eligibility_basis": "Number of saved combined_operational Boolean cases in primitive_checks.",
+      "eligible_examples": 4,
+      "historical_classification": "conformant",
+      "historical_evidence": "history/submitted/results/agentabstain_prospective_v2.json"
+    },
+    {
+      "contract_id": "AABS-MACRO-01",
+      "current_evidence": "study/camera_ready/results/agentabstain/case_analysis_v1.json",
+      "eligibility_basis": "dataset.pairs in the released task-composition census.",
+      "eligible_examples": 263,
+      "historical_classification": "convention sensitivity",
+      "historical_evidence": "history/submitted/results/agentabstain_prospective_v2.json"
+    }
+  ],
+  "saved_evidence_only": true,
+  "schema_version": "1.0"
+}

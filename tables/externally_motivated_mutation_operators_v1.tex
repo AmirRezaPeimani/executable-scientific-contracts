@@ -1,0 +1,23 @@
+% Requires: booktabs, tabularx
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\caption{Eight externally motivated mutation operators, evaluated before and after adding an equality case to the input. The check remained unchanged.}
+\label{tab:external-mutation-operators-v1}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}@{}}
+\toprule
+Family & Check & Mutation & First run & After fixture correction \\
+\midrule
+Arithmetic operator replacement & XM-01: AgentPRM target value & horizon - 1 - t $\rightarrow$ horizon - 1 + t & Detected & Detected \\
+Relational operator replacement & XM-02: thresholded pass rate & $\mathrm{reward} \geq \mathrm{threshold} \rightarrow \mathrm{reward} > \mathrm{threshold}$ & Missed (fixture lacked equality case) & Detected \\
+Constant-value replacement & XM-03: AgentPRM terminal index & terminal offset 1 $\rightarrow$ 0 & Detected & Detected \\
+Unary operator replacement & XM-04: AgentPRM signed target & value $\rightarrow$ -value & Detected & Detected \\
+Logical operator replacement & XM-05: AgentAbstain paired accuracy & act and abstain $\rightarrow$ act or abstain & Detected & Detected \\
+Statement deletion & XM-06: ContractBench response logging & delete final response append & Detected & Detected \\
+Statement deletion & XM-07: ToolACE required arguments & delete required-argument insertion & Detected & Detected \\
+Logical operator replacement & XM-08: AgentAbstain commit scoring & not commit and judge $\rightarrow$ not commit or judge & Detected & Detected \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,11 @@
+\newcommand{\ImplementationTestsCaption}{Decisions on 52 of the 60 implementation cases. The eight conformant original cases are reported in the supplementary results table. Blue marks the expected decision, orange a missed fault or false alarm, and gray unavailable coverage.}
+
+\newcommand{\AgentPRMTargetsCaption}{AgentPRM targets before and after correcting the discount exponent. The left panel shows signed targets for an eight-state successful trajectory at $\gamma=0.95$. The right panel shows the largest change in exported targets across trajectory lengths. Exported targets use $0.5(Q+1)$, giving half the change in signed targets.}
+
+\newcommand{\ToolACEMaskCaption}{ToolACE mask alignment after left cropping. Ten prompt tokens and four response/EOS tokens are cropped to eight inputs, removing six prompt tokens. The mask at position $i$ weights the prediction of retained token $i+1$. The original mask suppresses all four response/EOS predictions; the corrected mask retains them. Padding and the final position with no next-token prediction are excluded.}
+
+\newcommand{\AgentAbstainWeightingCaption}{Released subtype counts and the maximum absolute difference between equal-subtype and pair-weighted scenario averages. Constructed outcomes attain the overall bound of 2.412476 percentage points through the unchanged evaluator and ranking computation.}
+
+\newcommand{\ToolACELengthCaption}{Sequence lengths for the 9,394 converted examples with nonempty responses. The 570 EOS-only examples are omitted from the histogram. All 9,964 converted examples were checked against the 8,192-token limit; none exceeded it, and the maximum length was 3,945 tokens.}
+
+\newcommand{\MissingPairsCaption}{Maximum weighting difference after hypothetical removal of zero, one, three, or eight complete pairs from one subtype in each scenario. The removed subtype is chosen separately for each scenario to maximize the difference. Removing pairs simultaneously across the eight scenarios gives overall bounds of approximately 2.41, 4.07, 7.71, and 19.43 percentage points.}

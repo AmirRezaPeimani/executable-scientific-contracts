@@ -1,0 +1,296 @@
+{
+  "availability": "sourcepath.is_file() and selectedfixtures nonempty; zeroeligible selected by actual official_census sequence_tokens>8192",
+  "case_analysis_v1_sha256": "6168faa97bd8b6fe3165d99cbb0f6c90316be8a48ccb1b1f9c206f1942883062",
+  "controlled_fixtures": [
+    {
+      "maximum": 8,
+      "prompt_tokens": 1,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 1,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 1,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 1,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 1,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 1,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 1,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 1,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 2,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 2,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 2,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 2,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 2,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 2,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 2,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 2,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 7,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 7,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 7,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 7,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 7,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 7,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 7,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 7,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 8,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 8,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 8,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 8,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 8,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 8,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 8,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 8,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 9,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 9,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 9,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 9,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 9,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 9,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 9,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 9,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 10,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 10,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 10,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 10,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 10,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 10,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 10,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 10,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 16,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 16,
+      "response_tokens": 1
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 16,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 16,
+      "response_tokens": 2
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 16,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 16,
+      "response_tokens": 4
+    },
+    {
+      "maximum": 8,
+      "prompt_tokens": 16,
+      "response_tokens": 9
+    },
+    {
+      "maximum": 16,
+      "prompt_tokens": 16,
+      "response_tokens": 9
+    }
+  ],
+  "cost_cad": 0,
+  "first_challenge_sha256": "86f9ce8a4cc414100501aeab7d3a3490c946be386adaad0dbab85b0c00d26e08",
+  "frozen_utc": "2026-10-29T14:34:50.722619+00:00",
+  "oracle": "Unchanged independent prediction-index oracle; score loss_mask[:-1] and compare actual retainedinput_ids and shiftedlabels to independently tokenized concatenation/crop/pad",
+  "partition_policy": "All reusedcases development with inheritedpartition and exposedconfirmation metadata",
+  "purpose": "Confirm exposed v1 cases with executable schema/availability predicates and actual trainer-consumed masks; not untouched heldout evidence",
+  "runner_sha256": "df9a673f8fb0ca8a415bf2cc9635082b455cb34b2e7ffbdd0e5d7f51f3cb7d39",
+  "schema": "Exact4keys; int64torch tensors; rank1; configured length",
+  "schema_version": "2.0",
+  "thresholds": "Faultcounts require at leastone consumed-position/token mismatch without errors. Repairs/benign must pass every selected fixture."
+}

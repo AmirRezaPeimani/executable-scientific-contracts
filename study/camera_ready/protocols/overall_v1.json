@@ -1,0 +1,32 @@
+{
+  "budget_cad": 0,
+  "created_utc": "2026-10-29T14:23:05.665109+00:00",
+  "method_decisions": [
+    "pass",
+    "fail",
+    "not_evaluated",
+    "error"
+  ],
+  "methods": [
+    "schema",
+    "native_tests",
+    "source_pattern",
+    "behavioral_contract"
+  ],
+  "partitions": {
+    "development": "historical known examples and new development fixtures",
+    "locked_evaluation": "distinct transformation families frozen before first locked execution; no claim of blind repository selection or independent human authorship"
+  },
+  "primary_metrics": [
+    "faults_detected",
+    "repairs_accepted",
+    "benign_false_alarms",
+    "not_evaluated",
+    "execution_errors"
+  ],
+  "rule": "A crash is an error, not a detection. No eligible examples and missing required evidence are not_evaluated. Verify every counted source fault manifests against a separate reference oracle. Convention alternatives are sensitivities, not faults. Report every excluded mutation and every first execution.",
+  "scope": "five existing repositories; evidence and controlled behavior; no model training",
+  "source_files_frozen": true,
+  "uncertainty": "exact finite challenge outcomes and full-data census/bounds; no population accuracy intervals over handcrafted mutants",
+  "version": "camera-ready-v1"
+}

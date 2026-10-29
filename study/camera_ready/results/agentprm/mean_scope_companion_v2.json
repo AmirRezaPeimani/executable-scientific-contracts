@@ -1,0 +1,217 @@
+{
+  "complete_visit_mean_difference_signed": 2.220446049250313e-16,
+  "fixture_lengths": [
+    2,
+    4
+  ],
+  "fixture_paths": [
+    "STUDY_ROOT/results/agentprm/scope_inputs_v2/shared-prefix-length-2.json",
+    "STUDY_ROOT/results/agentprm/scope_inputs_v2/shared-prefix-length-4.json"
+  ],
+  "gamma": 0.95,
+  "scope": "Complete trajectory visit mean is invariant to exponent reversal. An unweighted mean after deduplicating and count-merging state-action evidence need not be invariant.",
+  "unique_state_action_mean_difference_exported": 0.011882812500000062,
+  "unique_state_action_mean_difference_signed": 0.023765625000000123,
+  "versions": {
+    "original": {
+      "complete_visit_mean_signed": 0.9433124999999999,
+      "count_weighted_merged_mean_signed": 0.9433124999999999,
+      "raw_merged": {
+        "06663cfe75e5bf4e9c93fe8fe8a525d73ab409cddb1390363e0c06768d84cede": {
+          "count": 1,
+          "qestimate": 0.8573749999999999,
+          "reason_action": {
+            "action": "shared-prefix-act-3",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-3"
+            ],
+            "history": [
+              {
+                "action": "shared-prefix-act-0",
+                "observation": "shared-prefix-obs-0"
+              },
+              {
+                "action": "shared-prefix-act-1",
+                "observation": "shared-prefix-obs-1"
+              },
+              {
+                "action": "shared-prefix-act-2",
+                "observation": "shared-prefix-obs-2"
+              }
+            ],
+            "observation": "shared-prefix-obs-3",
+            "task": "task-shared-prefix"
+          }
+        },
+        "4365e11bce825e1e38bb787d6e9941e572b5218a13551d488e3b53cbad6c0742": {
+          "count": 2,
+          "qestimate": 0.95,
+          "reason_action": {
+            "action": "shared-prefix-act-1",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-1"
+            ],
+            "history": [
+              {
+                "action": "shared-prefix-act-0",
+                "observation": "shared-prefix-obs-0"
+              }
+            ],
+            "observation": "shared-prefix-obs-1",
+            "task": "task-shared-prefix"
+          }
+        },
+        "a510bd7fa93bc36c3173bf0aeb92fba729ab4f8f346d33478a62270d66d5c7fb": {
+          "count": 1,
+          "qestimate": 0.9025,
+          "reason_action": {
+            "action": "shared-prefix-act-2",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-2"
+            ],
+            "history": [
+              {
+                "action": "shared-prefix-act-0",
+                "observation": "shared-prefix-obs-0"
+              },
+              {
+                "action": "shared-prefix-act-1",
+                "observation": "shared-prefix-obs-1"
+              }
+            ],
+            "observation": "shared-prefix-obs-2",
+            "task": "task-shared-prefix"
+          }
+        },
+        "a8585607cd149fb48066a6c7a4dbf42dc2f381f2b41575f98c739d73b0d77a28": {
+          "count": 2,
+          "qestimate": 1.0,
+          "reason_action": {
+            "action": "shared-prefix-act-0",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-0"
+            ],
+            "history": [],
+            "observation": "shared-prefix-obs-0",
+            "task": "task-shared-prefix"
+          }
+        }
+      },
+      "unique_state_action_entries": 4,
+      "unweighted_unique_state_action_mean_signed": 0.92746875,
+      "visits": 6
+    },
+    "repaired": {
+      "complete_visit_mean_signed": 0.9433125000000001,
+      "count_weighted_merged_mean_signed": 0.9433125000000001,
+      "raw_merged": {
+        "06663cfe75e5bf4e9c93fe8fe8a525d73ab409cddb1390363e0c06768d84cede": {
+          "count": 1,
+          "qestimate": 1.0,
+          "reason_action": {
+            "action": "shared-prefix-act-3",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-3"
+            ],
+            "history": [
+              {
+                "action": "shared-prefix-act-0",
+                "observation": "shared-prefix-obs-0"
+              },
+              {
+                "action": "shared-prefix-act-1",
+                "observation": "shared-prefix-obs-1"
+              },
+              {
+                "action": "shared-prefix-act-2",
+                "observation": "shared-prefix-obs-2"
+              }
+            ],
+            "observation": "shared-prefix-obs-3",
+            "task": "task-shared-prefix"
+          }
+        },
+        "4365e11bce825e1e38bb787d6e9941e572b5218a13551d488e3b53cbad6c0742": {
+          "count": 2,
+          "qestimate": 0.9512499999999999,
+          "reason_action": {
+            "action": "shared-prefix-act-1",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-1"
+            ],
+            "history": [
+              {
+                "action": "shared-prefix-act-0",
+                "observation": "shared-prefix-obs-0"
+              }
+            ],
+            "observation": "shared-prefix-obs-1",
+            "task": "task-shared-prefix"
+          }
+        },
+        "a510bd7fa93bc36c3173bf0aeb92fba729ab4f8f346d33478a62270d66d5c7fb": {
+          "count": 1,
+          "qestimate": 0.95,
+          "reason_action": {
+            "action": "shared-prefix-act-2",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-2"
+            ],
+            "history": [
+              {
+                "action": "shared-prefix-act-0",
+                "observation": "shared-prefix-obs-0"
+              },
+              {
+                "action": "shared-prefix-act-1",
+                "observation": "shared-prefix-obs-1"
+              }
+            ],
+            "observation": "shared-prefix-obs-2",
+            "task": "task-shared-prefix"
+          }
+        },
+        "a8585607cd149fb48066a6c7a4dbf42dc2f381f2b41575f98c739d73b0d77a28": {
+          "count": 2,
+          "qestimate": 0.9036875,
+          "reason_action": {
+            "action": "shared-prefix-act-0",
+            "reason": "controlled action"
+          },
+          "state": {
+            "candidate_actions": [
+              "shared-prefix-act-0"
+            ],
+            "history": [],
+            "observation": "shared-prefix-obs-0",
+            "task": "task-shared-prefix"
+          }
+        }
+      },
+      "unique_state_action_entries": 4,
+      "unweighted_unique_state_action_mean_signed": 0.9512343750000001,
+      "visits": 6
+    }
+  }
+}

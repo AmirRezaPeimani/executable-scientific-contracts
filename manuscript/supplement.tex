@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,graphicx,hyperref,longtable,microtype,array,tabularx,ragged2e,url,placeins,needspace}
+\raggedbottom
+\hypersetup{hidelinks,pdftitle={Supplementary Material: Executable Scientific Contracts for Verifiable LLM and Agent Research},pdfauthor={Amir Reza Peimani}}
+\makeatletter
+\newenvironment{nonfloatingtable}{\par\begingroup\def\@captype{table}}{\par\endgroup}
+\makeatother
+\input{figure_captions.tex}
+\title{Supplementary Material\\Executable Scientific Contracts for Verifiable LLM and Agent Research}
+\author{Amir Reza Peimani\\University of Toronto\\\texttt{amir.peimani@utoronto.ca}}
+\date{}
+\begin{document}
+\maketitle
+\section{Complete contract inventory}
+The inventory records the source, role, original classification, eligible data, and evidence for each of the 25 checks.
+
+The $\tau$-bench set contains two substantive checks, two checks of agreement between stored data fields, and one summary of preceding results. The reward check compares saved top-level and nested reward fields on 1,313 of 1,320 trajectories.
+
+\paragraph{Original classifications.} 15 conformant, seven discrepant, one inactive, and two convention sensitivities.
+\input{tables/contract_inventory.tex}
+
+\section{Implementation cases}
+\input{tables/all_implementation_cases.tex}
+\input{tables/additional_case_details.tex}
+
+\section{Mutation details}
+The four fixture validators detected all 30 selected mutations: eight equation changes, eight schema changes, eight logging changes, and six aggregation changes. The set includes duplicate temporal transformations. The separate eight-operator experiment detected seven mutations on its first execution. Its relational mutation survived because the input contained no equality case. Adding that case increased detection to eight of eight with the check unchanged.
+\input{tables/externally_motivated_mutation_operators_v1.tex}\FloatBarrier
+
+\par\noindent\begin{minipage}{\linewidth}
+\section{Prospective AgentAbstain details}
+\input{tables/agentabstain_checks.tex}
+
+\end{minipage}\par
+\Needspace{4\baselineskip}
+The conditional accuracy definition leaves the empty denominator unspecified. The implementation returns zero; representing the result as undefined is another possible convention. On the aggregation input, equal subtype weighting gives 0.750 and pair weighting gives 0.625.
+
+
+
+\section{ToolACE conversion and sequence lengths}
+The earlier custom conversion retained 9,412 of 10,092 candidate targets (93.3\%). The official conversion produces 9,964 examples: 9,394 with nonempty responses and 570 with empty responses supervised on EOS only. Conversation-schema validation excludes 128 candidates. The official and custom converters disagree on 18 retained prompt/response rows; the conversion comparison records these differences.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{../figures/toolace_released_lengths.pdf}
+\caption{\ToolACELengthCaption}
+\label{fig:toolace-lengths}
+\end{figure}
+\FloatBarrier
+
+\Needspace{4.5in}
+\section{Missing-pair analysis}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{../figures/agentabstain_missing_pairs.pdf}
+\caption{\MissingPairsCaption}
+\label{fig:missing-pairs}
+\end{figure}
+\FloatBarrier
+
+\section{ContractBench comparison}
+\begin{table}[!htbp]\centering\small\input{tables/contractbench_comparison_v1.tex}
+\caption{Reported ContractBench result and released evaluation records for Qwen3.5-9B.}\label{tab:contractbench-comparison}\end{table}\FloatBarrier
+
+\section{Comparison with conventional tests}
+Field/type validation accepts AgentPRM's query-history error because observations and actions have the same string type. ContractBench traces can also retain expected field types while omitting a terminal response. ContractBench's existing regression test covers terminal-response logging. The implementation comparison in this paper evaluates the selected AgentPRM, ToolACE, and AgentAbstain behaviors.
+
+\par\noindent\begin{minipage}{\linewidth}
+\section{Execution time after contract authoring}
+\input{tables/runtime.tex}
+\end{minipage}\par
+
+\section{Repository revisions}
+We evaluated AgentPRM at \texttt{e4714717}, ContractBench at \texttt{c50eefee}, ToolACE at \texttt{1156d649}, $\tau$-bench at \texttt{59a200c6}, and AgentAbstain at \texttt{f5812497}. The AgentAbstain dataset revision is \texttt{84222842}. Full commit hashes and the dataset SHA-256 are included in the repository.
+\end{document}
