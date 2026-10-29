@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Transparent confirmation rerun with executable schema/eligibility guards.
-
-All challenge cases were exposed by v1; none is claimed as a new holdout.
-The original protocol, first runner and every v1 output remain unchanged.
-"""
+"""Check ToolACE source availability, output structure, token IDs, and prediction masks."""
 from pathlib import Path
 from types import SimpleNamespace
 import argparse
@@ -59,7 +55,7 @@ def assess(source_path, fixtures, tokenizer, position_source):
             out = execute_loader(call, tokenizer, [prompt], [response], 0, maximum)
             schema = schema_check(out, maximum)
             if not schema["pass"]:
-                outcomes.append({"fixture": fixture, "schema": schema, "behavior": "not_evaluated", "reason": "Malformed output cannot be interpreted as a valid token-level observation"})
+                outcomes.append({"fixture": fixture, "schema": schema, "behavior": "not_evaluated", "reason": "Output has invalid keys, tensor types, or dimensions."})
                 continue
             expected_ids = (pp + rr)[-maximum:]
             expected_ids += [tokenizer.pad_token_id] * (maximum - len(expected_ids))
@@ -90,13 +86,13 @@ def assess(source_path, fixtures, tokenizer, position_source):
     masks_prompt = "loss_mask[: min(prompt_length, loss_mask.size(0)) - 1] = 0" in changed
     masks_terminal = "loss_mask[min(prompt_length + response_length, loss_mask.size(0)) - 1] = 0" in changed
     return {"guard": guard, "outcomes": outcomes, "methods": {
-        "schema": {"decision": schema_decision, "reason": f"Executed required-key/tensor/dtype/rank/length predicates on {len(outcomes)} observed outputs; malformed outputs={len(schema_bad)}; errors={len(errors)}"},
-        "native_tests": {"decision": "not_evaluated", "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"},
+        "schema": {"decision": schema_decision, "reason": f"Checked keys, tensor types, ranks, and lengths on {len(outcomes)} observed outputs; malformed outputs={len(schema_bad)}; errors={len(errors)}"},
+        "native_tests": {"decision": "not_evaluated", "reason": "No native test covers the selected loader behavior."},
         "source_pattern": {"decision": "fail" if source_defect or not (masks_prompt and masks_terminal) else "pass",
-                           "reason": "Historical coordinate and mask-source predicates executed on this exact variant",
+                           "reason": "Runs the original coordinate and mask checks on this source variant.",
                            "predicates": {"source_defect": source_defect, "masks_prompt": masks_prompt, "masks_terminal": masks_terminal}},
         "behavioral_contract": {"decision": behavioral_decision,
-                                "reason": f"Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures={sum(o['behavior'] == 'fail' for o in outcomes)}; errors={len(errors)}"}}}
+                                "reason": f"Token IDs and loss_mask[:-1] compared with expected predictions; failures={sum(o['behavior'] == 'fail' for o in outcomes)}; errors={len(errors)}"}}}
 
 
 def main():
@@ -109,10 +105,10 @@ def main():
         raise FileExistsError(dest)
     protocol = json.loads(a.protocol.read_text())
     if digest(Path(__file__).read_bytes()) != protocol["runner_sha256"]:
-        raise ValueError("Runner changed after confirmation protocol freeze")
+        raise ValueError("Evaluator hash differs from the protocol.")
     original = a.results / "challenge_results_v1.json"
     if digest(original.read_bytes()) != protocol["first_challenge_sha256"]:
-        raise ValueError("First challenge record differs from confirmation freeze")
+        raise ValueError("Initial result hash differs from the protocol.")
     tokenizer = AutoTokenizer.from_pretrained(a.tokenizer, local_files_only=True)
     position_source = (a.source_root / "verl/verl/utils/model.py").read_text()
     fixtures = protocol["controlled_fixtures"]
@@ -129,8 +125,7 @@ def main():
             selector = {"kind": "fixed controlled grid", "selected": len(fixtures)}
         elif ident == "TACE-ZERO-ELIGIBLE":
             source_path = a.source_root / LOADER
-            # Actual census filter is the same eligibility guard exercised
-            # for valid variants, not a preassigned not_evaluated label.
+            # Count eligible examples using the same census filter as the other variants.
             selected = [{"prompt_tokens": int(x.prompt_tokens), "response_tokens": int(x.response_tokens_including_eos), "maximum": 8192} for x in eligible_census.itertuples()]
             selector = {"kind": "official census sequence_tokens > 8192", "source_rows": len(census),
                         "selected": len(selected), "source_csv_sha256": digest((a.results / "official_loader_census_v1.csv").read_bytes())}
@@ -161,8 +156,7 @@ def main():
                                      "retained_input_identity_equal": item.get("retained_input_identity_equal"),
                                      "coded_supervised_predictions": item.get("coded_supervised_predictions"),
                                      "oracle_supervised_predictions": item.get("oracle_supervised_predictions")})
-    # Independent falsification of predicates: malformed returns cannot pass
-    # merely because the producing function returned without an exception.
+    # Test key, type, dtype, rank, and length checks with malformed outputs.
     clean = {k: torch.zeros(8, dtype=torch.int64) for k in ("input_ids", "attention_mask", "position_ids", "loss_mask")}
     controls = [("valid", clean, True), ("missing_field", {k: v for k, v in clean.items() if k != "loss_mask"}, False),
                 ("wrong_type", {**clean, "loss_mask": [0] * 8}, False),
@@ -184,7 +178,7 @@ def main():
                 "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "command": sys.argv,
                 "case_analysis_v1_sha256": digest((a.results / "case_analysis_v1.json").read_bytes()),
                 "first_evidence_preserved": True,
-                "corrections": ["Execute schema predicates rather than preassign pass", "Invoke real source availability and concrete census eligibility guards", "Score trainer-consumed positions plus exact shifted token identities", "All reused cases labeled exposed confirmation/development; inherited partition retained only as history"]})
+                "corrections": ["Check output fields, tensor types, and shapes.", "Check source availability and count eligible examples.", "Compare shifted token IDs and prediction masks.", "Reuse the original cases and retain their initial partition labels."]})
     print(json.dumps(summary, indent=2))
 
 

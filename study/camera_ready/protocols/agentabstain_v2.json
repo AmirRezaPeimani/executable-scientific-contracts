@@ -10,17 +10,17 @@
     "scenario_macro"
   ],
   "cost_cad": 0,
-  "counterfactual_test": "Execute every case again with expected_state replaced by each other gold label; observed outputs and all method decisions must stay identical. The guarded checker has no expected_state argument.",
+  "counterfactual_test": "Repeat each case with each alternative expected_state label and compare the outputs and method decisions. The checker accepts source and input arguments.",
   "eligibility": {
-    "combined": "Actual combined metric rows contain Boolean results after dependency handling.",
-    "commit": "Concrete input bundle includes at least one critical action; empty critical set cannot test critical-call success semantics.",
-    "conditional": "Actual summary has positive num_car_pairs; zero conditioned denominator remains a separately documented convention sensitivity.",
-    "paired": "Actual pinned summary has positive num_pairs and a nonmissing paired_accuracy.",
-    "ranking": "Actual metric summary contains positive complete-pair coverage before final ranking aggregation."
+    "combined": "Combined metric rows contain Boolean results after dependency handling.",
+    "commit": "The input contains at least one critical action.",
+    "conditional": "The summary has positive num_car_pairs.",
+    "paired": "The summary has positive num_pairs and a nonmissing paired_accuracy.",
+    "ranking": "The summary contains complete pairs for ranking."
   },
-  "exposure": "All reused families were observed in v1; inherited_partition retained only as provenance. No new independent holdout claim.",
+  "exposure": "Reuses previously evaluated families and retains their initial partition labels.",
   "frozen_before_v2_execution": true,
-  "go_no_go": "Any decision dependence on a gold label, unmanifest fault, unsupported pass, crash counted as detection, or false alarm blocks validation. Preserve v1 exactly.",
+  "go_no_go": "Require label-invariant decisions, a changed output for each counted fault, eligible inputs for each pass, and zero execution errors or false alarms. Save each run separately.",
   "ineligible_inputs": [
     "one-sided pair",
     "zero conditioned successful act pairs",
@@ -37,8 +37,8 @@
     "label-independence cases"
   ],
   "partition": "development",
-  "purpose": "Replace gold-label-driven v1 missing/ineligible decisions with an executable source-availability and actual-input eligibility guard.",
-  "source_missing_test": "Pass an actual nonexistent file path; no variant-name or expected-label shortcut.",
+  "purpose": "Check source availability and input eligibility before evaluating AgentAbstain outputs.",
+  "source_missing_test": "Test a nonexistent source path.",
   "source_revision": "f581249704b26804e28a39e37396f1be00b71a4d",
   "variants": [
     "original_conformant",

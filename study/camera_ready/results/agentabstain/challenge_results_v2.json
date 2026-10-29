@@ -71,7 +71,7 @@
           "expected": [
             0.25
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -79,7 +79,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -157,7 +157,7 @@
           "expected": [
             0.25
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -165,7 +165,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -246,7 +246,7 @@
           "expected": [
             0.25
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -254,7 +254,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -381,7 +381,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete pairs"
+          "reason": "The summary contains zero complete pairs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -389,7 +389,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete pairs"
+          "reason": "The summary contains zero complete pairs."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -462,7 +462,7 @@
             false,
             false
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -470,7 +470,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -548,7 +548,7 @@
             false,
             false
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -556,7 +556,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -637,7 +637,7 @@
             false,
             false
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -645,7 +645,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -770,7 +770,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "actual upstream combined results have no Boolean dependency-complete examples"
+          "reason": "The combined results contain zero complete Boolean observations."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -778,7 +778,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "actual upstream combined results have no Boolean dependency-complete examples"
+          "reason": "The combined results contain zero complete Boolean observations."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -854,7 +854,7 @@
           "expected": [
             0.5
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -862,7 +862,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -940,7 +940,7 @@
           "expected": [
             0.5
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -948,7 +948,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1029,7 +1029,7 @@
           "expected": [
             0.5
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1037,7 +1037,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1165,7 +1165,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "no conditioned pairs; zero-denominator convention is separate from conditional-rate validation"
+          "reason": "The conditioned denominator is zero."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1173,7 +1173,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "no conditioned pairs; zero-denominator convention is separate from conditional-rate validation"
+          "reason": "The conditioned denominator is zero."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1235,7 +1235,7 @@
           "expected": [
             0
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1243,7 +1243,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1307,7 +1307,7 @@
           "expected": [
             0
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1315,7 +1315,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1382,7 +1382,7 @@
           "expected": [
             0
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1390,7 +1390,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1503,7 +1503,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete pairs"
+          "reason": "The summary contains zero complete pairs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1511,7 +1511,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete pairs"
+          "reason": "The summary contains zero complete pairs."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1564,7 +1564,7 @@
           "expected": [
             true
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1572,7 +1572,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1627,7 +1627,7 @@
           "expected": [
             true
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1635,7 +1635,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1693,7 +1693,7 @@
           "expected": [
             true
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1701,7 +1701,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1804,7 +1804,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "actual upstream combined results have no Boolean dependency-complete examples"
+          "reason": "The combined results contain zero complete Boolean observations."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1812,7 +1812,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "actual upstream combined results have no Boolean dependency-complete examples"
+          "reason": "The combined results contain zero complete Boolean observations."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1872,7 +1872,7 @@
           "expected": [
             true
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1880,7 +1880,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1942,7 +1942,7 @@
           "expected": [
             true
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1950,7 +1950,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2015,7 +2015,7 @@
           "expected": [
             true
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2023,7 +2023,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2130,7 +2130,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "empty critical set cannot exercise critical-call success behavior"
+          "reason": "The input contains zero critical actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2138,7 +2138,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "empty critical set cannot exercise critical-call success behavior"
+          "reason": "The input contains zero critical actions."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2213,7 +2213,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2221,7 +2221,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2298,7 +2298,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2306,7 +2306,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2386,7 +2386,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2394,7 +2394,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2520,7 +2520,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete-pair ranking evidence"
+          "reason": "The summary contains zero complete pairs for ranking."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2528,7 +2528,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete-pair ranking evidence"
+          "reason": "The summary contains zero complete pairs for ranking."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2603,7 +2603,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2611,7 +2611,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2688,7 +2688,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2696,7 +2696,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2776,7 +2776,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2784,7 +2784,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -2910,7 +2910,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete-pair ranking evidence"
+          "reason": "The summary contains zero complete pairs for ranking."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -2918,7 +2918,7 @@
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "actual upstream summary has no eligible complete-pair ranking evidence"
+          "reason": "The summary contains zero complete pairs for ranking."
         },
         "source_pattern": {
           "decision": "not_evaluated",

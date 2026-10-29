@@ -14,8 +14,8 @@
     "behavioral_contract"
   ],
   "partitions": {
-    "development": "historical known examples and new development fixtures",
-    "locked_evaluation": "distinct transformation families frozen before first locked execution; no claim of blind repository selection or independent human authorship"
+    "development": "known examples and inputs used to construct the checks",
+    "locked_evaluation": "additional transformation families specified before evaluation"
   },
   "primary_metrics": [
     "faults_detected",
@@ -24,9 +24,9 @@
     "not_evaluated",
     "execution_errors"
   ],
-  "rule": "A crash is an error, not a detection. No eligible examples and missing required evidence are not_evaluated. Verify every counted source fault manifests against a separate reference oracle. Convention alternatives are sensitivities, not faults. Report every excluded mutation and every first execution.",
-  "scope": "five existing repositories; evidence and controlled behavior; no model training",
+  "rule": "Record crashes as error and missing evidence or zero eligible inputs as not_evaluated. Confirm that each counted fault changes the output relative to the reference calculation. Record convention differences as sensitivities. Save all initial results and excluded mutations.",
+  "scope": "five repositories, released artifacts, and controlled inputs",
   "source_files_frozen": true,
-  "uncertainty": "exact finite challenge outcomes and full-data census/bounds; no population accuracy intervals over handcrafted mutants",
+  "uncertainty": "Counts for the listed cases, complete-data counts, and algebraic bounds.",
   "version": "camera-ready-v1"
 }

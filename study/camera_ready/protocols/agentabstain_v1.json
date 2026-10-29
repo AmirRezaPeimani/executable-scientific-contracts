@@ -23,11 +23,11 @@
     ]
   },
   "frozen_before_first_execution": true,
-  "go_no_go": "Any original rejection, benign false alarm, unmanifest counted mutation, error counted as detection, or synthetic output described as an observed leaderboard change blocks release pending transparent repair/new version.",
+  "go_no_go": "Expected outcomes: accept original and harmless code; detect mutations that change outputs; record execution errors; label constructed scores as synthetic.",
   "hypotheses": [
-    "Pinned evaluator and final ranking computation reproduce the historical Boolean, conditional-rate, operational scoring and aggregation fixtures.",
-    "Same frozen behavioral contracts reject manifest source faults, accept the original and semantically equivalent source, and abstain on missing evidence or zero eligible pairs.",
-    "Released subtype composition permits an exact finite bound on equal-subtype versus pair-weighted scenario macro averaging; constructed endpoint rates attain the bound without implying observed model performance."
+    "The evaluator and ranking calculation reproduce the Boolean, conditional-rate, operational-scoring, and aggregation fixtures.",
+    "The checks reject mutations that change outputs, accept original and equivalent code, and return not_evaluated for missing sources or zero eligible pairs.",
+    "The released subtype counts determine a maximum weighting difference that constructed endpoint rates attain."
   ],
   "locked_evaluation": {
     "fault_families": [
@@ -44,7 +44,7 @@
       "critical tool call success flag",
       "three-scenario unequal sizes with act-versus-paired disagreement"
     ],
-    "rule": "Contract runner and expected outputs are frozen in script hash before first execution. These are held-out transformation families, not blind external authorship or unbiased fault sampling."
+    "rule": "Record the runner hash and expected outputs before executing the reserved transformation families."
   },
   "methods": [
     "schema",
@@ -73,8 +73,8 @@
       "eight-scenario macro bound",
       "composed synthetic outputs through pinned final ranking path"
     ],
-    "units": "pairs removed per scenario, conservatively from each subtype in turn"
+    "units": "pairs removed per scenario, evaluated for each subtype in turn"
   },
   "source_revision": "f581249704b26804e28a39e37396f1be00b71a4d",
-  "uncertainty": "Exact finite challenge counts and algebraic sharp bounds, not population confidence intervals over handcrafted mutants."
+  "uncertainty": "Counts for the listed cases and exact algebraic bounds."
 }

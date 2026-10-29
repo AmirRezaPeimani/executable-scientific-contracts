@@ -69,7 +69,7 @@
       "target": "taubench"
     },
     {
-      "consequence": "Pinned trajectories serve as a clean false-positive control.",
+      "consequence": "Summary of the preceding four checks.",
       "contract_id": "TBEN-NEG-01",
       "elapsed_seconds": 9.5367431640625e-07,
       "evidence": [

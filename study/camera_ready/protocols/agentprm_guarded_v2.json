@@ -1,15 +1,15 @@
 {
-  "claims": "No historical model-performance result, no population detection accuracy, no independent human replication.",
+  "claims": "Implementation checks on controlled inputs.",
   "cost_cad": 0,
-  "counterexample": "Actual process_file and merge_results on two controlled successful trajectories of lengths2 and4 sharing complete state/action prefix; compare visit-weighted and deduplicated unweighted means.",
+  "counterexample": "Run process_file and merge_results on successful trajectories of lengths 2 and 4 sharing a state/action prefix. Compare means over visits and deduplicated state-action pairs.",
   "created_utc": "2026-10-29T14:38:13.172608+00:00",
-  "evaluation_rule": "Evaluator receives no expected state. Missing source is derived by stat on required files. Gamma=1 actual implementations execute before zero discriminating eligibility is derived. Every scorer shares that availability/eligibility guard. Expected labels are checked only after methods execute.",
-  "evaluator_sha256": "6dd0f26423229aa5c0411787f49e71ab567c30a8ce65e6e5c991c0bf8f31ee1a",
-  "inherited_evaluator_sha256": "7bcd27a6d9c040ecd70e3ca3c80bd210677af8580a2029d195eef9faa7a1c2ba",
+  "evaluation_rule": "Check that required files exist. Execute gamma=1 inputs and determine eligibility from their output. Apply the same availability and eligibility rules to each method, then compare decisions with expected labels.",
+  "evaluator_sha256": "1fad7113376fd309e4dd3932970898c5e08abc42e6228adf630891568e8b10b4",
+  "inherited_evaluator_sha256": "337c807059b6dfd45a349e98baee359d7ca2d10c701ecaf9a2458f59eeabbade",
   "inherited_protocol_sha256": "e7ace7e40a756be3e842a930cbd357d54feb6a09d8f1b955c731d2d4838141fa",
   "legacy_adapter": "ACQUISITION_ROOT/semantic-conformance/executable-scientific-contracts/src/conform/adapters/agentprm.py",
-  "partitions": "All reused v1 cases are exposed development confirmation. Preserve inherited partition metadata, never label this rerun untouched heldout.",
-  "purpose": "Confirm availability and discriminating eligibility using actual paths and actually executed gamma=1 inputs. Correct mean-aggregation scope with a merged-state counterexample.",
+  "partitions": "Repeat evaluation of the original cases, retaining their initial partition labels.",
+  "purpose": "Check source availability and eligibility at gamma=1. Compare means over trajectory visits and merged state-action targets.",
   "schema_version": "2.0",
   "tests_sha256": "2a065fd6b504a3affa4a18f52935ca45a989db244819cbb580abfa225d360839"
 }

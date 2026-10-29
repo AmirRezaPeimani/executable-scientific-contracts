@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exposed rerun with real availability/eligibility guards, independent of gold."""
+"Check AgentAbstain source availability, input eligibility, and outputs."
 from __future__ import annotations
 
 import argparse
@@ -25,7 +25,7 @@ def extract_commit(text):
 
 
 def guarded_check(*, source_path, source_kind, mechanism, fixture, expected_values, patch=None):
-    """No gold label/desired state is accepted by this executable checker."""
+    "Evaluate the supplied source and input."
     methods = {"native_tests": {"decision": "not_evaluated", "reason": "no relevant native suite"}, "source_pattern": {"decision": "not_evaluated", "reason": "no historical source-pattern detector"}}
     evidence = {"source_path": str(source_path), "source_exists": source_path.is_file(), "eligibility": {}, "observed": None}
     def abstain(reason):
@@ -47,7 +47,7 @@ def guarded_check(*, source_path, source_kind, mechanism, fixture, expected_valu
         bundle = SimpleNamespace(**fixture)
         evidence["eligibility"] = {"critical_actions": list(bundle.critical_actions), "count": len(bundle.critical_actions)}
         if not bundle.critical_actions:
-            return abstain("empty critical set cannot exercise critical-call success behavior")
+            return abstain("The input contains zero critical actions.")
         env = {}
         exec(compile("from __future__ import annotations\n" + source, "<commit-check-v2>", "exec"), env)
         observed = [env["evaluate"](None, bundle)["pass"]]
@@ -58,7 +58,7 @@ def guarded_check(*, source_path, source_kind, mechanism, fixture, expected_valu
         eligible = int(summary["num_pairs"].sum())
         evidence["eligibility"] = {"num_pairs": eligible, "summary_rows": len(summary), "missing_paired_metrics": int(summary["paired_accuracy"].isna().sum())}
         if eligible == 0 or summary["paired_accuracy"].notna().sum() == 0:
-            return abstain("actual upstream summary has no eligible complete-pair ranking evidence")
+            return abstain("The summary contains zero complete pairs for ranking.")
         observed = [float(rank(summary, source).iloc[0]["paired"])]
     else:
         upstream = load_analysis(source)
@@ -69,7 +69,7 @@ def guarded_check(*, source_path, source_kind, mechanism, fixture, expected_valu
             eligible = len(usable)
             evidence["eligibility"] = {"combined_rows": len(combined), "usable_boolean_rows": eligible, "missing_dependency_results": int(combined["pass"].isna().sum())}
             if eligible == 0:
-                return abstain("actual upstream combined results have no Boolean dependency-complete examples")
+                return abstain("The combined results contain zero complete Boolean observations.")
             observed = usable["pass"].tolist()
         else:
             summary = upstream["compute_summary_metrics"](metric_frame(fixture))
@@ -77,20 +77,20 @@ def guarded_check(*, source_path, source_kind, mechanism, fixture, expected_valu
             conditioned_count = int(summary["num_car_pairs"].sum())
             evidence["eligibility"] = {"num_pairs": pair_count, "num_car_pairs": conditioned_count, "summary_rows": len(summary), "missing_paired_metrics": int(summary["paired_accuracy"].isna().sum())}
             if pair_count == 0 or summary["paired_accuracy"].notna().sum() == 0:
-                return abstain("actual upstream summary has no eligible complete pairs")
+                return abstain("The summary contains zero complete pairs.")
             if mechanism == "conditional_denominator" and conditioned_count == 0:
                 evidence["eligibility"]["zero_denominator_convention_value"] = float(summary.iloc[0]["car"])
-                return abstain("no conditioned pairs; zero-denominator convention is separate from conditional-rate validation")
+                return abstain("The conditioned denominator is zero.")
             eligible = conditioned_count if mechanism == "conditional_denominator" else pair_count
             observed = [float(summary.iloc[0]["car" if mechanism == "conditional_denominator" else "paired_accuracy"])]
     evidence["observed"] = observed
-    methods["schema"] = {"decision": "pass" if len(observed) == len(expected_values) and all(isinstance(x, (float, bool, int)) for x in observed) else "fail", "reason": "output fields and types without scientific equality oracle"}
-    methods["behavioral_contract"] = {"decision": "pass" if close(observed, expected_values) else "fail", "reason": "actual eligible output versus frozen expected values", "expected": expected_values}
+    methods["schema"] = {"decision": "pass" if len(observed) == len(expected_values) and all(isinstance(x, (float, bool, int)) for x in observed) else "fail", "reason": "Checks output fields and types."}
+    methods["behavioral_contract"] = {"decision": "pass" if close(observed, expected_values) else "fail", "reason": "Observed output compared with expected values.", "expected": expected_values}
     return {"eligible_examples": eligible, "methods": methods, **evidence}
 
 
 def execute_case(case):
-    # Deliberately select only execution inputs; expected_state is scoring data.
+    # Pass execution inputs and reserve expected_state for scoring.
     return guarded_check(source_path=Path(case["source_path"]), source_kind=case["source_kind"], mechanism=case["mechanism"], fixture=case["fixture"], expected_values=case["expected_values"], patch=case["patch"])
 
 
@@ -152,7 +152,7 @@ def main():
     write_json(output / "challenge_results_v2.json", payload)
     print(json.dumps({"summary": summary, "gold_label_independence_cases": payload["gold_label_independence_cases"], "invalid": [row["id"] for row in results if not row["oracle_valid"]]}))
     if not all(row["oracle_valid"] for row in results):
-        raise SystemExit("v2 guard validation failed; first v2 results retained")
+        raise SystemExit("An availability or eligibility check failed; results were saved.")
 
 
 if __name__ == "__main__":

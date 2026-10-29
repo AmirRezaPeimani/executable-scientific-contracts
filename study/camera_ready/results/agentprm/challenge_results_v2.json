@@ -2,8 +2,8 @@
   "all_oracles_valid": true,
   "evaluator_sha256": "6dd0f26423229aa5c0411787f49e71ab567c30a8ce65e6e5c991c0bf8f31ee1a",
   "limitations": [
-    "Reuses exposed v1 inputs and source variants; this is confirmation and guard validation, not untouched heldout evidence.",
-    "Finite selected mechanisms do not establish population detection accuracy."
+    "Reuses the original inputs and source variants.",
+    "Counts cover the listed transformations."
   ],
   "protocol_sha256": "f8872bdc4c05100ec6007e62ab7a9652ab867b5acbf59130133c0d33068fc6c6",
   "rows": [
@@ -12,7 +12,7 @@
       "expected_state": "fault",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+        "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
         "executed_implementation_probes": 4,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -58,19 +58,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -877,7 +877,7 @@
       "expected_state": "conformant",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+        "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
         "executed_implementation_probes": 4,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -923,19 +923,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -1742,7 +1742,7 @@
       "expected_state": "fault",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Actual rollout supplied at least one previous action to a subsequent query.",
+        "eligibility_rule": "The rollout passes a previous action to a subsequent query.",
         "executed_implementation_probes": 1,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -1788,19 +1788,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -1898,7 +1898,7 @@
       "expected_state": "conformant",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Actual rollout supplied at least one previous action to a subsequent query.",
+        "eligibility_rule": "The rollout passes a previous action to a subsequent query.",
         "executed_implementation_probes": 1,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -1944,19 +1944,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "pass",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -2054,7 +2054,7 @@
       "expected_state": "fault",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+        "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
         "executed_implementation_probes": 4,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -2100,19 +2100,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -2919,7 +2919,7 @@
       "expected_state": "fault",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Actual rollout supplied at least one previous action to a subsequent query.",
+        "eligibility_rule": "The rollout passes a previous action to a subsequent query.",
         "executed_implementation_probes": 1,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -2965,19 +2965,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "pass",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -3075,7 +3075,7 @@
       "expected_state": "conformant",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+        "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
         "executed_implementation_probes": 4,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -3121,19 +3121,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -3940,7 +3940,7 @@
       "expected_state": "conformant",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Actual rollout supplied at least one previous action to a subsequent query.",
+        "eligibility_rule": "The rollout passes a previous action to a subsequent query.",
         "executed_implementation_probes": 1,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -3986,19 +3986,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "pass",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
@@ -4146,7 +4146,7 @@
       "expected_state": "not_evaluated",
       "exposed_rerun": true,
       "guard_evidence": {
-        "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+        "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
         "executed_implementation_probes": 4,
         "fixture_hashes": {
           "STUDY_ROOT/results/agentprm/fixtures/challenge-0.json": "ae8dfaed44b1f53653caacfda9033a89bd3505ce4131d27ed040140fe54a7a7c",
@@ -4176,19 +4176,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "Actual executed inputs provide no eligible discriminating examples."
+          "reason": "The executed inputs contain zero eligible examples."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Actual executed inputs provide no eligible discriminating examples."
+          "reason": "The executed inputs contain zero eligible examples."
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "Actual executed inputs provide no eligible discriminating examples."
+          "reason": "The executed inputs contain zero eligible examples."
         },
         "source_pattern": {
           "decision": "not_evaluated",
-          "reason": "Actual executed inputs provide no eligible discriminating examples."
+          "reason": "The executed inputs contain zero eligible examples."
         }
       },
       "observed": {

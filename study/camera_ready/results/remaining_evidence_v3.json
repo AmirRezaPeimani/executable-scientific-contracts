@@ -5,14 +5,14 @@
     "derived_from": "camera_ready_2026/results/remaining_evidence_v2.json",
     "derived_from_sha256": "3a4891e7f0474a4d1ce913a1283f29b1d16cda4aca8266b4afbf465cfd625889",
     "numeric_results_unchanged": true,
-    "reason": "Independent review identified stored-field reward agreement as consistency control, not independent scientific conjunction validation."
+    "reason": "The reward check compares two stored reward fields."
   },
-  "comparison": "Saved labels are retained as historical observations; coverage-corrected statuses do not overwrite them.",
+  "comparison": "The records retain original labels and current eligibility counts.",
   "contracts": [
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "CBEN-LOG-01",
@@ -25,9 +25,9 @@
         "published_performance_change_identifiable": false,
         "state": "unverified_evaluation_identity"
       },
-      "interpretation": "Generated output is not fully represented in the released trace; the number of corrected successes is not identifiable.",
+      "interpretation": "The released trace omits generated output; corrected success counts are unknown.",
       "legacy_result": {
-        "consequence": "Generated output is not fully represented in the released trace; the number of corrected successes is not identifiable.",
+        "consequence": "The released trace omits generated output; corrected success counts are unknown.",
         "contract_id": "CBEN-LOG-01",
         "elapsed_seconds": 0.00013589859008789062,
         "evidence": [
@@ -52,7 +52,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "not_evaluated_no_eligible_examples"
       },
       "contract_id": "CBEN-LOG-02",
@@ -65,7 +65,7 @@
         "published_performance_change_identifiable": false,
         "state": "unverified_evaluation_identity"
       },
-      "interpretation": "No successful episodes in the released slice; successful-trace recoverability was not evaluated.",
+      "interpretation": "Zero successful episodes; the successful-trace check returns not_evaluated.",
       "legacy_result": {
         "consequence": "The released slice has no success event lacking a trace.",
         "contract_id": "CBEN-LOG-02",
@@ -91,7 +91,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "CBEN-SCHEMA-01",
@@ -131,7 +131,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "CBEN-METRIC-01",
@@ -144,9 +144,9 @@
         "published_performance_change_identifiable": false,
         "state": "unverified_evaluation_identity"
       },
-      "interpretation": "The released record-level aggregate does not reproduce the reported baseline count. Missing trace content prevents a defensible corrected performance estimate.",
+      "interpretation": "The released record-level success count differs from the count corresponding to the reported baseline.",
       "legacy_result": {
-        "consequence": "The released record-level aggregate does not reproduce the reported baseline count. Missing trace content prevents a defensible corrected performance estimate.",
+        "consequence": "The released record-level success count differs from the count corresponding to the reported baseline.",
         "contract_id": "CBEN-METRIC-01",
         "elapsed_seconds": 1.1920928955078125e-05,
         "evidence": [
@@ -172,7 +172,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "CBEN-METRIC-02",
@@ -206,7 +206,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "TBEN-SCHEMA-01",
@@ -245,7 +245,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "TBEN-LOG-01",
@@ -284,7 +284,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "TBEN-METRIC-01",
@@ -297,7 +297,7 @@
         "published_performance_change_identifiable": false,
         "state": "released_historical_trajectories_only"
       },
-      "interpretation": "Compares the top-level stored reward with info.reward_info.reward for 1,313 records; seven of 1,320 records lack nested reward information. It does not recompute the underlying primitive reward-conjunction semantics.",
+      "interpretation": "Compares the saved top-level reward with info.reward_info.reward for 1,313 records. Seven of 1,320 records lack the nested reward field.",
       "legacy_result": {
         "consequence": "Top-level rewards agree with their saved reward checks.",
         "contract_id": "TBEN-METRIC-01",
@@ -323,7 +323,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "TBEN-METRIC-02",
@@ -357,7 +357,7 @@
     {
       "activation": {
         "independent_of_local_outcome": true,
-        "note": "Support availability is separate from whether an implementation fault is triggered.",
+        "note": "The record gives available-example counts and defect activation separately.",
         "state": "released_support_available"
       },
       "contract_id": "TBEN-NEG-01",
@@ -370,9 +370,9 @@
         "published_performance_change_identifiable": false,
         "state": "released_historical_trajectories_only"
       },
-      "interpretation": "Summarizes the preceding four adapter outcomes; it is not independent false-positive validation or another scientific assertion.",
+      "interpretation": "Summary of the preceding four adapter outcomes.",
       "legacy_result": {
-        "consequence": "Pinned trajectories serve as a clean false-positive control.",
+        "consequence": "Summary of the preceding four checks.",
         "contract_id": "TBEN-NEG-01",
         "elapsed_seconds": 9.5367431640625e-07,
         "evidence": [
@@ -406,7 +406,7 @@
     "created_at_unix": 1793284246.954607,
     "expected_interpretation": {
       "CBEN-LOG-02": "not_evaluated when zero successful episodes",
-      "TBEN-NEG-01": "derived summary, not independent scientific assertion"
+      "TBEN-NEG-01": "summary of the preceding checks"
     },
     "inputs": [
       {

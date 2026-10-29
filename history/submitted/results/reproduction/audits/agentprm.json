@@ -2,7 +2,7 @@
   "command": "conform audit agentprm",
   "contracts": [
     {
-      "consequence": "Per-state target values change on controlled non-unit-discount fixtures; released trajectories are unavailable, so no result ranking consequence is assigned.",
+      "consequence": "Per-state targets change on controlled trajectories with non-unit discount.",
       "contract_id": "APRM-TEMP-01",
       "elapsed_seconds": 1.3113021850585938e-05,
       "evidence": [
@@ -68,7 +68,7 @@
       "target": "agentprm"
     },
     {
-      "consequence": "The saved history value is wrong; no released affected trace is present locally to establish a metric consequence.",
+      "consequence": "The query history contains an observation in the action field.",
       "contract_id": "APRM-SCHEMA-01",
       "elapsed_seconds": 3.0994415283203125e-06,
       "evidence": [
@@ -81,7 +81,7 @@
       "target": "agentprm"
     },
     {
-      "consequence": "Corrected fixture values differ. Severity remains value-level because released result traces are not available.",
+      "consequence": "The original synthetic fixture produces different target values before and after correction.",
       "contract_id": "APRM-METRIC-01",
       "elapsed_seconds": 1.52587890625e-05,
       "evidence": [

@@ -138,7 +138,7 @@
     ]
   },
   "preference_comparisons": 140,
-  "preference_scope": "Same initial state, two distinct candidate actions, successful continuations of different lengths; controlled parameter grid, not prevalence or empirical training distribution.",
+  "preference_scope": "Two distinct actions from the same initial state, followed by successful continuations of different lengths.",
   "primary_delta": 0.03,
   "primary_gamma": 0.95,
   "primary_preference_added_cases": 28,
@@ -464,7 +464,7 @@
       ]
     }
   },
-  "scope": "Controlled synthetic trajectories and deterministic environment/agent; no model training, historical trajectories or model-performance estimate.",
+  "scope": "Controlled trajectories with a deterministic agent and environment.",
   "source_revision": "e4714717f7f4bd4671848670c4ed54d0169f603a",
   "state_rows": 2550,
   "state_sweep_cells": 80

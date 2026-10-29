@@ -13,19 +13,19 @@
           "methods": {
             "behavioral_contract": {
               "decision": "fail",
-              "reason": "Actual implementation compared against the frozen terminal/history expectation."
+              "reason": "Implementation output compared with expected targets and query history."
             },
             "native_tests": {
               "decision": "not_evaluated",
-              "reason": "No relevant native dataproc/history tests at the pinned revision."
+              "reason": "No native test covers the selected data-processing or query-history behavior."
             },
             "schema": {
               "decision": "pass",
-              "reason": "Executed required-field/type/finite-number validator over actual outputs."
+              "reason": "Checks required fields, types, and finite numbers in the outputs."
             },
             "source_pattern": {
               "decision": "fail",
-              "reason": "Executed unchanged v1 public adapter for relevant IDs."
+              "reason": "Runs the original adapter for the relevant check IDs."
             }
           }
         },
@@ -37,19 +37,19 @@
           "methods": {
             "behavioral_contract": {
               "decision": "fail",
-              "reason": "Actual implementation compared against the frozen terminal/history expectation."
+              "reason": "Implementation output compared with expected targets and query history."
             },
             "native_tests": {
               "decision": "not_evaluated",
-              "reason": "No relevant native dataproc/history tests at the pinned revision."
+              "reason": "No native test covers the selected data-processing or query-history behavior."
             },
             "schema": {
               "decision": "pass",
-              "reason": "Executed required-field/type/finite-number validator over actual outputs."
+              "reason": "Checks required fields, types, and finite numbers in the outputs."
             },
             "source_pattern": {
               "decision": "fail",
-              "reason": "Executed unchanged v1 public adapter for relevant IDs."
+              "reason": "Runs the original adapter for the relevant check IDs."
             }
           }
         },
@@ -61,19 +61,19 @@
           "methods": {
             "behavioral_contract": {
               "decision": "fail",
-              "reason": "Actual implementation compared against the frozen terminal/history expectation."
+              "reason": "Implementation output compared with expected targets and query history."
             },
             "native_tests": {
               "decision": "not_evaluated",
-              "reason": "No relevant native dataproc/history tests at the pinned revision."
+              "reason": "No native test covers the selected data-processing or query-history behavior."
             },
             "schema": {
               "decision": "pass",
-              "reason": "Executed required-field/type/finite-number validator over actual outputs."
+              "reason": "Checks required fields, types, and finite numbers in the outputs."
             },
             "source_pattern": {
               "decision": "fail",
-              "reason": "Executed unchanged v1 public adapter for relevant IDs."
+              "reason": "Runs the original adapter for the relevant check IDs."
             }
           }
         }
@@ -91,19 +91,19 @@
           "methods": {
             "behavioral_contract": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "native_tests": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "schema": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "source_pattern": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             }
           }
         },
@@ -115,19 +115,19 @@
           "methods": {
             "behavioral_contract": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "native_tests": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "schema": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "source_pattern": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             }
           }
         },
@@ -139,19 +139,19 @@
           "methods": {
             "behavioral_contract": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "native_tests": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "schema": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             },
             "source_pattern": {
               "decision": "not_evaluated",
-              "reason": "Actual executed inputs provide no eligible discriminating examples."
+              "reason": "The executed inputs contain zero eligible examples."
             }
           }
         }

@@ -20,7 +20,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -28,17 +28,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": true,
           "decision": "fail",
           "prompt_mask_pattern": true,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -71,7 +71,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -79,17 +79,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -122,7 +122,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -130,17 +130,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -173,7 +173,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -181,17 +181,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -224,7 +224,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -232,17 +232,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -275,7 +275,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -283,17 +283,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": false
         }
       },
@@ -326,7 +326,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -334,17 +334,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -377,7 +377,7 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Exact comparison with frozen prediction-index oracle on 56 controlled inputs."
+          "reason": "Expected prediction mask compared with outputs on 56 controlled inputs."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -385,17 +385,17 @@
             "verl/tests/utils/dataset/test_sft_dataset_on_cpu.py",
             "verl/tests/utils/dataset/test_multiturn_sft_dataset_on_cpu.py"
           ],
-          "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage."
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."
+          "reason": "Checks output keys, tensor types, and shapes."
         },
         "source_pattern": {
           "coordinate_fault_pattern": false,
           "decision": "fail",
           "prompt_mask_pattern": false,
-          "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+          "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
           "terminal_mask_pattern": true
         }
       },
@@ -458,23 +458,23 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+          "reason": "The selected inputs contain zero sequences above the length limit."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+          "reason": "The selected inputs contain zero sequences above the length limit."
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+          "reason": "The selected inputs contain zero sequences above the length limit."
         },
         "source_pattern": {
           "decision": "not_evaluated",
-          "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+          "reason": "The selected inputs contain zero sequences above the length limit."
         }
       },
       "observed": {
-        "reason": "Activation check has zero eligible overlength examples in fixed diagnostic input group"
+        "reason": "The selected inputs contain zero sequences above the length limit."
       },
       "oracle_valid": true,
       "partition": "locked_evaluation",

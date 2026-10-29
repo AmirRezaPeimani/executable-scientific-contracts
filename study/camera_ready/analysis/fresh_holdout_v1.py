@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce the nine published source cases with unchanged v2 checkers.
-
-Preparation binds explicitly acquired inputs and freezes their hashes before
-execution. Reproduction does not create another untouched evaluation set.
-"""
+"""Prepare and run the nine additional cases using recorded source versions and inputs."""
 from __future__ import annotations
 import argparse
 import datetime as dt
@@ -55,7 +51,7 @@ def trajectory(length, score, name):
 
 
 def verify_inputs(inputs):
-    """Check acquisition identities without scanning data or running cases."""
+    "Check the acquired revisions and file hashes."
     pins = {name: read(BUNDLED_STUDY / f"protocols/{name}_v1.json")["source_revision"]
             for name in ("agentprm", "toolace", "agentabstain")}
     revisions, hashes = {}, {}
@@ -120,7 +116,7 @@ def prepare(w, inputs):
     folder = w / "results/fresh_holdout_v1"
     protocol_path = w / "protocols/fresh_holdout_v1.json"
     if protocol_path.exists() or folder.exists():
-        raise FileExistsError("Fresh holdout has already been prepared; never overwrite it")
+        raise FileExistsError("Cases already prepared; choose a new workspace.")
     revisions, input_hashes = verify_inputs(inputs)
     folder.mkdir(parents=True)
     frozen = [BUNDLED_ANALYSIS / f"{name}.py" for name in ("agentprm_guarded_v2", "agentprm_analysis", "toolace_evaluator_v2", "toolace_analysis", "agentabstain_guards_v2", "agentabstain_analysis")]
@@ -135,7 +131,7 @@ def prepare(w, inputs):
         diffpath.parent.mkdir(exist_ok=True)
         diffpath.write_text(diff)
         diffs.append({"source": str(path), "source_sha256": digest(path), "parent_content_sha256": hashlib.sha256(original.encode()).hexdigest(), "diff": str(diffpath), "diff_sha256": digest(diffpath)})
-    # Family 1: terminal-outcome range conversion, not discount indexing.
+    # Family 1: terminal reward conversion.
     files = ["scripts/dataproc/compute_prm_target.py", "scripts/dataproc/compute_prm_preference_target.py", "scripts/dataproc/rollout_alfworld.py", "src/agent_prm/utils/alfworld.py"]
     sourcebase = Path(inputs["agentprm_results"]) / "sources/repaired"
     original_reward = "outcome_reward = 2 * trajectory[-1]['score'] - 1"
@@ -158,7 +154,7 @@ def prepare(w, inputs):
                       "source_root": str(root), "fixture_paths": fixture_paths, "gamma": .95,
                       "frozen_evaluator_mechanism_argument": "terminal_discount", "expected_state": "fault" if variant == "fault" else "conformant",
                       "expected_eligible_examples": 16, "reference_rule": "For terminal score s in {0,1}, signed reward is 2s-1; return at distance d is (2s-1)*(19/20)^d. Two unchanged pinned caller functions execute."})
-    # Family 2: response token identity/order, not crop or mask coordinates.
+    # Family 2: response token order.
     loader_relative = "verl/verl/utils/dataset/sft_dataset_wo_apply_template.py"
     loader_base = (Path(inputs["toolace_results"]) / "implementation_variants/TACE-REPAIR" / loader_relative).read_text()
     old = "input_ids = torch.cat((prompt_ids, response_ids), dim=-1)"
@@ -170,9 +166,9 @@ def prepare(w, inputs):
         emit_source(path, loader_base, loader_base.replace(old, replacement), f"toolace-{variant}")
         cases.append({"id": f"FRESH-TACE-RESPONSE-ORDER-{variant}", "target": "toolace", "family": "response_token_order_corruption", "variant": variant,
                       "source_path": str(path), "fixtures": new_grid, "expected_state": "fault" if variant == "fault" else "conformant", "expected_eligible_examples": len(new_grid),
-                      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected."})
-    # Family 3: mean -> median at the specified OUTER scenario reduction.
-    # Every scenario has exactly one pair, so subtype weighting is irrelevant.
+                      "reference_rule": "Tokenize the prompt and response plus EOS separately. Concatenate, crop from the left, and pad. Compare all input IDs and shifted labels."})
+    # Family 3: scenario aggregation.
+    # Each scenario contains one pair.
     ranking_base = (Path(inputs["agentabstain_source_root"]) / "eval/statistics/figure_ranking_bar.py").read_text()
     rank_old = 'per_cat.groupby(["provider", "model"])[["act", "abstain", "paired", "car"]]\n        .mean()'
     assert ranking_base.count(rank_old) == 1
@@ -186,12 +182,12 @@ def prepare(w, inputs):
         emit_source(path.parent / "analysis.py", analysis_base, analysis_base, f"agentabstain-helper-{variant}")
         cases.append({"id": f"FRESH-AABS-SCENARIO-STATISTIC-{variant}", "target": "agentabstain", "family": "outer_macro_mean_to_order_statistic", "variant": variant,
                       "source_path": str(path), "fixture": rank_fixture, "expected_state": "fault" if variant == "fault" else "conformant", "expected_eligible_examples": 8,
-                      "expected_values": [3 / 8], "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention."})
+                      "expected_values": [3 / 8], "reference_rule": "Eight equally weighted scenario scores [0,0,0,0,0,1,1,1] have mean 3/8 and median 0. The ranking calculation specifies their mean."})
     source_files = list((folder / "sources").rglob("*.py"))
     fixture_files = list((folder / "fixtures").glob("*.json"))
     protocol = {"schema_version": "1.0", "frozen_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
-                "purpose": "Reproduction of the nine published source cases; no existing evaluator, reference contract, case family or expected value changes.",
-                "scope": "Small researcher-constructed source challenge; not independent human validation, new repositories, population generalization or model-performance evidence.",
+                "purpose": "Run the nine published cases with their recorded inputs and expected values.",
+                "scope": "Three manually constructed fault families, each with a fault, a reference implementation, and a harmless rewrite.",
                 "runner_sha256": digest(Path(__file__)), "evaluator_and_import_hashes": {str(path): digest(path) for path in frozen},
                 "execution_role": "reproduction_of_published_cases", "execution_inputs": inputs,
                 "acquired_revisions": revisions, "input_file_hashes": input_hashes,
@@ -199,9 +195,9 @@ def prepare(w, inputs):
                 "prior_frozen_protocol_hashes": {str(path): digest(path) for path in prior_protocols},
                 "isolated_source_and_fixture_hashes": {str(path): digest(path) for path in source_files + fixture_files},
                 "source_diffs": diffs, "cases": cases,
-                "method_policy": "Use each target's existing four method decisions unchanged. Missing relevant native/pattern coverage remains not_evaluated. An error is not detection. A separately manifested fault missed by checker remains an explicit miss.",
+                "method_policy": "Record the four method decisions for each case. Record unavailable coverage as not_evaluated and execution failures as error. Count a missed fault when the output differs from the expected value and the check accepts it.",
                 "primary_metrics": ["independently_manifested_faults", "faults_detected", "faults_missed", "reference_controls_accepted", "benign_false_alarms", "errors", "unmanifest_faults"],
-                "freeze_rule": "Verify every runner/evaluator/helper/source/fixture hash before first execution; no patching based on these outputs; save all outputs before interpretation.",
+                "freeze_rule": "Check the recorded file hashes before execution and save every output.",
                 "environment_versions": {name: importlib.metadata.version(name) for name in ("torch", "transformers", "pandas", "pyarrow", "numpy")},
                 "paid_cost_cad": 0, "model_weights_or_training": False}
     save(protocol_path, protocol)
@@ -214,7 +210,7 @@ def run(w):
     protocol = read(protocol_path)
     output = folder / "challenge_results_v1.json"
     if output.exists() or (folder / "execution_started.json").exists():
-        raise FileExistsError("First fresh evaluation already exists")
+        raise FileExistsError("Results already exist in this workspace.")
     revisions, _ = verify_inputs(protocol["execution_inputs"])
     if revisions != protocol["acquired_revisions"]:
         raise RuntimeError("Acquired revisions changed after preparation")
@@ -222,7 +218,7 @@ def run(w):
     changed = [{"path": path, "expected": expected, "actual": digest(path) if Path(path).is_file() else None} for path, expected in required.items() if not Path(path).is_file() or digest(path) != expected]
     if changed:
         save(folder / "freeze_verification_failure.json", changed)
-        raise RuntimeError("Frozen source/evaluator mismatch; no evaluation executed")
+        raise RuntimeError("A source or evaluator hash differs from the prepared protocol.")
     save(folder / "execution_started.json", {"started_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "protocol_sha256": digest(protocol_path), "hashes_verified": len(required), "command": sys.argv})
     aprm = load(BUNDLED_ANALYSIS / "agentprm_guarded_v2.py", "fresh_aprm_checker")
     aabs = load(BUNDLED_ANALYSIS / "agentabstain_guards_v2.py", "fresh_aabs_checker")
@@ -237,8 +233,7 @@ def run(w):
         row = {"id": case["id"], "target": case["target"], "mechanism": case["family"], "variant": case["variant"], "partition": "locked_evaluation", "expected_state": case["expected_state"], "oracle_valid": False, "eligible_examples": 0,
                "freshness": "new_cases_after_v2_evaluator_freeze", "independent_human_validation": False, "implementation": {"source_root": case.get("source_root"), "source_path": case.get("source_path")}}
         try:
-            # Independently establish source behavior and reference validity
-            # before invoking the unchanged checker; never infer gold from it.
+            # Record the source output before running the check.
             witnesses = []
             if case["target"] == "agentprm":
                 for relative in ("scripts/dataproc/compute_prm_target.py", "scripts/dataproc/compute_prm_preference_target.py"):
@@ -302,12 +297,12 @@ def run(w):
               "execution_role": "reproduction_of_published_cases", "published_summary_matches": summary_matches,
               "published_result_sha256": digest(published),
               "rows": rows, "summary": methods, "execution_finished_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
-              "limitations": ["One new source family per target selected by the same researcher after viewing existing evaluators.", "No unseen repository, independent human author, population accuracy or historical model-performance claim.", "All misses, errors, uncovered cases and nonmanifested faults remain in the saved record."], "cost_cad": 0}
+              "limitations": ["One fault family per repository, selected by the author after inspecting the checks.", "The cases use the three listed repositories and controlled inputs.", "The records include misses, execution errors, unavailable coverage, and mutations with unchanged outputs."], "cost_cad": 0}
     save(output, result)
-    lines = ["# Reproduction of the published source-family challenge", "", "The nine published cases were rerun with hash-verified, unchanged evaluators and imports. No new source family or untouched evaluation set is claimed.", "", "These are three researcher-constructed source families with paired reference and benign controls, not independent human validation or an accuracy estimate.", "", "| Method | Manifested faults | Detected | Missed | Uncovered | Benign false alarms | Errors |", "|---|---:|---:|---:|---:|---:|---:|"]
+    lines = ["# Additional case results", "", "The nine cases use the recorded inputs, expected outputs, and evaluator files.", "", "Each family contains a fault, a reference implementation, and a harmless rewrite.", "", "| Method | Faults with changed output | Detected | Missed | Uncovered | Benign false alarms | Errors |", "|---|---:|---:|---:|---:|---:|---:|"]
     for method, metrics in methods.items():
         lines.append(f"| {method} | {metrics['independently_manifested_faults']} | {metrics['faults_detected']} | {metrics['faults_missed']} | {metrics['faults_uncovered']} | {metrics['benign_false_alarms']}/{metrics['benign_controls']} | {metrics['errors']} |")
-    lines += ["", "Every case has a separate actual-source manifestation witness and raw output. Missing native test coverage is unavailable, not a failed test. No existing result, protocol or evaluator was changed.", ""]
+    lines += ["", "Each case includes its raw output. Native test coverage is unavailable for these behaviors.", ""]
     (folder / "REPORT.md").write_text("\n".join(lines))
     print(json.dumps({"rows": len(rows), "summary": methods, "published_summary_matches": summary_matches, "unmanifest_or_errors": [r["id"] for r in rows if not r["oracle_valid"] or "execution_error" in r]}, indent=2))
     if not summary_matches:
@@ -317,14 +312,14 @@ def run(w):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--phase", choices=("prepare", "run"), required=True)
-    parser.add_argument("--workspace", type=Path, required=True, help="New external output directory; bundled evidence is never overwritten")
+    parser.add_argument("--workspace", type=Path, required=True, help="New output directory outside the repository")
     names = ("agentprm-source-root", "toolace-source-root", "agentabstain-source-root", "agentprm-results", "toolace-results", "tokenizer")
     for name in names:
         parser.add_argument("--" + name, type=Path, help="Explicit acquired input; required for prepare and recorded in its protocol")
     args = parser.parse_args()
     workspace = args.workspace.resolve()
     if workspace == REPOSITORY_ROOT or workspace.is_relative_to(REPOSITORY_ROOT):
-        parser.error("--workspace must be outside the repository so bundled evidence stays unchanged")
+        parser.error("--workspace must be outside the repository")
     if args.phase == "prepare":
         missing = ["--" + name for name in names if getattr(args, name.replace("-", "_")) is None]
         if missing:

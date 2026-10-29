@@ -9,7 +9,7 @@
     "STUDY_ROOT/results/agentprm/scope_inputs_v2/shared-prefix-length-4.json"
   ],
   "gamma": 0.95,
-  "scope": "Complete trajectory visit mean is invariant to exponent reversal. An unweighted mean after deduplicating and count-merging state-action evidence need not be invariant.",
+  "scope": "Complete trajectory visit mean is invariant to exponent reversal. The unweighted mean of deduplicated, count-merged state-action targets can change.",
   "unique_state_action_mean_difference_exported": 0.011882812500000062,
   "unique_state_action_mean_difference_signed": 0.023765625000000123,
   "versions": {

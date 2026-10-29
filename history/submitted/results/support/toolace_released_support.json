@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "scope": "Aggregate support scan of the released ToolACE target candidates; no model outcomes are included.",
+  "scope": "Counts and token lengths for the released ToolACE target candidates.",
   "repository_revision": "1156d649235235e686372956e99bfc50e4b1e3f6",
   "source_dataset_sha256": "ba12c083fca7e8da48c67ad5b895e495447da7c66e39a2e19742c082e6cb537e",
   "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
@@ -19,8 +19,8 @@
   },
   "definitions": {
     "candidate_targets": "Assistant messages in the released source data whose value begins with a list-form target.",
-    "targets": "Candidate targets successfully parsed by the frozen support scan.",
+    "targets": "Candidate targets parsed by the recorded scanner.",
     "maximum_sequence_tokens": "Maximum prompt-plus-response token count among parsed targets."
   },
-  "redistribution": "Only aggregate values and source hashes are included here; the third-party dataset and per-target records are not redistributed."
+  "redistribution": "This file contains aggregate values and source hashes. Acquire the dataset separately."
 }

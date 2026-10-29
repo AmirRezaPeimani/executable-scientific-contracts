@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Render the contract inventory with repository-relative evidence links.
-
-The tracked CSV supplies its descriptive source/role/coverage wording. Historical
-classifications are checked against the preserved submission. Eligible counts
-are checked against existing camera-ready records; no experiment is executed.
-Both the repository tables and manuscript copies are regenerated together.
-"""
+"""Generate both contract-inventory tables from the saved counts and evidence paths."""
 from __future__ import annotations
 
 import argparse
@@ -59,12 +53,12 @@ def current_bindings(root):
     bindings["APRM-TEMP-03"] = (states_path, sum(Decimal(row["gamma"]) == Decimal("0.95") and int(row["terminal_score"]) == 1 and int(row["length"]) > 1 for row in states), "Count saved positive-terminal observations at gamma=0.95 with trajectory length greater than one.")
     aprm_case_path = CURRENT + "agentprm/case_analysis_v1.json"
     aprm_case = read_json(root, aprm_case_path)
-    bindings["APRM-SCHEMA-01"] = (aprm_case_path, aprm_case["query_history"]["original"]["history_entries"], "Original query_history.history_entries; separately saved actions remain correct.")
+    bindings["APRM-SCHEMA-01"] = (aprm_case_path, aprm_case["query_history"]["original"]["history_entries"], "Number of query-history entries in the original case; saved trajectory actions are correct.")
     scope_path = CURRENT + "agentprm/mean_scope_companion_v2.json"
     scope = read_json(root, scope_path)
     if "Complete trajectory visit mean is invariant" not in scope["scope"]:
-        raise ValueError("AgentPRM replacement scope evidence is missing")
-    bindings["APRM-METRIC-01"] = (scope_path, 0, "Ineligibility designation for the superseded varying-terminal-outcome fixture, not a measured zero effect. Saved replacement evidence compares complete visits with merged state-action means.")
+        raise ValueError("AgentPRM mean-aggregation result is missing")
+    bindings["APRM-METRIC-01"] = (scope_path, 0, "The original varying-terminal-outcome fixture has zero valid upstream instances. The replacement analysis compares means over trajectory visits and merged state-action pairs.")
 
     remaining_path = CURRENT + "remaining_evidence_v3.json"
     for row in read_json(root, remaining_path)["contracts"]:
@@ -88,7 +82,7 @@ def current_bindings(root):
     aabs_rows = read_json(root, aabs_challenge_path)["rows"]
     for cid, mechanism in (("AABS-PAIR-02", "paired_conjunction"), ("AABS-CAR-01", "conditional_denominator")):
         row = next(row for row in aabs_rows if row["variant"] == "original_conformant" and row["mechanism"] == mechanism)
-        bindings[cid] = (aabs_challenge_path, row["eligible_examples"], "Original conformant " + mechanism + " case: eligible_examples; empty-denominator convention is separate.")
+        bindings[cid] = (aabs_challenge_path, row["eligible_examples"], "Original conformant " + mechanism + " case: eligible_examples.")
     bindings["AABS-COMMIT-01"] = (aabs_case_path, len(aabs_case["primitive_checks"]["combined_operational"]), "Number of saved combined_operational Boolean cases in primitive_checks.")
     return bindings
 

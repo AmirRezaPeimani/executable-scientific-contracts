@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Independent schema/token-identity checks and parser-difference diagnosis.
-
-This companion does not tune challenges, change their oracle or rewrite the
-first execution. It checks additional invariants specified by the frozen
-protocol and saves a separate validation record.
-"""
+"""Check token IDs, prediction masks, and differences between the two parsers."""
 from pathlib import Path
 import argparse
 import ast
@@ -54,7 +49,7 @@ def main():
                     full = prompt_ids + response_ids
                     expected = full[-maximum:]
                     expected += [tokenizer.pad_token_id] * (maximum - len(expected))
-                    # Check every input/shifted label, not merely token counts.
+                    # Compare every input token and shifted label.
                     label_match = result["input_ids"][1:].tolist() == expected[1:]
                     input_match = result["input_ids"].tolist() == expected
                     if not label_match or not input_match:
@@ -111,7 +106,7 @@ def main():
                   "difference": {"additional_empty_official_responses": len(parser_cases),
                                  "historical_target_difference": historical_summary["counts"]["targets"] - cov["nonempty_parsed_targets"]},
                   "exact_candidate_partition_verified": True},
-              "trainer_shift_interpretation": "Upstream loss_mask index j weights prediction of input_ids[j+1]. The final EOS token can be supervised; masking final input position excludes prediction after EOS. Historical r-1 count was not the trainer-aligned supervision count.",
+              "trainer_shift_interpretation": "Mask index j weights the prediction of input_ids[j+1]. This includes EOS; the final input position has no next-token prediction.",
               "preservation": {"case_analysis_v1_sha256": digest((args.results / "case_analysis_v1.json").read_bytes()),
                                "challenge_results_v1_sha256": digest((args.results / "challenge_results_v1.json").read_bytes())}}
     save(args.output, result)

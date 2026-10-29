@@ -91,8 +91,7 @@ def audit_contractbench(
             {"output_without_assistant_message": 0},
             1 if unlogged else 0,
             (
-                "Generated output is not fully represented in the released trace; "
-                "the number of corrected successes is not identifiable."
+                "The released trace omits generated output; corrected success counts are unknown."
             ),
             [
                 "released-results/selected-9b-slice",
@@ -172,9 +171,7 @@ def audit_contractbench(
             {"episodes": EXPECTED_EPISODES, "successes": EXPECTED_SUCCESSES},
             2 if released_successes != EXPECTED_SUCCESSES else 0,
             (
-                "The released record-level aggregate does not reproduce the "
-                "reported baseline count. Missing trace content prevents a "
-                "defensible corrected performance estimate."
+                "The released record-level success count differs from the count corresponding to the reported baseline."
             ),
             ["released-results/selected-9b-slice", "reported-table-baseline"],
             started,

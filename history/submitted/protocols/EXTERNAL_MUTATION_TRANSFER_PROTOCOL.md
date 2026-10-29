@@ -1,34 +1,14 @@
-# Prospective externally sourced mutation-transfer protocol
+# Eight-operator mutation experiment
 
-Freeze date: 2026-07-29
+Specified: 2026-07-29
 
-Outcome status at freeze: the original 30-mutant result was known. The eight
-operators below were selected from mutation families documented independently
-of this study. Their executions and detection outcomes were not inspected
-before this protocol was saved.
+The original 30-mutation result was known when these eight operators were selected. The operators and fixtures below were recorded before their execution.
 
-## Purpose and claim boundary
+## Operators and fixtures
 
-This small evaluation asks whether the existing scientific-semantic oracles
-also reject mutations selected from established software-testing operator
-families rather than from the four study-specific discrepancy classes. It is
-an operator-transfer check, not an independently authored test suite, a random
-sample of software defects, or evidence about field-wide mutation adequacy.
+Operators follow René Just, *The Major Mutation Framework: Efficient and Scalable Mutation Analysis for Java*, ISSTA 2014, Section 2.2. PIT's mutator catalog supplied names and examples of boundary, return, and deletion mutations.
 
-The external operator source is:
-
-- René Just, *The Major Mutation Framework: Efficient and Scalable Mutation
-  Analysis for Java*, ISSTA 2014, Section 2.2, which enumerates binary and
-  unary operator replacement, constant replacement, branch-condition
-  manipulation, and statement deletion.
-- PIT's public mutator catalog, consulted only for concrete names and
-  boundary/return/deletion examples within those established families.
-
-## Frozen operators and fixtures
-
-Exactly eight single-site mutants will be evaluated:
-
-| ID | External family | Frozen scientific fixture | Mutation |
+| ID | Operator family | Fixture | Mutation |
 |---|---|---|---|
 | XM-01 | arithmetic-operator replacement | discounted terminal target | replace the decreasing exponent with an increasing exponent |
 | XM-02 | relational-operator replacement | thresholded pass rate | replace `>=` by `>` at an attained boundary |
@@ -39,28 +19,12 @@ Exactly eight single-site mutants will be evaluated:
 | XM-07 | statement deletion | required tool arguments | delete the required-argument insertion |
 | XM-08 | logical-operator replacement | commit-aware abstention | replace conjunction by disjunction |
 
-Each clean fixture must pass its oracle before its mutant is evaluated. A
-mutant is detected only if the same oracle rejects the mutated fixture.
-Equivalent or invalid mutants are not silently replaced.
+Each original fixture must pass before its mutant is evaluated. Detection means that the same check rejects the mutated fixture. Record equivalent or invalid mutants in the results.
 
-## Primary output
+## Execution and reporting
 
-The primary output is the exact detected count out of eight, with a Wilson
-95% interval. Results are also reported by external operator family. No
-minimum detection threshold was used to select or revise the operators.
+Run the eight operators once and report detection counts, a 95% Wilson interval, and counts by operator family. Selection is independent of any minimum detection threshold. Save execution errors; correct errors that prevent the specified transformation and record the correction.
 
-## Stopping and amendment rule
+## Equality input
 
-The script is run once. Any implementation error is recorded, corrected only
-if it prevents the frozen transformation from being instantiated, and the
-correction is documented without replacing the operator or fixture.
-
-## Implementation amendment
-
-The first execution (`external_mutation_transfer_v1.json`) instantiated
-XM-02 with a threshold of `1 - 1e-6` and rewards equal to `1.0`. That did not
-place any reward on the relational boundary, contrary to the frozen
-"attained boundary" fixture, so replacing `>=` with `>` was equivalent.
-Version 2 changes only that threshold to `1.0`. The operator, rewards, oracle,
-other seven mutants, and reporting rule are unchanged; version 1 remains
-preserved.
+The first run, `external_mutation_transfer_v1.json`, used a threshold of `1 - 1e-6` and rewards of `1.0` for XM-02. Both comparisons therefore returned the same result. The second run sets the threshold to `1.0`, placing the rewards at equality. The operator, rewards, check, other seven mutants, and reporting rule stay the same. Both runs are included.

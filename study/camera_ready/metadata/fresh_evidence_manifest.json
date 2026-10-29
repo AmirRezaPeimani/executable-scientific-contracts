@@ -5,15 +5,15 @@
     "toolace": "3d8f9324d63690faacde247de7f1f7304af9d23e7743b4460c194f22e874c05c"
   },
   "files": {
-    "protocols/fresh_holdout_v1.json": "71750d4754b381dd9b947acd890b3952412cd6abc2de307d929abc57afd37133",
-    "results/fresh_holdout_v1/INTERPRETATION.md": "5a04aab7749191c2d308106517bae53802eacf5680a59261cb018bc2509f7886",
-    "results/fresh_holdout_v1/REPORT.md": "c5288e14f501532aaa452d9652b410dfbbf304a130d497e29b5d90382e3e54d3",
-    "results/fresh_holdout_v1/challenge_results_v1.json": "e2041e1bde80bc78b83bfd640661699a3fba606bdfda3881311292d9f9c3a8ef",
+    "protocols/fresh_holdout_v1.json": "992e8414bfc6ef2106d9d95c2fe0225fd547d9a4e11b052e4810a2c4b2159914",
+    "results/fresh_holdout_v1/INTERPRETATION.md": "8c5c9b43cb1f4b3f64faf642c0f2b58fd4bdf5dae3ec3127d028a32d7515822e",
+    "results/fresh_holdout_v1/REPORT.md": "6bea770b0dde5039e564f437481e97d42b4ecd2c111e9c923c497228c26d426d",
+    "results/fresh_holdout_v1/challenge_results_v1.json": "2aa5629c58284315a701145dcd9af4211b672deabea6f319a11ced6752c84709",
     "results/fresh_holdout_v1/coverage_validation_v1.json": "8631885fef991ce68c26b79665cfa1d0af51da5fa06843ca0017f25756c8a082",
     "results/fresh_holdout_v1/execution_started.json": "e477835a8f1d5ba52f07f5fb647d796ee19f78b7cccdad6526c52acccf90ebd6"
   },
-  "identity_scope": "Public hashes verify the current portable reproduction runner and normalized published evidence. The runner source_artifact_raw_sha256 and embedded protocol/source/parent hashes identify the original execution. Upstream source variants are acquired or reconstructed separately.",
-  "interpretation": "Nine cases in three researcher-constructed source families evaluated after v2 evaluator freeze, separate from the sixty exposed confirmation cases. No independent human authorship, unseen-repository or population-accuracy claim.",
+  "identity_scope": "The files mapping lists hashes of the distributed files. source_artifact_raw_sha256 and embedded protocol, source, and parent hashes identify the original execution. Acquire or reconstruct upstream variants separately.",
+  "interpretation": "Nine cases in three families, constructed and evaluated with the checks held fixed.",
   "kind": "separate_fresh_source_family_evidence",
   "normalization": {
     "camera_ready_workspace": "STUDY_ROOT",
@@ -30,7 +30,7 @@
   },
   "runner": {
     "path": "analysis/fresh_holdout_v1.py",
-    "sha256": "a6e824f22718b30e6a90ab6f893fb558446af3b38a5ff0d3d8b47b70696dbdde",
+    "sha256": "69e431bc3aacb5d190d8bea2c0c4fa6e6ade3294d98a0c0c1f39536b360a24a6",
     "source_artifact_raw_sha256": "ecf92b8ae21da500d452d5aa5d1bcd476876d7f88d7df367d09ac7a7533f16f5"
   },
   "schema_version": "1.0"

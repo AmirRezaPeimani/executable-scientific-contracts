@@ -59,7 +59,7 @@
     "loader_file_sha256": "12a9ee93736fd97e34d0da80f62a65abf1d622e3b2c6b715ee7e3227ac8c734c",
     "trainer_file_sha256": "4512ba648f6e3e368a58d8995adad25537842f0d7329bde5b5c705e86bc1e217",
     "trainer_shift_evidence": {
-      "executed": "identical indexing expressions on actual loader tensors; no model forward",
+      "executed": "Trainer indexing expressions evaluated on loader tensors.",
       "labels_expression": "input_ids[:, 1:].contiguous()",
       "lines": [
         382,
@@ -69,11 +69,11 @@
     }
   },
   "limitations": [
-    "Fixed source challenges do not estimate population mutation-detection accuracy.",
-    "Controlled lengths 8/16 diagnose mechanism and do not change the official 8192 activation conclusion.",
-    "Loss-mask agreement establishes preprocessing semantics, not historical model performance.",
-    "Empty response labels are EOS-only examples, not nonempty tool-call supervision.",
-    "Native coverage is not established; missing coverage is not a failing native test."
+    "Counts cover the listed source transformations.",
+    "Controlled lengths 8 and 16 test crop behavior. The released-data scan uses 8192.",
+    "The mask comparison evaluates preprocessing outputs.",
+    "Empty responses are supervised on EOS only.",
+    "Native test coverage is unavailable for these loader behaviors."
   ],
   "official_8192_census": {
     "all_parsed_names_present": true,

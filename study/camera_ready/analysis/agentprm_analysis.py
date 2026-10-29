@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Pinned AgentPRM behavior, target sensitivity, and finite source challenges.
+"""Check AgentPRM targets, preference exports, and query history.
 
-No upstream files are changed. Target/preference functions are imported whole;
-only the rollout function and two utility functions use unchanged AST extraction
-to avoid importing ALFWorld and model-serving dependencies.
-"""
+Import target and preference functions. Extract the rollout and utility
+functions to run them with a deterministic agent and environment."""
 from __future__ import annotations
 
 import argparse
@@ -123,7 +121,7 @@ def state_values(output: dict, data: dict) -> list[float]:
 
 
 def expected_values(length: int, gamma: float, outcome: int) -> list[float]:
-    # Independent reference uses repeated multiplication from the terminal state.
+    # Compute reference targets by repeated multiplication from the terminal state.
     signed = 2 * outcome - 1
     result = [float(signed)]
     for _ in range(length - 1):
@@ -201,7 +199,7 @@ def history_observation(root: Path, length=4) -> dict:
 
 
 def legacy_decisions(root: Path, legacy_path: Path) -> dict:
-    # Execute the unchanged historical adapter, replacing result serialization only.
+    # Run the original adapter and capture its result.
     env = {"Path": Path, "Any": Any, "time": time, "ContractResult": dict,
            "timed_result": lambda cid, target, status, observed, expected, severity, consequence, evidence, started:
            {"id": cid, "status": status, "observed": observed}}
@@ -213,7 +211,7 @@ def legacy_decisions(root: Path, legacy_path: Path) -> dict:
 def challenge_rows(variants: dict, output: Path, fixtures, protocol: dict, legacy: Path) -> list[dict]:
     rows = []
     definitions = protocol["challenges"]
-    native = {"decision": "not_evaluated", "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."}
+    native = {"decision": "not_evaluated", "reason": "No native test covers the selected target or query-history behavior."}
     for spec in definitions:
         root = variants.get(spec["variant"])
         row = {"id": spec["id"], "target": "agentprm", "mechanism": spec["mechanism"],
@@ -223,7 +221,7 @@ def challenge_rows(variants: dict, output: Path, fixtures, protocol: dict, legac
         methods = row["methods"]
         methods["native_tests"] = native.copy()
         if root is None or spec.get("ineligible"):
-            reason = "required implementation missing" if root is None else "unit-discount fixture cannot discriminate temporal exponent direction"
+            reason = "required implementation missing" if root is None else "At gamma=1, both exponent directions produce identical targets."
             for name in ("schema", "source_pattern", "behavioral_contract"):
                 methods[name] = {"decision": "not_evaluated", "reason": reason}
             row["oracle_valid"] = True
@@ -248,9 +246,8 @@ def challenge_rows(variants: dict, output: Path, fixtures, protocol: dict, legac
             row["oracle_valid"] = ((failed and spec["expected_state"] == "fault") or
                                     (not failed and spec["expected_state"] == "conformant"))
             methods["behavioral_contract"] = {"decision": "fail" if failed else "pass",
-                                              "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."}
-            # A required-field/type baseline sees well-formed serialized outputs;
-            # it does not have the scientific numerical/history equality oracle.
+                                              "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."}
+            # Check output fields and types.
             if spec["mechanism"] == "query_history_action":
                 schema_valid = (all(isinstance(x,str) for x in obs["saved_actions"])
                     and all(isinstance(h,list) and all(set(("action","observation")).issubset(x)
@@ -260,11 +257,11 @@ def challenge_rows(variants: dict, output: Path, fixtures, protocol: dict, legac
                 schema_valid = all(isinstance(x["signed_values"],list) and bool(x["signed_values"])
                     and all(isinstance(v,(int,float)) and math.isfinite(v) for v in x["signed_values"])
                     for path_rows in obs["paths"].values() for x in path_rows)
-            methods["schema"] = {"decision": "pass" if schema_valid else "fail", "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."}
+            methods["schema"] = {"decision": "pass" if schema_valid else "fail", "reason": "Checks required fields and numeric, string, and list types."}
             old = legacy_decisions(root, legacy)
             ids = ["APRM-SCHEMA-01"] if spec["mechanism"] == "query_history_action" else ["APRM-TEMP-01", "APRM-TEMP-02", "APRM-TEMP-03", "APRM-METRIC-01"]
             methods["source_pattern"] = {"decision": "fail" if any(old[k]["status"] == "discrepant" for k in ids) else "pass",
-                                         "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."}
+                                         "reason": "Runs the original adapter and its formula calculations for the applicable checks."}
             row["observed"]["legacy_checks"] = {key: old[key] for key in ids}
         except Exception as exc:
             row["observed"]["error"] = repr(exc)
@@ -321,7 +318,7 @@ def scientific_analysis(variants: dict, out: Path, protocol: dict) -> dict:
                               "max_abs_signed_distortion": max(abs(a-b) for a,b in zip(old,new)),
                               "max_abs_exported_distortion": .5*max(abs(a-b) for a,b in zip(old,new))})
     # Same initial state; different actions and valid successful continuations.
-    # At t=0 the original ignores remaining duration; the repaired target does not.
+    # At t=0, the repair discounts by the remaining trajectory length.
     preference_rows, preference_raw = [], []
     lengths = protocol["preference_continuation_lengths"]
     for gamma in protocol["gammas"]:
@@ -358,7 +355,7 @@ def scientific_analysis(variants: dict, out: Path, protocol: dict) -> dict:
                                         "long_repaired_signed": values[1]["right"], "signed_margin": expected_margin})
                 preference_raw.append({"gamma": gamma, "lengths": [short,long], "values": values,
                                        "preference_sets": [sorted(x) for x in sets]})
-    # Repeated identical state-action evidence tests actual count-weighted merge.
+    # Repeated state-action pairs test the count-weighted merge.
     merge_fixtures = []
     for index, outcome in enumerate([1,1,0]):
         d = trajectory(4, outcome, "merge")
@@ -380,7 +377,7 @@ def scientific_analysis(variants: dict, out: Path, protocol: dict) -> dict:
     assert history_old["saved_actions_match_execution"] and history_new["saved_actions_match_execution"]
     primary = [r for r in sweep if r["gamma"] == protocol["primary_gamma"]]
     pref_primary = [r for r in preference_rows if r["gamma"] == protocol["primary_gamma"]]
-    return {"source_revision": PIN, "scope": "Controlled synthetic trajectories and deterministic environment/agent; no model training, historical trajectories or model-performance estimate.",
+    return {"source_revision": PIN, "scope": "Controlled trajectories with a deterministic agent and environment.",
             "primary_gamma": protocol["primary_gamma"], "primary_delta": protocol["primary_delta"],
             "state_sweep_cells": len(sweep), "state_rows": len(tokens),
             "mean_identity_max_abs_error": max(abs(r["mean_signed_original"]-r["mean_signed_repaired"]) for r in sweep),
@@ -388,13 +385,13 @@ def scientific_analysis(variants: dict, out: Path, protocol: dict) -> dict:
             "preference_comparisons": len(preference_rows), "primary_preference_comparisons": len(pref_primary),
             "primary_preference_added_cases": sum(r["added_pairs"]>0 for r in pref_primary),
             "primary_preference_removed_cases": sum(r["removed_pairs"]>0 for r in pref_primary),
-            "preference_scope": "Same initial state, two distinct candidate actions, successful continuations of different lengths; controlled parameter grid, not prevalence or empirical training distribution.",
+            "preference_scope": "Two distinct actions from the same initial state, followed by successful continuations of different lengths.",
             "merge_check": {"input_outcomes": [1,1,0], "counts": sorted(x["count"] for x in merged.values()), "values": merge_values, "reference": merge_ref},
             "query_history": {"original": history_old, "repaired": history_new}}
 
 
 def top_level_smoke(variants: dict, out: Path, python: str, protocol: dict) -> list[dict]:
-    """Run unmodified top-level computational/export functions via their real CLI."""
+    "Run target and preference exports through the upstream command line."
     import pyarrow.parquet as pq
     fixture_dir = out / "cli_fixtures"
     fixture_dir.mkdir()
@@ -423,7 +420,7 @@ def top_level_smoke(variants: dict, out: Path, python: str, protocol: dict) -> l
                     records_all.extend(table.to_pylist())
                     record["records"].append({"file": str(file), "sha256": digest(file), "rows": len(table)})
                 if relative == TARGET:
-                    # Match actual exported rows to process_file outputs by state/action.
+                    # Match exported rows to process_file outputs by state/action.
                     obj = module(variants[name] / TARGET)
                     q = obj.merge_results([obj.process_file(str(p),protocol["primary_gamma"]) for p in sorted(fixture_dir.glob("*.json"))])
                     reference = {(x["state"]["observation"],x["reason_action"]["action"]):.5*(x["qestimate"]+1) for x in q.values()}
@@ -475,11 +472,10 @@ def main():
     analysis=scientific_analysis(variants,out,protocol)
     analysis["actual_cli_export_checks"]=top_level_smoke(variants,out,sys.executable,protocol)
     dump(out/"case_analysis_v1.json",analysis)
-    # The complete implementation/contract file and protocol are already frozen.
-    # Record the first evaluation boundary before reading any locked decision.
+    # Record the script and protocol hashes before evaluation.
     dump(out/"locked_execution_manifest_v1.json",{"analysis_sha256":digest(Path(__file__)),
           "protocol_sha256":digest(args.protocol),"first_locked_execution_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
-          "claims":"New transformation/input families within a known repository; no blind or independent researcher claim."})
+          "claims":"Additional transformations and inputs from the same repository."})
     rows=challenge_rows(variants,out,fixtures,protocol,Path(protocol["legacy_adapter"]))
     payload={"schema_version":"2.0","rows":rows,"summary":summarize_challenges(rows),
              "finite_set_only":True,"all_oracles_valid":all(r["oracle_valid"] for r in rows),

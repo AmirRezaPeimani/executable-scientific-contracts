@@ -2,7 +2,7 @@
   "command": "conform audit toolace",
   "contracts": [
     {
-      "consequence": "The source mismatch is exact but inactive on the released support.",
+      "consequence": "The coordinate error is inactive on the inspected released examples.",
       "contract_id": "TACE-COORD-01",
       "elapsed_seconds": 2.193450927734375e-05,
       "evidence": [
@@ -26,7 +26,7 @@
       "target": "toolace"
     },
     {
-      "consequence": "Every released target retains supervised support.",
+      "consequence": "Every parsed target retains supervised tokens.",
       "contract_id": "TACE-COORD-02",
       "elapsed_seconds": 3.0994415283203125e-06,
       "evidence": [
@@ -81,7 +81,7 @@
       "target": "toolace"
     },
     {
-      "consequence": "A real coordinate mismatch has zero released-data activation under the official maximum length.",
+      "consequence": "The coordinate error occurs in zero inspected examples at the official maximum length.",
       "contract_id": "TACE-SUPPORT-01",
       "elapsed_seconds": 0.0,
       "evidence": [

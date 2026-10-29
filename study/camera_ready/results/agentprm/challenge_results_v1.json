@@ -28,19 +28,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -201,19 +201,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -374,19 +374,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -504,19 +504,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "pass",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -634,19 +634,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -807,19 +807,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "pass",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -937,19 +937,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -1110,19 +1110,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared with terminal-anchored repeated-multiplication oracle or environment-recorded actions."
+          "reason": "Implementation output compared with repeated-multiplication targets or recorded environment actions."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field and numeric/string/list type checks without scientific equality assertions."
+          "reason": "Checks required fields and numeric, string, and list types."
         },
         "source_pattern": {
           "decision": "pass",
-          "reason": "Unchanged legacy adapter decisions for the applicable checks (includes its local formula computations)."
+          "reason": "Runs the original adapter and its formula calculations for the applicable checks."
         }
       },
       "observed": {
@@ -1228,7 +1228,7 @@
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "not_evaluated",
@@ -1254,19 +1254,19 @@
       "methods": {
         "behavioral_contract": {
           "decision": "not_evaluated",
-          "reason": "unit-discount fixture cannot discriminate temporal exponent direction"
+          "reason": "At gamma=1, both exponent directions produce identical targets."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "Pinned repository example scripts do not test these target/history semantics; no relevant native test coverage."
+          "reason": "No native test covers the selected target or query-history behavior."
         },
         "schema": {
           "decision": "not_evaluated",
-          "reason": "unit-discount fixture cannot discriminate temporal exponent direction"
+          "reason": "At gamma=1, both exponent directions produce identical targets."
         },
         "source_pattern": {
           "decision": "not_evaluated",
-          "reason": "unit-discount fixture cannot discriminate temporal exponent direction"
+          "reason": "At gamma=1, both exponent directions produce identical targets."
         }
       },
       "observed": {},

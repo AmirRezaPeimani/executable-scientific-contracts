@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "Sharp sensitivity bound from released composition and constructed endpoint outcomes; no released model outputs or observed leaderboard change. Convention alternatives are not implementation faults.",
+  "claim_boundary": "Maximum weighting difference for the released subtype counts, attained with constructed endpoint outcomes.",
   "dataset": {
     "invalid_pairs": 0,
     "pairs": 263,

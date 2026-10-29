@@ -69,7 +69,7 @@ def audit_toolace(
             {"implemented_supervised": implemented, "fixture": [10, 4, 8]},
             {"corrected_supervised": corrected},
             0,
-            "The source mismatch is exact but inactive on the released support.",
+            "The coordinate error is inactive on the inspected released examples.",
             [f"{loader}:170", f"{loader}:184", str(support_path)],
             started,
         )
@@ -84,7 +84,7 @@ def audit_toolace(
             {"zero_loss_targets": zero_loss, "targets": counts["targets"]},
             {"zero_loss_targets": 0},
             0 if zero_loss == 0 else 2,
-            "Every released target retains supervised support.",
+            "Every parsed target retains supervised tokens.",
             [str(support_path)],
             started,
         )
@@ -134,8 +134,7 @@ def audit_toolace(
             {"severity": 0},
             0,
             (
-                "A real coordinate mismatch has zero released-data activation "
-                "under the official maximum length."
+                "The coordinate error occurs in zero inspected examples at the official maximum length."
             ),
             [str(support_path)],
             started,

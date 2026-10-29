@@ -1,11 +1,8 @@
-# Optional upstream acquisition
+# Acquire upstream sources and data
 
-The commands below acquire pinned sources and released data for implementation
-analyses. They make network requests and download third-party material under
-the upstream projects' own licenses. Saved-result verification uses the
-included records and does not require these downloads.
+These commands download the source and data revisions used in the analyses. `conform behavior-check` uses the result files already included in this repository.
 
-Use a separate acquisition root so the public repository stays clean:
+Choose a download directory outside the repository:
 
 ```bash
 mkdir -p /path/to/acquisition-root/third_party
@@ -39,7 +36,4 @@ Expected AgentAbstain dataset file:
 SHA-256: 165f021e7bb8b3a1ba103cef291eb522ff219769e8e7727f1a669364a225fb63
 ```
 
-The code repositories were distributed under permissive licenses at the
-examined revisions. The AgentAbstain dataset declares CC BY 4.0. Check each
-upstream license before any redistribution. This release records revisions
-and aggregate evidence but does not sublicense third-party content.
+The source repositories use permissive licenses at the listed revisions. The AgentAbstain dataset uses CC BY 4.0. Upstream licenses apply to downloaded material.diff --git a/figures/figure_provenance.json b/figures/figure_provenance.json

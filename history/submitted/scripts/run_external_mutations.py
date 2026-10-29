@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the frozen externally sourced mutation-transfer set."""
+"Run the eight mutations selected from external operator families."
 
 from __future__ import annotations
 
@@ -62,7 +62,7 @@ def main() -> int:
         "--execution",
         required=True,
         choices=("first", "corrected"),
-        help="reproduce the frozen first execution or the fixture-corrected rerun",
+        help="run the original fixtures or the fixtures with the equality case",
     )
     args = parser.parse_args()
     if args.output.exists():
@@ -223,8 +223,7 @@ def main() -> int:
         },
         "by_family": family_summary,
         "claim_boundary": (
-            "Operator-transfer evidence for eight prospectively frozen "
-            "single-site mutants; not independent authorship or a prevalence sample."
+            "Eight mutations selected from established operator families before execution."
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

@@ -1,4 +1,4 @@
-"""Validate included evidence and reconstruct the paper-facing summary."""
+"Check saved results and reconstruct the paper summary."
 
 from __future__ import annotations
 

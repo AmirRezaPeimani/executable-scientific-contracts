@@ -1,5 +1,5 @@
 {
-  "analysis_sha256": "7bcd27a6d9c040ecd70e3ca3c80bd210677af8580a2029d195eef9faa7a1c2ba",
+  "analysis_sha256": "337c807059b6dfd45a349e98baee359d7ca2d10c701ecaf9a2458f59eeabbade",
   "budget_cad": 0,
   "challenges": [
     {
@@ -85,8 +85,8 @@
     "ineligible unit-discount fixture"
   ],
   "created_utc": "2026-10-29T14:28:06.515178+00:00",
-  "execution_boundary": "Historical forward-discount and duplicated-history examples are development; terminal-offset and stale-history transformations and benign rewrites are locked. Known repository, same author; no blind selection or independent human authorship claim.",
-  "freeze_rule": "No contract/protocol edits after the locked_execution_manifest is created; retain all first execution errors and misses. New versions require a new protocol and evaluation family.",
+  "execution_boundary": "Use forward-discount and duplicated-history examples to construct the checks. Reserve terminal-offset, stale-history, and harmless-rewrite cases for evaluation.",
+  "freeze_rule": "Record the protocol, check code, and reserved cases before evaluation. Save every initial result, error, and miss. Record changes in a new protocol.",
   "gammas": [
     0.8,
     0.9,
@@ -94,9 +94,9 @@
     0.99,
     1.0
   ],
-  "go_no_go": "All outputs retained. A behavioral contract is validated only for executed cases; source faults enter detection denominators only when the independent reference confirms their behavioral manifestation. Crashes are errors, not detections. No outcome-favorable stopping.",
+  "go_no_go": "Save all outputs. Count a source fault when its output differs from the reference calculation. Record crashes as errors and complete every listed case.",
   "legacy_adapter": "ACQUISITION_ROOT/semantic-conformance/executable-scientific-contracts/src/conform/adapters/agentprm.py",
-  "legacy_adapter_sha256": "e192572c31ffcc15c26542b092f553ce3db18639d4328cd65dd38c0c790ffe8d",
+  "legacy_adapter_sha256": "f06de060b929930ffd1422844bcf73f0fd5426ac945cf0144e9fdd312f985756",
   "lengths": [
     1,
     2,
@@ -137,7 +137,7 @@
     0,
     1
   ],
-  "uncertainty": "Exact deterministic grid and finite challenge outcomes. No population sensitivity interval or historical model-performance claim.",
+  "uncertainty": "Counts and target differences across the specified grid.",
   "variants": {
     "benign_history": {
       "history_expression": "env_data.get(\"action\")[t]",

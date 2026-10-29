@@ -2,55 +2,55 @@
   "agentabstain_composition_bounds": {
     "minimum_authored_font_pt": 8,
     "native_width_inches": 5.5,
-    "question": "How much convention sensitivity does released composition allow?",
+    "question": "Maximum weighting difference for the released subtype counts",
     "source_artifact_raw_sha256": {
       "results/agentabstain/case_analysis_v1.json": "8bd3a782ee3dc329c88fccfb736811cff3b5fbea7252c6ba35d0a41a87ad11cd",
       "results/agentabstain/subtype_sensitivity_v1.csv": "5986e9ef6b271827d1b1958dc98425634b5dce52dd27fec75e844a2a4ece2e06"
     },
     "sources": {
-      "study/camera_ready/results/agentabstain/case_analysis_v1.json": "7b1363ee5b565f609f603b64fd34490de1a150b08c10a3490e1cac1dabab2d97",
+      "study/camera_ready/results/agentabstain/case_analysis_v1.json": "defbf29d0a2bd8e6299e377cf2a0f931d8c6bf22aa13a877c3a99387e024be37",
       "study/camera_ready/results/agentabstain/subtype_sensitivity_v1.csv": "0f53d610a7c1d8d843b043ddb8d0fdd0528658119742d35106805b3f86e5ca51"
     }
   },
   "agentabstain_missing_pairs": {
     "minimum_authored_font_pt": 8,
     "native_width_inches": 5.5,
-    "question": "How does incomplete evaluated support alter the bound?",
+    "question": "Effect of missing task pairs on the weighting bound",
     "source_artifact_raw_sha256": {
       "results/agentabstain/case_analysis_v1.json": "8bd3a782ee3dc329c88fccfb736811cff3b5fbea7252c6ba35d0a41a87ad11cd"
     },
     "sources": {
-      "study/camera_ready/results/agentabstain/case_analysis_v1.json": "7b1363ee5b565f609f603b64fd34490de1a150b08c10a3490e1cac1dabab2d97"
+      "study/camera_ready/results/agentabstain/case_analysis_v1.json": "defbf29d0a2bd8e6299e377cf2a0f931d8c6bf22aa13a877c3a99387e024be37"
     }
   },
   "agentprm_trajectory": {
     "minimum_authored_font_pt": 8,
     "native_width_inches": 5.5,
-    "question": "How can unchanged aggregates hide state-level supervision changes?",
+    "question": "State target changes with an unchanged trajectory mean",
     "source_artifact_raw_sha256": {
       "results/agentprm/case_analysis_v1.json": "f0457020a093811f56baa1a2ab4b65a2065574d689e8474eb034166df7051651",
       "results/agentprm/state_targets_v1.csv": "0bf65e9c3cfda8a8cb882c2bff9e85cbdbf7e7b1dc7879039f5aec029b402f64"
     },
     "sources": {
-      "study/camera_ready/results/agentprm/case_analysis_v1.json": "613a1dafe0eaf4145eb2cc3f278d951083933849e8821a4bb6d8bfba260db6e2",
+      "study/camera_ready/results/agentprm/case_analysis_v1.json": "d2d830c65aa19842b3b72efb67d8cd70ddfcf66f5fc562c70b410c831020ebfe",
       "study/camera_ready/results/agentprm/state_targets_v1.csv": "d7163a3e62374d347a88d1b63544f6f22aae23b483a5ae99a0d54c2a9baf1e8a"
     }
   },
   "behavior_matrix": {
     "minimum_authored_font_pt": 8,
     "native_width_inches": 5.5,
-    "question": "Do checks follow implementation behavior?",
+    "question": "Decisions on faulty implementations, repairs, and harmless rewrites",
     "source_artifact_raw_sha256": {
       "results/behavioral_summary_v1.json": "5ef0e88a12e10eec9668becd17d9d0f3cce2963a2482f302417a1bcd62a8b18a"
     },
     "sources": {
-      "study/camera_ready/results/behavioral_summary_v1.json": "a9ab53ec28f60d5bbb16a0cf24f77176f6608966b7d980991c66fdb02e7351f3"
+      "study/camera_ready/results/behavioral_summary_v1.json": "2ae018a76d2103c2dfcc344ab253199ee66fd5982494a71283d0a7c8e9aa8713"
     }
   },
   "toolace_prediction_mask": {
     "minimum_authored_font_pt": 8,
     "native_width_inches": 5.5,
-    "question": "Why does a left crop remove valid response supervision?",
+    "question": "Response supervision after left cropping",
     "source_artifact_raw_sha256": {
       "results/toolace/controlled_boundary_sweep_v1.csv": "cb75d6dd6eeca90292309b8b447ecd659523258f96ff93339a3aad4b98837b84"
     },
@@ -61,7 +61,7 @@
   "toolace_released_lengths": {
     "minimum_authored_font_pt": 8,
     "native_width_inches": 5.5,
-    "question": "Is the crop defect activated at the official configuration?",
+    "question": "Sequence lengths at the official maximum of 8,192 tokens",
     "source_artifact_raw_sha256": {
       "results/toolace/official_loader_census_v1.csv": "43768554eea3c6d073e23e15f398d43765e24b80ff4f60fc27c69416b2764a6f"
     },

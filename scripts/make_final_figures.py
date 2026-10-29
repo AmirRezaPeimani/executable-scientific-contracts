@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publication figures generated only from recorded experimental outputs."""
+"Generate the manuscript figures from saved results."
 from __future__ import annotations
 import argparse
 import csv
@@ -95,7 +95,7 @@ def matrix(out):
     fig.text(.01,.98,"Faults, repairs, and harmless changes",fontsize=10,weight="bold",va="top")
     fig.text(.01,.94,"Each fraction counts evaluated cases.",fontsize=8.5)
     fig.text(.01,.015,"Blue: expected decision. Orange: miss or false alarm. Gray: coverage unavailable.",fontsize=8)
-    save(fig,out,"behavior_matrix",["results/behavioral_summary_v1.json"],"Do checks follow implementation behavior?")
+    save(fig,out,"behavior_matrix",["results/behavioral_summary_v1.json"],"Decisions on faulty implementations, repairs, and harmless rewrites")
 
 def agentprm(out):
     states=read_csv("results/agentprm/state_targets_v1.csv")
@@ -115,7 +115,7 @@ def agentprm(out):
     fig.text(.01,.97,"AgentPRM: temporal discount assigned to each state",fontsize=9.5,weight="bold",va="top")
     fig.text(.11,.84,"A  Eight-state success; γ = 0.95",fontsize=8.5);fig.text(.62,.82,"B  Largest target change\n    by trajectory length",fontsize=8.5,va="bottom")
     fig.text(.11,.04,f"Mean in both versions: {np.mean(original):.5f}.",fontsize=8.5)
-    save(fig,out,"agentprm_trajectory",["results/agentprm/state_targets_v1.csv","results/agentprm/case_analysis_v1.json"],"How can unchanged aggregates hide state-level supervision changes?")
+    save(fig,out,"agentprm_trajectory",["results/agentprm/state_targets_v1.csv","results/agentprm/case_analysis_v1.json"],"State target changes with an unchanged trajectory mean")
 
 def toolace(out):
     rows=read_csv("results/toolace/controlled_boundary_sweep_v1.csv")
@@ -142,7 +142,7 @@ def toolace(out):
     ax.text(3.5,-.43,"Mask position i supervises retained token i + 1.",ha="center",fontsize=8.5)
     ax.set_xlim(-7,14.1);ax.set_ylim(-.7,5.3);ax.axis("off")
     fig.text(.01,.98,"ToolACE: crop coordinates and next-token prediction",fontsize=9.5,weight="bold",va="top")
-    save(fig,out,"toolace_prediction_mask",["results/toolace/controlled_boundary_sweep_v1.csv"],"Why does a left crop remove valid response supervision?")
+    save(fig,out,"toolace_prediction_mask",["results/toolace/controlled_boundary_sweep_v1.csv"],"Response supervision after left cropping")
 
 SCENARIOS={"ambiguous_action_specification":"Ambiguous action","conflicting_constraints":"Conflicting constraints","conflicting_evidence":"Conflicting evidence","critical_tool_failure":"Critical tool failure","emergent_risk_discovery":"Emergent risk","high_stakes_action":"High-stakes action","insufficient_tool_capability":"Insufficient tool capability","missing_critical_parameter":"Missing parameter"}
 def abstain(out):
@@ -162,7 +162,7 @@ def abstain(out):
     fig.text(.34,.84,"A  Pair counts",fontsize=9);fig.text(.72,.84,"B  Maximum difference",fontsize=9)
     fig.legend(*a.get_legend_handles_labels(),loc="lower center",bbox_to_anchor=(.60,.015),ncol=2,frameon=False)
     fig.text(.01,.135,f"Maximum overall difference: {data['subtype_sensitivity']['macro_max_gap_pp']:.4f} percentage points.",fontsize=8.5)
-    save(fig,out,"agentabstain_composition_bounds",["results/agentabstain/case_analysis_v1.json","results/agentabstain/subtype_sensitivity_v1.csv"],"How much convention sensitivity does released composition allow?")
+    save(fig,out,"agentabstain_composition_bounds",["results/agentabstain/case_analysis_v1.json","results/agentabstain/subtype_sensitivity_v1.csv"],"Maximum weighting difference for the released subtype counts")
 
 def supplements(out):
     pref=read_csv("results/agentprm/preference_sensitivity_v1.csv")
@@ -175,14 +175,14 @@ def supplements(out):
     ax.set(xlim=(0,8500),xticks=[0,2000,4000,6000,8192],xlabel="Prompt + response + EOS tokens",ylabel="Converted records");style(ax)
     fig.text(.01,.98,"ToolACE: sequence lengths after official conversion",fontsize=9.5,weight="bold",va="top")
     fig.text(.13,.035,f"{len(lengths):,} nonempty records; 570 EOS-only records not shown.\nMaximum sequence length: 3,945 tokens.",fontsize=8.5)
-    save(fig,out,"toolace_released_lengths",["results/toolace/official_loader_census_v1.csv"],"Is the crop defect activated at the official configuration?")
+    save(fig,out,"toolace_released_lengths",["results/toolace/official_loader_census_v1.csv"],"Sequence lengths at the official maximum of 8,192 tokens")
     data=read_json("results/agentabstain/case_analysis_v1.json")['subtype_sensitivity']['missing_pair_sensitivity']
     fig,ax=plt.subplots(figsize=(5.5,2.95));fig.subplots_adjust(left=.14,right=.98,top=.82,bottom=.33)
     xx=[r['requested_pairs_removed_per_scenario'] for r in data];yy=[100*r['macro_max_gap'] for r in data]
     ax.plot(xx,yy,color=BLUE,marker='o',markersize=4);ax.set(xlabel="Pairs removed per scenario\n(from one subtype)",ylabel="Maximum macro gap (pp)",xticks=xx,ylim=(0,max(yy)*1.15));style(ax)
     fig.text(.01,.98,"AgentAbstain: sensitivity to missing task pairs",fontsize=9.5,weight="bold",va="top")
     fig.text(.14,.035,"Hypothetical removals from one subtype per scenario.",fontsize=8.5)
-    save(fig,out,"agentabstain_missing_pairs",["results/agentabstain/case_analysis_v1.json"],"How does incomplete evaluated support alter the bound?")
+    save(fig,out,"agentabstain_missing_pairs",["results/agentabstain/case_analysis_v1.json"],"Effect of missing task pairs on the weighting bound")
 
 def main():
     global ROOT

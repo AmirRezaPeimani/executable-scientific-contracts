@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Additional path-relevant benign transformations, separate from first run.
-
-This supplemental diagnostic keeps the first frozen challenge untouched. It
-tests equivalent rewrites on the exact expression exercised by each contract.
-"""
+"""Test equivalent rewrites of the expressions used by the AgentAbstain checks."""
 from __future__ import annotations
 
 import argparse

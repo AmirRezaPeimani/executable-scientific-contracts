@@ -58,12 +58,12 @@ def _parser() -> argparse.ArgumentParser:
     )
     mutate.add_argument("--output", type=Path, required=True)
     behavior = subparsers.add_parser(
-        "behavior-check", help="verify sealed saved camera-ready results; does not execute upstream implementations"
+        "behavior-check", help="verify saved result files and summarize their outcomes"
     )
     behavior.add_argument("--results-root", type=Path, required=True)
     behavior.add_argument("--output", type=Path, required=True)
     for name in ("behavior-run", "scan-toolace"):
-        runner = subparsers.add_parser(name, help="execute pinned upstream analysis and exposed guard confirmation; opt-in research dependencies required")
+        runner = subparsers.add_parser(name, help="run upstream implementations and check source availability and input eligibility")
         if name == "behavior-run":
             runner.add_argument("--target", choices=("agentprm", "toolace", "agentabstain"), required=True)
         runner.add_argument("--source-root", type=Path, required=True)

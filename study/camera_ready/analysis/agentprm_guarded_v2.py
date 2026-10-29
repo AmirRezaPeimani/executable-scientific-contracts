@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Preserved-v2 guard confirmation on exposed AgentPRM source challenges.
-
-Version 1 stays unchanged. This evaluates availability from real paths and
-discriminating eligibility from executed inputs, without an expected label.
-"""
+"""Check AgentPRM source availability, input eligibility, targets, and query history."""
 from __future__ import annotations
 import argparse
 import copy
@@ -42,7 +38,7 @@ def structural_q_schema(output):
 
 
 def evaluate(source_root, mechanism, fixture_paths, gamma, legacy_path):
-    """No expected-state/label argument exists; guards use actual evidence."""
+    "Evaluate source availability, input eligibility, and implementation outputs."
     source_root = Path(source_root)
     missing = [p for p in V1.FILES if not (source_root/p).is_file()]
     unavailable = [str(p) for p in fixture_paths if not Path(p).is_file()]
@@ -67,7 +63,7 @@ def evaluate(source_root, mechanism, fixture_paths, gamma, legacy_path):
                     and isinstance(x["action"],str) and isinstance(x["observation"],str)
                     for x in h) for h in observed["query_histories"]))
         fault=observed["history_action_mismatches"]>0 or not observed["saved_actions_match_execution"]
-        evidence["eligibility_rule"]="Actual rollout supplied at least one previous action to a subsequent query."
+        evidence["eligibility_rule"]="The rollout passes a previous action to a subsequent query."
     else:
         actual={};raw={};errors=[];eligible=0;schema=True
         for relative in [V1.TARGET,V1.PREFERENCE]:
@@ -78,8 +74,8 @@ def evaluate(source_root, mechanism, fixture_paths, gamma, legacy_path):
                 schema &= structural_q_schema(output)
                 row_values=V1.state_values(output,data)
                 target=V1.expected_values(len(data["trajectory"]),gamma,data["trajectory"][-1]["score"])
-                # Eligibility derives from actual input length/discount. Unit
-                # discount is still executed and preserved before abstaining.
+                # Determine eligibility from trajectory length and discount.
+            # Save gamma=1 outputs before returning not_evaluated.
                 if len(data["trajectory"])>1 and gamma!=1:
                     eligible+=len(data["trajectory"])
                 errors.extend(abs(a-b) for a,b in zip(row_values,target))
@@ -90,17 +86,17 @@ def evaluate(source_root, mechanism, fixture_paths, gamma, legacy_path):
             actual[relative]=values
         observed={"paths":actual,"raw_outputs":raw,"max_abs_error":max(errors,default=0)}
         fault=observed["max_abs_error"]>1e-12
-        evidence["eligibility_rule"]="Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated."
+        evidence["eligibility_rule"]="The trajectory has more than one state and gamma differs from one."
     if eligible==0:
-        methods={m:entry("not_evaluated","Actual executed inputs provide no eligible discriminating examples.")
+        methods={m:entry("not_evaluated","The executed inputs contain zero eligible examples.")
                  for m in ["schema","native_tests","source_pattern","behavioral_contract"]}
     else:
         legacy=V1.legacy_decisions(source_root,legacy_path)
         ids=["APRM-SCHEMA-01"] if mechanism=="query_history_action" else ["APRM-TEMP-01","APRM-TEMP-02","APRM-TEMP-03","APRM-METRIC-01"]
-        methods={"schema":entry("pass" if schema else "fail","Executed required-field/type/finite-number validator over actual outputs."),
-                 "native_tests":entry("not_evaluated","No relevant native dataproc/history tests at the pinned revision."),
-                 "source_pattern":entry("fail" if any(legacy[k]["status"]=="discrepant" for k in ids) else "pass","Executed unchanged v1 public adapter for relevant IDs."),
-                 "behavioral_contract":entry("fail" if fault else "pass","Actual implementation compared against the frozen terminal/history expectation.")}
+        methods={"schema":entry("pass" if schema else "fail","Checks required fields, types, and finite numbers in the outputs."),
+                 "native_tests":entry("not_evaluated","No native test covers the selected data-processing or query-history behavior."),
+                 "source_pattern":entry("fail" if any(legacy[k]["status"]=="discrepant" for k in ids) else "pass","Runs the original adapter for the relevant check IDs."),
+                 "behavioral_contract":entry("fail" if fault else "pass","Implementation output compared with expected targets and query history.")}
         observed["legacy_checks"]={k:legacy[k] for k in ids}
     return {"eligible_examples":eligible,"evidence":evidence,"observed":observed,"methods":methods}
 
@@ -112,8 +108,7 @@ def independent_oracle_valid(expected_state, result, mechanism):
     if mechanism=="query_history_action":
         bad=any(x["action"]!=f"act-{i}" for h in observed["query_histories"] for i,x in enumerate(h))
     else:
-        # Structural terminal anchoring is independent of the full-value
-        # expectation used by the behavioral checker.
+        # Check the terminal target separately from the full target vector.
         bad=any(abs(x["signed_values"][-1]-(2*x["terminal_score"]-1))>1e-12
                 for path_rows in observed["paths"].values() for x in path_rows)
     return bad if expected_state=="fault" else not bad
@@ -127,7 +122,7 @@ def mean_scope(results, gamma):
         data=V1.trajectory(length,1,"shared-prefix")
         path=folder/f"shared-prefix-length-{length}.json"
         V1.dump(path,data);paths.append(path)
-    result={"scope":"Complete trajectory visit mean is invariant to exponent reversal. An unweighted mean after deduplicating and count-merging state-action evidence need not be invariant.",
+    result={"scope":"Complete trajectory visit mean is invariant to exponent reversal. The unweighted mean of deduplicated, count-merged state-action targets can change.",
             "gamma":gamma,"fixture_lengths":[2,4],"fixture_paths":[str(x) for x in paths],"versions":{}}
     for name in ["original","repaired"]:
         obj=V1.module(results/"sources"/name/V1.TARGET)
@@ -159,7 +154,7 @@ def main():
     assert V1.digest(HERE.with_name("agentprm_analysis.py"))==protocol["inherited_evaluator_sha256"]
     assert not (results/"challenge_results_v2.json").exists()
     V1.dump(results/"guarded_evaluation_freeze_v2.json",{"evaluator_sha256":V1.digest(HERE),"protocol_sha256":V1.digest(args.protocol),
-        "started_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"reuse":"All prior challenge sources/inputs are exposed; no new heldout claim."})
+        "started_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"reuse":"Repeat evaluation of the original source variants and inputs."})
     old=json.loads((results/"challenge_results_v1.json").read_text());rows=[]
     legacy=Path(protocol["legacy_adapter"])
     fixture_paths=[results/"fixtures/challenge-0.json",results/"fixtures/challenge-1.json"]
@@ -178,7 +173,7 @@ def main():
     V1.dump(results/"challenge_results_v2.json",{"schema_version":"2.0","version":"guarded-confirmation-v2",
         "rows":rows,"summary":V1.summarize_challenges(rows),"all_oracles_valid":all(x["oracle_valid"] for x in rows),
         "protocol_sha256":V1.digest(args.protocol),"evaluator_sha256":V1.digest(HERE),
-        "scope_companion":"mean_scope_companion_v2.json","limitations":["Reuses exposed v1 inputs and source variants; this is confirmation and guard validation, not untouched heldout evidence.","Finite selected mechanisms do not establish population detection accuracy."]})
+        "scope_companion":"mean_scope_companion_v2.json","limitations":["Reuses the original inputs and source variants.","Counts cover the listed transformations."]})
     print(json.dumps({"rows":len(rows),"all_oracles_valid":all(x["oracle_valid"] for x in rows),"mean_scope_difference_signed":scope["unique_state_action_mean_difference_signed"]},indent=2))
 
 

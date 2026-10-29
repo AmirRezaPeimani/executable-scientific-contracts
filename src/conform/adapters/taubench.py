@@ -154,7 +154,7 @@ def audit_taubench(root: Path, specs: list[dict[str, Any]]) -> list[ContractResu
             {"prior_contracts_conformant": clean},
             {"prior_contracts_conformant": True},
             0,
-            "Pinned trajectories serve as a clean false-positive control.",
+            "Summary of the preceding four checks.",
             ["historical-trajectories/two-domains"],
             started,
         )

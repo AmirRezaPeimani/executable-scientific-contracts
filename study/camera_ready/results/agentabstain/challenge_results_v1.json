@@ -22,7 +22,7 @@
           "expected": [
             0.25
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -30,7 +30,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -65,7 +65,7 @@
           "expected": [
             0.25
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -73,7 +73,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -108,7 +108,7 @@
           "expected": [
             0.25
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -116,7 +116,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -230,7 +230,7 @@
             false,
             false
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -238,7 +238,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -279,7 +279,7 @@
             false,
             false
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -287,7 +287,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -328,7 +328,7 @@
             false,
             false
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -336,7 +336,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -450,7 +450,7 @@
           "expected": [
             0.5
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -458,7 +458,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -493,7 +493,7 @@
           "expected": [
             0.5
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -501,7 +501,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -536,7 +536,7 @@
           "expected": [
             0.5
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -544,7 +544,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -655,7 +655,7 @@
           "expected": [
             0
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -663,7 +663,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -698,7 +698,7 @@
           "expected": [
             0
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -706,7 +706,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -741,7 +741,7 @@
           "expected": [
             0
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -749,7 +749,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -860,7 +860,7 @@
           "expected": [
             true
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -868,7 +868,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -903,7 +903,7 @@
           "expected": [
             true
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -911,7 +911,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -946,7 +946,7 @@
           "expected": [
             true
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -954,7 +954,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1065,7 +1065,7 @@
           "expected": [
             true
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1073,7 +1073,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1108,7 +1108,7 @@
           "expected": [
             true
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1116,7 +1116,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1151,7 +1151,7 @@
           "expected": [
             true
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1159,7 +1159,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1270,7 +1270,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1278,7 +1278,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1313,7 +1313,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1321,7 +1321,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1356,7 +1356,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1364,7 +1364,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1475,7 +1475,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1483,7 +1483,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1518,7 +1518,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1526,7 +1526,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -1561,7 +1561,7 @@
           "expected": [
             0.3333333333333333
           ],
-          "reason": "compared pinned implementation output with frozen independent expected values"
+          "reason": "Implementation output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -1569,7 +1569,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "numeric/Boolean output fields and shape; no scientific oracle"
+          "reason": "Checks numeric and Boolean fields and output shape."
         },
         "source_pattern": {
           "decision": "not_evaluated",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the prospectively frozen AgentAbstain method-transfer checks."""
+"Run the five AgentAbstain checks."
 
 from __future__ import annotations
 
@@ -198,7 +198,7 @@ def main() -> None:
             evidence=[
                 "README.md:23 (263 pairs; one should-act and one should-abstain task)",
                 "README.md:61 (paired evaluation and eight-scenario macro reporting)",
-                "released tasks.jsonl at locked dataset revision",
+                "released tasks.jsonl at the recorded dataset revision",
             ],
             consequence=(
                 "The released task rows instantiate complete, one-act/one-abstain "
@@ -244,8 +244,7 @@ def main() -> None:
                 "four-cell exact fixture",
             ],
             consequence=(
-                "Paired accuracy is the item-level conjunction rather than a "
-                "function of marginal act and abstain rates."
+                "Paired accuracy is the mean of the conjunction of act and abstain correctness for each pair."
             ),
         )
     )
@@ -292,8 +291,7 @@ def main() -> None:
             expected={
                 "nonempty_denominator_car": 0.5,
                 "zero_denominator_car": (
-                    "not specified by the paper or README; undefined/NA is "
-                    "a coherent alternative"
+                    "unspecified; the implementation returns zero and the comparison uses undefined/NA"
                 ),
             },
             severity=0,
@@ -303,11 +301,7 @@ def main() -> None:
                 "conditioned-denominator exact fixture",
             ],
             consequence=(
-                "The nonempty conditional rate is correct. The implementation "
-                "explicitly assigns zero when no act-side pair succeeds. The "
-                "paper does not prescribe this boundary convention, so the "
-                "undefined alternative is a sensitivity rather than a "
-                "paper-code discrepancy."
+                "The conditional rate matches the definition for a nonempty denominator. With no successful act-side pairs, the implementation returns zero; an undefined value is another convention."
             ),
         )
     )
@@ -418,12 +412,7 @@ def main() -> None:
                 "unequal-action-type exact fixture",
             ],
             consequence=(
-                "The headline path equal-weights action-type subgroup rates "
-                "inside each scenario instead of computing one rate over all "
-                "scenario pairs. The paper does not specify that lower-level "
-                "weighting choice, so the controlled 0.625-versus-0.750 "
-                "difference is an alternative-convention sensitivity, not a "
-                "paper-code discrepancy."
+                "The ranking calculation weights action subtypes equally within each scenario. The weighting rule is unspecified. The controlled input gives 0.750 with equal subtype weights and 0.625 with pair weights."
             ),
         )
     )
@@ -447,10 +436,7 @@ def main() -> None:
         "native_test_files_found": 0,
         "elapsed_seconds": time.monotonic() - started,
         "claim_boundary": (
-            "The prospective audit validates pair integrity, conjunction "
-            "semantics, and commit-aware scoring. Two under-specified edge "
-            "cases expose alternative metric conventions; neither supports a "
-            "paper-code discrepancy claim."
+            "Pair integrity, paired conjunction, and commit scoring match the stated definitions. Empty conditioned denominators and subtype weighting have unspecified conventions."
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

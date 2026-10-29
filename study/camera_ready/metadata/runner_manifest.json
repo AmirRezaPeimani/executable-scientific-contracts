@@ -1,15 +1,15 @@
 {
   "additional_evidence_manifest": "metadata/fresh_evidence_manifest.json",
   "analysis": {
-    "agentabstain_analysis.py": "3f72d9c355231db6f432819a5aa9b96343decb29e982b5775397f53f72e64b92",
-    "agentabstain_benign_validation.py": "85fb495e350da97b9a93a881d7e0e68460a314843bd50ad6cc680e7ddff27409",
-    "agentabstain_guards_v2.py": "3d08dc2c5bc1606d77b0dd02786853664b769944d860fdafee256ca1b136c439",
-    "agentprm_analysis.py": "7bcd27a6d9c040ecd70e3ca3c80bd210677af8580a2029d195eef9faa7a1c2ba",
-    "agentprm_guarded_v2.py": "6dd0f26423229aa5c0411787f49e71ab567c30a8ce65e6e5c991c0bf8f31ee1a",
-    "fresh_holdout_v1.py": "a6e824f22718b30e6a90ab6f893fb558446af3b38a5ff0d3d8b47b70696dbdde",
-    "toolace_analysis.py": "3b41959f10ff9a7092b16b74ec3af77561069b2e79b4cdcaa7a409f7aeec3c43",
-    "toolace_evaluator_v2.py": "df9a673f8fb0ca8a415bf2cc9635082b455cb34b2e7ffbdd0e5d7f51f3cb7d39",
-    "validate_toolace_evidence.py": "641b87140c06fdf922b4764e559c49af39770f173e434f3f1fcbd86c5823b8f0"
+    "agentabstain_analysis.py": "9fe072744140ffb41ee3a2ad1095b699aa23e925e424da43a1a83a42e409eac0",
+    "agentabstain_benign_validation.py": "751e59be3276ec561aba16864167ced66fb7b606f22f33c69a76e9b13d8aa5f3",
+    "agentabstain_guards_v2.py": "86f9322267a4e45ec34014934e8449b43090dd1d246a0bad9964775e228d4b43",
+    "agentprm_analysis.py": "337c807059b6dfd45a349e98baee359d7ca2d10c701ecaf9a2458f59eeabbade",
+    "agentprm_guarded_v2.py": "1fad7113376fd309e4dd3932970898c5e08abc42e6228adf630891568e8b10b4",
+    "fresh_holdout_v1.py": "69e431bc3aacb5d190d8bea2c0c4fa6e6ade3294d98a0c0c1f39536b360a24a6",
+    "toolace_analysis.py": "d7eb7098c9d8c7df4d7bf86654c6df18afe36d64f9398e52eb73066d7625a004",
+    "toolace_evaluator_v2.py": "723638ac61b163d912a775a445df9702b591664ab1c98fd5afbb9532a4e2fabb",
+    "validate_toolace_evidence.py": "b7d8c2dc0a4261b4f1207005c03bb8711d50782e0da67b0677e84951e7c570a7"
   },
   "complete_example": {
     "paper_listing_identical": true,
@@ -19,11 +19,11 @@
   "created_utc": "2026-10-29T14:46:57.147307+00:00",
   "figure_generator": {
     "script": "scripts/make_final_figures.py",
-    "sha256": "d6c213ebfe6e21c5386620b644c9e99348685050500469d66a4d59f0b162f484"
+    "sha256": "94afdc2b260368da525b7b882116ca74272870a50131a167597fa554ffe5845e"
   },
   "inventory_generator": {
     "script": "scripts/make_contract_inventory.py",
-    "sha256": "af646e4393606f6bd460236ae5652662b599c5ae88aec5e15f6eb2a9094979a2"
+    "sha256": "746e3f0f16000f1f0592c8bc67cec551483d9b4ba7ed20b8d7bbc2f7b4f2b129"
   },
   "model_weights_not_bundled": true,
   "normalization": {
@@ -34,19 +34,19 @@
   "notice": "Executable upstream functions are acquired separately and run at the pinned revisions. ToolACE loader extraction retains upstream copyright/license notice in acquired sources; this package includes only our extraction/runner code, metadata and derived summaries. Small AgentAbstain code diffs in aggregate challenge records retain source attribution here.",
   "presentation_edition": "1.1.1",
   "presentation_files": {
-    "results/behavioral_summary_v1.json": "a9ab53ec28f60d5bbb16a0cf24f77176f6608966b7d980991c66fdb02e7351f3",
-    "results/remaining_evidence_v3.json": "7ee6de5ced5100fe519d2d606df08617f6724eb7ce9ab8eaa13bbc4ac4c713b2",
+    "results/behavioral_summary_v1.json": "2ae018a76d2103c2dfcc344ab253199ee66fd5982494a71283d0a7c8e9aa8713",
+    "results/remaining_evidence_v3.json": "f7a6a24d3f50d144a7d7b07937a97b52b399d8db6425c5902b81bd60975d1174",
     "results/toolace/controlled_boundary_sweep_v1.csv": "cb75d6dd6eeca90292309b8b447ecd659523258f96ff93339a3aad4b98837b84"
   },
   "protocols": {
-    "agentabstain_v1.json": "fa780a31b213722cdb716cad476e8bf43bbffa1fda35ef606fbd15f9f0c82887",
-    "agentabstain_v2.json": "cf148b94be2f5690f20831dd480ef55dc0382b1752813cf3988a14a00283cc2b",
-    "agentprm_guarded_v2.json": "9553fd142ced997d0f86c2da2b4757285b928a0d9d667d2765e13d91c77fbf0b",
-    "agentprm_v1.json": "75795f5fc06f9ff834a33b53dec64272e5b8f15b5497ace9e97e12266d467804",
-    "fresh_holdout_v1.json": "71750d4754b381dd9b947acd890b3952412cd6abc2de307d929abc57afd37133",
-    "overall_v1.json": "683a6321fd27b8bd952e9eb5aca3fb6edc36a10e9c4661c478f7bfd6d6419e76",
-    "toolace_confirmation_v2.json": "0c200b71860afd186d0e31db7b218f894e72ffe0d71280a65546f0e56df04cac",
-    "toolace_v1.json": "6f641939500a8d0172ee3d7910c76b2093903aeb5ece69ade3880d75ab9b0c7e"
+    "agentabstain_v1.json": "2417a875ac5ee76af2e7bfe6434c5f693bd742e6715bcfd5af4a133022d7baea",
+    "agentabstain_v2.json": "c6e4521b4154496c2f172f5459aed78b06f836e520087172d4c651bfdb30228e",
+    "agentprm_guarded_v2.json": "f4c5809994479bc0b38b24843581e4ee44c3a743821aa7b620645d738a561452",
+    "agentprm_v1.json": "33d2ae8fcb1c67eb51b325e50d6302116412b92e588c1eac6324384209a0a7a1",
+    "fresh_holdout_v1.json": "992e8414bfc6ef2106d9d95c2fe0225fd547d9a4e11b052e4810a2c4b2159914",
+    "overall_v1.json": "33dac4dab4ea7a6f7ad335366d066c9d651d83e25f5aeca19b0d5db9a06d95de",
+    "toolace_confirmation_v2.json": "115230922be9c86a15431cc27a854b37f30bf97cd36afe41cca8b83ae4b45998",
+    "toolace_v1.json": "3a9bd3077678e887b5917970fdecb7b8817eb6b3915f28117ede62b4eae9c7a0"
   },
   "raw_artifact_sha256": {
     "protocols/agentabstain_v1.json": "928c4f6743daa2a812632bcfa6a636aa112795cb38b2986abf2bbf17488fd89c",
@@ -85,8 +85,8 @@
     "results/toolace/official_loader_census_v1.csv": "43768554eea3c6d073e23e15f398d43765e24b80ff4f60fc27c69416b2764a6f"
   },
   "raw_dataset_not_bundled": true,
-  "script_policy": "Scientific evaluators and expected values are preserved. The additional-case runner accepts explicit acquisition and prior-result inputs and resolves bundled evaluators and protocols from this repository.",
-  "source_artifact_identity": "Scientific evaluator identities are preserved. Public-file hashes identify the current executable example, figure generator, inventory generator, and portable additional-case runner. Raw hashes identify the original execution records; embedded historical parent hashes continue to identify those raw artifacts.",
+  "script_policy": "The runner accepts explicit source, tokenizer, and prior-result paths and loads evaluators and protocols from this repository.",
+  "source_artifact_identity": "Public-file hashes identify the distributed scripts and records. Raw hashes and embedded parent hashes identify files from the original executions.",
   "tokenizer_assets_not_bundled": true,
   "upstream_import_sources": {
     "agentabstain": "MIT; https://github.com/AntiQuality/agentabstain/tree/f581249704b26804e28a39e37396f1be00b71a4d",

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Implementation-coupled ToolACE census and frozen source challenge.
+"""Run ToolACE conversion, sequence-length counts, and loader checks.
 
-Upstream loader/position-id extracts retain the Bytedance Apache-2.0 notice.
-The unchanged Tool-RL-Box converter is MIT-licensed. No model is instantiated.
-"""
+The loader and position-ID extracts retain the Bytedance Apache-2.0 notice.
+The Tool-RL-Box converter uses the MIT license."""
 from __future__ import annotations
 
 import argparse
@@ -71,15 +70,14 @@ def loader_callable(source, position_source):
 
 
 def execute_loader(call, tokenizer, prompts, responses, index, maximum=8192):
-    # __init__ is storage-only setup; every tokenization/crop/mask operation is
-    # the unchanged upstream __getitem__ executed with real torch/tokenizer.
+    # Supply storage fields and call the upstream __getitem__ method.
     obj = types.SimpleNamespace(tokenizer=tokenizer, prompts=prompts, responses=responses,
                                 max_length=maximum, truncation="left")
     return call(obj, index)
 
 
 def oracle(prompt_len, response_len, maximum):
-    """Prediction-position oracle, independent of upstream mask slicing."""
+    "Compute the expected mask from prediction positions."
     total = prompt_len + response_len
     crop = max(0, total - maximum)
     kept = min(total, maximum)
@@ -91,12 +89,7 @@ def oracle(prompt_len, response_len, maximum):
 
 
 def convert_official(source, rows, tokenizer, output_dir, label):
-    """Execute byte-identical converter, redirecting only storage/model path.
-
-    datasets.load_dataset supplies the local JSON data; tokenizer factory uses
-    the pinned real tokenizer; final to_parquet writes into this run folder.
-    No parser, prompt-construction, rendering, or iteration logic is replaced.
-    """
+    """Run the converter with local data, tokenizer, and output paths."""
     output_dir.mkdir(parents=True, exist_ok=True)
     datasets_module = types.ModuleType("datasets")
     datasets_module.load_dataset = lambda path: {"train": rows}
@@ -117,8 +110,7 @@ def convert_official(source, rows, tokenizer, output_dir, label):
             except Exception as exc:
                 exception = {"type": type(exc).__name__, "message": str(exc)}
                 traceback.print_exc()
-    # A partial in-memory prefix is retained after failure, never mislabeled a
-    # full official conversion. Full frame exists only when final writer ran.
+    # Save partial rows after an exception and the full frame after a completed write.
     frame = captured[0] if captured else pd.DataFrame(namespace.get("convert_data", []))
     return frame, {"label": label, "complete": exception is None, "exception": exception,
                    "converted_rows": len(frame), "source_sha256": digest(source),
@@ -152,7 +144,7 @@ def challenges(args, tokenizer, source, position_source):
     rows, boundary = [], []
     extracts = args.output_dir / "implementation_variants"
     native_matches = list(args.source_root.glob("**/test*sft*"))
-    native = {"decision": "not_evaluated", "reason": "No relevant native test suite executable for this pinned custom loader; absence is missing coverage.",
+    native = {"decision": "not_evaluated", "reason": "No native test covers the selected loader behavior.",
               "name_matches": [str(x.relative_to(args.source_root)) for x in native_matches]}
     for ident, mechanism, variant, partition, expected_state, changed in versions:
         path = extracts / ident / LOADER
@@ -171,8 +163,7 @@ def challenges(args, tokenizer, source, position_source):
                         out = execute_loader(call, tokenizer, [prompt], [response], 0, maximum)
                         truth = oracle(p_actual, r_actual, maximum)
                         equal = bool(torch.equal(out["loss_mask"].cpu(), truth))
-                        # Execute exactly the two upstream trainer indexing
-                        # expressions with real tensors (no model forward).
+                        # Apply the two trainer indexing expressions to the loader tensors.
                         labels = out["input_ids"].unsqueeze(0)[:, 1:].contiguous()
                         effective = out["loss_mask"].unsqueeze(0)[:, :-1].reshape(-1)
                         mismatch = int((out["loss_mask"] != truth).sum().item())
@@ -190,14 +181,13 @@ def challenges(args, tokenizer, source, position_source):
             behavior = {"decision": "error", "reason": repr(error)}
         else:
             behavior = {"decision": "pass" if all(o["matches_oracle"] for o in outcomes) else "fail",
-                        "reason": f"Exact comparison with frozen prediction-index oracle on {len(outcomes)} controlled inputs."}
-        # Historical source-pattern checks, copied verbatim predicates from
-        # public adapter's TACE-COORD-01 and TACE-MASK-01; report conjunction.
+                        "reason": f"Expected prediction mask compared with outputs on {len(outcomes)} controlled inputs."}
+        # Combine the original TACE-COORD-01 and TACE-MASK-01 source checks.
         source_defect = "input_ids = input_ids[-self.max_length :]" in changed and "min(prompt_length, loss_mask.size(0))" in changed
         masks_prompt = "loss_mask[: min(prompt_length, loss_mask.size(0)) - 1] = 0" in changed
         masks_terminal = "loss_mask[min(prompt_length + response_length, loss_mask.size(0)) - 1] = 0" in changed
         pattern = {"decision": "fail" if source_defect or not (masks_prompt and masks_terminal) else "pass",
-                   "reason": "Conjunction of historical TACE-COORD-01/TACE-MASK-01 source predicates; no behavioral recomputation.",
+                   "reason": "Conjunction of the original TACE-COORD-01 and TACE-MASK-01 source checks.",
                    "coordinate_fault_pattern": source_defect, "prompt_mask_pattern": masks_prompt,
                    "terminal_mask_pattern": masks_terminal}
         manifested = any(not o["matches_oracle"] for o in outcomes)
@@ -209,12 +199,12 @@ def challenges(args, tokenizer, source, position_source):
                                         "parent_sha256": digest(source if variant in ("original", "repair") else fixed),
                                         "patch_sha256": digest("".join(__import__("difflib").unified_diff(source.splitlines(True), changed.splitlines(True)))),
                                         "extraction": meta},
-                     "methods": {"schema": {"decision": "pass" if not error else "error", "reason": "Return keys and tensor types/shapes are retained; schema does not encode response-coordinate semantics."},
+                     "methods": {"schema": {"decision": "pass" if not error else "error", "reason": "Checks output keys, tensor types, and shapes."},
                                  "native_tests": native, "source_pattern": pattern, "behavioral_contract": behavior},
                      "observed": {"inputs": len(outcomes), "inputs_disagreeing_with_oracle": sum(not o["matches_oracle"] for o in outcomes), "error": error}})
         boundary.extend(outcomes)
     for ident, reason in [("TACE-MISSING-EVIDENCE", "Required pinned source is deliberately unavailable"),
-                          ("TACE-ZERO-ELIGIBLE", "Activation check has zero eligible overlength examples in fixed diagnostic input group")]:
+                          ("TACE-ZERO-ELIGIBLE", "The selected inputs contain zero sequences above the length limit.")]:
         rows.append({"id": ident, "target": "toolace", "mechanism": "evidence_eligibility", "variant": "control",
                      "partition": "locked_evaluation", "expected_state": "not_evaluated", "oracle_valid": True,
                      "eligible_examples": 0, "implementation": {"source": None, "source_sha256": None, "patch_sha256": None},
@@ -243,7 +233,7 @@ def main():
     protocol = json.loads(args.protocol.read_text())
     rev = subprocess.check_output(["git", "-C", str(args.source_root), "rev-parse", "HEAD"], text=True).strip()
     if rev != PIN:
-        raise RuntimeError("Upstream revision differs from frozen protocol")
+        raise RuntimeError("Upstream revision differs from the protocol.")
     source = (args.source_root / LOADER).read_text()
     position_source = (args.source_root / "verl/verl/utils/model.py").read_text()
     converter_source = (args.source_root / "data/convert_toolace.py").read_text()
@@ -256,7 +246,7 @@ def main():
                       if item["from"] == "assistant" and item["value"].startswith("[")]
     frame, official = convert_official(converter_source, raw, tokenizer, args.output_dir / "conversion", "official_full_first_execution")
     save(args.output_dir / "conversion_first_execution.json", official)
-    # This audit never repairs an upstream converter exception silently.
+    # Save the original converter exception.
     if not official["complete"]:
         save(args.output_dir / "case_analysis_v1.json", {"status": "blocked_converter_exception", "official_conversion": official,
              "protocol_sha256": digest(args.protocol.read_bytes()), "candidate_targets": len(all_candidates)})
@@ -265,9 +255,8 @@ def main():
     spec = importlib.util.spec_from_file_location("historical_toolace_scanner", baseline_path)
     baseline = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(baseline)
-    # Map official outputs in upstream loop order. System parsing is executed
-    # verbatim from the converter, including its unconditional final-character
-    # removal, then compared with the complete actual output sequence.
+    # Follow converter iteration order and system-schema parsing, including
+    # final-character removal, to match converted rows.
     output_ids, failed_schema_rows, candidates_in_failed_schema = [], [], []
     baseline_records = []
     with (args.output_dir / "baseline_render.stderr.log").open("w") as log:
@@ -319,9 +308,7 @@ def main():
         supervised = result["loss_mask"][:-1].bool()
         labels = result["input_ids"][1:]
         eos_predictions = int(((labels == tokenizer.eos_token_id) & supervised).sum().item())
-        # Schema is verified structurally before crop: exact JSON tool names
-        # occur in the actual generated prompt. No substring-only semantic
-        # completeness claim beyond those recorded names is made.
+        # Parse the tool schema and check tool names in the uncropped prompt.
         census.append({"converter_index": k, "row_index": row_index, "message_index": message_index,
                        "empty_response": response == "", "prompt_tokens": p,
                        "response_tokens_including_eos": r, "sequence_tokens": p + r,
@@ -376,16 +363,16 @@ def main():
                            "converter_file_sha256": digest(converter_source), "trainer_file_sha256": digest(trainer_source),
                            "trainer_shift_evidence": {"mask_expression": 'batch.pop("loss_mask")[:, :-1].reshape(-1)',
                                                       "labels_expression": 'input_ids[:, 1:].contiguous()',
-                                                      "lines": [382, 390], "executed": "identical indexing expressions on actual loader tensors; no model forward"}},
+                                                      "lines": [382, 390], "executed": "Trainer indexing expressions evaluated on loader tensors."}},
         "challenge_summary": challenge_summary,
         "environment": {"python": sys.version, "platform": platform.platform(), "torch": torch.__version__,
                         "transformers": transformers.__version__, "pandas": pd.__version__, "numpy": np.__version__,
                         "command": sys.argv, "paid_cost_cad": 0},
-        "limitations": ["Fixed source challenges do not estimate population mutation-detection accuracy.",
-                        "Controlled lengths 8/16 diagnose mechanism and do not change the official 8192 activation conclusion.",
-                        "Loss-mask agreement establishes preprocessing semantics, not historical model performance.",
-                        "Empty response labels are EOS-only examples, not nonempty tool-call supervision.",
-                        "Native coverage is not established; missing coverage is not a failing native test."]}
+        "limitations": ["Counts cover the listed source transformations.",
+                        "Controlled lengths 8 and 16 test crop behavior. The released-data scan uses 8192.",
+                        "The mask comparison evaluates preprocessing outputs.",
+                        "Empty responses are supervised on EOS only.",
+                        "Native test coverage is unavailable for these loader behaviors."]}
     save(args.output_dir / "case_analysis_v1.json", result)
     print(json.dumps({"coverage": result["coverage"], "official_8192_census": result["official_8192_census"], "challenge_summary": challenge_summary}, indent=2))
 

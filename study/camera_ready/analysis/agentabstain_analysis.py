@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Implementation-coupled AgentAbstain checks and exact composition bounds.
-
-Upstream functions execute unchanged; only explicit challenge variants patch
-isolated in-memory copies. No model predictions are generated or inferred.
-"""
+"""Run AgentAbstain checks and compute weighting bounds from the released task counts."""
 from __future__ import annotations
 
 import argparse
@@ -104,7 +100,7 @@ def main():
     protocol = json.loads(args.protocol.read_text())
     revision = subprocess.check_output(["git", "-C", str(args.source_root), "rev-parse", "HEAD"], text=True).strip()
     if revision != protocol["source_revision"] or digest(args.dataset_jsonl) != protocol["dataset_sha256"]:
-        raise ValueError("source or dataset differs from frozen protocol")
+        raise ValueError("Source or dataset differs from the protocol.")
     paths = {"analysis": args.source_root / "eval/statistics/analysis.py", "ranking": args.source_root / "eval/statistics/figure_ranking_bar.py", "commit": args.source_root / "eval/evaluators/commit_check.py"}
     sources = {name: path.read_text() for name, path in paths.items()}
     rank_source, rank_anchors = extraction(sources["ranking"], ["combined", "per_cat", "macro"], inner="main")
@@ -113,7 +109,7 @@ def main():
     commit_source = ast.get_source_segment(sources["commit"], method)
     freeze = {"protocol_sha256": digest(args.protocol), "script_sha256": digest(Path(__file__)), "source_revision": revision, "dataset_sha256": digest(args.dataset_jsonl), "sources": {key: {"path": str(paths[key]), "sha256": digest(src)} for key, src in sources.items()}, "ranking_extraction": rank_anchors, "commit_extraction": {"line_start": method.lineno, "line_end": method.end_lineno, "sha256": digest(commit_source)}, "frozen_at_unix": time.time(), "evaluation_started": False}
     write_json(args.output_dir / "execution_freeze_v1.json", freeze)
-    # First new evaluation occurs only after both protocol and executable hash exist.
+    # Record the protocol and script hash.
     started = time.monotonic()
     ns = load_analysis(sources["analysis"])
     rows = [json.loads(line) for line in args.dataset_jsonl.read_text().splitlines() if line.strip()]
@@ -199,7 +195,7 @@ def main():
         ("ranking_columns", "locked_evaluation", "ranking", 'paired=("paired_accuracy", "mean")', 'paired=("should_act_accuracy", "mean")', [1/3], "headline_uses_act_column"),
         ("scenario_macro", "locked_evaluation", "ranking", 'per_cat.groupby(["provider", "model"])[["act", "abstain", "paired", "car"]]', 'per_cat.assign(category="pooled").groupby(["provider", "model"])[["act", "abstain", "paired", "car"]]', [.5], "headline_pools_scenarios")
     ]
-    # Pooling must weight original subtype-summary rows instead of categories.
+    # Pool the original subtype-summary rows.
     pool_old = '''per_cat.groupby(["provider", "model"])[["act", "abstain", "paired", "car"]]'''
     pool_new = '''combined.rename(columns={"should_act_accuracy": "act", "should_abstain_accuracy": "abstain", "paired_accuracy": "paired"}).groupby(["provider", "model"])[["act", "abstain", "paired", "car"]]'''
     plans[-1] = ("scenario_macro", "locked_evaluation", "ranking", pool_old, pool_new, [1/3], "headline_pools_scenarios")
@@ -223,9 +219,9 @@ def main():
             result["observed"] = observed
             manifest = not close(observed, expected)
             result["oracle_valid"] = manifest if state == "fault" else not manifest
-            result["methods"]["behavioral_contract"] = {"decision": "fail" if manifest else "pass", "reason": "compared pinned implementation output with frozen independent expected values", "expected": expected}
+            result["methods"]["behavioral_contract"] = {"decision": "fail" if manifest else "pass", "reason": "Implementation output compared with expected values.", "expected": expected}
             schema_ok = isinstance(observed, list) and len(observed) == len(expected) and all(isinstance(x, (bool, int, float)) and math.isfinite(float(x)) for x in observed)
-            result["methods"]["schema"] = {"decision": "pass" if schema_ok else "fail", "reason": "numeric/Boolean output fields and shape; no scientific oracle"}
+            result["methods"]["schema"] = {"decision": "pass" if schema_ok else "fail", "reason": "Checks numeric and Boolean fields and output shape."}
         except Exception as exc:
             result["error"] = f"{type(exc).__name__}: {exc}"
             for method in ("schema", "behavioral_contract"):
@@ -242,7 +238,7 @@ def main():
         assert original.count(benign_old) >= 1
         for variant, implementation, state in [("original_conformant", original, "conformant"), ("fault", original.replace(old, new), "fault"), ("benign", original.replace(benign_old, benign_new), "conformant"), ("missing", None, "not_evaluated"), ("ineligible", original, "not_evaluated")]:
             add(mechanism, partition, kind, variant, implementation, [] if variant == "ineligible" else expected, state, family if variant == "fault" else None)
-    # Keep every first execution, including unmanifest mutants, before gate checks.
+    # Save every result before checking validity.
     summary = {}
     for method in protocol["methods"]:
         selected = [row for row in challenges if row["oracle_valid"]]
@@ -252,7 +248,7 @@ def main():
     incomplete = ns["compute_summary_metrics"](metric_frame(empty_fixture))
     zero_car = ns["compute_summary_metrics"](metric_frame([{"category": "zero", "action_type": "operational", "task_id": "zero", "act": False, "abstain": True}]))
     primitive = {"four_boolean_pairs": ns["compute_summary_metrics"](metric_frame(truth)).iloc[0]["paired_accuracy"], "nonempty_car": ns["compute_summary_metrics"](metric_frame(truth)).iloc[0]["car"], "zero_conditioned_denominator_car": zero_car.iloc[0]["car"], "incomplete_pair_num_pairs": int(incomplete.iloc[0]["num_pairs"]), "incomplete_pair_metric_is_missing": bool(pd.isna(incomplete.iloc[0]["paired_accuracy"])), "combined_operational": observe("operational_combined", sources["analysis"]), "informational_ignores_commit": observe("informational_combined", sources["analysis"]), "failed_call_is_not_commit": observe("commit_success_flag", commit_source)}
-    payload = {"schema_version": "1.0", "source": freeze, "dataset": {"rows": len(rows), "pairs": len(groups), "scenarios": len(counts), "invalid_pairs": len(invalid)}, "historical_fixture": {"equal_subtype_macro": historical_equal, "pair_weighted_macro": historical_pair, "synthetic": True, "actual_final_ranking_path_executed": True}, "primitive_checks": primitive, "subtype_sensitivity": {"scenarios": scenarios, "macro_sharp_gap": float(macro_bound), "macro_sharp_gap_exact": str(macro_bound), "macro_max_gap_pp": float(macro_bound) * 100, "constructed_attainment": {"equal_subtype_macro": actual_equal, "pair_weighted_macro": actual_pair, "gap": actual_equal - actual_pair, "synthetic": True, "actual_final_ranking_path_executed": True}, "missing_pair_sensitivity": missing_sensitivity}, "claim_boundary": "Sharp sensitivity bound from released composition and constructed endpoint outcomes; no released model outputs or observed leaderboard change. Convention alternatives are not implementation faults.", "execution": {"command": shlex.join([sys.executable, *sys.argv]), "python": sys.version, "pandas": pd.__version__, "platform": platform.platform(), "cost_cad": 0, "elapsed_seconds": time.monotonic() - started}}
+    payload = {"schema_version": "1.0", "source": freeze, "dataset": {"rows": len(rows), "pairs": len(groups), "scenarios": len(counts), "invalid_pairs": len(invalid)}, "historical_fixture": {"equal_subtype_macro": historical_equal, "pair_weighted_macro": historical_pair, "synthetic": True, "actual_final_ranking_path_executed": True}, "primitive_checks": primitive, "subtype_sensitivity": {"scenarios": scenarios, "macro_sharp_gap": float(macro_bound), "macro_sharp_gap_exact": str(macro_bound), "macro_max_gap_pp": float(macro_bound) * 100, "constructed_attainment": {"equal_subtype_macro": actual_equal, "pair_weighted_macro": actual_pair, "gap": actual_equal - actual_pair, "synthetic": True, "actual_final_ranking_path_executed": True}, "missing_pair_sensitivity": missing_sensitivity}, "claim_boundary": "Maximum weighting difference for the released subtype counts, attained with constructed endpoint outcomes.", "execution": {"command": shlex.join([sys.executable, *sys.argv]), "python": sys.version, "pandas": pd.__version__, "platform": platform.platform(), "cost_cad": 0, "elapsed_seconds": time.monotonic() - started}}
     write_json(args.output_dir / "case_analysis_v1.json", payload)
     with (args.output_dir / "subtype_sensitivity_v1.csv").open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["category", "action_type", "pairs", "scenario_pairs", "sharp_gap", "max_gap_pp", "attaining_rate"])
@@ -260,12 +256,12 @@ def main():
         for scenario in scenarios:
             for key, count in scenario["counts"].items():
                 writer.writerow({"category": scenario["category"], "action_type": key, "pairs": count, "scenario_pairs": scenario["num_pairs"], "sharp_gap": scenario["sharp_gap"], "max_gap_pp": scenario["max_gap_pp"], "attaining_rate": scenario["attaining_rates"][key]})
-    # Save independently inspectable unchanged scientific computation blocks.
+    # Save the extracted computation blocks.
     (args.output_dir / "ranking_extraction.py").write_text(rank_source + "\n")
     (args.output_dir / "commit_extraction.py").write_text("from __future__ import annotations\n" + commit_source + "\n")
     print(json.dumps({"dataset": payload["dataset"], "macro_max_gap_pp": payload["subtype_sensitivity"]["macro_max_gap_pp"], "challenge_summary": summary, "excluded": [row["id"] for row in challenges if not row["oracle_valid"]]}))
     if any(not row["oracle_valid"] for row in challenges):
-        raise SystemExit("release gate: unmanifest challenge or execution error; first execution saved")
+        raise SystemExit("A mutation produced no output difference or an execution failed; results were saved.")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The prospective audit validates pair integrity, conjunction semantics, and commit-aware scoring. Two under-specified edge cases expose alternative metric conventions; neither supports a paper-code discrepancy claim.",
+  "claim_boundary": "Pair integrity, paired conjunction, and commit scoring match the stated definitions. Empty conditioned denominators and subtype weighting have unspecified conventions.",
   "contracts": [
     {
       "consequence": "The released task rows instantiate complete, one-act/one-abstain pairs across all declared scenarios.",
@@ -7,7 +7,7 @@
       "evidence": [
         "README.md:23 (263 pairs; one should-act and one should-abstain task)",
         "README.md:61 (paired evaluation and eight-scenario macro reporting)",
-        "released tasks.jsonl at locked dataset revision"
+        "released tasks.jsonl at the recorded dataset revision"
       ],
       "expected": {
         "categories": 8,
@@ -27,7 +27,7 @@
       "status": "conformant"
     },
     {
-      "consequence": "Paired accuracy is the item-level conjunction rather than a function of marginal act and abstain rates.",
+      "consequence": "Paired accuracy is the mean of the conjunction of act and abstain correctness for each pair.",
       "contract_id": "AABS-PAIR-02",
       "evidence": [
         "AgentAbstain paper Appendix B.6, Eq. (3) (pair conjunction)",
@@ -45,7 +45,7 @@
       "status": "conformant"
     },
     {
-      "consequence": "The nonempty conditional rate is correct. The implementation explicitly assigns zero when no act-side pair succeeds. The paper does not prescribe this boundary convention, so the undefined alternative is a sensitivity rather than a paper-code discrepancy.",
+      "consequence": "The conditional rate matches the definition for a nonempty denominator. With no successful act-side pairs, the implementation returns zero; an undefined value is another convention.",
       "contract_id": "AABS-CAR-01",
       "evidence": [
         "AgentAbstain paper Appendix B.6, Eq. (4) (conditional definition)",
@@ -54,7 +54,7 @@
       ],
       "expected": {
         "nonempty_denominator_car": 0.5,
-        "zero_denominator_car": "not specified by the paper or README; undefined/NA is a coherent alternative"
+        "zero_denominator_car": "unspecified; the implementation returns zero and the comparison uses undefined/NA"
       },
       "observed": {
         "nonempty_denominator_car": 0.5,
@@ -89,7 +89,7 @@
       "status": "conformant"
     },
     {
-      "consequence": "The headline path equal-weights action-type subgroup rates inside each scenario instead of computing one rate over all scenario pairs. The paper does not specify that lower-level weighting choice, so the controlled 0.625-versus-0.750 difference is an alternative-convention sensitivity, not a paper-code discrepancy.",
+      "consequence": "The ranking calculation weights action subtypes equally within each scenario. The weighting rule is unspecified. The controlled input gives 0.750 with equal subtype weights and 0.625 with pair weights.",
       "contract_id": "AABS-MACRO-01",
       "evidence": [
         "AgentAbstain paper Section 3.1 and Figure 3 (macro over eight scenarios)",

@@ -115,7 +115,7 @@
         }
       ],
       "id": "FRESH-TACE-RESPONSE-ORDER-reference",
-      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected.",
+      "reference_rule": "Tokenize the prompt and response plus EOS separately. Concatenate, crop from the left, and pad. Compare all input IDs and shifted labels.",
       "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/reference/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
       "target": "toolace",
       "variant": "reference"
@@ -187,7 +187,7 @@
         }
       ],
       "id": "FRESH-TACE-RESPONSE-ORDER-fault",
-      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected.",
+      "reference_rule": "Tokenize the prompt and response plus EOS separately. Concatenate, crop from the left, and pad. Compare all input IDs and shifted labels.",
       "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/fault/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
       "target": "toolace",
       "variant": "fault"
@@ -259,7 +259,7 @@
         }
       ],
       "id": "FRESH-TACE-RESPONSE-ORDER-benign",
-      "reference_rule": "Tokenize real prompt and response+EOS separately; concatenate in original order, retain configured left-crop, pad. Compare all input IDs and shifted labels. No mask transformation is injected.",
+      "reference_rule": "Tokenize the prompt and response plus EOS separately. Concatenate, crop from the left, and pad. Compare all input IDs and shifted labels.",
       "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/benign/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py",
       "target": "toolace",
       "variant": "benign"
@@ -330,7 +330,7 @@
         }
       ],
       "id": "FRESH-AABS-SCENARIO-STATISTIC-reference",
-      "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention.",
+      "reference_rule": "Eight equally weighted scenario scores [0,0,0,0,0,1,1,1] have mean 3/8 and median 0. The ranking calculation specifies their mean.",
       "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/reference/eval/statistics/figure_ranking_bar.py",
       "target": "agentabstain",
       "variant": "reference"
@@ -401,7 +401,7 @@
         }
       ],
       "id": "FRESH-AABS-SCENARIO-STATISTIC-fault",
-      "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention.",
+      "reference_rule": "Eight equally weighted scenario scores [0,0,0,0,0,1,1,1] have mean 3/8 and median 0. The ranking calculation specifies their mean.",
       "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/fault/eval/statistics/figure_ranking_bar.py",
       "target": "agentabstain",
       "variant": "fault"
@@ -472,7 +472,7 @@
         }
       ],
       "id": "FRESH-AABS-SCENARIO-STATISTIC-benign",
-      "reference_rule": "Eight equally weighted scenario paired scores [0,0,0,0,0,1,1,1] have arithmetic mean3/8. Replacing outer mean by median gives0, contradicting source-selected scenario mean, not an unspecified subtype convention.",
+      "reference_rule": "Eight equally weighted scenario scores [0,0,0,0,0,1,1,1] have mean 3/8 and median 0. The ranking calculation specifies their mean.",
       "source_path": "STUDY_ROOT/results/fresh_holdout_v1/sources/agentabstain/benign/eval/statistics/figure_ranking_bar.py",
       "target": "agentabstain",
       "variant": "benign"
@@ -494,7 +494,7 @@
     "STUDY_ROOT/analysis/toolace_analysis.py": "3b41959f10ff9a7092b16b74ec3af77561069b2e79b4cdcaa7a409f7aeec3c43",
     "STUDY_ROOT/analysis/toolace_evaluator_v2.py": "df9a673f8fb0ca8a415bf2cc9635082b455cb34b2e7ffbdd0e5d7f51f3cb7d39"
   },
-  "freeze_rule": "Verify every runner/evaluator/helper/source/fixture hash before first execution; no patching based on these outputs; save all outputs before interpretation.",
+  "freeze_rule": "Check the recorded file hashes before execution and save every output.",
   "frozen_utc": "2026-10-29T14:53:51.522803+00:00",
   "isolated_source_and_fixture_hashes": {
     "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
@@ -521,7 +521,7 @@
     "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/fault/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py": "5c9e9a655c123ef6ca28f038943f41a70d5e1f7afb5592e45d7244719882c2bd",
     "STUDY_ROOT/results/fresh_holdout_v1/sources/toolace/reference/verl/verl/utils/dataset/sft_dataset_wo_apply_template.py": "138ab9dd55556d402d980135bb83d98041c71add585f2592e8f10b51d1b4da09"
   },
-  "method_policy": "Use each target's existing four method decisions unchanged. Missing relevant native/pattern coverage remains not_evaluated. An error is not detection. A separately manifested fault missed by checker remains an explicit miss.",
+  "method_policy": "Record the four method decisions for each case. Record unavailable coverage as not_evaluated and execution failures as error. Count a missed fault when the output differs from the expected value and the check accepts it.",
   "model_weights_or_training": false,
   "paid_cost_cad": 0,
   "primary_metrics": [
@@ -538,10 +538,10 @@
     "STUDY_ROOT/protocols/agentprm_guarded_v2.json": "f8872bdc4c05100ec6007e62ab7a9652ab867b5acbf59130133c0d33068fc6c6",
     "STUDY_ROOT/protocols/toolace_confirmation_v2.json": "4ddbf4cceabaf65c3231fe57fc7f73fb1c38bb35b444b5266934993702429406"
   },
-  "purpose": "New mechanistic source cases constructed after all v2 evaluators were frozen; no existing evaluator or reference contract changes.",
+  "purpose": "Nine additional cases constructed and evaluated with the checks held fixed.",
   "runner_sha256": "ecf92b8ae21da500d452d5aa5d1bcd476876d7f88d7df367d09ac7a7533f16f5",
   "schema_version": "1.0",
-  "scope": "Small researcher-constructed source challenge; not independent human validation, new repositories, population generalization or model-performance evidence.",
+  "scope": "Three manually constructed fault families, each with a fault, a reference implementation, and a harmless rewrite.",
   "source_diffs": [
     {
       "diff": "STUDY_ROOT/results/fresh_holdout_v1/patches/agentprm-reference-dataproc-compute_prm_target.py.diff",

@@ -3,9 +3,9 @@
   "execution_finished_utc": "2026-10-29T14:54:11.606968+00:00",
   "frozen_evaluators_unchanged": true,
   "limitations": [
-    "One new source family per target selected by the same researcher after viewing existing evaluators.",
-    "No unseen repository, independent human author, population accuracy or historical model-performance claim.",
-    "All misses, errors, uncovered cases and nonmanifested faults remain in the saved record."
+    "One fault family per repository, selected by the author after inspecting the checks.",
+    "The cases use the three listed repositories and controlled inputs.",
+    "The records include misses, execution errors, unavailable coverage, and mutations with unchanged outputs."
   ],
   "protocol": "STUDY_ROOT/protocols/fresh_holdout_v1.json",
   "protocol_sha256": "669fca39cb055d2387f674fbdc51f19295aaa36b922e9b733849c71d4cf7afe6",
@@ -98,25 +98,25 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
         "eligible_examples": 16,
         "evidence": {
-          "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+          "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
           "executed_implementation_probes": 4,
           "fixture_hashes": {
             "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
@@ -142,19 +142,19 @@
         "methods": {
           "behavioral_contract": {
             "decision": "pass",
-            "reason": "Actual implementation compared against the frozen terminal/history expectation."
+            "reason": "Implementation output compared with expected targets and query history."
           },
           "native_tests": {
             "decision": "not_evaluated",
-            "reason": "No relevant native dataproc/history tests at the pinned revision."
+            "reason": "No native test covers the selected data-processing or query-history behavior."
           },
           "schema": {
             "decision": "pass",
-            "reason": "Executed required-field/type/finite-number validator over actual outputs."
+            "reason": "Checks required fields, types, and finite numbers in the outputs."
           },
           "source_pattern": {
             "decision": "fail",
-            "reason": "Executed unchanged v1 public adapter for relevant IDs."
+            "reason": "Runs the original adapter for the relevant check IDs."
           }
         },
         "observed": {
@@ -733,25 +733,25 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
         "eligible_examples": 16,
         "evidence": {
-          "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+          "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
           "executed_implementation_probes": 4,
           "fixture_hashes": {
             "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
@@ -777,19 +777,19 @@
         "methods": {
           "behavioral_contract": {
             "decision": "fail",
-            "reason": "Actual implementation compared against the frozen terminal/history expectation."
+            "reason": "Implementation output compared with expected targets and query history."
           },
           "native_tests": {
             "decision": "not_evaluated",
-            "reason": "No relevant native dataproc/history tests at the pinned revision."
+            "reason": "No native test covers the selected data-processing or query-history behavior."
           },
           "schema": {
             "decision": "pass",
-            "reason": "Executed required-field/type/finite-number validator over actual outputs."
+            "reason": "Checks required fields, types, and finite numbers in the outputs."
           },
           "source_pattern": {
             "decision": "fail",
-            "reason": "Executed unchanged v1 public adapter for relevant IDs."
+            "reason": "Runs the original adapter for the relevant check IDs."
           }
         },
         "observed": {
@@ -1368,25 +1368,25 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Actual implementation compared against the frozen terminal/history expectation."
+          "reason": "Implementation output compared with expected targets and query history."
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native dataproc/history tests at the pinned revision."
+          "reason": "No native test covers the selected data-processing or query-history behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-field/type/finite-number validator over actual outputs."
+          "reason": "Checks required fields, types, and finite numbers in the outputs."
         },
         "source_pattern": {
           "decision": "fail",
-          "reason": "Executed unchanged v1 public adapter for relevant IDs."
+          "reason": "Runs the original adapter for the relevant check IDs."
         }
       },
       "observed": {
         "eligible_examples": 16,
         "evidence": {
-          "eligibility_rule": "Executed trajectory has more than one state and non-unit discount; otherwise exponent direction is undiscriminated.",
+          "eligibility_rule": "The trajectory has more than one state and gamma differs from one.",
           "executed_implementation_probes": 4,
           "fixture_hashes": {
             "STUDY_ROOT/results/fresh_holdout_v1/fixtures/agentprm-failure-length3.json": "b8347a2fb351e27a4022e5a04818d20f1d595471f4dafc364b5ec4e0b7fcc8ae",
@@ -1412,19 +1412,19 @@
         "methods": {
           "behavioral_contract": {
             "decision": "pass",
-            "reason": "Actual implementation compared against the frozen terminal/history expectation."
+            "reason": "Implementation output compared with expected targets and query history."
           },
           "native_tests": {
             "decision": "not_evaluated",
-            "reason": "No relevant native dataproc/history tests at the pinned revision."
+            "reason": "No native test covers the selected data-processing or query-history behavior."
           },
           "schema": {
             "decision": "pass",
-            "reason": "Executed required-field/type/finite-number validator over actual outputs."
+            "reason": "Checks required fields, types, and finite numbers in the outputs."
           },
           "source_pattern": {
             "decision": "fail",
-            "reason": "Executed unchanged v1 public adapter for relevant IDs."
+            "reason": "Runs the original adapter for the relevant check IDs."
           }
         },
         "observed": {
@@ -2463,15 +2463,15 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+          "reason": "Token IDs and loss_mask[:-1] compared with expected predictions; failures=0; errors=0"
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+          "reason": "Checked keys, tensor types, ranks, and lengths on 12 observed outputs; malformed outputs=0; errors=0"
         },
         "source_pattern": {
           "decision": "fail",
@@ -2480,7 +2480,7 @@
             "masks_terminal": true,
             "source_defect": false
           },
-          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+          "reason": "Runs the original coordinate and mask checks on this source variant."
         }
       },
       "observed": {
@@ -2494,15 +2494,15 @@
         "methods": {
           "behavioral_contract": {
             "decision": "pass",
-            "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+            "reason": "Token IDs and loss_mask[:-1] compared with expected predictions; failures=0; errors=0"
           },
           "native_tests": {
             "decision": "not_evaluated",
-            "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+            "reason": "No native test covers the selected loader behavior."
           },
           "schema": {
             "decision": "pass",
-            "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+            "reason": "Checked keys, tensor types, ranks, and lengths on 12 observed outputs; malformed outputs=0; errors=0"
           },
           "source_pattern": {
             "decision": "fail",
@@ -2511,7 +2511,7 @@
               "masks_terminal": true,
               "source_defect": false
             },
-            "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+            "reason": "Runs the original coordinate and mask checks on this source variant."
           }
         },
         "outcomes": [
@@ -3286,15 +3286,15 @@
       "methods": {
         "behavioral_contract": {
           "decision": "fail",
-          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=12; errors=0"
+          "reason": "Token IDs and loss_mask[:-1] compared with expected predictions; failures=12; errors=0"
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+          "reason": "Checked keys, tensor types, ranks, and lengths on 12 observed outputs; malformed outputs=0; errors=0"
         },
         "source_pattern": {
           "decision": "fail",
@@ -3303,7 +3303,7 @@
             "masks_terminal": true,
             "source_defect": false
           },
-          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+          "reason": "Runs the original coordinate and mask checks on this source variant."
         }
       },
       "observed": {
@@ -3317,15 +3317,15 @@
         "methods": {
           "behavioral_contract": {
             "decision": "fail",
-            "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=12; errors=0"
+            "reason": "Token IDs and loss_mask[:-1] compared with expected predictions; failures=12; errors=0"
           },
           "native_tests": {
             "decision": "not_evaluated",
-            "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+            "reason": "No native test covers the selected loader behavior."
           },
           "schema": {
             "decision": "pass",
-            "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+            "reason": "Checked keys, tensor types, ranks, and lengths on 12 observed outputs; malformed outputs=0; errors=0"
           },
           "source_pattern": {
             "decision": "fail",
@@ -3334,7 +3334,7 @@
               "masks_terminal": true,
               "source_defect": false
             },
-            "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+            "reason": "Runs the original coordinate and mask checks on this source variant."
           }
         },
         "outcomes": [
@@ -4109,15 +4109,15 @@
       "methods": {
         "behavioral_contract": {
           "decision": "pass",
-          "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+          "reason": "Token IDs and loss_mask[:-1] compared with expected predictions; failures=0; errors=0"
         },
         "native_tests": {
           "decision": "not_evaluated",
-          "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+          "reason": "No native test covers the selected loader behavior."
         },
         "schema": {
           "decision": "pass",
-          "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+          "reason": "Checked keys, tensor types, ranks, and lengths on 12 observed outputs; malformed outputs=0; errors=0"
         },
         "source_pattern": {
           "decision": "fail",
@@ -4126,7 +4126,7 @@
             "masks_terminal": true,
             "source_defect": false
           },
-          "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+          "reason": "Runs the original coordinate and mask checks on this source variant."
         }
       },
       "observed": {
@@ -4140,15 +4140,15 @@
         "methods": {
           "behavioral_contract": {
             "decision": "pass",
-            "reason": "Exact retained token identities plus trainer-consumed mask[:-1] against frozen independent prediction-index oracle; failures=0; errors=0"
+            "reason": "Token IDs and loss_mask[:-1] compared with expected predictions; failures=0; errors=0"
           },
           "native_tests": {
             "decision": "not_evaluated",
-            "reason": "No relevant native test for pinned custom loader identified; coverage unavailable, not a native failure"
+            "reason": "No native test covers the selected loader behavior."
           },
           "schema": {
             "decision": "pass",
-            "reason": "Executed required-key/tensor/dtype/rank/length predicates on 12 observed outputs; malformed outputs=0; errors=0"
+            "reason": "Checked keys, tensor types, ranks, and lengths on 12 observed outputs; malformed outputs=0; errors=0"
           },
           "source_pattern": {
             "decision": "fail",
@@ -4157,7 +4157,7 @@
               "masks_terminal": true,
               "source_defect": false
             },
-            "reason": "Historical coordinate and mask-source predicates executed on this exact variant"
+            "reason": "Runs the original coordinate and mask checks on this source variant."
           }
         },
         "outcomes": [
@@ -4414,7 +4414,7 @@
           "expected": [
             0.375
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -4422,7 +4422,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -4448,7 +4448,7 @@
             "expected": [
               0.375
             ],
-            "reason": "actual eligible output versus frozen expected values"
+            "reason": "Observed output compared with expected values."
           },
           "native_tests": {
             "decision": "not_evaluated",
@@ -4456,7 +4456,7 @@
           },
           "schema": {
             "decision": "pass",
-            "reason": "output fields and types without scientific equality oracle"
+            "reason": "Checks output fields and types."
           },
           "source_pattern": {
             "decision": "not_evaluated",
@@ -4504,7 +4504,7 @@
           "expected": [
             0.375
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -4512,7 +4512,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -4538,7 +4538,7 @@
             "expected": [
               0.375
             ],
-            "reason": "actual eligible output versus frozen expected values"
+            "reason": "Observed output compared with expected values."
           },
           "native_tests": {
             "decision": "not_evaluated",
@@ -4546,7 +4546,7 @@
           },
           "schema": {
             "decision": "pass",
-            "reason": "output fields and types without scientific equality oracle"
+            "reason": "Checks output fields and types."
           },
           "source_pattern": {
             "decision": "not_evaluated",
@@ -4594,7 +4594,7 @@
           "expected": [
             0.375
           ],
-          "reason": "actual eligible output versus frozen expected values"
+          "reason": "Observed output compared with expected values."
         },
         "native_tests": {
           "decision": "not_evaluated",
@@ -4602,7 +4602,7 @@
         },
         "schema": {
           "decision": "pass",
-          "reason": "output fields and types without scientific equality oracle"
+          "reason": "Checks output fields and types."
         },
         "source_pattern": {
           "decision": "not_evaluated",
@@ -4628,7 +4628,7 @@
             "expected": [
               0.375
             ],
-            "reason": "actual eligible output versus frozen expected values"
+            "reason": "Observed output compared with expected values."
           },
           "native_tests": {
             "decision": "not_evaluated",
@@ -4636,7 +4636,7 @@
           },
           "schema": {
             "decision": "pass",
-            "reason": "output fields and types without scientific equality oracle"
+            "reason": "Checks output fields and types."
           },
           "source_pattern": {
             "decision": "not_evaluated",

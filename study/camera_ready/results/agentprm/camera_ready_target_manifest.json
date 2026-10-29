@@ -1,11 +1,11 @@
 {
   "challenge_file": "challenge_results_v2.json",
   "files": {
-    "case_analysis_v1.json": "613a1dafe0eaf4145eb2cc3f278d951083933849e8821a4bb6d8bfba260db6e2",
-    "challenge_results_v1.json": "96f999eaf448328a38fd280cc4cd9a77734271106b4869741b4b5406cf2be7d4",
-    "challenge_results_v2.json": "bcbc89ccc1d7ab8f211d248eb36c6af9cd0f9e750f643f2a47486471f7325a27",
-    "label_invariance_execution_v2.json": "937cf298a3f42149a1da499c100541a2d1c4329c51eb98ac96606c7cd1ee1a20",
-    "mean_scope_companion_v2.json": "7cd5e9728b896f1f22372eeea02db174e84d7a1d431db5a642b4cd77a672256f",
+    "case_analysis_v1.json": "d2d830c65aa19842b3b72efb67d8cd70ddfcf66f5fc562c70b410c831020ebfe",
+    "challenge_results_v1.json": "ef20d993813f5da7b990d565a04231719ad49f59ec3a5ad0e1080b7b4f7cf2c9",
+    "challenge_results_v2.json": "38fa9e9c7fa9e47fa8f5d25484c40c6bc84ea345894d909c9c1b1675f7f44576",
+    "label_invariance_execution_v2.json": "9b9d8bf54b07a8c745c49f0000a55f6217dc0be81a83edb7f4415caf0579257b",
+    "mean_scope_companion_v2.json": "66eb52e61c8013fba74b39ffce39c7fe5ebb4f2ec12eb028af43cab33d6521bf",
     "preference_sensitivity_v1.csv": "1de9a35110e249342666759354531dfe7a72e71de76a885312c189d931ce27f2",
     "state_targets_v1.csv": "d7163a3e62374d347a88d1b63544f6f22aae23b483a5ae99a0d54c2a9baf1e8a",
     "target_sensitivity_v1.csv": "8c32e0ec4a7f0fffdb65a638448f64d968c81e64a836d96c9996cb1c088e5dfe"
@@ -16,7 +16,7 @@
     "research_python_executable": "python"
   },
   "schema_version": "2.0",
-  "scope": "Public-copy hashes validate public files. Embedded historical artifact hashes identify unchanged private raw evidence and do not purport to hash normalized public copies.",
+  "scope": "The files mapping lists hashes of the distributed files. source_artifact_raw_sha256 and embedded hashes identify the original execution files.",
   "source_artifact_raw_sha256": {
     "case_analysis_v1.json": "f0457020a093811f56baa1a2ab4b65a2065574d689e8474eb034166df7051651",
     "challenge_results_v1.json": "96f999eaf448328a38fd280cc4cd9a77734271106b4869741b4b5406cf2be7d4",

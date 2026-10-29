@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
-"""Reproduce Tool-RL-Box ToolACE SFT conversion and audit truncation semantics.
+"""Reproduce ToolACE conversion and the loader's 8,192-token cropping and masks.
 
-This is a support audit, not an outcome experiment.  It reproduces the public
-converter and the custom SFT dataset's 8,192-token left-truncation/mask logic
-without training a model.  It records whether a retained supervised tool call
-still has its named tool in the retained prompt.
-"""
+Count retained response tokens and check whether the retained prompt
+contains the named tool."""
 
 from __future__ import annotations
 

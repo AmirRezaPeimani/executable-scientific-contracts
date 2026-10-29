@@ -1,8 +1,4 @@
-"""Camera-ready evidence verification and explicit upstream-executing runners.
-
-Saved-result verification uses only the standard library. Heavy dependencies
-are imported by the opt-in research scripts in their subprocesses.
-"""
+"""Verify saved results and run upstream implementation checks."""
 from __future__ import annotations
 
 import datetime as dt
@@ -84,7 +80,7 @@ def validate_rows(rows, target):
             raise ValueError(f"{label}: unknown partition")
         exposed = row.get("exposed_rerun") or "exposed" in str(row.get("evaluation_status", ""))
         if exposed and row["partition"] == "locked_evaluation":
-            raise ValueError(f"{label}: exposed confirmation cannot be presented as untouched evaluation")
+            raise ValueError(f"{label}: previously evaluated cases must use the development partition")
         if row["expected_state"] not in {"fault", "conformant", "not_evaluated"}:
             raise ValueError(f"{label}: unknown expected state")
         if not isinstance(row["oracle_valid"], bool):
@@ -93,7 +89,7 @@ def validate_rows(rows, target):
         if isinstance(count, bool) or not isinstance(count, int) or count < 0:
             raise ValueError(f"{label}: invalid eligibility count")
         if count and not isinstance(row.get("implementation"), dict):
-            raise ValueError(f"{label}: eligible observation lacks implementation provenance")
+            raise ValueError(f"{label}: source revision and file information are missing")
         if not isinstance(row["methods"], dict) or set(row["methods"]) != set(METHODS):
             raise ValueError(f"{label}: missing or unknown comparison method")
         for method in METHODS:
@@ -103,13 +99,13 @@ def validate_rows(rows, target):
             if not isinstance(item.get("reason"), str) or not item["reason"].strip():
                 raise ValueError(f"{label}: missing decision reason")
             if count == 0 and item["decision"] in {"pass", "fail"}:
-                raise ValueError(f"{label}: zero eligible examples cannot establish pass/fail")
+                raise ValueError(f"{label}: zero eligible examples require not_evaluated")
         if row["expected_state"] == "not_evaluated" and (count or any(row["methods"][m]["decision"] in {"pass", "fail"} for m in METHODS)):
             raise ValueError(f"{label}: unavailable evidence incorrectly evaluated")
 
 
 def verify_behavior_results(results_root: Path) -> dict:
-    """Validate sealed saved evidence; never execute an upstream implementation."""
+    "Check saved result files against their manifests."
     all_rows, files = [], {}
     for target in TARGETS:
         directory = results_root / target
@@ -147,7 +143,7 @@ def verify_behavior_results(results_root: Path) -> dict:
             "upstream_implementations_executed": False, "inputs": files, "rows": len(all_rows),
             "excluded_unvalidated_rows": excluded,
             "by_target": {t: score([r for r in all_rows if r["target"] == t]) for t in TARGETS},
-            "interpretation": "Exact finite selected variants, including exposed confirmation reruns. Native missing coverage is unavailable, not a miss. No population accuracy or historical model-performance inference."}
+            "interpretation": "Results for the listed implementation variants. Unavailable coverage is recorded as not_evaluated."}
 
 
 def legacy_adapter_path() -> Path:
@@ -167,7 +163,7 @@ def execution_protocol(original: Path, destination: Path, target: str, *, confir
     save_new(destination, payload)
     save_new(destination.with_suffix(".rebinding.json"), {"original_protocol": str(original), "original_sha256": sha(original),
              "execution_protocol_sha256": sha(destination), "changes": changes,
-             "meaning": "Acquisition/storage path and first-run artifact identity rebinding only; no new pristine-freeze claim. Scientific runner code, inputs and expected behavior are unchanged."})
+             "meaning": "Updated acquisition paths and references to the first-run result files."})
     return destination
 
 
@@ -191,7 +187,7 @@ def runner_command(target: str, source_root: Path, protocol: Path, output_dir: P
 
 
 def prepare_tokenizer(input_dir: Path, context: Path, assets: Path) -> Path:
-    """Validate pinned tokenizer bytes and stage only small assets, never weights."""
+    "Check and copy the required tokenizer files."
     recorded = read(assets / "metadata/toolace_tokenizer_acquisition.json")
     required = {"tokenizer.json", "tokenizer_config.json", "vocab.json", "merges.txt"}
     for name in required:
@@ -220,7 +216,7 @@ def seal_target(output: Path, target: str):
             raise FileNotFoundError(f"Runner did not produce {name}")
     save_new(output / "camera_ready_target_manifest.json", {"schema_version": "2.0", "target": target,
          "challenge_file": selection, "files": {name: sha(output / name) for name in names},
-         "scope": "Saved output integrity seal, not an authenticity signature or an independent scientific validation."})
+         "scope": "SHA-256 hashes of saved result files."})
 
 
 def run_behavior(*, target: str, source_root: Path, protocol: Path, output_dir: Path, dataset_jsonl=None, data=None, tokenizer=None, historical_tokenizer=None):
@@ -230,7 +226,7 @@ def run_behavior(*, target: str, source_root: Path, protocol: Path, output_dir: 
     runner_command(target, source_root, protocol, output_dir, dataset_jsonl=dataset_jsonl, data=data, tokenizer=tokenizer,
                    historical_tokenizer=historical_tokenizer, assets=assets)
     if output_dir.exists():
-        raise FileExistsError("Choose a new --output-dir; previous evidence is never overwritten.")
+        raise FileExistsError("Output directory already exists; choose a new --output-dir.")
     expected_pin = read(protocol)["source_revision"]
     pin = subprocess.check_output(["git", "-C", str(source_root), "rev-parse", "HEAD"], text=True).strip()
     dirty = subprocess.check_output(["git", "-C", str(source_root), "status", "--porcelain"], text=True).strip()
@@ -244,7 +240,7 @@ def run_behavior(*, target: str, source_root: Path, protocol: Path, output_dir: 
                              data=Path(data).resolve() if data else None, tokenizer=staged_tokenizer,
                              historical_tokenizer=Path(historical_tokenizer).resolve() if historical_tokenizer else None, assets=assets)
     save_new(context / "base_command.json", {"command": command, "runner_sha256": sha(Path(command[1])),
-             "source_revision": pin, "scope": "Actual upstream-executing base analysis followed by exposed guard confirmation."})
+             "source_revision": pin, "scope": "Upstream execution with source-availability and input-eligibility checks."})
     subprocess.run(command, check=True)
     confirmation_names = {"agentprm": ("agentprm_guarded_v2.py", "agentprm_guarded_v2.json"),
                           "toolace": ("toolace_evaluator_v2.py", "toolace_confirmation_v2.json"),

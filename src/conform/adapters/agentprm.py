@@ -50,9 +50,7 @@ def audit_agentprm(root: Path, specs: list[dict[str, Any]]) -> list[ContractResu
             "gamma**(T-1-t)",
             1 if implemented_forward else 0,
             (
-                "Per-state target values change on controlled non-unit-discount "
-                "fixtures; released trajectories are unavailable, so no result "
-                "ranking consequence is assigned."
+                "Per-state targets change on controlled trajectories with non-unit discount."
             ),
             [f"{target_file}:55"],
             started,
@@ -115,8 +113,7 @@ def audit_agentprm(root: Path, specs: list[dict[str, Any]]) -> list[ContractResu
             "recorded policy action",
             1 if duplicated else 0,
             (
-                "The saved history value is wrong; no released affected trace is "
-                "present locally to establish a metric consequence."
+                "The query history contains an observation in the action field."
             ),
             [f"{rollout_file}:66"],
             started,
@@ -142,8 +139,7 @@ def audit_agentprm(root: Path, specs: list[dict[str, Any]]) -> list[ContractResu
             {"values": corrected_values, "mean": sum(corrected_values) / 4},
             1 if max_delta > 1e-12 else 0,
             (
-                "Corrected fixture values differ. Severity remains value-level "
-                "because released result traces are not available."
+                "The original synthetic fixture produces different target values before and after correction."
             ),
             [f"{target_file}:55"],
             started,
