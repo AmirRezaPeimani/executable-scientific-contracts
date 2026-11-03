@@ -32,7 +32,7 @@ Regenerate the six manuscript figures from the recorded results:
 python scripts/make_final_figures.py --results-root study/camera_ready/results --output-dir /new/path/figures
 ```
 
-The paper prints `scripts/agentabstain_contract_example.py` directly from the supplied source. Acquire AgentAbstain at `f581249704b26804e28a39e37396f1be00b71a4d`; the example requires Python 3.10 or newer and pandas 2.x. It constructs all four Boolean pairs, imports the actual `compute_summary_metrics`, asserts paired accuracy 0.25 and four eligible pairs, and prints the source SHA-256:
+The supplement prints `scripts/agentabstain_contract_example.py` directly from the supplied source. Acquire AgentAbstain at `f581249704b26804e28a39e37396f1be00b71a4d`; the example requires Python 3.10 or newer and pandas 2.x. It constructs all four Boolean pairs, imports the actual `compute_summary_metrics`, asserts paired accuracy 0.25 and four eligible pairs, and prints the source SHA-256:
 
 ```bash
 python scripts/agentabstain_contract_example.py --source-root /path/to/pinned/agentabstain

@@ -14,8 +14,8 @@
       "sha256": "7f8278fb8f705641cc931c09437898cc8c2145626e4921f3e376f3f066d2f2f1"
     },
     "README.md": {
-      "bytes": 5235,
-      "sha256": "3a4bb2e5c41fc9b3764d39b384e59114314271b0bf4bee929a3f69ac311f2ed3"
+      "bytes": 5240,
+      "sha256": "e82ecaf561929d669823c7d3486289f69fdfca3fd839c0e33f8ea79c431de02a"
     },
     "UPSTREAM.md": {
       "bytes": 2302,
@@ -190,16 +190,16 @@
       "sha256": "7f714325581ffdd23a06bb6703d323bc6bf2b1c9cb651435c0d675fe7c3b2ecb"
     },
     "manuscript/camera_ready.pdf": {
-      "bytes": 267334,
-      "sha256": "e5ae0b969efbdde379e1b45d03cfef01c64e084401674bd82c0c36d1ea9c9bc9"
+      "bytes": 262253,
+      "sha256": "3f2e361df7b9d82992393640f78433b38f458a581598aef4a80ad12da6521a6b"
     },
     "manuscript/figure_captions.tex": {
       "bytes": 2015,
       "sha256": "5fea5562bb8ee3a7453a0b96869a7fbb1eb3816389727ab430362d29fc2147d5"
     },
     "manuscript/main.tex": {
-      "bytes": 13609,
-      "sha256": "23c05b64f6bc14a21204997271b3363c2920842227b1d363e5d44c5f97dc4dfd"
+      "bytes": 13590,
+      "sha256": "bb4c744b7d5e02d8c6c51b55b80d98d9f2c5563a4cbed7dca9007b197ed1ec7c"
     },
     "manuscript/neurips_2026.sty": {
       "bytes": 13579,
@@ -210,12 +210,12 @@
       "sha256": "68e06c2172e5dc103b1a5968c9b0b64880002e4010ca362d52eacd6b39c752b9"
     },
     "manuscript/supplement.pdf": {
-      "bytes": 338511,
-      "sha256": "3802ce6c25fe3a18bc8e7b8cc7953f47443e419ccd43b9fe1be62ecb290c0146"
+      "bytes": 352351,
+      "sha256": "a8a914664d29903ae06c5820573f4e1a1484698ce72e0da157ddb9b89a5f3e2b"
     },
     "manuscript/supplement.tex": {
-      "bytes": 4565,
-      "sha256": "dbf6cbcd37e59d699405d0b359cbe5f407151a1c61b0412cba2cf999a3f5a4ad"
+      "bytes": 5008,
+      "sha256": "471ccad02b3e767531ab95a64ca6ac9220c9488b1d338d005bfd6cd85ac27c23"
     },
     "manuscript/tables/additional_case_details.tex": {
       "bytes": 2266,
@@ -318,8 +318,8 @@
       "sha256": "1d8d939235b99adbfd19480fa5966650c905d4d0cbe57fb28c7b361d72480f70"
     },
     "study/camera_ready/README.md": {
-      "bytes": 8129,
-      "sha256": "7dc9b9e94d908a0560aa4d3cbf56f60d6f77f62cfe609c2abe6d97d1e5e3808f"
+      "bytes": 8134,
+      "sha256": "ea5358dbeae8a40a1592818b1454dac6019f307cce0f288d6fa242e408c52cd7"
     },
     "study/camera_ready/analysis/agentabstain_analysis.py": {
       "bytes": 22866,
@@ -569,6 +569,6 @@
   "repository_url": "https://github.com/AmirRezaPeimani/executable-scientific-contracts",
   "schema_version": "2.0",
   "title": "Executable Scientific Contracts for Verifiable LLM and Agent Research",
-  "total_bytes_excluding_manifest": 7000576,
+  "total_bytes_excluding_manifest": 7009769,
   "version": "1.1.1"
 }

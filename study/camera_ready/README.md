@@ -13,7 +13,7 @@ python scripts/make_final_figures.py --results-root study/camera_ready/results -
 
 ## Complete executable example
 
-The paper prints `scripts/agentabstain_contract_example.py`. Use Python 3.10 or newer, pandas 2.x, and AgentAbstain revision `f581249704b26804e28a39e37396f1be00b71a4d`:
+The supplement prints `scripts/agentabstain_contract_example.py`. Use Python 3.10 or newer, pandas 2.x, and AgentAbstain revision `f581249704b26804e28a39e37396f1be00b71a4d`:
 
 ```bash
 python scripts/agentabstain_contract_example.py --source-root /path/to/pinned/agentabstain

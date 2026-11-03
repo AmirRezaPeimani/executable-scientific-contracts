@@ -80,10 +80,9 @@ We held the checks fixed while constructing and evaluating nine additional cases
 The earlier mutation experiment exercised four fixture validators. Its 30 mutations and the eight externally motivated operators are documented in the supplement.
 
 \par\noindent\begin{minipage}{\linewidth}
-\paragraph{Complete executable example.}
-The AgentAbstain conjunction check uses the four Boolean act/abstain pairs, for which paired accuracy is 0.25. The listing constructs the evaluator input and calls \texttt{compute\_summary\_metrics} from revision f5812497. Code, study artifacts, environment specifications, and run commands are available at \url{https://github.com/AmirRezaPeimani/executable-scientific-contracts}.
-\lstinputlisting{../scripts/agentabstain_contract_example.py}
-The check prints `paired\_accuracy: 0.25 PASS' and the SHA-256 hash of the imported source file.
+\paragraph{Example: paired accuracy.}
+The four Boolean act/abstain outcome pairs have paired accuracy $0.25$. The check calls AgentAbstain's evaluator at revision \texttt{f5812497} and runs from that checkout with Python 3.10 or newer and pandas 2.x.
+\lstinputlisting[linerange={8-8,19-19,22-33}]{../scripts/agentabstain_contract_example.py}
 \end{minipage}\par
 
 \section{Results}
@@ -171,6 +170,8 @@ One author selected the checks and faults and assigned their labels across five 
 
 \section{Conclusion}
 The contracts detect implementation errors, accept repaired code, and quantify differences between evaluation conventions. Releasing the inputs, expected outputs, and source versions gives reviewers a direct way to inspect and rerun the findings.
+\paragraph{Code availability.}
+Code, results, dependencies, and run commands are available at \url{https://github.com/AmirRezaPeimani/executable-scientific-contracts}. The supplement includes the complete example script.
 \label{end-of-main-text}
 \clearpage\bibliographystyle{plainnat}\bibliography{references}
 \end{document}

@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,booktabs,graphicx,hyperref,longtable,microtype,array,tabularx,ragged2e,url,placeins,needspace}
+\usepackage{listings}
 \raggedbottom
 \hypersetup{hidelinks,pdftitle={Supplementary Material: Executable Scientific Contracts for Verifiable LLM and Agent Research},pdfauthor={Amir Reza Peimani}}
 \makeatletter
@@ -76,4 +77,8 @@ Field/type validation accepts AgentPRM's query-history error because observation
 
 \section{Repository revisions}
 We evaluated AgentPRM at \texttt{e4714717}, ContractBench at \texttt{c50eefee}, ToolACE at \texttt{1156d649}, $\tau$-bench at \texttt{59a200c6}, and AgentAbstain at \texttt{f5812497}. The AgentAbstain dataset revision is \texttt{84222842}. Full commit hashes and the dataset SHA-256 are included in the repository.
+\clearpage
+\section{Executable paired-accuracy check}
+Run \texttt{scripts/agentabstain\_contract\_example.py} with \texttt{--source-root} pointing to AgentAbstain revision \texttt{f5812497}. The script requires Python 3.10 or newer and pandas 2.x.
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false]{../scripts/agentabstain_contract_example.py}
 \end{document}
