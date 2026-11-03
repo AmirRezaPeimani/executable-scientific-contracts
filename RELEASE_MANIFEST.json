@@ -190,8 +190,8 @@
       "sha256": "7f714325581ffdd23a06bb6703d323bc6bf2b1c9cb651435c0d675fe7c3b2ecb"
     },
     "manuscript/camera_ready.pdf": {
-      "bytes": 262253,
-      "sha256": "3f2e361df7b9d82992393640f78433b38f458a581598aef4a80ad12da6521a6b"
+      "bytes": 262211,
+      "sha256": "6271973c6f12ce8c907eb3a8b72332fbca4eaa6af6a222b7d27b07d383b10c34"
     },
     "manuscript/figure_captions.tex": {
       "bytes": 2015,
@@ -206,8 +206,8 @@
       "sha256": "0208b5e55a44fb0f6b1ff8c9077935ef02fa94935adb601c9494817ac605bf89"
     },
     "manuscript/references.bib": {
-      "bytes": 8123,
-      "sha256": "68e06c2172e5dc103b1a5968c9b0b64880002e4010ca362d52eacd6b39c752b9"
+      "bytes": 8131,
+      "sha256": "b357c927d084fd53f1cbd7e6e60218a6a963f19c622bb6085e1d9b26b2915385"
     },
     "manuscript/supplement.pdf": {
       "bytes": 352351,
@@ -569,6 +569,6 @@
   "repository_url": "https://github.com/AmirRezaPeimani/executable-scientific-contracts",
   "schema_version": "2.0",
   "title": "Executable Scientific Contracts for Verifiable LLM and Agent Research",
-  "total_bytes_excluding_manifest": 7009769,
+  "total_bytes_excluding_manifest": 7009735,
   "version": "1.1.1"
 }
